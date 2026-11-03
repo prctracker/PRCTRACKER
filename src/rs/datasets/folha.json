@@ -1,0 +1,15 @@
+{
+  "description": "Médicos ativos no Executivo do Rio Grande do Sul em setembro de 2026, efetivos e temporários: quantidade, total de vantagens do mês e média por médico (Tesouro do Estado, relatórios RHE3031P e RHE3033R).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json",
+    "url": "/_blob/43d6a03ac7db64a5af3497cca7fc7d0d"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-02T14:10:00-03:00",
+    "by": "Claude"
+  }
+}

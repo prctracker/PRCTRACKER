@@ -1,0 +1,15 @@
+{
+  "description": "Médicos com vínculo ativo no CNES em Rondônia, competência de setembro de cada ano (TabNet Recursos Humanos).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "serie.json",
+    "url": "/_blob/9c89af8b9738967f29eb6cb3c17b078b"
+  },
+  "title": "Médicos no CNES, 2022–2026",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

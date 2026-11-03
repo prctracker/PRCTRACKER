@@ -1,0 +1,15 @@
+{
+  "description": "Contornos dos 497 municípios do Rio Grande do Sul (malha IBGE via geodata-br; Pinto Bandeira pelo contorno do IBGE), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json",
+    "url": "/_blob/5cf6e6586a9018dc0bd731284a4401eb"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-11-02T14:10:00-03:00",
+    "by": "Claude"
+  }
+}

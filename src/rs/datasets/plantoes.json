@@ -1,0 +1,15 @@
+{
+  "description": "Não localizado: a SES-RS não publica pagamento de plantões médicos por mês; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json",
+    "url": "/_blob/f7784e06ff2fc3cf5abcd4a3d96beac4"
+  },
+  "title": "Plantões extras do Estado, por mês",
+  "updated": {
+    "at": "2026-11-02T14:40:00-03:00",
+    "by": "Claude"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "Vencimento inicial de médicos em concursos e chamamentos temporários da SES-TO e da SMS Palmas, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json",
+    "url": "/_blob/6cabf3f8fd0bcd15ffa2c53c3cfba709"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-10-28T15:30:00-03:00",
+    "by": "Claude"
+  }
+}

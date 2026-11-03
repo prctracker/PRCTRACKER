@@ -1,0 +1,15 @@
+{
+  "description": "Números pontuais de editais, reportagens, Ministério da Saúde, IBGE e ANS: concurso SESAU-AL, prestadores, Mais Médicos, população e planos de saúde, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json",
+    "url": "/_blob/e0237f78e30889b28b3782a52c0fabef"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

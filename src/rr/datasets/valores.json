@@ -1,0 +1,15 @@
+{
+  "description": "Valores pagos a médicos em Roraima, um por linha, com órgão, documento de origem, amparo legal, unidade, quantidade, valor e link: credenciamento estadual de PJ por plantão, plantões PSS da folha, médias da folha, planos de cargos e seleções municipais e bolsa do Mais Médicos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "valores.json",
+    "url": "/_blob/db68cc3205b17cd1b47ba1dcb47be33b"
+  },
+  "title": "Remuneração médica levantada",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

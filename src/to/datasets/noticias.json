@@ -1,0 +1,15 @@
+{
+  "description": "Reportagens de 2025 e 2026 sobre falta de médicos, escalas e gestão de unidades no Tocantins, resumidas por Claude, com link para cada matéria.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json",
+    "url": "/_blob/55683b935080cb8de0e9b77b5f30d3ac"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-10-28T15:30:00-03:00",
+    "by": "Claude"
+  }
+}

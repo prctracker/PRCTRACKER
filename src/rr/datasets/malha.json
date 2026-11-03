@@ -1,0 +1,15 @@
+{
+  "description": "Contornos dos 15 municípios de Roraima (malha IBGE via geodata-br), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json",
+    "url": "/_blob/63ecf9bffaa66c67f8a19f0c86ded061"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

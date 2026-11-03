@@ -1,0 +1,15 @@
+{
+  "description": "Reportagens e publicações de 2025 e 2026 sobre falta de médicos, contratação e pagamento em Roraima, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json",
+    "url": "/_blob/e5aeeb9f524da2a827c6296287cb4ce7"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

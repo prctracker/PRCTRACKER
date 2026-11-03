@@ -1,0 +1,15 @@
+{
+  "description": "Hospitais, UPA e unidades mistas ativos no CNES (consulta em 30/10/2026), com médicos (CBO 225 e 2231) por tipo de vínculo e mantenedor; residentes incluídos. PJ inclui o vínculo intermediado.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "hospitais.json",
+    "url": "/_blob/3f4b927f40f626bad22a0f6b450d55b4"
+  },
+  "title": "Médicos por hospital e UPA",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

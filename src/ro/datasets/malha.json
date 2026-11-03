@@ -1,0 +1,15 @@
+{
+  "description": "Contornos dos 52 municípios de Rondônia (malha IBGE via geodata-br), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json",
+    "url": "/_blob/4238bba24b2678b064d6c02475fc592a"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

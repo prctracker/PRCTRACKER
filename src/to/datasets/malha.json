@@ -1,0 +1,15 @@
+{
+ "description": "Contornos dos 139 municípios do Tocantins (malha municipal do IBGE via geodata-br, arquivo geojs-17-mun), simplificados para desenhar o mapa sem lacunas entre municípios. Substitui, no site, a malha simplificada demais do painel original.",
+ "fixed": true,
+ "source": {
+  "format": "json",
+  "kind": "file",
+  "name": "malha.json",
+  "url": "/_blob/e388ae9c78106f2fe23f2b9187f130ee"
+ },
+ "title": "Limites municipais",
+ "updated": {
+  "at": "2026-11-02T15:20:00-03:00",
+  "by": "Claude"
+ }
+}

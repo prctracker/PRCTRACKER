@@ -1,0 +1,15 @@
+{
+  "description": "Médicos com vínculo ativo no CNES no Tocantins, competência de setembro de cada ano (TabNet Recursos Humanos).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "serie.json",
+    "url": "/_blob/79788defe3ef2e6b9efa1f01a640651b"
+  },
+  "title": "Médicos no CNES, 2022–2026",
+  "updated": {
+    "at": "2026-10-28T15:30:00-03:00",
+    "by": "Claude"
+  }
+}

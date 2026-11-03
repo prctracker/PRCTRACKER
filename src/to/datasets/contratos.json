@@ -1,0 +1,15 @@
+{
+  "description": "Contratos de prestação de serviço médico publicados por prefeituras do Tocantins no PNCP (contratado, valor global, vigência) e os contratos das UPAs de Palmas noticiados pela imprensa. CNPJ e tipo de pessoa do contratado conferidos na API de consulta do PNCP em 02/11/2026 pelo número de controle de cada contrato (CPF de pessoa física não é exibido).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "contratos.json",
+    "url": "/_blob/b2146e5787eeb99f2c3a31d4316ef29c"
+  },
+  "title": "Contratos de serviço médico",
+  "updated": {
+    "at": "2026-11-02T20:30:00-03:00",
+    "by": "Claude"
+  }
+}

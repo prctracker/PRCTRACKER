@@ -1,0 +1,15 @@
+{
+  "description": "Reportagens e publicações de 2025 e 2026 sobre falta de médicos, contratação e pagamento em Rondônia, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json",
+    "url": "/_blob/fe6914a37d33e02b32b4ec710716ec38"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

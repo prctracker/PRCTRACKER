@@ -1,0 +1,15 @@
+{
+  "description": "Por ano (2025 e 2026 até outubro): adicional de serviço extraordinário e total de proventos pagos aos médicos do Estado, e o que o Fundo Estadual de Saúde pagou nos elementos 3.3.90.34 e 3.3.90.36. Serviço extraordinário de outros profissionais: Não localizado.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json",
+    "url": "/_blob/11dfa5cf907be69113494b45a2ad22aa"
+  },
+  "title": "Serviço extraordinário x folha do Estado",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

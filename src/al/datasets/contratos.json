@@ -1,0 +1,15 @@
+{
+  "description": "Contratos e credenciados de serviço médico publicados por prefeituras de Alagoas no PNCP (sem laboratórios), com contratado, valor, vigência e link. CNPJ e tipo de pessoa do contratado conferidos na API de consulta do PNCP em 02/11/2026 pelo número de controle de cada contrato (CPF de pessoa física não é exibido).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "contratos.json",
+    "url": "/_blob/7bd85114898a9b644e59f3462d9694f3"
+  },
+  "title": "Contratos de serviço médico",
+  "updated": {
+    "at": "2026-11-02T20:30:00-03:00",
+    "by": "Claude"
+  }
+}

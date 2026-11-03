@@ -1,0 +1,15 @@
+{
+  "description": "Valores pagos pelo Fundo Estadual de Saúde por ano: plantões terceirizados a PJ (natureza 3.3.90.34) e serviços médico-hospitalares de PJ (natureza 3.3.90.39, credores de saúde); a folha anual não foi localizada (Portal da Transparência de Roraima).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json",
+    "url": "/_blob/67679a2e38ef4c9345e047f9e19725da"
+  },
+  "title": "Pagamentos a PJ médicas da SESAU",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

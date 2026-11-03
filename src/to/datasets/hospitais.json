@@ -1,0 +1,15 @@
+{
+  "description": "Hospitais, UPAs, prontos-socorros e unidades mistas ativos no CNES (consulta em 02/11/2026), com médicos (CBO 225 e 2231) por tipo de vínculo, vínculo intermediado e mantenedor; residentes incluídos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "hospitais.json",
+    "url": "/_blob/a89ad38b8a7cc8c0d38cfcec3e9f73a4"
+  },
+  "title": "Médicos por hospital e UPA",
+  "updated": {
+    "at": "2026-11-02T18:05:00-03:00",
+    "by": "Claude"
+  }
+}

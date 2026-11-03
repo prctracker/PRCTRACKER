@@ -1,0 +1,8 @@
+node_modules/
+tools/node_modules/
+build/
+dist/
+shots/
+site/data/
+site/estados/
+*.log

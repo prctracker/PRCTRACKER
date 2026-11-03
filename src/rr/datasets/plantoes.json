@@ -1,0 +1,15 @@
+{
+  "description": "Valor pago por mês pelo Fundo Estadual de Saúde a pessoas jurídicas na natureza 3.3.90.34 (terceirização de plantões), sem retenções de IRRF e repasses a órgãos, de jan/2024 a out/2026 (Portal da Transparência de Roraima).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json",
+    "url": "/_blob/842ecda092ca37db69716747ab790468"
+  },
+  "title": "Plantões pagos a PJ, por mês",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

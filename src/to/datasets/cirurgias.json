@@ -1,0 +1,15 @@
+{
+  "description": "Indenização por procedimento cirúrgico paga a servidores da SES-TO fora da jornada, por especialidade e complexidade, segundo a Lei estadual 4.626/2025 (Anexos I e II).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "cirurgias.json",
+    "url": "/_blob/87384903c7c6428220d5d1747d024a77"
+  },
+  "title": "Pag-Cirúrgico da SES-TO",
+  "updated": {
+    "at": "2026-10-28T16:20:00-03:00",
+    "by": "Claude"
+  }
+}

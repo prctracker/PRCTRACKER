@@ -1,0 +1,140 @@
+[
+{
+"especialidade": "Clínico geral",
+"sus": 2554,
+"nao_sus": 199,
+"total": 2753
+},
+{
+"especialidade": "Médico da ESF (família)",
+"sus": 582,
+"nao_sus": 4,
+"total": 586
+},
+{
+"especialidade": "Pediatra",
+"sus": 414,
+"nao_sus": 84,
+"total": 498
+},
+{
+"especialidade": "Ginecologista obstetra",
+"sus": 291,
+"nao_sus": 75,
+"total": 366
+},
+{
+"especialidade": "Residente",
+"sus": 447,
+"nao_sus": 0,
+"total": 447
+},
+{
+"especialidade": "Ortopedista",
+"sus": 155,
+"nao_sus": 26,
+"total": 181
+},
+{
+"especialidade": "Cirurgião geral",
+"sus": 168,
+"nao_sus": 9,
+"total": 177
+},
+{
+"especialidade": "Anestesiologista",
+"sus": 241,
+"nao_sus": 94,
+"total": 335
+},
+{
+"especialidade": "Cardiologista",
+"sus": 231,
+"nao_sus": 64,
+"total": 295
+},
+{
+"especialidade": "Radiologista",
+"sus": 270,
+"nao_sus": 46,
+"total": 316
+},
+{
+"especialidade": "Oftalmologista",
+"sus": 111,
+"nao_sus": 48,
+"total": 159
+},
+{
+"especialidade": "Psiquiatra",
+"sus": 140,
+"nao_sus": 21,
+"total": 161
+},
+{
+"especialidade": "Neurologista",
+"sus": 124,
+"nao_sus": 18,
+"total": 142
+},
+{
+"especialidade": "Generalista",
+"sus": 59,
+"nao_sus": 2,
+"total": 61
+},
+{
+"especialidade": "Dermatologista",
+"sus": 76,
+"nao_sus": 37,
+"total": 113
+},
+{
+"especialidade": "Nefrologista",
+"sus": 72,
+"nao_sus": 7,
+"total": 79
+},
+{
+"especialidade": "Otorrinolaringologista",
+"sus": 68,
+"nao_sus": 11,
+"total": 79
+},
+{
+"especialidade": "Urologista",
+"sus": 40,
+"nao_sus": 5,
+"total": 45
+},
+{
+"especialidade": "Infectologista",
+"sus": 39,
+"nao_sus": 3,
+"total": 42
+},
+{
+"especialidade": "Gastroenterologista",
+"sus": 49,
+"nao_sus": 27,
+"total": 76
+},
+{
+"especialidade": "Endocrinologista",
+"sus": 62,
+"nao_sus": 15,
+"total": 77
+},
+{
+"especialidade": "Oncologista clínico",
+"sus": 57,
+"nao_sus": 5,
+"total": 62
+},
+{
+"especialidade": "Médico em medicina intensiva",
+"sus": 44,
+"nao_sus": 1,
+"total": 45
+}
+]

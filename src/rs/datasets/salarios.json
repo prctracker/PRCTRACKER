@@ -1,0 +1,15 @@
+{
+  "description": "Remuneração média dos médicos efetivos e temporários do Estado (folha de set/2026), tabela do cargo, vencimentos de concursos e seleções municipais e bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json",
+    "url": "/_blob/627d94a79f0379f8be6cfd5fb439089d"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-02T14:10:00-03:00",
+    "by": "Claude"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "Valor pago por mês pela SESAU (Fundo Estadual de Saúde) na rubrica de serviços médicos de pessoa física, favorecido \"Plantões extras\", de jan/2024 a out/2026 (Portal da Transparência de Alagoas).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json",
+    "url": "/_blob/bab460b633ed95f1e3f718fc2c3857b9"
+  },
+  "title": "Plantões extras da SESAU, por mês",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

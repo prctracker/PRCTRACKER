@@ -1,0 +1,15 @@
+{
+  "description": "Contratos e credenciados de serviço médico publicados por prefeituras de Rondônia no PNCP e contratos da SESAU no Portal da Transparência de Rondônia desde 2024 (sem laboratórios e sem hospitais), com contratado, CNPJ, tipo de pessoa, valor, vigência e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "contratos.json",
+    "url": "/_blob/4cb0adbee2547608040c5eff6589ae12"
+  },
+  "title": "Contratos de serviço médico",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

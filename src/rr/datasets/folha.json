@@ -1,0 +1,15 @@
+{
+  "description": "Médicos da SESAU-RR (efetivos e temporários ACT) em agosto de 2024, 2025 e 2026: pessoas, proventos brutos do vínculo de médico e média por pessoa, com e sem plantões PSS (Portal da Transparência de Roraima).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json",
+    "url": "/_blob/463bf55f36574830d53ebbea8c0ea1a0"
+  },
+  "title": "Folha de médicos efetivos e temporários",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

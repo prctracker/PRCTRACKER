@@ -1,0 +1,15 @@
+{
+  "description": "Preço unitário de consultas especializadas e exames com laudo em credenciamentos de prefeituras do Tocantins no PNCP, um por linha, com órgão, edital e processo, amparo legal, nº de controle e item, quantidade, valor estimado e homologado, contratado e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "consultas.json",
+    "url": "/_blob/28f39467d5d2e304465d45b30ee1809e"
+  },
+  "title": "Preços de consulta e exame",
+  "updated": {
+    "at": "2026-10-28T16:10:00-03:00",
+    "by": "Claude"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "Números pontuais de editais, reportagens, Ministério da Saúde, CNES, IBGE e ANS: concurso da SESAU-RO, serviço extraordinário pago a médicos, vínculos não estatutários na rede estadual, Mais Médicos, população e planos de saúde, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json",
+    "url": "/_blob/5201146467fdf29fda169af965378a05"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

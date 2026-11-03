@@ -1,0 +1,15 @@
+{
+  "description": "Vagas do Edital 001/2026 SECAD/SES-TO: generalista por cidade (14 cidades detalhadas pelas fontes, 261 de 275 vagas) e especialista RQE por especialidade (593), compiladas de Estratégia MED e Grupo MedCof.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "concurso_vagas.json",
+    "url": "/_blob/4e050c4715f1c791c4f35c1292a35691"
+  },
+  "title": "Vagas de médico, concurso SES-TO",
+  "updated": {
+    "at": "2026-10-28T15:30:00-03:00",
+    "by": "Claude"
+  }
+}

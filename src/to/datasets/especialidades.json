@@ -1,0 +1,15 @@
+{
+  "description": "Médicos com vínculo no CNES por especialidade (CBO), atendendo ou não pelo SUS (TabNet Recursos Humanos, competência set/2026).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "especialidades.json",
+    "url": "/_blob/363ecd98fcd940398f26e3c6ddaef388"
+  },
+  "title": "Médicos por especialidade",
+  "updated": {
+    "at": "2026-10-28T15:30:00-03:00",
+    "by": "Claude"
+  }
+}

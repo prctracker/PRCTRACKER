@@ -1,0 +1,1159 @@
+<meta name="dash-one-writer">
+<style>
+.tm{font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:var(--cds-gap-xl)}
+.tm-head{display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.tm-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0;line-height:1.15}
+.tm-take{margin:0;font-size:var(--cds-font-size-body);line-height:1.55;max-width:78ch}
+.tm .tm-take b,.tm .tm-card-n b,.tm .tm-sec-p b,.tm .tm-kpi-n b{font-weight:600}
+.tm-nav{display:flex;flex-wrap:wrap;gap:var(--cds-gap-xs)}
+.tm-nav button,.tm-seg button{font:inherit;font-size:var(--cds-font-size-caption);padding:var(--cds-pad-xs) var(--cds-pad-sm);border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);border-radius:var(--cds-radius);cursor:pointer}
+.tm-seg button[aria-pressed=true]{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
+.tm-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11.5rem),1fr));gap:var(--cds-gap-md)}
+.tm-kpi{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-md);display:flex;flex-direction:column;gap:var(--cds-gap-xs)}
+.tm-kpi-l{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.tm-kpi-v{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);font-variant-numeric:tabular-nums;line-height:1.1;min-height:1.1em}
+.tm-kpi-n{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.tm-sec{display:flex;flex-direction:column;gap:var(--cds-gap-md);scroll-margin-top:var(--cds-gap-md)}
+.tm-sec-h{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.tm-sec-p{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-body);line-height:1.5;max-width:80ch}
+.tm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:var(--cds-gap-md)}
+.tm-grid-map{grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr))}
+.tm-stack{display:flex;flex-direction:column;gap:var(--cds-gap-md);min-width:0}
+.tm-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-sm);min-width:0}
+.tm-card-h{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.tm-card-n{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin:0;line-height:1.45}
+.tm-ctrl{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm);align-items:center}
+.tm-seg{display:flex;flex-wrap:wrap;gap:var(--cds-gap-xs)}
+.tm-chk{font-size:var(--cds-font-size-caption);display:flex;gap:var(--cds-gap-xs);align-items:center;color:var(--color-fg-muted)}
+.tm-map{position:relative;min-height:520px}
+.tm-chart{position:relative;min-height:180px}
+.tm-chart svg,.tm-map svg{display:block;overflow:visible}
+.tm-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);max-width:17rem;z-index:3;line-height:1.45}
+.tm-tip-h{color:var(--cds-text-secondary);margin-bottom:2px}
+.tm-tbl-wrap{max-height:30rem;overflow:auto}
+.tm-tbl-wrap.tm-short{max-height:19rem}
+.tm-tbl{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums}
+.tm-tbl th{position:sticky;top:0;background:var(--color-panel);text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);white-space:nowrap;z-index:1}
+.tm-tbl th button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.tm-tbl th[aria-sort=ascending] button::after{content:" ↑"}
+.tm-tbl th[aria-sort=descending] button::after{content:" ↓"}
+.tm-tbl td{padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.tm-tbl .num{text-align:right;white-space:nowrap}
+.tm-tbl a{color:inherit;text-underline-offset:2px}
+.tm-bar{display:inline-block;height:.45rem;border-radius:2px;margin-right:var(--cds-gap-xs);vertical-align:middle}
+.tm-search{font:inherit;font-size:var(--cds-font-size-caption);padding:var(--cds-pad-xs) var(--cds-pad-sm);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);background:var(--color-bg);color:var(--color-fg);width:min(100%,20rem)}
+.tm-legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-xs) var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.tm-sw{display:inline-block;width:.65rem;height:.65rem;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.tm-fail{display:flex;align-items:center;justify-content:center;gap:var(--cds-gap-xs);min-height:inherit;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.tm-fail::before{content:"";width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)}
+.tm-notes{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);display:flex;flex-direction:column;gap:var(--cds-gap-sm);max-width:85ch;line-height:1.5}
+.tm-notes p{margin:0}
+.tm-kpis-sm .tm-kpi-v{font-size:var(--cds-font-size-heading)}
+.tm [data-dash-source-state=empty]{color:transparent}
+.tm [data-dash-source-state=refreshing]{opacity:.5;transition:opacity var(--cds-dur-slow)}
+@media (max-width:640px){.tm-hide-sm{display:none}}
+</style>
+
+<div class="tm">
+  <header class="tm-head" id="topo">
+    <h1 class="tm-title">Mapeamento médico de Alagoas</h1>
+    <p class="tm-take">Maceió e Arapiraca concentram <b data-draw="val" data-source="kpi" data-field="conc_share" data-fmt="pct">—</b> dos médicos com vínculo no CNES, e <b data-draw="val" data-source="kpi" data-field="mun_baixa">—</b> dos <b data-draw="val" data-source="kpi" data-field="n_mun">—</b> municípios ficam abaixo de <b data-draw="val" data-source="kpi" data-field="limite_baixa">—</b> médico por mil habitantes. Nos hospitais e UPAs, só <b data-draw="val" data-source="kpi_vinc" data-field="share_est" data-fmt="pct">—</b> dos vínculos médicos são de concursados: <b data-draw="val" data-source="kpi_vinc" data-field="share_pf" data-fmt="pct">—</b> são de autônomos pessoa física e <b data-draw="val" data-source="kpi_vinc" data-field="share_tmp" data-fmt="pct">—</b> de contratos por prazo determinado, o vínculo dos prestadores de plantão da rede estadual.</p>
+    <nav class="tm-nav" aria-label="Seções">
+      <button type="button" data-go="mapa">Mapa de calor</button>
+      <button type="button" data-go="demografia">Dados demográficos</button>
+      <button type="button" data-go="hospitais">Hospitais e médicos</button>
+      <button type="button" data-go="contratacao">Contratação e valores</button>
+      <button type="button" data-go="concursos">Concursos e salários</button>
+      <button type="button" data-go="ociosas">Vagas ociosas</button>
+      <button type="button" data-go="noticias">Notícias</button>
+      <button type="button" data-go="metodo">Método e fontes</button>
+    </nav>
+  </header>
+
+  <div class="tm-kpis">
+    <div class="tm-kpi"><span class="tm-kpi-l">Médicos com vínculo no CNES</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi" data-field="medicos">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="kpi" data-field="medicos_sus">—</b> atendem pelo SUS</span></div>
+    <div class="tm-kpi"><span class="tm-kpi-l">Médicos por mil habitantes</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi" data-field="dens" data-fmt="dec2">—</span><span class="tm-kpi-n">População estimada: <b data-draw="val" data-source="kpi" data-field="pop">—</b></span></div>
+    <div class="tm-kpi"><span class="tm-kpi-l">Municípios abaixo de <span data-draw="val" data-source="kpi" data-field="limite_baixa">—</span> médico por mil hab.</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi" data-field="mun_baixa">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="kpi" data-field="mun_zero">—</b> sem nenhum médico registrado</span></div>
+    <div class="tm-kpi"><span class="tm-kpi-l">Vínculos de concursados em hospitais e UPAs</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi_vinc" data-field="share_est" data-fmt="pct">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="kpi_vinc" data-field="share_pf" data-fmt="pct">—</b> autônomos PF · <b data-draw="val" data-source="kpi_vinc" data-field="share_tmp" data-fmt="pct">—</b> prazo determinado</span></div>
+    <div class="tm-kpi"><span class="tm-kpi-l">Vagas de médico no concurso SESAU-AL 2026</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=cs_med" data-field="valor">—</span><span class="tm-kpi-n">Concurso de 2021: <b data-draw="val" data-source="indicadores" data-where="id=cs_2021" data-field="valor">—</b> vagas de médico</span></div>
+    <div class="tm-kpi"><span class="tm-kpi-l">Médico efetivo da SESAU, remuneração média do mês</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="salarios" data-where="id=s1" data-field="valor_min" data-fmt="brl0">—</span><span class="tm-kpi-n">Uncisal: <b data-draw="val" data-source="salarios" data-where="id=s2" data-field="valor_min" data-fmt="brl0">—</b> · agosto de 2026</span></div>
+  </div>
+
+  <section class="tm-sec" id="mapa">
+    <h2 class="tm-sec-h">Mapa de calor da concentração médica</h2>
+    <div class="tm-grid tm-grid-map">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Médicos por município</h3>
+        <p class="tm-card-n">Quanto mais escuro, maior o valor. Listrado: nenhum médico registrado no município. Círculos: hospitais e UPAs, do tamanho do corpo médico. Passe o cursor para ver os números.</p>
+        <div class="tm-ctrl">
+          <div class="tm-seg" role="group" aria-label="Indicador do mapa">
+            <button type="button" data-metric="dens" aria-pressed="true">Médicos por mil hab.</button>
+            <button type="button" data-metric="dens_sus" aria-pressed="false">Médicos SUS por mil hab.</button>
+            <button type="button" data-metric="med" aria-pressed="false">Total de médicos</button>
+            <button type="button" data-metric="pct_60mais" aria-pressed="false">População com 60 anos ou mais</button>
+          </div>
+          <label class="tm-chk"><input type="checkbox" class="tm-hosp-toggle" checked> Mostrar hospitais e UPAs</label>
+        </div>
+        <div class="tm-map dash-skeleton" id="mapa-calor" data-draw="mapa" data-source="malha municipios hospitais"></div>
+      </div>
+      <div class="tm-stack">
+        <div class="tm-card">
+          <h3 class="tm-card-h">Médicos por mil habitantes, por região de saúde</h3>
+          <p class="tm-card-n">As dez regiões de saúde (CIR) do estado, identificadas pelo maior município. Em destaque, as que estão acima da média estadual, marcada pela linha tracejada.</p>
+          <div class="tm-chart dash-skeleton" id="regioes" data-draw="reg" data-source="regioes kpi"></div>
+        </div>
+        <div class="tm-card">
+          <h3 class="tm-card-h">Vazios assistenciais</h3>
+          <p class="tm-card-n"><b data-draw="val" data-source="kpi" data-field="mun_vazio">—</b> municípios com menos de <b data-draw="val" data-source="kpi" data-field="limite_vazio" data-fmt="dec1">—</b> médico por mil habitantes, do mais desassistido para o menos.</p>
+          <div class="tm-tbl-wrap tm-short">
+            <table class="tm-tbl" data-source="municipios" data-row-key="id">
+              <thead><tr><th data-field="nome">Município</th><th data-field="cir_nome" class="tm-hide-sm">Região de saúde</th><th data-field="pop" class="num">População</th><th data-field="med" class="num">Médicos</th><th data-field="dens" class="num">Por mil hab.</th></tr></thead>
+              <tbody data-draw="vazios"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="demografia">
+    <h2 class="tm-sec-h">Dados demográficos</h2>
+    <p class="tm-sec-p">Quem é atendido: tamanho da população, crescimento, estrutura de idade e quanto dela depende só do SUS. As idades vêm do Censo 2022; a população atual, da estimativa do IBGE para 2025.</p>
+    <div class="tm-kpis tm-kpis-sm">
+      <div class="tm-kpi"><span class="tm-kpi-l">População estimada (IBGE 2025)</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi" data-field="pop">—</span><span class="tm-kpi-n">Censo 2022: <b data-draw="val" data-source="indicadores" data-where="id=pop22" data-field="valor">—</b></span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Crescimento desde o Censo 2022</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="demo" data-field="cresc" data-fmt="pct1">—</span><span class="tm-kpi-n">Maceió: <b data-draw="val" data-source="demo" data-field="cresc_mcz" data-fmt="pct1">—</b></span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Crianças de 0 a 14 anos</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="demo" data-field="share_0a14" data-fmt="pct1">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=pop22_0a14" data-field="valor">—</b> pessoas no Censo 2022</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Pessoas com 60 anos ou mais</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="demo" data-field="share_60" data-fmt="pct1">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=pop22_60" data-field="valor">—</b> pessoas no Censo 2022</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Idade mediana (anos)</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=idade_med" data-field="valor">—</span><span class="tm-kpi-n">Índice de envelhecimento: <b data-draw="val" data-source="indicadores" data-where="id=ind_env" data-field="valor" data-fmt="dec1">—</b> idosos por 100 crianças</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">População com plano de saúde</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="demo" data-field="cobertura" data-fmt="pct1">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=ans_benef" data-field="valor">—</b> beneficiários em dez/2025; o resto depende só do SUS</span></div>
+    </div>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Parcela da população e dos médicos, por região de saúde</h3>
+        <p class="tm-card-n">Barra clara: parcela dos habitantes do estado. Barra escura: parcela dos médicos. Onde a escura é menor, a região tem menos médicos do que seu peso na população.</p>
+        <div class="tm-legend"><span><i class="tm-sw" data-sw="m"></i>População</span><span><i class="tm-sw" data-sw="0"></i>Médicos</span></div>
+        <div class="tm-chart dash-skeleton" id="demo-reg" data-draw="demoreg" data-source="demo_reg"></div>
+      </div>
+      <div class="tm-card">
+        <h3 class="tm-card-h">Idade e crescimento por região de saúde</h3>
+        <p class="tm-card-n">Parcelas de idade do Censo 2022 ponderadas pela população de cada município; crescimento de 2022 para 2025.</p>
+        <div class="tm-tbl-wrap">
+          <table class="tm-tbl" data-source="demo_reg" data-row-key="regiao">
+            <thead><tr><th data-field="regiao">Região</th><th data-field="pop" class="num">População</th><th data-field="cresc" class="num tm-hide-sm">Cresc. 22–25</th><th data-field="share_0a14" class="num">0 a 14 anos</th><th data-field="share_60" class="num">60 anos ou mais</th><th data-field="dens" class="num">Médicos por mil</th></tr></thead>
+            <tbody data-draw="demotbl"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="hospitais">
+    <h2 class="tm-sec-h">Hospitais, UPAs e corpo médico</h2>
+    <p class="tm-sec-p">Cada unidade com os médicos cadastrados no CNES e o tipo de vínculo. A rede estadual se apoia em prestadores com contrato por prazo determinado; filantrópicos, privados e boa parte das prefeituras pagam o médico como autônomo pessoa física. Contratação por PJ é minoria, concentrada em algumas unidades municipais do interior.</p>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Como os médicos estão contratados</h3>
+        <p class="tm-card-n">Parcela dos vínculos médicos por tipo, segundo quem mantém a unidade. Um médico pode ter mais de um vínculo.</p>
+        <div class="tm-legend">
+          <span><i class="tm-sw" data-sw="0"></i>Estatutário</span>
+          <span><i class="tm-sw" data-sw="1"></i>Prazo determinado</span>
+          <span><i class="tm-sw" data-sw="2"></i>PJ</span>
+          <span><i class="tm-sw" data-sw="3"></i>Autônomo PF</span>
+          <span><i class="tm-sw" data-sw="m"></i>CLT, cooperado, residente e outros</span>
+        </div>
+        <div class="tm-chart dash-skeleton" id="vinculos" data-draw="vinc" data-source="vinc_grupo kpi_vinc"></div>
+      </div>
+      <div class="tm-card">
+        <h3 class="tm-card-h">Maiores corpos médicos</h3>
+        <p class="tm-card-n">As <b data-draw="lim" data-k="top">—</b> unidades com mais médicos, com a mesma divisão por vínculo.</p>
+        <div class="tm-chart dash-skeleton" id="maiores" data-draw="top" data-source="hospitais"></div>
+      </div>
+    </div>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Todas as unidades</h3>
+      <p class="tm-card-n"><b data-draw="val" data-source="kpi_vinc" data-field="unidades">—</b> hospitais, UPAs, prontos atendimentos e unidades mistas ativos. Clique no cabeçalho para ordenar; os vínculos CLT, cooperado, residente e outros entram só no total. Intermediado é o vínculo feito por empresa, cooperativa ou entidade que fornece o médico à unidade, e já está contado nas colunas de tipo.</p>
+      <input class="tm-search" type="search" placeholder="Buscar unidade, município ou mantenedor" aria-label="Buscar unidade, município ou mantenedor">
+      <div class="tm-tbl-wrap">
+        <table class="tm-tbl tm-hosp" data-source="hospitais" data-row-key="cnes">
+          <thead><tr>
+            <th data-field="cnes"><button type="button" data-sort="cnes">CNES</button></th>
+            <th data-field="unidade"><button type="button" data-sort="unidade">Unidade</button></th>
+            <th data-field="municipio"><button type="button" data-sort="municipio">Município</button></th>
+            <th data-field="tipo" class="tm-hide-sm"><button type="button" data-sort="tipo">Tipo</button></th>
+            <th data-field="grupo" class="tm-hide-sm"><button type="button" data-sort="grupo">Mantenedor</button></th>
+            <th data-field="medicos" class="num" aria-sort="descending"><button type="button" data-sort="medicos">Médicos</button></th>
+            <th data-field="estatutario" class="num"><button type="button" data-sort="estatutario">Estatutários</button></th>
+            <th data-field="temporario" class="num"><button type="button" data-sort="temporario">Prazo det.</button></th>
+            <th data-field="pj" class="num"><button type="button" data-sort="pj">PJ</button></th>
+            <th data-field="autonomo_pf" class="num tm-hide-sm"><button type="button" data-sort="autonomo_pf">Autônomo PF</button></th>
+            <th data-field="intermediado" class="num tm-hide-sm"><button type="button" data-sort="intermediado">Intermediado</button></th>
+          </tr></thead>
+          <tbody data-draw="hosp"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="contratacao">
+    <h2 class="tm-sec-h">Contratação de médicos e valores praticados</h2>
+    <p class="tm-sec-p">Levantamento em editais, credenciamentos e contratos do PNCP, editais de concurso e seleção municipais, folha e despesas do Portal da Transparência de Alagoas e programas federais, com link para a fonte em cada linha: <b data-draw="val" data-source="val_kpi" data-field="n_registros">—</b> valores de remuneração de <b data-draw="val" data-source="val_kpi" data-field="n_contratantes">—</b> contratantes, <b data-draw="val" data-source="cons_kpi" data-field="n">—</b> preços de consulta e exame e <b data-draw="val" data-source="contr_kpi" data-field="n">—</b> contratos e credenciados. As prefeituras alagoanas publicam pouca contratação médica no PNCP; a maior parte do pagamento a médicos no estado passa por plantões pagos a pessoa física, que não aparecem como edital.</p>
+    <div class="tm-kpis">
+      <div class="tm-kpi"><span class="tm-kpi-l">Plantão de 24h em prefeituras (mediana)</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="val_kpi" data-field="p24" data-fmt="brl0">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="val_kpi" data-field="p24h" data-fmt="brl2">—</b> por hora · <b data-draw="val" data-source="val_kpi" data-field="n24">—</b> valores</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Plantões extras de médicos pagos pela SESAU, média por mês em 2026</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=pl_mes" data-field="valor" data-fmt="brlmi">—</span><span class="tm-kpi-n">pagos a pessoa física, fora da folha</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Médicos prestadores, não efetivos, em cinco hospitais estaduais</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=prest_pct" data-field="valor" data-fmt="pct1">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=prest_n" data-field="valor">—</b> de <b data-draw="val" data-source="indicadores" data-where="id=prest_tot" data-field="valor">—</b> registros, dados da SESAU</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Médico efetivo da SESAU, remuneração média do mês</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="valores" data-where="id=r020" data-field="valor" data-fmt="brl0">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="valores" data-where="id=r020" data-field="quantidade">—</b> médicos ativos na folha de agosto de 2026</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Generalista PSF concursado, Matriz de Camaragibe, 40h</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="valores" data-where="id=r015" data-field="valor" data-fmt="brl0">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="valores" data-where="id=r015" data-field="valor_hora" data-fmt="brl2">—</b> por hora de vencimento</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Mais Médicos, bolsa mensal, 40h</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="valores" data-where="id=r022" data-field="valor" data-fmt="brl0">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="valores" data-where="id=r022" data-field="valor_hora" data-fmt="brl2">—</b> por hora</span></div>
+    </div>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Quanto vale a hora médica, por forma de contratação</h3>
+      <p class="tm-card-n">Cada ponto é um valor levantado, em reais por hora: o plantão dividido pelas suas horas e o valor mensal dividido pela carga do mês. O traço vertical marca a mediana do grupo. A SESAU não publica o valor do seu plantão extra, por isso a rede estadual fica fora; o gasto total aparece mais abaixo. Passe o cursor sobre um ponto para ver o documento.</p>
+      <div class="tm-legend"><span><i class="tm-sw" data-sw="0"></i>Prefeituras</span><span><i class="tm-sw" data-sw="3"></i>Governo federal</span></div>
+      <div class="tm-chart dash-skeleton" id="valor-hora" data-draw="horas" data-source="hora"></div>
+    </div>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Como cada contratante contrata</h3>
+        <div class="tm-notes">
+          <p><b>Governo do Estado (SESAU):</b> poucos médicos efetivos (<b data-draw="val" data-source="valores" data-where="id=r020" data-field="quantidade">—</b> na folha de agosto) e a maior parte da escala feita por prestadores, pagos como serviço de pessoa física na rubrica "plantões extras" do Fundo Estadual de Saúde. No CNES esse vínculo aparece como contrato por prazo determinado. Não há edital de credenciamento de empresas para escala hospitalar no PNCP, e o concurso de 2026 não tem vaga de médico.</p>
+          <p><b>Uncisal:</b> mantém a Maternidade Escola Santa Mônica, o Hospital Escola Hélvio Auto e o Portugal Ramalho, com efetivos e também plantões pagos a pessoa física.</p>
+          <p><b>Maceió:</b> as UPAs municipais e o Hospital da Cidade são geridos pela Maceió Saúde, serviço social autônomo; os médicos aparecem no CNES como autônomos pessoa física, e parte atua como PJ.</p>
+          <p><b>Prefeituras do interior:</b> seleção temporária ou concurso com valor por plantão de 24h, credenciamento de PF ou PJ para plantões e consultas especializadas, e pregões em que uma empresa fornece os profissionais por hora ou plantão. Há unidades inteiramente PJ, como o hospital regional e a UPA de Santana do Ipanema e a UPA de Palmeira dos Índios.</p>
+          <p><b>Filantrópicos e privados:</b> Santa Casa de Maceió, Veredas e Sanatório, entre outros, registram quase todo o corpo médico como autônomo pessoa física.</p>
+        </div>
+      </div>
+      <div class="tm-card">
+        <h3 class="tm-card-h">Plantões extras de médicos pagos pela SESAU, por mês</h3>
+        <p class="tm-card-n">Valor pago no mês na rubrica de serviços médicos de pessoa física do Fundo Estadual de Saúde. O último mês ainda está em aberto.</p>
+        <div class="tm-chart dash-skeleton" id="plantoes-mes" data-draw="plmes" data-source="plantoes"></div>
+      </div>
+    </div>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Gasto da SESAU: plantões extras pagos a pessoa física e folha de pessoal</h3>
+      <p class="tm-card-n">Valores pagos no ano. Plantões de médicos e de outros profissionais vêm da rubrica de serviços de pessoa física; a folha é a de vencimentos e vantagens fixas dos servidores. Em 2026, de janeiro a outubro.</p>
+      <div class="tm-legend"><span><i class="tm-sw" data-sw="0"></i>Plantões de médicos</span><span><i class="tm-sw" data-sw="1"></i>Plantões de outros profissionais</span><span><i class="tm-sw" data-sw="m"></i>Folha de servidores</span></div>
+      <div class="tm-chart dash-skeleton" id="gasto-ano" data-draw="gasto" data-source="gasto"></div>
+    </div>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Consultas e exames: preço por atendimento</h3>
+      <p class="tm-card-n">Preço unitário por consulta especializada, ultrassonografia e laudo em credenciamentos e pregões de prefeituras. Cada preço, com seu edital e link, está no mapa de preços abaixo.</p>
+      <div class="tm-tbl-wrap tm-short">
+        <table class="tm-tbl" data-source="cons_esp" data-row-key="especialidade">
+          <thead><tr><th data-field="especialidade">Especialidade</th><th data-field="registros" class="num">Valores</th><th data-field="municipios" class="num tm-hide-sm">Municípios</th><th data-field="mediana" class="num">Mediana</th><th data-field="minimo" class="num">Mínimo</th><th data-field="maximo" class="num">Máximo</th></tr></thead>
+          <tbody data-draw="cons"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tm-card" id="mapa-precos">
+      <h3 class="tm-card-h">Mapa de preços: cada valor e sua referência</h3>
+      <p class="tm-card-n">Uma linha por valor encontrado, com o órgão, o documento de origem (edital, chamamento, folha de pagamento ou portaria), o número de controle no PNCP, o item, a quantidade e o link para conferir. Estimado é o preço de referência do edital; edital é o vencimento fixado em concurso ou seleção; pago é a média da folha. São <b data-draw="val" data-source="mapa_kpi" data-field="valores">—</b> valores tirados de <b data-draw="val" data-source="mapa_kpi" data-field="documentos">—</b> documentos, todos consultados em <b data-draw="val" data-source="mapa_kpi" data-field="consultado_em" data-fmt="data">—</b>.</p>
+      <div class="tm-ctrl">
+        <input class="tm-search tm-search-mapa" type="search" placeholder="Buscar município, órgão, especialidade, documento ou empresa" aria-label="Buscar no mapa de preços">
+        <div class="tm-seg" role="group" aria-label="Tipo de valor">
+          <button type="button" data-tipo="" aria-pressed="true">Todos</button>
+          <button type="button" data-tipo="Remuneração" aria-pressed="false">Remuneração</button>
+          <button type="button" data-tipo="Consulta" aria-pressed="false">Consultas</button>
+          <button type="button" data-tipo="Exame com laudo" aria-pressed="false">Exames</button>
+        </div>
+      </div>
+      <p class="tm-card-n"><b data-draw="mapacount">—</b></p>
+      <div class="tm-tbl-wrap">
+        <table class="tm-tbl tm-mapa" data-source="mapa" data-row-key="id">
+          <thead><tr><th data-field="id">Nº</th><th data-field="data">Data</th><th data-field="municipio">Município</th><th data-field="orgao" class="tm-hide-sm">Órgão</th><th data-field="fonte_tipo" class="tm-hide-sm">Tipo de fonte</th><th data-field="documento">Documento</th><th data-field="item" class="num tm-hide-sm">Item</th><th data-field="descricao">Descrição</th><th data-field="unidade" class="tm-hide-sm">Unidade</th><th data-field="quantidade" class="num tm-hide-sm">Qtd.</th><th data-field="valor" class="num">Valor</th><th data-field="base">Base</th><th data-field="valor_hora" class="num">Por hora</th><th data-field="contratado" class="tm-hide-sm">Contratado</th><th data-field="url">Link da fonte</th></tr></thead>
+          <tbody data-draw="mapatbl"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Contratos com empresas médicas e credenciados</h3>
+      <p class="tm-card-n">Contratos e credenciamentos de serviço médico publicados por prefeituras no PNCP, sem laboratórios, com valor mensal calculado pela vigência. Em Campo Alegre, o valor é o homologado para cada credenciado.</p>
+      <input class="tm-search tm-search-contr" type="search" placeholder="Buscar município, empresa, CNPJ ou objeto" aria-label="Buscar nos contratos">
+      <div class="tm-tbl-wrap">
+        <table class="tm-tbl" data-source="contratos" data-row-key="id">
+          <thead><tr><th data-field="municipio">Município</th><th data-field="fornecedor">Contratado</th><th data-field="cnpj" class="tm-hide-sm">CNPJ/CPF</th><th data-field="tipo_pessoa" class="tm-hide-sm">Pessoa</th><th data-field="objeto" class="tm-hide-sm">Objeto</th><th data-field="valor_global" class="num">Valor global</th><th data-field="meses" class="num tm-hide-sm">Meses</th><th data-field="valor_mes" class="num">Por mês</th><th data-field="inicio" class="tm-hide-sm">Vigência</th></tr></thead>
+          <tbody data-draw="contr"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="concursos">
+    <h2 class="tm-sec-h">Concursos, salários e vagas</h2>
+    <p class="tm-sec-p">O concurso da SESAU-AL de 2026, com prova no começo de novembro, tem <b data-draw="val" data-source="indicadores" data-where="id=cs_total" data-field="valor">—</b> vagas e <b data-draw="val" data-source="indicadores" data-where="id=cs_med" data-field="valor">—</b> de médico; o de 2021 ofereceu <b data-draw="val" data-source="indicadores" data-where="id=cs_2021" data-field="valor">—</b>. Enquanto isso, o número de médicos efetivos na folha estadual cai a cada ano, e a escala segue com prestadores.</p>
+    <div class="tm-card">
+      <h3 class="tm-card-h">Salários de referência</h3>
+      <p class="tm-card-n">Remuneração média paga aos efetivos do Estado e vencimentos de concursos e seleções municipais recentes. Clique na referência para abrir a fonte.</p>
+      <div class="tm-tbl-wrap">
+        <table class="tm-tbl" data-source="salarios" data-row-key="id">
+          <thead><tr><th data-field="orgao">Órgão</th><th data-field="cargo">Cargo</th><th data-field="vinculo">Vínculo</th><th data-field="carga" class="tm-hide-sm">Carga</th><th data-field="valor_min" class="num">A partir de</th><th data-field="valor_max" class="num">Até</th><th data-field="referencia" class="tm-hide-sm">Referência</th></tr></thead>
+          <tbody data-draw="sal"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Médicos efetivos na folha estadual</h3>
+        <p class="tm-card-n">Servidores ativos no cargo de Médico em agosto de cada ano, na SESAU e na Uncisal.</p>
+        <div class="tm-legend"><span><i class="tm-sw" data-sw="0"></i>SESAU</span><span><i class="tm-sw" data-sw="2"></i>Uncisal</span></div>
+        <div class="tm-chart dash-skeleton" id="folha-chart" data-draw="folhachart" data-source="folha"></div>
+      </div>
+      <div class="tm-card">
+        <h3 class="tm-card-h">Remuneração média do médico efetivo</h3>
+        <p class="tm-card-n">Folha bruta do mês dividida pelo número de médicos ativos, em agosto de cada ano.</p>
+        <div class="tm-tbl-wrap tm-short">
+          <table class="tm-tbl" data-source="folha" data-row-key="id">
+            <thead><tr><th data-field="ano">Ano</th><th data-field="orgao">Órgão</th><th data-field="medicos" class="num">Médicos</th><th data-field="folha_total" class="num tm-hide-sm">Folha do mês</th><th data-field="media" class="num">Média por médico</th></tr></thead>
+            <tbody data-draw="folhatbl"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="ociosas">
+    <h2 class="tm-sec-h">Vagas ociosas e sinais de falta</h2>
+    <p class="tm-sec-p">Onde a vaga existe e não há médico: postos do Mais Médicos abertos, cargos efetivos que não são oferecidos, especialidades quase ausentes do cadastro e credenciamentos sem interessados.</p>
+    <div class="tm-kpis tm-kpis-sm">
+      <div class="tm-kpi"><span class="tm-kpi-l">Mais Médicos: vagas abertas no estado</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=mm_vagas" data-field="valor">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=mm_ativos" data-field="valor">—</b> médicos do programa em atividade, <b data-draw="val" data-source="indicadores" data-where="id=mm_vagas" data-field="data" data-fmt="mesano">—</b></span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Cargos efetivos de médico em concurso</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=cs_med" data-field="valor">—</span><span class="tm-kpi-n">hoje há <b data-draw="val" data-source="kpi_vinc" data-field="est">—</b> vínculos estatutários nos hospitais e UPAs</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Municípios sem médico registrado</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="kpi" data-field="mun_zero">—</span><span class="tm-kpi-n">e <b data-draw="val" data-source="kpi" data-field="mun_vazio">—</b> abaixo de <b data-draw="val" data-source="kpi" data-field="limite_vazio" data-fmt="dec1">—</b> por mil hab.</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Intensivistas com registro no CNES</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="especialidades" data-where="especialidade=Médico em medicina intensiva" data-field="total">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="ind_calc" data-field="int_100k" data-fmt="dec2">—</b> por 100 mil habitantes</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Pediatras por 100 mil crianças de 0 a 14 anos</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="ind_calc" data-field="ped_100k" data-fmt="dec1">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="especialidades" data-where="especialidade=Pediatra" data-field="total">—</b> pediatras no CNES</span></div>
+      <div class="tm-kpi"><span class="tm-kpi-l">Mais Médicos Especialistas em atividade</span><span class="tm-kpi-v dash-skeleton" data-draw="val" data-source="indicadores" data-where="id=mme_ativos" data-field="valor">—</span><span class="tm-kpi-n"><b data-draw="val" data-source="indicadores" data-where="id=mme_vagas" data-field="valor">—</b> vagas no ciclo de julho de 2026</span></div>
+    </div>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <h3 class="tm-card-h">Médicos por especialidade registrada</h3>
+        <p class="tm-card-n">Fora do gráfico, para não achatar as barras: <b data-draw="val" data-source="especialidades" data-where="especialidade=Clínico geral" data-field="total">—</b> clínicos gerais e <b data-draw="val" data-source="especialidades" data-where="especialidade=Médico da ESF (família)" data-field="total">—</b> médicos da Saúde da Família.</p>
+        <div class="tm-legend"><span><i class="tm-sw" data-sw="0"></i>Atende pelo SUS</span><span><i class="tm-sw" data-sw="m"></i>Só fora do SUS</span></div>
+        <div class="tm-chart dash-skeleton" id="especialidades" data-draw="espec" data-source="especialidades"></div>
+      </div>
+      <div class="tm-card">
+        <h3 class="tm-card-h">Evolução dos médicos no CNES</h3>
+        <p class="tm-card-n">Médicos com vínculo ativo no estado, competência de setembro de cada ano.</p>
+        <div class="tm-chart dash-skeleton" id="evolucao" data-draw="serie" data-source="serie"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="noticias">
+    <h2 class="tm-sec-h">Notícias recentes sobre falta de médicos</h2>
+    <p class="tm-sec-p">Resumos próprios das reportagens e publicações, da mais recente para a mais antiga. Clique no resumo para abrir a fonte.</p>
+    <div class="tm-card">
+      <div class="tm-tbl-wrap">
+        <table class="tm-tbl" data-source="noticias" data-row-key="id">
+          <thead><tr><th data-field="data">Data</th><th data-field="local">Local</th><th data-field="tema" class="tm-hide-sm">Tema</th><th data-field="resumo">Resumo</th><th data-field="veiculo" class="tm-hide-sm">Veículo</th></tr></thead>
+          <tbody data-draw="news"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-sec" id="metodo">
+    <h2 class="tm-sec-h">Método e fontes</h2>
+    <div class="tm-notes">
+      <p><b>Médicos por município e por especialidade:</b> CNES/DataSUS, TabNet de Recursos Humanos (profissionais segundo CBO), competência de setembro, médicos com vínculo ativo em qualquer estabelecimento, público ou privado. Um médico que trabalha em dois municípios conta em cada um, por isso o total é de vínculos por município e não de pessoas.</p>
+      <p><b>Médicos por hospital e tipo de vínculo:</b> consulta direta ao CNES por estabelecimento em 02/11/2026 (a primeira versão usou a consulta de outubro), contando os profissionais com ocupação de médico em cada hospital, UPA, pronto atendimento e unidade mista ativos; a lista bate com a contagem de estabelecimentos do TabNet. Estatutário inclui servidores cedidos e comissionados; prazo determinado é o contrato por tempo determinado, público ou privado; PJ é o médico contratado por meio de pessoa jurídica (autônomo PJ ou intermediado por empresa); intermediado é o vínculo registrado no CNES como feito por empresa, cooperativa ou entidade que fornece o médico, já contado nas colunas de tipo; autônomo PF é o médico pago como pessoa física. A soma das unidades passa do total municipal, porque o mesmo médico aparece em mais de uma unidade. Unidades desativadas no CNES ficaram de fora, como os hospitais de campanha e o antigo Hospital do Coração.</p>
+      <p><b>Plantões extras e folha da SESAU:</b> Portal da Transparência de Alagoas, consulta avançada de despesas (órgão Secretaria de Estado da Saúde, valores pagos por rubrica e favorecido "Plantões extras") e de pessoal (cargo Médico, servidores ativos, agosto). O portal agrupa os pagamentos de plantão em um único favorecido, sem valor por plantão nem por médico.</p>
+      <p><b>Valores de prefeituras:</b> itens de editais e credenciamentos de serviço médico publicados no PNCP por municípios de Alagoas, com o preço de referência do edital, e editais de concurso e seleção municipais noticiados. O valor por hora divide o plantão pelas suas horas e o valor mensal pela carga semanal vezes 4,345 semanas. Ficaram de fora laboratórios, itens sem preço e valores globais sem preço unitário.</p>
+      <p><b>População e idade:</b> estimativa municipal do IBGE para 2025 e Censo 2022 (idade e crescimento). <b>Planos de saúde:</b> beneficiários de planos médico-hospitalares (ANS, compilado pelo IESS) divididos pela população estimada. <b>Mapa:</b> malha municipal do IBGE. <b>Vagas ociosas:</b> Ministério da Saúde e imprensa, cada número com data e fonte.</p>
+      <p>Os números do CNES dependem do que cada unidade informa: uma escala real pode ter menos médicos do que o cadastro mostra. Para decisões de contratação, confirme com a escala publicada ou com a própria unidade.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+dash.calc('kpi', {
+  inputs: ['municipios'],
+  title: 'Indicadores do estado',
+  description: 'Totais dos municípios: médicos, população, médicos por mil habitantes, parcela de Maceió e Arapiraca e municípios abaixo dos limites.',
+  fn: (municipios) => {
+    const limite_baixa = 1, limite_vazio = 0.5;
+    const soma = (k) => municipios.reduce((a, r) => a + (Number(r[k]) || 0), 0);
+    const medicos = soma('med'), pop = soma('pop');
+    const polos = municipios.filter((r) => r.nome === 'Maceió' || r.nome === 'Arapiraca').reduce((a, r) => a + Number(r.med), 0);
+    return [{
+      medicos, medicos_sus: soma('med_sus'), pop, dens: medicos / pop * 1000, n_mun: municipios.length,
+      mun_baixa: municipios.filter((r) => Number(r.dens) < limite_baixa).length,
+      mun_vazio: municipios.filter((r) => Number(r.dens) < limite_vazio).length,
+      mun_zero: municipios.filter((r) => Number(r.med) === 0).length,
+      conc_share: polos / medicos, limite_baixa, limite_vazio
+    }];
+  }
+});
+dash.calc('kpi_vinc', {
+  inputs: ['hospitais'],
+  title: 'Vínculos médicos nas unidades',
+  description: 'Soma dos vínculos médicos de hospitais e UPAs por tipo e a parcela de cada tipo no total.',
+  fn: (hospitais) => {
+    const s = (k) => hospitais.reduce((a, r) => a + (Number(r[k]) || 0), 0);
+    const est = s('estatutario'), tmp = s('temporario'), pj = s('pj'), pf = s('autonomo_pf');
+    const outros = s('clt') + s('cooperado') + s('residente') + s('outros');
+    const total = est + tmp + pj + pf + outros;
+    return [{ unidades: hospitais.length, vinculos: total, est, tmp, pj, pf, outros, share_est: est / total, share_tmp: tmp / total, share_pj: pj / total, share_pf: pf / total }];
+  }
+});
+dash.calc('vinc_grupo', {
+  inputs: ['hospitais'],
+  title: 'Vínculos por mantenedor da unidade',
+  description: 'Vínculos médicos por tipo, somados por quem mantém a unidade (rede estadual, municipal, federal, filantrópicos e privados).',
+  fn: (hospitais) => {
+    const g = {};
+    for (const r of hospitais) {
+      const o = g[r.grupo] || (g[r.grupo] = { grupo: r.grupo, unidades: 0, est: 0, tmp: 0, pj: 0, pf: 0, outros: 0 });
+      o.unidades += 1; o.est += Number(r.estatutario); o.tmp += Number(r.temporario); o.pj += Number(r.pj); o.pf += Number(r.autonomo_pf);
+      o.outros += Number(r.clt) + Number(r.cooperado) + Number(r.residente) + Number(r.outros);
+    }
+    return Object.values(g).map((o) => ({ ...o, total: o.est + o.tmp + o.pj + o.pf + o.outros })).sort((a, b) => b.total - a.total);
+  }
+});
+dash.calc('regioes', {
+  inputs: ['municipios'],
+  title: 'Médicos por região de saúde',
+  description: 'Médicos e população somados por região de saúde, e médicos por mil habitantes.',
+  fn: (municipios) => {
+    const g = {};
+    for (const r of municipios) {
+      const o = g[r.cir_nome] || (g[r.cir_nome] = { regiao: r.cir_nome, n_mun: 0, pop: 0, med: 0 });
+      o.n_mun += 1; o.pop += Number(r.pop); o.med += Number(r.med);
+    }
+    return Object.values(g).map((o) => ({ ...o, dens: o.med / o.pop * 1000 })).sort((a, b) => b.dens - a.dens);
+  }
+});
+dash.calc('demo', {
+  inputs: ['municipios', 'indicadores'],
+  title: 'Perfil demográfico do estado',
+  description: 'Crescimento da população de 2022 a 2025, parcelas de 0 a 14 e de 60 anos ou mais no Censo 2022 e cobertura de planos de saúde.',
+  fn: (municipios, indicadores) => {
+    const v = (id) => Number((indicadores.find((r) => r.id === id) || {}).valor) || 0;
+    const pop = municipios.reduce((a, r) => a + Number(r.pop), 0), pop22 = municipios.reduce((a, r) => a + Number(r.pop2022), 0);
+    const mcz = municipios.find((r) => r.nome === 'Maceió') || {};
+    return [{ cresc: pop / pop22 - 1, cresc_mcz: Number(mcz.pop) / Number(mcz.pop2022) - 1, share_0a14: v('pop22_0a14') / v('pop22'), share_60: v('pop22_60') / v('pop22'), cobertura: v('ans_benef') / pop }];
+  }
+});
+dash.calc('demo_reg', {
+  inputs: ['municipios'],
+  title: 'Demografia por região de saúde',
+  description: 'População, crescimento, parcelas de idade (ponderadas pela população do Censo 2022) e médicos por região de saúde.',
+  fn: (municipios) => {
+    const g = {}, totPop = municipios.reduce((a, r) => a + Number(r.pop), 0), totMed = municipios.reduce((a, r) => a + Number(r.med), 0);
+    for (const r of municipios) {
+      const o = g[r.cir_nome] || (g[r.cir_nome] = { regiao: r.cir_nome, pop: 0, pop2022: 0, kids: 0, old: 0, med: 0 });
+      o.pop += Number(r.pop); o.pop2022 += Number(r.pop2022); o.med += Number(r.med);
+      o.kids += Number(r.pct_0a14) / 100 * Number(r.pop2022); o.old += Number(r.pct_60mais) / 100 * Number(r.pop2022);
+    }
+    return Object.values(g).map((o) => ({ regiao: o.regiao, pop: o.pop, med: o.med, cresc: o.pop / o.pop2022 - 1, share_0a14: o.kids / o.pop2022, share_60: o.old / o.pop2022,
+      dens: o.med / o.pop * 1000, share_pop: o.pop / totPop, share_med: o.med / totMed })).sort((a, b) => b.pop - a.pop);
+  }
+});
+dash.calc('ind_calc', {
+  inputs: ['especialidades', 'municipios', 'indicadores'],
+  title: 'Especialistas por habitante',
+  description: 'Intensivistas por 100 mil habitantes e pediatras por 100 mil crianças de 0 a 14 anos (Censo 2022).',
+  fn: (especialidades, municipios, indicadores) => {
+    const e = (n) => Number((especialidades.find((r) => r.especialidade === n) || {}).total) || 0;
+    const pop = municipios.reduce((a, r) => a + Number(r.pop), 0);
+    const kids = Number((indicadores.find((r) => r.id === 'pop22_0a14') || {}).valor) || 1;
+    return [{ int_100k: e('Médico em medicina intensiva') / pop * 1e5, ped_100k: e('Pediatra') / kids * 1e5 }];
+  }
+});
+
+const TM_L = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['R$ ', ''] });
+const TM_F = {
+  int: TM_L.format(',d'), dec1: TM_L.format(',.1f'), dec2: TM_L.format(',.2f'), pct: TM_L.format('.0%'),
+  brl0: TM_L.format('$,.0f'), brl2: TM_L.format('$,.2f'), raw: (v) => String(v), pct1: TM_L.format('.1%'),
+  brlmi: (v) => 'R$ ' + TM_L.format(',.1f')(Number(v) / 1e6) + ' mi',
+  mesano: (v) => new Date(String(v).slice(0, 10) + 'T12:00:00Z').toLocaleDateString('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' }),
+  data: (v) => { const p = String(v).slice(0, 10).split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+};
+const TM_TEXT = { raw: 1, mesano: 1, data: 1 };
+const TM_LIM = { top: 12 };
+window.TM = { metric: 'dens', showHosp: true, sort: { key: 'medicos', dir: -1 }, q: '' };
+
+function tmRows(id) { const d = dash.data(id); return d.status === 'ok' ? (d.data || []) : []; }
+function tmStatus(ids) {
+  let s = 'ok';
+  for (const id of ids) {
+    const st = dash.data(id).status;
+    if (st === 'error' || st === 'declined' || st === 'missing' || st === 'connect') return 'error';
+    if (st !== 'ok') s = 'loading';
+  }
+  return s;
+}
+function tmPending(el, st) {
+  if (st === 'error') {
+    el.classList.remove('dash-skeleton');
+    const d = document.createElement('div'); d.className = 'tm-fail'; d.textContent = 'Não carregou';
+    el.replaceChildren(d);
+  } else { el.replaceChildren(); el.classList.add('dash-skeleton'); }
+}
+function tmWhere(rs, w) {
+  if (!w) return rs[0];
+  const pairs = w.split('&').map((p) => p.split('=').map((x) => decodeURIComponent(x)));
+  return rs.find((r) => pairs.every(([k, v]) => String(r[k]) === v));
+}
+function tmColor(el, c) {
+  const s = document.createElement('span'); s.style.color = c; s.style.display = 'none'; el.appendChild(s);
+  const css = getComputedStyle(s).color; s.remove();
+  try {
+    const cv = document.createElement('canvas'); cv.width = 1; cv.height = 1;
+    const ctx = cv.getContext('2d', { willReadFrequently: true });
+    ctx.fillStyle = '#808080'; ctx.fillStyle = css; ctx.fillRect(0, 0, 1, 1);
+    const p = ctx.getImageData(0, 0, 1, 1).data;
+    return `rgb(${p[0]}, ${p[1]}, ${p[2]})`;
+  } catch (e) { return css; }
+}
+function tmTip(el) {
+  const t = document.createElement('div'); t.className = 'tm-tip'; t.hidden = true; el.appendChild(t);
+  return {
+    show(ev, head, lines) {
+      t.replaceChildren();
+      const h = document.createElement('div'); h.className = 'tm-tip-h'; h.textContent = head; t.appendChild(h);
+      for (const [label, val, color] of lines) {
+        const d = document.createElement('div');
+        if (color) { const sw = document.createElement('i'); sw.className = 'tm-sw'; sw.style.background = color; d.appendChild(sw); }
+        d.appendChild(document.createTextNode(label + ': '));
+        const b = document.createElement('b'); b.textContent = val; d.appendChild(b); t.appendChild(d);
+      }
+      t.hidden = false;
+      const r = el.getBoundingClientRect();
+      let x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14;
+      if (x + t.offsetWidth > r.width) x = Math.max(0, ev.clientX - r.left - t.offsetWidth - 14);
+      if (y + t.offsetHeight > r.height) y = Math.max(0, ev.clientY - r.top - t.offsetHeight - 14);
+      t.style.left = x + 'px'; t.style.top = y + 'px';
+    },
+    hide() { t.hidden = true; }
+  };
+}
+function tmSvg(el, W, H) {
+  return d3.create('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`)
+    .style('font-family', 'var(--font-anthropic-sans)').style('font-size', 'var(--cds-font-size-caption)');
+}
+function tmShort(s, n) { s = String(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+
+// Horizontal bars with the label above each bar; segments stack left to right.
+function tmBars(el, items, opts = {}) {
+  const W = Math.max(260, el.clientWidth || 400);
+  const rowH = 36, top = opts.ref ? 18 : 0, H = top + items.length * rowH + 2;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const fmt = opts.fmt || TM_F.int;
+  const totals = items.map((it) => it.segs.reduce((a, s) => a + s.v, 0));
+  const maxV = opts.max || d3.max(totals) || 1;
+  const probe = svg.append('text').text(fmt(maxV));
+  const valW = opts.norm ? 0 : probe.node().getComputedTextLength() + 8;
+  probe.remove();
+  const x = d3.scaleLinear([0, maxV], [0, Math.max(40, W - valW)]);
+  const tip = tmTip(el);
+  items.forEach((it, i) => {
+    const y = top + i * rowH;
+    const g = svg.append('g').attr('transform', `translate(0,${y})`);
+    g.append('text').attr('x', 0).attr('y', 12).attr('fill', 'var(--color-fg)').text(tmShort(it.label, Math.max(18, Math.floor(W / 7))));
+    let x0 = 0;
+    it.segs.forEach((s) => {
+      const w = Math.max(0, x(s.v));
+      if (w > 0) g.append('rect').attr('x', x0).attr('y', 18).attr('width', w).attr('height', 12).attr('rx', 2).attr('fill', s.color);
+      if (opts.norm && w > 34) g.append('text').attr('x', x0 + w / 2).attr('y', 28).attr('text-anchor', 'middle').attr('fill', 'var(--color-bg)').style('font-size', '10px').text(TM_F.pct(s.v));
+      x0 += w;
+    });
+    if (!opts.norm) g.append('text').attr('x', x0 + 6).attr('y', 28).attr('fill', 'var(--color-fg-muted)').text(fmt(totals[i]));
+    g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rowH).attr('fill', 'transparent')
+      .on('pointermove', (ev) => tip.show(ev, it.tip.head, it.tip.lines)).on('pointerleave', () => tip.hide());
+  });
+  if (opts.ref) {
+    const rx = x(opts.ref.v);
+    svg.append('line').attr('x1', rx).attr('x2', rx).attr('y1', 14).attr('y2', H).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 3');
+    const lt = svg.append('text').attr('x', rx).attr('y', 10).attr('fill', 'var(--color-fg-muted)').text(opts.ref.label);
+    const lw = lt.node().getComputedTextLength();
+    lt.attr('text-anchor', rx + lw / 2 > W ? 'end' : rx - lw / 2 < 0 ? 'start' : 'middle');
+  }
+}
+
+dash.draw('val', (el) => {
+  const d = dash.data(el.dataset.source);
+  if (d.status !== 'ok') { el.textContent = '—'; return; }
+  const r = tmWhere(d.data || [], el.dataset.where);
+  const v = r ? r[el.dataset.field] : null;
+  const f = el.dataset.fmt || 'int';
+  el.textContent = (v === null || v === undefined || v === '') ? '—' : TM_F[f](TM_TEXT[f] ? v : Number(v));
+  el.classList.remove('dash-skeleton');
+});
+dash.draw('lim', (el) => { el.textContent = TM_F.int(TM_LIM[el.dataset.k]); });
+
+dash.draw('mapa', (el) => {
+  const st = tmStatus(['malha', 'municipios', 'hospitais']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  el.replaceChildren();
+  const malha = tmRows('malha'), mun = tmRows('municipios'), hosp = tmRows('hospitais');
+  const byId = new Map(mun.map((r) => [String(r.id), r]));
+  const feats = malha.map((r) => ({ id: String(r.id), geom: typeof r.geom === 'string' ? JSON.parse(r.geom) : r.geom }));
+  const each = (g, f) => { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates; for (const p of polys) for (const ring of p) for (const pt of ring) f(pt); };
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  feats.forEach((ft) => each(ft.geom, ([x, y]) => { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }));
+  const kx = Math.cos(((y0 + y1) / 2) * Math.PI / 180);
+  const W = Math.max(280, el.clientWidth || 560);
+  const H = Math.min(W * (y1 - y0) / ((x1 - x0) * kx), 760);
+  const sc = Math.min((W - 16) / ((x1 - x0) * kx), (H - 16) / (y1 - y0));
+  const ox = (W - (x1 - x0) * kx * sc) / 2, oy = (H - (y1 - y0) * sc) / 2;
+  const P = ([x, y]) => [ox + (x - x0) * kx * sc, oy + (y1 - y) * sc];
+  const pathOf = (g) => { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates; let d = ''; for (const p of polys) for (const ring of p) d += 'M' + ring.map((pt) => P(pt).map((v) => v.toFixed(1)).join(',')).join('L') + 'Z'; return d; };
+  const center = (g) => { let sx = 0, sy = 0, n = 0; each(g, (pt) => { const q = P(pt); sx += q[0]; sy += q[1]; n += 1; }); return [sx / n, sy / n]; };
+
+  const metric = window.TM.metric;
+  const BINS = { dens: [0.5, 1, 2, 3], dens_sus: [0.5, 1, 2, 3], med: [5, 10, 20, 50, 200], pct_60mais: [11, 12.5, 14, 15.5] };
+  const NAMES = { dens: 'Médicos por mil hab.', dens_sus: 'Médicos SUS por mil hab.', med: 'Total de médicos', pct_60mais: 'População com 60 anos ou mais' };
+  const th = BINS[metric];
+  const lo = tmColor(el, 'var(--color-panel)'), hi = tmColor(el, dash.colors[0]);
+  const crit = tmColor(el, 'var(--cds-chart-status-critical)');
+  const ramp = d3.interpolateRgb(lo, hi);
+  const fills = th.concat([Infinity]).map((_, i, a) => ramp(0.16 + 0.84 * i / (a.length - 1)));
+  const binOf = (v) => { for (let i = 0; i < th.length; i += 1) if (v < th[i]) return i; return th.length; };
+  const fmtT = metric === 'med' ? TM_F.int : metric === 'pct_60mais' ? ((v) => TM_F.dec1(v) + '%') : TM_F.dec1;
+  const hatchOn = metric !== 'pct_60mais';
+
+  const svg = tmSvg(el, W, H).attr('role', 'img').attr('aria-label', 'Mapa de calor de médicos por município de Alagoas');
+  el.appendChild(svg.node());
+  const defs = svg.append('defs');
+  const pat = defs.append('pattern').attr('id', 'tm-hatch').attr('width', 6).attr('height', 6).attr('patternUnits', 'userSpaceOnUse').attr('patternTransform', 'rotate(45)');
+  pat.append('rect').attr('width', 6).attr('height', 6).attr('fill', lo);
+  pat.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 6).attr('stroke', crit).attr('stroke-width', 2);
+  const tip = tmTip(el);
+  const gm = svg.append('g');
+  feats.forEach((ft) => {
+    const r = byId.get(ft.id); if (!r) return;
+    const v = Number(r[metric]);
+    gm.append('path').attr('d', pathOf(ft.geom))
+      .attr('fill', hatchOn && Number(r.med) === 0 ? 'url(#tm-hatch)' : fills[binOf(v)])
+      .attr('stroke', 'var(--color-bg)').attr('stroke-width', 0.6)
+      .on('pointermove', function (ev) {
+        d3.select(this).attr('stroke', 'var(--color-fg)').attr('stroke-width', 1.4).raise();
+        tip.show(ev, r.nome + ' · ' + r.cir_nome, [
+          ['Médicos', TM_F.int(Number(r.med))], ['Atendem SUS', TM_F.int(Number(r.med_sus))],
+          ['Por mil hab.', TM_F.dec2(Number(r.dens))], ['População', TM_F.int(Number(r.pop))],
+          ['Hospitais e UPAs', TM_F.int(Number(r.n_unid))], ['60 anos ou mais', TM_F.dec1(Number(r.pct_60mais)) + '%'], ['0 a 14 anos', TM_F.dec1(Number(r.pct_0a14)) + '%']]);
+      })
+      .on('pointerleave', function () { d3.select(this).attr('stroke', 'var(--color-bg)').attr('stroke-width', 0.6); tip.hide(); });
+  });
+  const lab = svg.append('g').attr('pointer-events', 'none');
+  mun.slice().sort((a, b) => Number(b.med) - Number(a.med)).slice(0, 6).forEach((r) => {
+    const ft = feats.find((f) => f.id === String(r.id)); if (!ft) return;
+    const [cx, cy] = center(ft.geom);
+    lab.append('text').attr('x', cx).attr('y', cy - 8).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)')
+      .attr('stroke', 'var(--color-panel)').attr('stroke-width', 3).attr('paint-order', 'stroke').style('font-weight', 600).text(r.nome);
+  });
+  if (window.TM.showHosp) {
+    const rs = d3.scaleSqrt([0, d3.max(hosp, (h) => Number(h.medicos)) || 1], [0, Math.max(10, W / 34)]);
+    const gh = svg.append('g');
+    hosp.slice().sort((a, b) => Number(b.medicos) - Number(a.medicos)).forEach((h) => {
+      const [cx, cy] = P([Number(h.lon), Number(h.lat)]);
+      gh.append('circle').attr('cx', cx).attr('cy', cy).attr('r', Math.max(2.5, rs(Number(h.medicos))))
+        .attr('fill', dash.colors[1]).attr('fill-opacity', 0.55).attr('stroke', 'var(--color-panel)').attr('stroke-width', 1)
+        .on('pointermove', (ev) => tip.show(ev, h.unidade, [
+          ['Município', h.municipio], ['Mantenedor', h.grupo], ['Médicos', TM_F.int(Number(h.medicos))],
+          ['Estatutários', TM_F.int(Number(h.estatutario))], ['Prazo determinado', TM_F.int(Number(h.temporario))],
+          ['PJ', TM_F.int(Number(h.pj))], ['Autônomo PF', TM_F.int(Number(h.autonomo_pf))], ['Intermediado', TM_F.int(Number(h.intermediado))]]))
+        .on('pointerleave', () => tip.hide());
+    });
+  }
+  const leg = document.createElement('div'); leg.className = 'tm-legend';
+  const ttl = document.createElement('span'); ttl.textContent = NAMES[metric] + ':'; leg.appendChild(ttl);
+  fills.forEach((c, i) => {
+    const s = document.createElement('span'); const sw = document.createElement('i'); sw.className = 'tm-sw'; sw.style.background = c; s.appendChild(sw);
+    s.appendChild(document.createTextNode(i === 0 ? 'abaixo de ' + fmtT(th[0]) : i === th.length ? fmtT(th[i - 1]) + ' ou mais' : fmtT(th[i - 1]) + ' a ' + fmtT(th[i])));
+    leg.appendChild(s);
+  });
+  const z = document.createElement('span'); const zs = document.createElement('i'); zs.className = 'tm-sw';
+  zs.style.background = `repeating-linear-gradient(45deg, ${crit} 0 2px, ${lo} 2px 5px)`; z.appendChild(zs); z.appendChild(document.createTextNode('sem médico')); leg.appendChild(z);
+  if (window.TM.showHosp) {
+    const hc = document.createElement('span'); const hs = document.createElement('i'); hs.className = 'tm-sw'; hs.style.borderRadius = '50%'; hs.style.background = dash.colors[1]; hs.style.opacity = '.7';
+    hc.appendChild(hs); hc.appendChild(document.createTextNode('hospital ou UPA')); leg.appendChild(hc);
+  }
+  el.appendChild(leg);
+});
+
+dash.draw('reg', (el) => {
+  const st = tmStatus(['regioes', 'kpi']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('regioes'), k = tmRows('kpi')[0];
+  tmBars(el, R.map((r) => ({
+    label: r.regiao,
+    segs: [{ v: Number(r.dens), color: Number(r.dens) >= k.dens ? dash.colors[0] : 'var(--cds-chart-muted)' }],
+    tip: { head: r.regiao, lines: [['Médicos por mil hab.', TM_F.dec2(Number(r.dens))], ['Médicos', TM_F.int(Number(r.med))], ['População', TM_F.int(Number(r.pop))], ['Municípios', TM_F.int(Number(r.n_mun))]] }
+  })), { fmt: TM_F.dec2, ref: { v: k.dens, label: 'média do estado ' + TM_F.dec2(k.dens) } });
+});
+
+dash.draw('vazios', (el) => {
+  const st = tmStatus(['municipios', 'kpi']);
+  if (st !== 'ok') { el.replaceChildren(); return; }
+  const lim = tmRows('kpi')[0].limite_vazio;
+  const rs = tmRows('municipios').filter((r) => Number(r.dens) < lim).sort((a, b) => Number(a.dens) - Number(b.dens) || Number(b.pop) - Number(a.pop));
+  el.replaceChildren(...rs.map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.id);
+    const cells = [[r.nome], [r.cir_nome, 'tm-hide-sm'], [TM_F.int(Number(r.pop)), 'num'], [TM_F.int(Number(r.med)), 'num'], [TM_F.dec2(Number(r.dens)), 'num']];
+    for (const [t, c] of cells) { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); }
+    return tr;
+  }));
+});
+
+const TM_SEGS = [['est', 'estatutario', 'Estatutário', 0], ['tmp', 'temporario', 'Prazo determinado', 1], ['pj', 'pj', 'PJ', 2], ['pf', 'autonomo_pf', 'Autônomo PF', 3]];
+dash.draw('vinc', (el) => {
+  const st = tmStatus(['vinc_grupo', 'kpi_vinc']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const G = tmRows('vinc_grupo'), T = tmRows('kpi_vinc')[0];
+  const all = G.map((g) => ({ nome: g.grupo, unidades: g.unidades, est: g.est, tmp: g.tmp, pj: g.pj, pf: g.pf, outros: g.outros, total: g.total }));
+  all.push({ nome: 'Todas as unidades', unidades: T.unidades, est: T.est, tmp: T.tmp, pj: T.pj, pf: T.pf, outros: T.outros, total: T.vinculos });
+  tmBars(el, all.map((g) => ({
+    label: g.nome + ' · ' + TM_F.int(g.unidades) + ' unidades · ' + TM_F.int(g.total) + ' vínculos',
+    segs: TM_SEGS.map(([k, , , c]) => ({ v: g[k] / g.total, color: dash.colors[c] })).concat([{ v: g.outros / g.total, color: 'var(--cds-chart-muted)' }]),
+    tip: { head: g.nome, lines: TM_SEGS.map(([k, , n, c]) => [n, TM_F.int(g[k]) + ' (' + TM_F.pct(g[k] / g.total) + ')', dash.colors[c]]).concat([['CLT, cooperado, residente e outros', TM_F.int(g.outros), 'var(--cds-chart-muted)']]) }
+  })), { norm: true, max: 1 });
+});
+
+dash.draw('top', (el) => {
+  const st = tmStatus(['hospitais']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const H = tmRows('hospitais').slice().sort((a, b) => Number(b.medicos) - Number(a.medicos)).slice(0, TM_LIM.top);
+  tmBars(el, H.map((h) => {
+    const outros = Number(h.clt) + Number(h.cooperado) + Number(h.residente) + Number(h.outros);
+    return {
+      label: h.unidade + ' · ' + h.municipio,
+      segs: TM_SEGS.map(([, f, , c]) => ({ v: Number(h[f]), color: dash.colors[c] })).concat([{ v: outros, color: 'var(--cds-chart-muted)' }]),
+      tip: { head: h.unidade, lines: [['Médicos (pessoas)', TM_F.int(Number(h.medicos))]].concat(TM_SEGS.map(([, f, n, c]) => [n, TM_F.int(Number(h[f])), dash.colors[c]])).concat([['CLT, cooperado, residente e outros', TM_F.int(outros), 'var(--cds-chart-muted)']]) }
+    };
+  }));
+});
+
+dash.draw('hosp', (el) => {
+  const st = tmStatus(['hospitais']);
+  if (st !== 'ok') { el.replaceChildren(); return; }
+  const all = tmRows('hospitais');
+  const max = d3.max(all, (h) => Number(h.medicos)) || 1;
+  const norm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const q = norm(window.TM.q || '');
+  const { key, dir } = window.TM.sort;
+  const numeric = ['medicos', 'estatutario', 'temporario', 'pj', 'autonomo_pf', 'intermediado'].includes(key);
+  const rs = all.filter((h) => !q || norm([h.unidade, h.municipio, h.tipo, h.grupo, h.mantenedora, h.cnes].join(' ')).includes(q))
+    .sort((a, b) => numeric ? dir * (Number(a[key]) - Number(b[key])) : dir * String(a[key]).localeCompare(String(b[key]), 'pt-BR'));
+  const barColor = dash.colors[0];
+  el.replaceChildren(...rs.map((h) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(h.cnes);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(h.cnes); add(h.unidade); add(h.municipio); add(h.tipo, 'tm-hide-sm'); add(h.grupo, 'tm-hide-sm');
+    const td = add('', 'num');
+    const bar = document.createElement('span'); bar.className = 'tm-bar'; bar.style.width = Math.max(2, Number(h.medicos) / max * 56) + 'px'; bar.style.background = barColor;
+    td.appendChild(bar); td.appendChild(document.createTextNode(TM_F.int(Number(h.medicos))));
+    add(TM_F.int(Number(h.estatutario)), 'num'); add(TM_F.int(Number(h.temporario)), 'num'); add(TM_F.int(Number(h.pj)), 'num'); add(TM_F.int(Number(h.autonomo_pf)), 'num tm-hide-sm'); add(TM_F.int(Number(h.intermediado)), 'num tm-hide-sm');
+    return tr;
+  }));
+});
+
+dash.draw('sal', (el) => {
+  const st = tmStatus(['salarios']);
+  if (st !== 'ok') { el.replaceChildren(); return; }
+  el.replaceChildren(...tmRows('salarios').map((s) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(s.id);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(s.orgao); add(s.cargo); add(s.vinculo); add(s.carga, 'tm-hide-sm'); add(TM_F.brl2(Number(s.valor_min)), 'num'); add(TM_F.brl2(Number(s.valor_max)), 'num');
+    const td = document.createElement('td'); td.className = 'tm-hide-sm';
+    if (/^https:\/\//.test(String(s.fonte))) { const a = document.createElement('a'); a.href = s.fonte; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.referencia; td.appendChild(a); } else td.textContent = s.referencia;
+    tr.appendChild(td);
+    return tr;
+  }));
+});
+
+dash.draw('espec', (el) => {
+  const st = tmStatus(['especialidades']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const skip = ['Clínico geral', 'Médico da ESF (família)'];
+  const R = tmRows('especialidades').filter((r) => !skip.includes(r.especialidade)).sort((a, b) => Number(b.total) - Number(a.total));
+  tmBars(el, R.map((r) => ({
+    label: r.especialidade,
+    segs: [{ v: Number(r.sus), color: dash.colors[0] }, { v: Number(r.nao_sus), color: 'var(--cds-chart-muted)' }],
+    tip: { head: r.especialidade, lines: [['Atende pelo SUS', TM_F.int(Number(r.sus)), dash.colors[0]], ['Só fora do SUS', TM_F.int(Number(r.nao_sus)), 'var(--cds-chart-muted)'], ['Total', TM_F.int(Number(r.total))]] }
+  })));
+});
+
+dash.draw('serie', (el) => {
+  const st = tmStatus(['serie']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('serie');
+  const W = Math.max(260, el.clientWidth || 400), H = 220, mt = 22, mb = 24;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const x = d3.scaleBand(R.map((r) => r.competencia), [0, W]).padding(0.32);
+  const y = d3.scaleLinear([0, d3.max(R, (r) => Number(r.medicos)) * 1.08], [H - mb, mt]);
+  const lab = (c) => { const [a, m] = String(c).split('-'); return new Date(Date.UTC(+a, +m - 1, 15)).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric', timeZone: 'UTC' }).replace(' de ', '/').replace('.', ''); };
+  svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', H - mb).attr('y2', H - mb).attr('stroke', 'var(--cds-chart-axis)');
+  const tip = tmTip(el);
+  R.forEach((r, i) => {
+    const bx = x(r.competencia), bw = Math.min(32, x.bandwidth()), cx = bx + x.bandwidth() / 2;
+    const v = Number(r.medicos), prev = i > 0 ? Number(R[i - 1].medicos) : null;
+    svg.append('rect').attr('x', cx - bw / 2).attr('y', y(v)).attr('width', bw).attr('height', y(0) - y(v)).attr('rx', 2).attr('fill', i === R.length - 1 ? dash.colors[0] : 'var(--cds-chart-muted)');
+    svg.append('text').attr('x', cx).attr('y', y(v) - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').text(TM_F.int(v));
+    svg.append('text').attr('x', cx).attr('y', H - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').text(lab(r.competencia));
+    svg.append('rect').attr('x', bx).attr('y', 0).attr('width', x.bandwidth()).attr('height', H).attr('fill', 'transparent')
+      .on('pointermove', (ev) => tip.show(ev, lab(r.competencia), [['Médicos', TM_F.int(v)]].concat(prev ? [['Variação no ano', (v >= prev ? '+' : '') + TM_F.pct(v / prev - 1)]] : [])))
+      .on('pointerleave', () => tip.hide());
+  });
+});
+
+dash.draw('news', (el) => {
+  const st = tmStatus(['noticias']);
+  if (st !== 'ok') { el.replaceChildren(); return; }
+  const rs = tmRows('noticias').slice().sort((a, b) => String(b.data).localeCompare(String(a.data)));
+  el.replaceChildren(...rs.map((n) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(n.id);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(TM_F.data(n.data), 'num'); add(n.local); add(n.tema, 'tm-hide-sm');
+    const td = document.createElement('td');
+    if (/^https:\/\//.test(String(n.url))) { const a = document.createElement('a'); a.href = n.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = n.resumo; td.appendChild(a); } else td.textContent = n.resumo;
+    tr.appendChild(td); add(n.veiculo, 'tm-hide-sm');
+    return tr;
+  }));
+});
+
+for (const sw of document.querySelectorAll('.tm [data-sw]')) {
+  sw.style.background = sw.dataset.sw === 'm' ? 'var(--cds-chart-muted)' : dash.colors[Number(sw.dataset.sw)];
+}
+for (const b of document.querySelectorAll('.tm-seg button[data-metric]')) {
+  b.addEventListener('click', () => {
+    window.TM.metric = b.dataset.metric;
+    for (const o of document.querySelectorAll('.tm-seg button[data-metric]')) o.setAttribute('aria-pressed', String(o === b));
+    dash.draw('mapa');
+  });
+}
+for (const c of document.querySelectorAll('.tm-hosp-toggle')) {
+  c.addEventListener('change', () => { window.TM.showHosp = c.checked; dash.draw('mapa'); });
+}
+for (const s of document.querySelectorAll('.tm-search:not(.tm-search-mapa):not(.tm-search-contr)')) {
+  s.addEventListener('input', () => { window.TM.q = s.value; dash.draw('hosp'); });
+}
+for (const b of document.querySelectorAll('.tm-hosp th button[data-sort]')) {
+  b.addEventListener('click', () => {
+    const key = b.dataset.sort, cur = window.TM.sort;
+    const numeric = ['medicos', 'estatutario', 'temporario', 'pj', 'autonomo_pf', 'intermediado'].includes(key);
+    window.TM.sort = { key, dir: cur.key === key ? -cur.dir : (numeric ? -1 : 1) };
+    for (const t of document.querySelectorAll('.tm-hosp th')) {
+      const bb = t.querySelector('button[data-sort]');
+      if (bb && bb.dataset.sort === key) t.setAttribute('aria-sort', window.TM.sort.dir > 0 ? 'ascending' : 'descending'); else t.removeAttribute('aria-sort');
+    }
+    dash.draw('hosp');
+  });
+}
+dash.calc('val_kpi', {
+  inputs: ['valores'],
+  title: 'Valores de referência',
+  description: 'Mediana do plantão de 24h em prefeituras (PNCP, concursos e seleções), em valor e por hora, e totais do levantamento.',
+  fn: (valores) => {
+    const med = (a) => { const s = a.filter((x) => x > 0).sort((x, y) => x - y); const m = Math.floor(s.length / 2); return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+    const p24 = valores.filter((r) => String(r.grupo).startsWith('Prefeituras') && r.forma === 'Plantão 24h');
+    return [{
+      n_registros: valores.length, n_contratantes: new Set(valores.map((r) => r.contratante)).size,
+      p24: med(p24.map((r) => Number(r.valor))), p24h: med(p24.map((r) => Number(r.valor_hora))), n24: p24.length
+    }];
+  }
+});
+dash.calc('hora', {
+  inputs: ['valores'],
+  title: 'Valor por hora por forma de contratação',
+  description: 'Valores com hora calculável, agrupados por contratante e forma de pagamento.',
+  fn: (valores) => {
+    const ordem = ['Plantão por credenciamento (PNCP)', 'Profissional terceirizado por hora (pregão PNCP)', 'Plantão em concurso ou seleção municipal', 'Carga semanal em concurso municipal', 'Mais Médicos (bolsa)'];
+    const grupo = (r) => {
+      if (r.grupo === 'Prefeituras (PNCP)') return String(r.forma).startsWith('Plantão') ? ordem[0] : (r.forma === 'Hora' ? ordem[1] : null);
+      if (r.grupo === 'Prefeituras (concurso)') return String(r.forma).startsWith('Plantão') ? ordem[2] : ordem[3];
+      if (r.vinculo === 'Bolsa (Mais Médicos)') return ordem[4];
+      return null;
+    };
+    return valores.filter((r) => Number(r.valor_hora) > 0 && grupo(r)).map((r) => ({
+      id: r.id, categoria: grupo(r), ordem: ordem.indexOf(grupo(r)), esfera: r.esfera, contratante: r.contratante, municipio: r.municipio,
+      forma: r.forma, especialidade: r.especialidade, vinculo: r.vinculo, valor: Number(r.valor), valor_hora: Number(r.valor_hora), data: r.data, documento: r.documento
+    }));
+  }
+});
+dash.calc('cons_esp', {
+  inputs: ['consultas'],
+  title: 'Preço de consulta por especialidade',
+  description: 'Consultas, ultrassonografias e laudos agrupados por especialidade: número de valores, municípios, mediana, mínimo e máximo.',
+  fn: (consultas) => {
+    const g = {};
+    for (const r of consultas) {
+      const k = r.tipo === 'Consulta' ? r.especialidade : (r.especialidade === 'Ultrassonografia' ? 'Ultrassonografia (exame)' : r.especialidade);
+      const o = g[k] || (g[k] = { especialidade: k, v: [], m: new Set() });
+      o.v.push(Number(r.valor)); o.m.add(r.municipio);
+    }
+    return Object.values(g).map((o) => {
+      const s = o.v.slice().sort((a, b) => a - b), h = Math.floor(s.length / 2);
+      return { especialidade: o.especialidade, registros: s.length, municipios: o.m.size, mediana: s.length % 2 ? s[h] : (s[h - 1] + s[h]) / 2, minimo: s[0], maximo: s[s.length - 1] };
+    }).sort((a, b) => b.registros - a.registros || b.mediana - a.mediana);
+  }
+});
+dash.calc('cons_kpi', {
+  inputs: ['consultas'],
+  title: 'Preços de consulta e exame',
+  description: 'Quantidade de preços de consulta e exame levantados.',
+  fn: (consultas) => [{ n: consultas.length }]
+});
+dash.calc('contr_kpi', {
+  inputs: ['contratos'],
+  title: 'Contratos de serviço médico',
+  description: 'Quantidade de contratos e credenciados levantados.',
+  fn: (contratos) => [{ n: contratos.length }]
+});
+
+dash.draw('plmes', (el) => {
+  const st = tmStatus(['plantoes']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('plantoes');
+  const W = Math.max(260, el.clientWidth || 420), H = 230, mt = 14, mb = 24;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const fmt = (v) => TM_F.brlmi(v);
+  const maxV = d3.max(R, (r) => Number(r.valor_pago)) || 1;
+  const y = d3.scaleLinear([0, maxV * 1.08], [H - mb, mt]);
+  const ticks = y.ticks(4);
+  const probe = svg.append('text').text(fmt(ticks[ticks.length - 1]));
+  const ml = probe.node().getComputedTextLength() + 8; probe.remove();
+  const x = d3.scaleBand(R.map((r) => r.competencia), [ml, W]).padding(0.25);
+  ticks.forEach((t) => {
+    svg.append('line').attr('x1', ml).attr('x2', W).attr('y1', y(t)).attr('y2', y(t)).attr('stroke', 'var(--cds-chart-grid)');
+    svg.append('text').attr('x', ml - 6).attr('y', y(t) + 4).attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').text(fmt(t));
+  });
+  const anos = Array.from(new Set(R.map((r) => String(r.competencia).slice(0, 4))));
+  const tip = tmTip(el);
+  R.forEach((r) => {
+    const v = Number(r.valor_pago), ano = String(r.competencia).slice(0, 4), m = Number(String(r.competencia).slice(5, 7));
+    const last = ano === anos[anos.length - 1];
+    svg.append('rect').attr('x', x(r.competencia)).attr('y', y(v)).attr('width', x.bandwidth()).attr('height', y(0) - y(v)).attr('rx', 1.5)
+      .attr('fill', last ? dash.colors[0] : 'var(--cds-chart-muted)').attr('fill-opacity', r.parcial === true || r.parcial === 'true' ? 0.45 : 1);
+    if (m === 1) svg.append('text').attr('x', x(r.competencia)).attr('y', H - 6).attr('fill', 'var(--color-fg-muted)').text(ano);
+    svg.append('rect').attr('x', x(r.competencia) - x.step() * x.paddingInner() / 2).attr('y', 0).attr('width', x.step()).attr('height', H).attr('fill', 'transparent')
+      .on('pointermove', (ev) => tip.show(ev, new Date(Date.UTC(+ano, m - 1, 15)).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' }), [['Pago', TM_F.brl0(v)]].concat(r.parcial === true || r.parcial === 'true' ? [['Situação', 'mês em aberto']] : [])))
+      .on('pointerleave', () => tip.hide());
+  });
+  svg.append('line').attr('x1', ml).attr('x2', W).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-axis)');
+});
+
+dash.draw('gasto', (el) => {
+  const st = tmStatus(['gasto']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const items = [];
+  for (const g of tmRows('gasto')) {
+    const pm = Number(g.plantoes_medicos), po = Number(g.plantoes_outros), fo = Number(g.folha_vencimentos);
+    items.push({ label: g.ano + ' · plantões extras pagos a pessoa física (' + g.periodo + ')', segs: [{ v: pm, color: dash.colors[0] }, { v: po, color: dash.colors[1] }],
+      tip: { head: g.ano + ' · ' + g.periodo, lines: [['Plantões de médicos', TM_F.brl0(pm), dash.colors[0]], ['Plantões de outros profissionais', TM_F.brl0(po), dash.colors[1]], ['Encargos sobre serviços de PF', TM_F.brl0(Number(g.encargos_pf))]] } });
+    items.push({ label: g.ano + ' · folha de servidores (vencimentos e vantagens fixas)', segs: [{ v: fo, color: 'var(--cds-chart-muted)' }],
+      tip: { head: g.ano + ' · ' + g.periodo, lines: [['Folha de servidores', TM_F.brl0(fo)], ['Serviços médico-hospitalares de PJ', TM_F.brl0(Number(g.servicos_pj_medico_hosp))]] } });
+  }
+  tmBars(el, items, { fmt: TM_F.brlmi });
+});
+
+dash.draw('folhachart', (el) => {
+  const st = tmStatus(['folha']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('folha');
+  const anos = Array.from(new Set(R.map((r) => String(r.ano)))), orgs = Array.from(new Set(R.map((r) => r.orgao)));
+  const W = Math.max(260, el.clientWidth || 400), H = 220, mt = 22, mb = 24;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const x0 = d3.scaleBand(anos, [0, W]).padding(0.25), x1 = d3.scaleBand(orgs, [0, x0.bandwidth()]).padding(0.12);
+  const y = d3.scaleLinear([0, d3.max(R, (r) => Number(r.medicos)) * 1.12], [H - mb, mt]);
+  svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', H - mb).attr('y2', H - mb).attr('stroke', 'var(--cds-chart-axis)');
+  const col = (o, i) => dash.colors[i === 0 ? 0 : 2];
+  const tip = tmTip(el);
+  anos.forEach((a) => {
+    svg.append('text').attr('x', x0(a) + x0.bandwidth() / 2).attr('y', H - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').text(a);
+    orgs.forEach((o, i) => {
+      const r = R.find((d) => String(d.ano) === a && d.orgao === o); if (!r) return;
+      const v = Number(r.medicos), bw = Math.min(32, x1.bandwidth()), cx = x0(a) + x1(o) + x1.bandwidth() / 2;
+      svg.append('rect').attr('x', cx - bw / 2).attr('y', y(v)).attr('width', bw).attr('height', y(0) - y(v)).attr('rx', 2).attr('fill', col(o, i));
+      svg.append('text').attr('x', cx).attr('y', y(v) - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').text(TM_F.int(v));
+      svg.append('rect').attr('x', x0(a) + x1(o)).attr('y', 0).attr('width', x1.bandwidth()).attr('height', H).attr('fill', 'transparent')
+        .on('pointermove', (ev) => tip.show(ev, o + ' · agosto de ' + a, [['Médicos ativos', TM_F.int(v)], ['Folha do mês', TM_F.brl0(Number(r.folha_total))], ['Média por médico', TM_F.brl2(Number(r.media))]]))
+        .on('pointerleave', () => tip.hide());
+    });
+  });
+});
+
+dash.draw('folhatbl', (el) => {
+  if (tmStatus(['folha']) !== 'ok') { el.replaceChildren(); return; }
+  const rs = tmRows('folha').slice().sort((a, b) => String(b.ano).localeCompare(String(a.ano)) || String(a.orgao).localeCompare(String(b.orgao)));
+  el.replaceChildren(...rs.map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.id);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(String(r.ano)); add(r.orgao); add(TM_F.int(Number(r.medicos)), 'num'); add(TM_F.brl0(Number(r.folha_total)), 'num tm-hide-sm'); add(TM_F.brl2(Number(r.media)), 'num');
+    return tr;
+  }));
+});
+
+dash.draw('demoreg', (el) => {
+  const st = tmStatus(['demo_reg']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('demo_reg');
+  const W = Math.max(260, el.clientWidth || 400), rowH = 40, H = R.length * rowH + 2;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const maxV = d3.max(R, (r) => Math.max(r.share_pop, r.share_med)) || 1;
+  const probe = svg.append('text').text(TM_F.pct1(maxV)); const vw = probe.node().getComputedTextLength() + 8; probe.remove();
+  const x = d3.scaleLinear([0, maxV], [0, Math.max(40, W - vw)]);
+  const tip = tmTip(el);
+  R.forEach((r, i) => {
+    const g = svg.append('g').attr('transform', `translate(0,${i * rowH})`);
+    g.append('text').attr('x', 0).attr('y', 12).attr('fill', 'var(--color-fg)').text(tmShort(r.regiao, Math.max(18, Math.floor(W / 7))));
+    g.append('rect').attr('x', 0).attr('y', 17).attr('width', Math.max(1, x(r.share_pop))).attr('height', 8).attr('rx', 2).attr('fill', 'var(--cds-chart-muted)');
+    g.append('text').attr('x', x(r.share_pop) + 6).attr('y', 25).attr('fill', 'var(--color-fg-muted)').style('font-size', '10px').text(TM_F.pct1(r.share_pop));
+    g.append('rect').attr('x', 0).attr('y', 27).attr('width', Math.max(1, x(r.share_med))).attr('height', 8).attr('rx', 2).attr('fill', dash.colors[0]);
+    g.append('text').attr('x', x(r.share_med) + 6).attr('y', 35).attr('fill', 'var(--color-fg)').style('font-size', '10px').text(TM_F.pct1(r.share_med));
+    g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rowH).attr('fill', 'transparent')
+      .on('pointermove', (ev) => tip.show(ev, r.regiao, [['População', TM_F.int(r.pop) + ' (' + TM_F.pct1(r.share_pop) + ')', 'var(--cds-chart-muted)'], ['Médicos', TM_F.int(r.med) + ' (' + TM_F.pct1(r.share_med) + ')', dash.colors[0]], ['Médicos por mil hab.', TM_F.dec2(r.dens)]]))
+      .on('pointerleave', () => tip.hide());
+  });
+});
+
+dash.draw('demotbl', (el) => {
+  if (tmStatus(['demo_reg']) !== 'ok') { el.replaceChildren(); return; }
+  el.replaceChildren(...tmRows('demo_reg').map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.regiao);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(r.regiao); add(TM_F.int(r.pop), 'num'); add(TM_F.pct1(r.cresc), 'num tm-hide-sm'); add(TM_F.pct1(r.share_0a14), 'num'); add(TM_F.pct1(r.share_60), 'num'); add(TM_F.dec2(r.dens), 'num');
+    return tr;
+  }));
+});
+
+window.TM.qv = ''; window.TM.qc = '';
+function tmLink(td, text, url) {
+  if (/^https:\/\//.test(String(url))) { const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = text; td.appendChild(a); } else td.textContent = text;
+}
+const tmNorm = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+dash.draw('horas', (el) => {
+  const st = tmStatus(['hora']);
+  if (st !== 'ok') { tmPending(el, st); return; }
+  el.classList.remove('dash-skeleton');
+  const R = tmRows('hora');
+  const cats = Array.from(new Set(R.slice().sort((a, b) => a.ordem - b.ordem).map((r) => r.categoria)));
+  const W = Math.max(280, el.clientWidth || 600), bandH = 46, mb = 26, H = cats.length * bandH + mb;
+  const svg = tmSvg(el, W, H);
+  el.replaceChildren(svg.node());
+  const maxV = d3.max(R, (r) => r.valor_hora) || 1;
+  const x = d3.scaleLinear([0, maxV * 1.06], [4, W - 8]);
+  const ticks = x.ticks(Math.max(3, Math.floor(W / 110)));
+  ticks.forEach((t) => {
+    svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', 0).attr('y2', H - mb).attr('stroke', 'var(--cds-chart-grid)');
+    svg.append('text').attr('x', x(t)).attr('y', H - 8).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').text(TM_F.brl0(t));
+  });
+  const colorOf = (r) => r.esfera === 'Municipal' ? dash.colors[0] : r.esfera === 'Estadual' ? dash.colors[1] : dash.colors[3];
+  const tip = tmTip(el);
+  cats.forEach((c, i) => {
+    const y0 = i * bandH;
+    const rs = R.filter((r) => r.categoria === c).sort((a, b) => a.valor_hora - b.valor_hora);
+    const s = rs.map((r) => r.valor_hora), h = Math.floor(s.length / 2);
+    const md = s.length % 2 ? s[h] : (s[h - 1] + s[h]) / 2;
+    svg.append('text').attr('x', 4).attr('y', y0 + 12).attr('fill', 'var(--color-fg)').text(c + ' · ' + TM_F.int(rs.length) + (rs.length === 1 ? ' valor' : ' valores') + ' · mediana ' + TM_F.brl2(md) + '/h');
+    rs.forEach((r, j) => {
+      const cy = y0 + 28 + ((j % 5) - 2) * 2.6;
+      svg.append('circle').attr('cx', x(r.valor_hora)).attr('cy', cy).attr('r', 4).attr('fill', colorOf(r)).attr('fill-opacity', 0.6).attr('stroke', 'var(--color-panel)').attr('stroke-width', 0.8)
+        .on('pointermove', (ev) => tip.show(ev, r.contratante + ' · ' + r.municipio, [['Forma', r.forma], ['Especialidade', r.especialidade], ['Vínculo', r.vinculo], ['Valor', TM_F.brl2(r.valor)], ['Por hora', TM_F.brl2(r.valor_hora)], ['Data', TM_F.data(r.data)], ['Fonte', r.documento]]))
+        .on('pointerleave', () => tip.hide());
+    });
+    svg.append('line').attr('x1', x(md)).attr('x2', x(md)).attr('y1', y0 + 18).attr('y2', y0 + 38).attr('stroke', 'var(--color-fg)').attr('stroke-width', 2).attr('stroke-linecap', 'round');
+  });
+});
+
+dash.draw('cons', (el) => {
+  if (tmStatus(['cons_esp']) !== 'ok') { el.replaceChildren(); return; }
+  el.replaceChildren(...tmRows('cons_esp').map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.especialidade);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); };
+    add(r.especialidade); add(TM_F.int(r.registros), 'num'); add(TM_F.int(r.municipios), 'num tm-hide-sm');
+    add(TM_F.brl2(r.mediana), 'num'); add(TM_F.brl2(r.minimo), 'num'); add(TM_F.brl2(r.maximo), 'num');
+    return tr;
+  }));
+});
+
+dash.draw('contr', (el) => {
+  if (tmStatus(['contratos']) !== 'ok') { el.replaceChildren(); return; }
+  const q = tmNorm(window.TM.qc || '');
+  const rs = tmRows('contratos').filter((r) => !q || tmNorm([r.municipio, r.fornecedor, r.objeto, r.contratante, r.cnpj].join(' ')).includes(q))
+    .sort((a, b) => Number(b.valor_global) - Number(a.valor_global));
+  el.replaceChildren(...rs.map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.id);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    add(r.municipio); add(r.fornecedor); add(r.cnpj || '—', 'tm-hide-sm'); add(r.tipo_pessoa || '—', 'tm-hide-sm');
+    const td = document.createElement('td'); td.className = 'tm-hide-sm'; tmLink(td, r.objeto, r.url); tr.appendChild(td);
+    add(TM_F.brl0(Number(r.valor_global)), 'num'); add(r.meses ? TM_F.int(Number(r.meses)) : '—', 'num tm-hide-sm');
+    add(r.valor_mes ? TM_F.brl0(Number(r.valor_mes)) : '—', 'num'); add(r.inicio ? TM_F.data(r.inicio) + (r.fim ? ' a ' + TM_F.data(r.fim) : '') : '—', 'tm-hide-sm');
+    return tr;
+  }));
+});
+
+for (const s of document.querySelectorAll('.tm-search-contr')) s.addEventListener('input', () => { window.TM.qc = s.value; dash.draw('contr'); });
+dash.calc('mapa', {
+  inputs: ['valores', 'consultas'],
+  title: 'Mapa de preços',
+  description: 'Todos os valores de remuneração, consulta e exame com a referência de cada um, em uma única lista.',
+  fn: (valores, consultas) => valores.concat(consultas).map((r) => ({
+    id: r.id, tipo_valor: r.tipo_valor, data: r.data, municipio: r.municipio, orgao: r.orgao, fonte_tipo: r.fonte_tipo, documento: r.documento,
+    amparo: r.amparo, controle_pncp: r.controle_pncp, item: r.item, descricao: r.descricao, especialidade: r.especialidade, forma: r.forma,
+    unidade: r.unidade, quantidade: r.quantidade, valor: Number(r.valor), base: r.base, valor_hora: r.valor_hora, contratado: r.contratado,
+    url: r.url, consultado_em: r.consultado_em
+  }))
+});
+dash.calc('mapa_kpi', {
+  inputs: ['mapa'],
+  title: 'Resumo do mapa de preços',
+  description: 'Quantidade de valores e de documentos de origem no mapa de preços e a data de consulta das fontes.',
+  fn: (mapa) => [{ valores: mapa.length, documentos: new Set(mapa.map((r) => r.documento + '|' + r.url)).size, consultado_em: mapa.reduce((a, r) => (r.consultado_em > a ? r.consultado_em : a), '') }]
+});
+window.TM.qm = ''; window.TM.tipo = '';
+function tmMapaRows() {
+  const q = tmNorm(window.TM.qm || ''), t = window.TM.tipo || '';
+  return tmRows('mapa').filter((r) => (!t || r.tipo_valor === t) && (!q || tmNorm([r.municipio, r.orgao, r.especialidade, r.documento, r.descricao, r.contratado, r.forma, r.controle_pncp].join(' ')).includes(q)))
+    .sort((a, b) => String(b.data).localeCompare(String(a.data)) || String(a.id).localeCompare(String(b.id)));
+}
+dash.draw('mapacount', (el) => {
+  if (tmStatus(['mapa']) !== 'ok') { el.textContent = '—'; return; }
+  const n = tmMapaRows().length, tot = tmRows('mapa').length;
+  el.textContent = n === tot ? TM_F.int(tot) + ' valores' : TM_F.int(n) + ' de ' + TM_F.int(tot) + ' valores';
+});
+dash.draw('mapatbl', (el) => {
+  if (tmStatus(['mapa']) !== 'ok') { el.replaceChildren(); return; }
+  el.replaceChildren(...tmMapaRows().map((r) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(r.id);
+    const add = (t, c) => { const td = document.createElement('td'); if (c) td.className = c; td.textContent = t; tr.appendChild(td); return td; };
+    const nada = (v) => v === null || v === undefined || v === '';
+    add(r.id); add(TM_F.data(r.data), 'num'); add(r.municipio); add(r.orgao, 'tm-hide-sm'); add(r.fonte_tipo, 'tm-hide-sm');
+    add(r.documento + (r.controle_pncp ? ' · PNCP ' + r.controle_pncp : ''));
+    add(nada(r.item) ? '—' : TM_F.int(Number(r.item)), 'num tm-hide-sm'); add(r.descricao); add(nada(r.unidade) ? '—' : r.unidade, 'tm-hide-sm');
+    add(nada(r.quantidade) ? '—' : TM_F.int(Number(r.quantidade)), 'num tm-hide-sm');
+    add(TM_F.brl2(r.valor), 'num'); add(r.base); add(nada(r.valor_hora) ? '—' : TM_F.brl2(Number(r.valor_hora)), 'num');
+    add(nada(r.contratado) ? '—' : r.contratado, 'tm-hide-sm');
+    const td = document.createElement('td'); td.style.wordBreak = 'break-all'; tmLink(td, r.url, r.url); tr.appendChild(td);
+    return tr;
+  }));
+});
+for (const s of document.querySelectorAll('.tm-search-mapa')) s.addEventListener('input', () => { window.TM.qm = s.value; dash.draw('mapatbl'); dash.draw('mapacount'); });
+for (const b of document.querySelectorAll('.tm-seg button[data-tipo]')) {
+  b.addEventListener('click', () => {
+    window.TM.tipo = b.dataset.tipo;
+    for (const o of document.querySelectorAll('.tm-seg button[data-tipo]')) o.setAttribute('aria-pressed', String(o === b));
+    dash.draw('mapatbl'); dash.draw('mapacount');
+  });
+}
+const tmGo = (el) => { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); dash.setLink(el.id); };
+for (const b of document.querySelectorAll('.tm-nav button[data-go]')) {
+  b.addEventListener('click', () => { const t = document.getElementById(b.dataset.go); if (t) tmGo(t); });
+}
+const tmNamed = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+if (tmNamed) setTimeout(() => tmGo(tmNamed), 400);
+</script>

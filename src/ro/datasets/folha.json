@@ -1,0 +1,15 @@
+{
+  "description": "Servidores ativos nos cargos Médico 20h e 40h do Executivo de Rondônia em setembro de 2022 a 2026, efetivos e temporários: quantidade, total de proventos do mês, média por médico e serviço extraordinário (API do Portal da Transparência de Rondônia).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json",
+    "url": "/_blob/45395746693cd66f952ad6830aed0481"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

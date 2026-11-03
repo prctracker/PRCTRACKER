@@ -1,0 +1,15 @@
+{
+  "description": "Reportagens e publicações de 2025 e 2026 sobre falta de médicos, contratação e pagamento no Rio Grande do Sul, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json",
+    "url": "/_blob/c0e5273694d17023c57b26cccbf3a6c7"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-11-02T14:10:00-03:00",
+    "by": "Claude"
+  }
+}

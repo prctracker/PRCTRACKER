@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: plantões extras e folha de pessoal da SES-TO por ano não puderam ser consultados; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte tentada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json"
+  },
+  "title": "Plantões extras x folha da SES-TO",
+  "updated": {
+    "at": "2026-11-02T19:10:00-03:00",
+    "by": "Claude"
+  }
+}

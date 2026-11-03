@@ -1,0 +1,811 @@
+<title>Atlas Médico do Brasil</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" href="assets/prc-icon-32.png">
+<meta name="description" content="Base de consulta dos relatórios de mapeamento do mercado público de serviços médicos por estado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap">
+<style>
+/* Layout: PRC Tracker identity. A deep-navy hero band carries the map of Brazil with the brand's orbit; below it, light
+   evidence sections on a 1240px measure, each led by one large number. Every figure opens its source. */
+:root {
+  --paper: #F4F7FB;
+  --surface: #FFFFFF;
+  --sunk: #E9EFF7;
+  --ink: #0B173B;
+  --ink-2: #46557A;
+  --ink-3: #7A88A8;
+  --rule: #DDE4EF;
+  --rule-2: #C3CEE0;
+  --petrol: #0A7CC4;          /* brand blue (the "Tracker" blue) */
+  --petrol-ink: #10205C;      /* brand navy */
+  --petrol-wash: #E2F0FA;
+  --brand-sky: #0AA6E6;
+  --brand-cyan: #19DDF2;
+  --brand-teal: #05A7B9;      /* the cross */
+  --team: #D98200;
+  --team-wash: #FFF2DC;
+  --ok: #1F8A5B;
+  --warn: #B7791F;
+  --bad: #D14343;
+  --s1: #0A7CC4; --s2: #05A7B9; --s3: #10205C; --s4: #5DC3EE; --s5: #6A5FD8; --s6: #0E8C7C; --s7: #8693AF; --s8: #B8C6DE;
+  --st-to: #05A7B9; --st-rr: #0AA6E6; --st-al: #2F62D6; --st-rs: #5B4FD0; --st-ro: #8446C4;
+  --map-off: #E2E8F1;
+  --map-off-line: #C9D3E3;
+  --chart-muted: #C9D3E3;
+  --hero-bg: #0B173B;
+  --hero-bg-2: #13306F;
+  --hero-ink: #EEF4FF;
+  --hero-ink-2: #A9B9DC;
+  --hero-ink-3: #7183B0;
+  --hero-off: #172A5E;
+  --hero-line: #24396F;
+  --shadow: 0 1px 2px rgba(11, 23, 59, .06), 0 12px 32px rgba(11, 23, 59, .10);
+  --display: "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure: 1240px;
+  --mast-h: 64px;
+  --stick: 65px;
+  --r: 12px;
+  --st: var(--petrol);
+
+  /* Tokens the state dashboards are written against, mapped onto this site's palette. */
+  --color-fg: var(--ink);
+  --color-fg-muted: var(--ink-2);
+  --color-bg: var(--surface);
+  --color-panel: var(--surface);
+  --color-border-line: var(--rule);
+  --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad);
+  --cds-surface-popover: var(--surface);
+  --cds-border: var(--rule-2);
+  --cds-shadow-popover: var(--shadow);
+  --cds-text-secondary: var(--ink-2);
+  --cds-chart-muted: var(--chart-muted);
+  --cds-chart-grid: var(--rule);
+  --cds-chart-axis: var(--rule-2);
+  --cds-chart-reference: var(--ink-3);
+  --cds-chart-status-critical: var(--bad);
+  --font-anthropic-sans: var(--sans);
+  --font-anthropic-serif: var(--display);
+  --cds-font-size-title: 1.75rem;
+  --cds-font-size-heading: 1.0625rem;
+  --cds-font-size-body: .975rem;
+  --cds-font-size-caption: .8125rem;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-xl: 40px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 9px; --cds-pad-md: 16px; --cds-pad-lg: 22px;
+  --cds-radius: 8px;
+  --cds-dur-slow: .35s;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #07102A; --surface: #0D1A3D; --sunk: #13234D; --ink: #E8EFFC; --ink-2: #A7B5D5; --ink-3: #7484AA;
+    --rule: #1D2C5A; --rule-2: #2B3C70; --petrol: #3EAAF0; --petrol-ink: #B5DBF8; --petrol-wash: #11305E;
+    --brand-sky: #45C3F5; --brand-cyan: #3FE6F7; --brand-teal: #25C4D0;
+    --team: #F5B23F; --team-wash: #3A2A0C; --ok: #5BC48F; --warn: #E0A64B; --bad: #F07474;
+    --s1: #3EAAF0; --s2: #25C4D0; --s3: #93A9F2; --s4: #86D6F6; --s5: #A39BF4; --s6: #4FC7B3; --s7: #9AA8C6; --s8: #5F7096;
+    --st-to: #25C4D0; --st-rr: #45C3F5; --st-al: #6D93F0; --st-rs: #9187EE; --st-ro: #B58BEE;
+    --map-off: #14244F; --map-off-line: #233667; --chart-muted: #2E3F70;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #07102A; --surface: #0D1A3D; --sunk: #13234D; --ink: #E8EFFC; --ink-2: #A7B5D5; --ink-3: #7484AA;
+  --rule: #1D2C5A; --rule-2: #2B3C70; --petrol: #3EAAF0; --petrol-ink: #B5DBF8; --petrol-wash: #11305E;
+  --brand-sky: #45C3F5; --brand-cyan: #3FE6F7; --brand-teal: #25C4D0;
+  --team: #F5B23F; --team-wash: #3A2A0C; --ok: #5BC48F; --warn: #E0A64B; --bad: #F07474;
+  --s1: #3EAAF0; --s2: #25C4D0; --s3: #93A9F2; --s4: #86D6F6; --s5: #A39BF4; --s6: #4FC7B3; --s7: #9AA8C6; --s8: #5F7096;
+  --st-to: #25C4D0; --st-rr: #45C3F5; --st-al: #6D93F0; --st-rs: #9187EE; --st-ro: #B58BEE;
+  --map-off: #14244F; --map-off-line: #233667; --chart-muted: #2E3F70;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .4);
+  color-scheme: dark;
+}
+:root { --mx-team: var(--team); }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15.5px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--surface); }
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--petrol); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; border-radius: 4px; }
+.mx-wrap { max-width: var(--measure); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mx-num { font-variant-numeric: tabular-nums; }
+.mx-mono { font-family: var(--mono); font-size: .8em; letter-spacing: .01em; }
+.mx-eyebrow { font-family: var(--display); font-weight: 600; font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--petrol); margin: 0; }
+.mx-h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.45rem, 2.2vw, 1.95rem); line-height: 1.15; letter-spacing: -.018em; margin: 0; text-wrap: balance; }
+.mx-h3 { font-size: 1.05rem; font-weight: 600; margin: 0; line-height: 1.3; text-wrap: balance; }
+.mx-lead { color: var(--ink-2); max-width: 66ch; margin: 0; }
+.mx-note { color: var(--ink-3); font-size: .8125rem; margin: 0; line-height: 1.5; }
+.mx-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Masthead */
+.mx-mast { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
+.mx-mast-in { display: flex; align-items: center; gap: 20px; min-height: var(--mast-h); }
+.mx-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); flex: none; }
+.mx-brand:hover { color: var(--ink); }
+.mx-brand svg { flex: none; }
+.mx-brand b { font-family: var(--display); font-weight: 600; font-size: 1.16rem; letter-spacing: -.01em; white-space: nowrap; }
+.mx-brand small { font-family: var(--mono); font-size: .66rem; color: var(--ink-3); letter-spacing: .06em; border: 1px solid var(--rule-2); border-radius: 4px; padding: 1px 5px; }
+.mx-nav { display: flex; gap: 2px; align-items: center; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.mx-nav::-webkit-scrollbar { display: none; }
+.mx-nav a, .mx-nav button.mx-navbtn { flex: none; text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--ink-2); padding: 7px 11px; border-radius: 6px; border: 0; background: none; cursor: pointer; white-space: nowrap; }
+.mx-nav a:hover, .mx-nav button.mx-navbtn:hover { color: var(--ink); background: var(--sunk); }
+.mx-nav a[aria-current="page"] { color: var(--ink); background: var(--sunk); }
+.mx-nav .mx-navsep { width: 1px; height: 18px; background: var(--rule); margin: 0 6px; flex: none; }
+.mx-nav .mx-navuf { font-family: var(--mono); font-size: .78rem; letter-spacing: .04em; }
+.mx-actions { display: flex; gap: 6px; align-items: center; flex: none; }
+.mx-iconbtn { display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink); cursor: pointer; font-size: .84rem; font-weight: 500; white-space: nowrap; }
+.mx-iconbtn:hover { border-color: var(--ink-3); }
+.mx-iconbtn[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.mx-iconbtn svg { flex: none; }
+@media (max-width: 1380px) { .mx-src-label { display: none; } }
+@media (max-width: 480px) { .mx-brand small { display: none; } .mx-brand b { font-size: 1.05rem; } }
+@media (max-width: 860px) {
+  .mx-mast-in { flex-wrap: wrap; gap: 4px 12px; padding-block: 8px 4px; }
+  .mx-nav { order: 3; flex-basis: 100%; margin: 0 -6px; }
+  .mx-actions { margin-left: auto; }
+  .mx-src-label { display: none; }
+}
+
+/* Pages */
+.mx-page { padding-block: 0 72px; }
+.mx-band { padding-block: 56px; }
+.mx-band + .mx-band { border-top: 1px solid var(--rule); }
+.mx-sechead { display: grid; gap: 10px; margin-bottom: 28px; max-width: 78ch; }
+.mx-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 20px; }
+.mx-panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.mx-panel-head { display: grid; gap: 6px; }
+
+/* Home hero */
+.mx-hero { padding-block: 40px 28px; }
+.mx-hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
+@media (max-width: 980px) { .mx-hero-grid { grid-template-columns: 1fr; gap: 28px; } }
+.mx-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.25rem, 4.3vw, 3.55rem); line-height: 1.04; letter-spacing: -.02em; margin: 14px 0 16px; text-wrap: balance; }
+.mx-hero h1 em { font-style: italic; color: var(--petrol); }
+.mx-hero .mx-lead { font-size: 1.04rem; }
+.mx-cover { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--hero-line); margin-top: 30px; }
+.mx-cover div { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--hero-line); display: grid; gap: 3px; }
+.mx-cover b { font-family: var(--display); font-weight: 300; font-size: 1.45rem; letter-spacing: -.02em; white-space: nowrap; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.mx-cover b { color: var(--hero-ink); }
+.mx-cover span { font-size: .78rem; color: var(--hero-ink-2); line-height: 1.35; }
+@media (max-width: 520px) { .mx-cover { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.mx-states { margin-top: 26px; display: grid; gap: 0; }
+.mx-states h2 { margin-bottom: 8px; }
+.mx-staterow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 13px 4px; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+.mx-staterow:first-of-type { border-top: 1px solid var(--rule); }
+.mx-staterow:hover { background: var(--surface); color: var(--ink); }
+.mx-staterow:hover .mx-arrow { transform: translateX(3px); color: var(--petrol); }
+.mx-uf { font-family: var(--mono); font-size: .78rem; font-weight: 500; letter-spacing: .04em; width: 38px; height: 28px; display: grid; place-items: center; border-radius: 6px; color: #fff; background: var(--sw, var(--petrol)); }
+:root[data-theme="dark"] .mx-uf { color: var(--paper); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-uf { color: var(--paper); } }
+.mx-staterow b { font-family: var(--display); font-weight: 500; font-size: 1.2rem; display: block; line-height: 1.2; }
+.mx-staterow small { display: block; color: var(--ink-2); font-size: .8rem; line-height: 1.4; }
+.mx-arrow { color: var(--ink-3); transition: transform .2s, color .2s; }
+
+/* Map */
+.mx-mapcard { position: relative; }
+.mx-mapbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.mx-seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; background: var(--sunk); border-radius: 9px; }
+.mx-seg button { border: 0; background: none; padding: 6px 11px; border-radius: 7px; font-size: .82rem; font-weight: 500; color: var(--ink-2); cursor: pointer; }
+.mx-seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.mx-map { position: relative; width: 100%; }
+.mx-map svg { display: block; width: 100%; height: auto; max-height: 76vh; overflow: visible; }
+.mx-map .uf-off { fill: var(--map-off); stroke: var(--surface); stroke-width: 1.2; }
+.mx-map .uf-on { stroke: var(--surface); stroke-width: 1.6; cursor: pointer; transition: filter .2s; }
+.mx-map .uf-on:hover, .mx-map .uf-on:focus-visible { filter: brightness(1.12) saturate(1.1); outline: none; }
+.mx-map .uf-on:focus-visible { stroke: var(--ink); stroke-width: 2.5; }
+.mx-map .grat { stroke: var(--rule); stroke-width: .8; fill: none; }
+.mx-map .grat-key { stroke: var(--ink-3); stroke-dasharray: 4 5; stroke-width: .9; fill: none; }
+.mx-map text { font-family: var(--sans); pointer-events: none; }
+.mx-map .lab-off { font-size: 12px; fill: var(--ink-3); font-family: var(--mono); }
+.mx-map .lab-on { font-size: 17px; font-weight: 600; fill: #fff; font-family: var(--mono); }
+.mx-map .lab-val { font-size: 14px; fill: #fff; font-family: var(--sans); font-weight: 500; }
+.mx-map .lab-out { fill: var(--ink); }
+.mx-map .lab-keytext { font-size: 11px; fill: var(--hero-ink-3); letter-spacing: .12em; text-transform: uppercase; font-family: var(--display); font-weight: 600; }
+.mx-maplegend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--ink-2); align-items: center; }
+.mx-sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+
+/* Tooltip */
+.mx-tip { position: fixed; z-index: 70; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--rule-2); box-shadow: var(--shadow); border-radius: 9px; padding: 10px 12px; font-size: .82rem; line-height: 1.45; max-width: min(19rem, calc(100vw - 32px)); }
+.mx-tip h4 { margin: 0 0 4px; font-size: .9rem; font-weight: 600; }
+.mx-tip .row { display: flex; justify-content: space-between; gap: 14px; }
+.mx-tip .row span { color: var(--ink-2); }
+.mx-tip .row b { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.mx-tip .cta { margin-top: 6px; color: var(--petrol); font-weight: 600; }
+
+/* Panorama */
+.mx-ledger { display: grid; gap: 0; }
+.mx-lrow { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.mx-lrow:first-child { border-top: 1px solid var(--rule); }
+@media (max-width: 560px) { .mx-lrow { grid-template-columns: 1fr; gap: 6px; } }
+.mx-lname { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.mx-bartrack { position: relative; height: 26px; }
+.mx-bar { position: absolute; left: 0; top: 4px; height: 18px; border-radius: 3px; background: var(--petrol); }
+.mx-barval { position: absolute; top: 3px; font-variant-numeric: tabular-nums; font-weight: 600; font-size: .9rem; white-space: nowrap; }
+.mx-refline { position: absolute; top: -6px; bottom: -6px; width: 0; border-left: 1.5px dashed var(--ink-3); }
+.mx-lsub { grid-column: 2; font-size: .8rem; color: var(--ink-2); margin-top: 2px; }
+@media (max-width: 560px) { .mx-lsub { grid-column: 1; } }
+.mx-stack { display: flex; height: 22px; border-radius: 4px; overflow: hidden; background: var(--sunk); }
+.mx-stack i { display: block; height: 100%; position: relative; }
+.mx-stack i + i { box-shadow: inset 1px 0 0 var(--surface); }
+.mx-stack i span { position: absolute; inset: 0; display: grid; place-items: center; font-style: normal; font-size: .72rem; font-weight: 600; color: #fff; }
+.mx-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--ink-2); }
+.mx-chart { position: relative; width: 100%; min-width: 0; }
+.mx-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.mx-chart text { font-family: var(--sans); }
+.mx-toggle { display: inline-flex; align-items: center; gap: 9px; font-size: .86rem; color: var(--ink-2); cursor: pointer; user-select: none; }
+.mx-toggle input { appearance: none; -webkit-appearance: none; width: 34px; height: 20px; border-radius: 20px; background: var(--rule-2); position: relative; cursor: pointer; transition: background .2s; flex: none; margin: 0; }
+.mx-toggle input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); transition: transform .2s; }
+.mx-toggle input:checked { background: var(--team); }
+.mx-toggle input:checked::after { transform: translateX(14px); }
+.mx-teamdot { display: inline-block; width: 10px; height: 10px; transform: rotate(45deg); background: var(--team); margin-right: 7px; vertical-align: 0; border-radius: 1px; }
+
+/* Matrix tables */
+.mx-tablewrap { overflow-x: auto; min-width: 0; border-top: 1px solid var(--ink); }
+.mx-table { width: 100%; border-collapse: collapse; font-size: .875rem; font-variant-numeric: tabular-nums; }
+.mx-table th, .mx-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.mx-table thead th { font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; white-space: nowrap; }
+.mx-table td.n, .mx-table th.n { text-align: right; white-space: nowrap; }
+.mx-table tbody th { font-weight: 500; }
+.mx-table .grp th { font-family: var(--display); font-size: 1rem; font-weight: 700; padding-top: 20px; color: var(--ink); border-bottom-color: var(--ink-3); }
+.mx-table td small { display: block; color: var(--ink-3); font-size: .74rem; line-height: 1.35; white-space: normal; }
+.mx-heat td.n { position: relative; }
+.mx-cell-na { color: var(--ink-3); }
+
+/* News */
+.mx-filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
+.mx-chip { border: 1px solid var(--rule-2); background: var(--surface); border-radius: 999px; padding: 6px 13px; font-size: .84rem; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.mx-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.mx-input, .mx-select, .mx-textarea { border: 1px solid var(--rule-2); background: var(--surface); border-radius: 8px; padding: 9px 11px; font-size: .9rem; width: 100%; min-width: 0; }
+.mx-input:focus, .mx-select:focus, .mx-textarea:focus { outline: 2px solid var(--petrol); outline-offset: 0; border-color: transparent; }
+.mx-search { max-width: 22rem; }
+.mx-newsmonth { font-family: var(--display); font-size: 1.05rem; font-weight: 700; letter-spacing: -.005em; margin: 30px 0 4px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+.mx-newsitem { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+@media (max-width: 560px) { .mx-newsitem { grid-template-columns: 1fr; gap: 6px; } }
+.mx-newsdate { font-family: var(--mono); font-size: .78rem; color: var(--ink-2); padding-top: 3px; }
+.mx-newsmeta { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: .78rem; color: var(--ink-2); margin-bottom: 5px; }
+.mx-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .04em; padding: 2px 7px; border-radius: 4px; background: var(--sunk); color: var(--ink-2); }
+.mx-tag.uf { color: var(--petrol-ink); background: var(--petrol-wash); font-weight: 500; }
+.mx-tag.auto { background: var(--petrol-wash); color: var(--petrol-ink); }
+.mx-tag.team { background: var(--team-wash); color: var(--team); }
+.mx-newsitem a.mx-newslink { font-size: 1.02rem; line-height: 1.45; text-decoration: none; color: var(--ink); }
+.mx-newsitem a.mx-newslink:hover { text-decoration: underline; color: var(--ink); }
+
+/* Team form */
+#mx-team-list .mx-table { min-width: 1120px; }
+.mx-teamgrid { display: grid; grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (max-width: 1000px) { .mx-teamgrid { grid-template-columns: 1fr; } }
+.mx-form { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--stick) + 16px); }
+@media (max-width: 1000px) { .mx-form { position: static; } }
+.mx-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mx-field { display: grid; gap: 5px; min-width: 0; }
+.mx-field.full { grid-column: 1 / -1; }
+.mx-field label { font-size: .8rem; font-weight: 600; color: var(--ink); }
+.mx-field label i { font-style: normal; color: var(--team); }
+.mx-field .hint { font-size: .74rem; color: var(--ink-3); }
+.mx-preview { border-radius: 8px; background: var(--team-wash); color: var(--ink); padding: 12px 14px; font-size: .88rem; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.mx-preview b { font-family: var(--display); font-weight: 400; font-size: 1.45rem; color: var(--team); font-variant-numeric: tabular-nums; }
+.mx-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 9px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-weight: 600; font-size: .9rem; cursor: pointer; text-decoration: none; }
+.mx-btn:hover { color: var(--paper); filter: brightness(1.15); }
+.mx-btn.ghost { background: var(--surface); color: var(--ink); border-color: var(--rule-2); }
+.mx-btn.ghost:hover { color: var(--ink); border-color: var(--ink-3); filter: none; }
+.mx-btn.sm { height: 32px; padding: 0 11px; font-size: .8rem; font-weight: 500; border-radius: 7px; }
+.mx-btn[disabled] { opacity: .45; cursor: not-allowed; }
+.mx-msg { font-size: .84rem; border-radius: 8px; padding: 10px 12px; background: var(--sunk); color: var(--ink-2); }
+.mx-msg.err { background: color-mix(in srgb, var(--bad) 14%, var(--surface)); color: var(--ink); }
+.mx-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.mx-kpi { padding: 12px 14px 14px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; align-content: start; }
+.mx-kpi span { font-size: .78rem; color: var(--ink-2); }
+.mx-kpi b { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.mx-kpi small { font-size: .76rem; color: var(--ink-3); }
+.mx-empty { border: 1px dashed var(--rule-2); border-radius: var(--r); padding: 28px; text-align: left; color: var(--ink-2); display: grid; gap: 6px; }
+.mx-empty b { color: var(--ink); font-family: var(--display); font-size: 1rem; font-weight: 700; }
+.mx-rowacts { display: flex; gap: 6px; flex-wrap: wrap; }
+tr.is-arch td { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rule-2); }
+tr.is-arch td.acts { text-decoration: none; }
+
+/* Fontes page */
+.mx-layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.mx-layer { padding: 18px 20px 20px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; }
+.mx-layer h3 { font-family: var(--display); font-weight: 700; font-size: 1.08rem; margin: 0; }
+.mx-layer p { margin: 0; color: var(--ink-2); font-size: .9rem; }
+
+/* State page */
+.mx-statehero { padding-block: 34px 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+@media (max-width: 760px) { .mx-statehero { grid-template-columns: 1fr; } .mx-locator { display: none; } }
+.mx-statehero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -.02em; margin: 10px 0 12px; }
+.mx-statemeta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .84rem; color: var(--ink-2); }
+.mx-statemeta b { color: var(--ink); font-weight: 600; }
+.mx-statebar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 20px; }
+.mx-statebar .mx-spacer { flex: 1; }
+.mx-locator svg { width: 132px; height: auto; display: block; }
+.mx-locator path { fill: var(--map-off); stroke: var(--surface); stroke-width: 6; }
+.mx-locator path.on { fill: var(--petrol); }
+.mx-locator circle { fill: none; stroke: var(--petrol); stroke-width: 10; }
+.mx-loading { display: grid; gap: 14px; padding-block: 24px; }
+.mx-loading .bar { height: 3px; background: var(--sunk); border-radius: 3px; overflow: hidden; }
+.mx-loading .bar i { display: block; height: 100%; width: 0; background: var(--petrol); transition: width .25s; }
+
+/* The original dashboards, restyled to the site */
+#mx-state-root .tm { gap: 48px; }
+#mx-state-root .tm-title { display: none; }
+#mx-state-root .tm-take { font-family: var(--sans); font-size: clamp(1.08rem, 1.7vw, 1.25rem); line-height: 1.6; max-width: 62ch; color: var(--ink); }
+#mx-state-root .tm-take b { font-weight: 700; color: var(--st); }
+#mx-state-root .tm-nav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--stick)); z-index: 20; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding-block: 10px; margin-block: -20px -8px; border-bottom: 1px solid var(--rule); flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+#mx-state-root .tm-nav::-webkit-scrollbar { display: none; }
+#mx-state-root .tm-nav button { border: 0; background: none; color: var(--ink-2); font-weight: 500; white-space: nowrap; border-radius: 6px; padding: 6px 10px; }
+#mx-state-root .tm-nav button:hover { background: var(--sunk); color: var(--ink); }
+#mx-state-root .tm-nav button[aria-current="true"] { background: var(--st); color: #fff; }
+#mx-state-root .tm-sec { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--stick) + 64px); padding-top: 8px; }
+#mx-state-root .tm-sec-h { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.85rem); letter-spacing: -.018em; padding-top: 18px; border-top: 2px solid var(--ink); }
+#mx-state-root .tm-sec-p { color: var(--ink-2); max-width: 74ch; }
+#mx-state-root .tm-card { border-radius: var(--r); border-color: var(--rule); padding: 20px 22px; }
+#mx-state-root .tm-card-h { font-size: 1.02rem; }
+#mx-state-root .tm-kpis { gap: 0; border-top: 1px solid var(--ink); }
+#mx-state-root .tm-kpi { background: none; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 14px 16px 16px 0; }
+#mx-state-root .tm-kpi-v { font-weight: 300; letter-spacing: -.02em; }
+#mx-state-root .tm-kpis { border-top: 2px solid var(--st); }
+#mx-state-root .tm-tbl th { background: var(--surface); }
+#mx-state-root .tm-tbl tbody tr:hover td { background: var(--sunk); }
+#mx-state-root .tm-search { border-radius: 8px; padding: 8px 11px; }
+#mx-state-root .tm-seg button { border-radius: 7px; }
+#mx-state-root .tm-tip { position: absolute; }
+.dash-skeleton { position: relative; min-height: 160px; border-radius: 8px; background: linear-gradient(100deg, var(--sunk) 30%, color-mix(in srgb, var(--sunk) 55%, var(--surface)) 50%, var(--sunk) 70%) 0 0 / 300% 100%; animation: mxshimmer 1.4s linear infinite; }
+span.dash-skeleton, b.dash-skeleton { min-height: 1.1em; display: inline-block; min-width: 3ch; background: none; animation: none; }
+@keyframes mxshimmer { to { background-position: -150% 0; } }
+@keyframes mxpop { from { opacity: .35; } }
+.mx-teamcard { border-color: color-mix(in srgb, var(--team) 40%, var(--rule)) !important; }
+.mx-teamcard .tm-card-h { display: flex; align-items: center; gap: 8px; }
+.mx-dsrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 18px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: center; }
+.mx-dsrow b { font-weight: 600; }
+.mx-dsrow p { margin: 3px 0 0; color: var(--ink-2); font-size: .82rem; }
+@media (max-width: 640px) { .mx-dsrow { grid-template-columns: 1fr; } }
+
+/* Source mode and drawer */
+body.mx-src-mode [data-source], body.mx-src-mode [data-fonte] { cursor: help; outline: 1px dashed color-mix(in srgb, var(--petrol) 55%, transparent); outline-offset: 2px; border-radius: 3px; }
+body.mx-src-mode [data-source]:hover, body.mx-src-mode [data-fonte]:hover { outline: 2px solid var(--petrol); background: color-mix(in srgb, var(--petrol) 7%, transparent); }
+.mx-srcbanner { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 55; background: var(--ink); color: var(--paper); border-radius: 999px; padding: 9px 10px 9px 18px; font-size: .85rem; display: flex; gap: 12px; align-items: center; box-shadow: var(--shadow); max-width: calc(100vw - 32px); }
+.mx-srcbanner button { border: 0; border-radius: 999px; padding: 6px 12px; background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 600; font-size: .8rem; }
+.mx-drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 80; width: min(34rem, 100vw); background: var(--surface); border-left: 1px solid var(--rule-2); box-shadow: var(--shadow); display: flex; flex-direction: column; transform: translateX(102%); transition: transform .28s cubic-bezier(.2,.7,.2,1); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.mx-drawer.open { transform: none; }
+.mx-drawer header { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px solid var(--rule); }
+.mx-drawer header h2 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin: 4px 0 0; line-height: 1.2; }
+.mx-drawer .body { overflow-y: auto; padding: 16px 20px 28px; display: grid; gap: 18px; align-content: start; }
+.mx-drawer .blk { display: grid; gap: 8px; }
+.mx-drawer .blk h3 { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0; font-weight: 500; }
+.mx-drawer p { margin: 0; color: var(--ink-2); font-size: .9rem; }
+.mx-drawer pre { margin: 0; font-family: var(--mono); font-size: .74rem; line-height: 1.5; background: var(--sunk); border-radius: 8px; padding: 12px; overflow-x: auto; white-space: pre; color: var(--ink); }
+.mx-drawer .dl { display: flex; flex-wrap: wrap; gap: 8px; }
+.mx-prev { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; }
+.mx-prev table { border-collapse: collapse; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.mx-prev th, .mx-prev td { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: left; white-space: nowrap; max-width: 16rem; overflow: hidden; text-overflow: ellipsis; }
+.mx-prev th { font-weight: 600; background: var(--sunk); position: sticky; top: 0; }
+.mx-prev tr.hit td { background: var(--petrol-wash); }
+.mx-kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; font-size: .85rem; }
+.mx-kv dt { color: var(--ink-3); }
+.mx-kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.mx-scrim { position: fixed; inset: 0; z-index: 75; background: rgba(5, 14, 17, .32); }
+.mx-toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; z-index: 90; background: var(--ink); color: var(--paper); padding: 11px 16px; border-radius: 10px; font-size: .88rem; box-shadow: var(--shadow); transition: opacity .2s, transform .2s; pointer-events: none; max-width: calc(100vw - 32px); }
+.mx-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+
+/* Brasil page */
+.mx-basenote { margin: 16px 0 0; font-size: .8rem; color: var(--hero-ink-3); line-height: 1.5; max-width: 54ch; }
+.mx-story { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 56px; align-items: center; }
+@media (max-width: 920px) { .mx-story { grid-template-columns: 1fr; gap: 24px; } }
+.mx-story-text { display: grid; gap: 12px; align-content: start; }
+.mx-story-vis { min-width: 0; }
+.mx-big { margin: 8px 0 0; font-family: var(--display); font-weight: 300; font-size: clamp(3.6rem, 7.6vw, 6rem); line-height: .92; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.mx-big small { font-family: var(--sans); font-size: .95rem; letter-spacing: 0; color: var(--ink-2); font-weight: 500; }
+.mx-story-p { margin: 0; color: var(--ink-2); max-width: 46ch; font-size: 1rem; }
+.mx-story-p b { color: var(--ink); font-weight: 600; }
+.mx-faixas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr)); gap: 0 24px; margin-top: 16px; border-top: 1px solid var(--rule); }
+.mx-faixas div { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: .84rem; }
+.mx-faixas b { font-variant-numeric: tabular-nums; font-weight: 600; }
+.mx-faixas span.p { display: block; color: var(--ink-3); font-size: .76rem; font-variant-numeric: tabular-nums; }
+.mx-bigbar { display: flex; height: 54px; border-radius: 6px; overflow: hidden; background: var(--sunk); }
+.mx-bigbar i { display: flex; align-items: center; justify-content: center; font-style: normal; font-weight: 600; font-size: .86rem; color: #fff; min-width: 0; overflow: hidden; }
+.mx-bigbar i + i { box-shadow: inset 2px 0 0 var(--paper); }
+.mx-vlist { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 0 24px; margin-top: 16px; border-top: 1px solid var(--rule); }
+.mx-vlist div { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: .86rem; }
+.mx-vlist b { font-variant-numeric: tabular-nums; }
+.mx-vlist span.c { display: block; color: var(--ink-3); font-size: .76rem; font-variant-numeric: tabular-nums; }
+.mx-maplinks { display: flex; flex-wrap: wrap; gap: 6px; }
+.mx-maplinks a { text-decoration: none; font-size: .8rem; font-weight: 500; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--rule-2); color: var(--ink); background: var(--surface); }
+.mx-maplinks a:hover { border-color: var(--petrol); color: var(--petrol); }
+
+footer.mx-foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; color: var(--ink-3); font-size: .8rem; }
+footer.mx-foot .mx-wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* ===================== PRC Tracker identity ===================== */
+:root { --fx0: #C93838; --fx1: #E4705E; --fx2: #F2B4A3; --fx3: #A3D6F3; --fx4: #3E9EDC; --fx5: #10205C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fx0: #F07474; --fx1: #C9766A; --fx2: #7A4E55; --fx3: #22528F; --fx4: #2F86D0; --fx5: #79C6F6; } }
+:root[data-theme="dark"] { --fx0: #F07474; --fx1: #C9766A; --fx2: #7A4E55; --fx3: #22528F; --fx4: #2F86D0; --fx5: #79C6F6; }
+.mx-brand { gap: 14px; }
+.mx-brand img { display: block; height: 38px; width: auto; }
+.mx-brand .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-brand .logo-light { display: none; } :root:not([data-theme="light"]) .mx-brand .logo-dark { display: block; } }
+:root[data-theme="dark"] .mx-brand .logo-light { display: none; }
+:root[data-theme="dark"] .mx-brand .logo-dark { display: block; }
+.mx-product { display: grid; gap: 2px; line-height: 1.1; padding-left: 14px; border-left: 1px solid var(--rule-2); }
+.mx-product b { font-family: var(--display); font-weight: 700; font-size: .9rem; letter-spacing: -.005em; color: var(--ink); white-space: nowrap; }
+.mx-product small { border: 0; padding: 0; font-family: var(--display); font-weight: 600; font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--petrol); }
+@media (max-width: 1300px) { .mx-product { display: none; } }
+@media (max-width: 1500px) { .mx-src-label { display: none; } }
+@media (max-width: 480px) { .mx-brand img { height: 30px; } }
+.mx-nav a, .mx-nav button.mx-navbtn { font-family: var(--display); font-weight: 600; font-size: .82rem; }
+.mx-nav .mx-navuf { font-family: var(--display); letter-spacing: .06em; font-size: .76rem; }
+.mx-nav a[aria-current="page"] { background: var(--petrol-wash); color: var(--petrol-ink); }
+.mx-nav a.mx-navuf[aria-current="page"] { background: var(--st); color: #fff; }
+.mx-iconbtn { font-family: var(--display); font-weight: 600; font-size: .8rem; }
+.mx-iconbtn[aria-pressed="true"] { background: var(--petrol); border-color: var(--petrol); color: #fff; }
+.mx-btn { font-family: var(--display); font-weight: 600; letter-spacing: .005em; background: var(--petrol-ink); border-color: var(--petrol-ink); }
+:root[data-theme="dark"] .mx-btn:not(.ghost) { background: var(--petrol); border-color: var(--petrol); color: #07102A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-btn:not(.ghost) { background: var(--petrol); border-color: var(--petrol); color: #07102A; } }
+.mx-btn.ghost { background: var(--surface); }
+
+.mx-heroband { position: relative; overflow: hidden; color: var(--hero-ink); background: radial-gradient(1100px 640px at 78% 40%, var(--hero-bg-2) 0%, var(--hero-bg) 64%); }
+.mx-heroband::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, #19DDF2 45%, transparent); opacity: .55; }
+.mx-heroband .mx-eyebrow { color: #3FE6F7; }
+.mx-hero { padding-block: 60px 52px; }
+.mx-hero-grid { align-items: center; }
+.mx-hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 5.2vw, 4.4rem); line-height: .98; letter-spacing: -.04em; color: var(--hero-ink); margin: 18px 0 20px; }
+.mx-hero h1 em { display: inline-block; font-style: italic; font-weight: 800; background: linear-gradient(100deg, #3FE6F7 0%, #0AA6E6 55%, #2F7FD8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .1em; }
+.mx-hero .mx-lead { color: var(--hero-ink-2); font-size: 1.06rem; max-width: 44ch; }
+.mx-heroband .mx-map .uf-off { fill: var(--hero-off); stroke: var(--hero-line); stroke-width: 1.1; }
+.mx-heroband .mx-map .uf-on { stroke: #0B173B; stroke-width: 1.4; }
+.mx-heroband .mx-map .uf-on:focus-visible { stroke: #fff; stroke-width: 2.5; }
+.mx-heroband .mx-map .grat { stroke: rgba(130, 160, 230, .09); }
+.mx-heroband .mx-map .grat-key { stroke: rgba(130, 170, 240, .34); }
+.mx-heroband .mx-map .lab-off { fill: var(--hero-ink-3); font-size: 11px; font-family: var(--display); font-weight: 600; letter-spacing: .05em; }
+.mx-heroband .mx-map .lab-on { fill: #fff; font-family: var(--display); font-weight: 800; font-size: 19px; letter-spacing: .02em; }
+.mx-heroband .mx-map .lab-out { fill: var(--hero-ink); }
+.mx-heroband .mx-maplegend { color: var(--hero-ink-2); margin-top: 6px; }
+.mx-heroband .mx-maplinks a { background: rgba(255, 255, 255, .04); color: var(--hero-ink); border-color: var(--hero-line); font-family: var(--display); font-weight: 600; font-size: .76rem; }
+.mx-heroband .mx-maplinks a:hover { border-color: #3FE6F7; color: #fff; }
+.mx-heroband .mx-sw { border-radius: 50%; }
+body.mx-src-mode .mx-heroband [data-fonte] { outline-color: rgba(63, 230, 247, .6); }
+
+.mx-band { padding-block: 76px; }
+.mx-band + .mx-band { border-top: 1px solid var(--rule); }
+.mx-big { color: var(--petrol-ink); }
+.mx-big small { font-family: var(--display); font-weight: 600; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--petrol); }
+.mx-story-p { font-size: 1.02rem; line-height: 1.65; }
+.mx-bigbar { height: 58px; border-radius: 10px; }
+.mx-bigbar i { font-family: var(--display); font-weight: 700; font-size: .84rem; }
+.mx-faixas, .mx-vlist { border-top-color: var(--rule-2); }
+.mx-kpis { border-top: 2px solid var(--petrol-ink); }
+.mx-kpi span { font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.mx-kpi b { color: var(--petrol-ink); font-weight: 300; font-size: 1.9rem; letter-spacing: -.02em; }
+.mx-tablewrap { border-top: 2px solid var(--petrol-ink); }
+.mx-panel { border-radius: var(--r); }
+.mx-toggle input:checked { background: var(--team); }
+.mx-newsmonth { border-bottom: 2px solid var(--petrol-ink); }
+.mx-newsitem a.mx-newslink { font-weight: 500; }
+.mx-tag { font-family: var(--display); font-weight: 600; letter-spacing: .06em; font-size: .64rem; text-transform: uppercase; }
+.mx-chip { font-family: var(--display); font-weight: 600; font-size: .78rem; }
+.mx-chip[aria-pressed="true"] { background: var(--petrol-ink); border-color: var(--petrol-ink); color: #fff; }
+:root[data-theme="dark"] .mx-chip[aria-pressed="true"] { background: var(--petrol); color: #07102A; border-color: var(--petrol); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-chip[aria-pressed="true"] { background: var(--petrol); color: #07102A; border-color: var(--petrol); } }
+.mx-sechead .mx-h2[style] { font-family: var(--display); }
+
+.mx-statehead { position: relative; overflow: hidden; color: var(--hero-ink); background: radial-gradient(900px 520px at 85% 50%, color-mix(in srgb, var(--st) 38%, var(--hero-bg)) 0%, var(--hero-bg) 62%); }
+.mx-statehead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--st) 40%, transparent); }
+.mx-statehead .mx-statehero { padding-block: 44px 40px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+.mx-statehead .mx-eyebrow { color: #3FE6F7; }
+.mx-statehead h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.5rem, 5.6vw, 4.2rem); line-height: 1; letter-spacing: -.04em; margin: 12px 0 14px; color: var(--hero-ink); }
+.mx-statehead .mx-statemeta { color: var(--hero-ink-2); }
+.mx-statehead .mx-statemeta b { color: var(--hero-ink); }
+.mx-silhouette svg { display: block; width: clamp(150px, 19vw, 250px); height: auto; max-height: 230px; overflow: visible; }
+.mx-silhouette path { stroke: rgba(255, 255, 255, .35); stroke-width: 1; vector-effect: non-scaling-stroke; }
+@media (max-width: 760px) { .mx-statehead .mx-statehero { grid-template-columns: 1fr; } .mx-silhouette { display: none; } }
+.mx-statebar { border-bottom: 1px solid var(--rule); }
+
+footer.mx-foot { background: var(--hero-bg); color: var(--hero-ink-2); border-top: 0; padding-block: 48px 56px; font-size: .84rem; }
+footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 1.3fr) minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; }
+@media (max-width: 760px) { footer .mx-foot-in { grid-template-columns: 1fr; } }
+.mx-foot-brand img { display: block; height: 50px; width: auto; margin-bottom: 14px; }
+.mx-foot-brand p, .mx-foot-col p { margin: 0; line-height: 1.6; max-width: 46ch; }
+.mx-foot-col { display: grid; gap: 8px; align-content: start; }
+.mx-foot-col a { color: var(--hero-ink); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: .84rem; }
+.mx-foot-col a:hover { color: #3FE6F7; }
+.mx-foot-h { margin: 0 0 4px !important; font-family: var(--display); font-weight: 600; font-size: .64rem; letter-spacing: .24em; text-transform: uppercase; color: #3FE6F7; }
+</style>
+
+<header class="mx-mast">
+  <div class="mx-wrap mx-mast-in">
+    <a class="mx-brand" href="#inicio" aria-label="PRC Tracker · Atlas Médico do Brasil, página inicial">
+      <img class="logo-light" src="assets/prc-logo.png" alt="PRC Tracker, pesquisa e inteligência" width="141" height="38">
+      <img class="logo-dark" src="assets/prc-logo-dark.png" alt="PRC Tracker, pesquisa e inteligência" width="141" height="38">
+      <span class="mx-product"><b>Atlas Médico do Brasil</b><small id="mx-cover-tag">—</small></span>
+    </a>
+    <nav class="mx-nav" aria-label="Seções do site">
+      <a href="#inicio" data-nav="inicio">Brasil</a>
+      <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#tocantins" data-nav="tocantins" class="mx-navuf">TO</a>
+      <a href="#roraima" data-nav="roraima" class="mx-navuf">RR</a>
+      <a href="#alagoas" data-nav="alagoas" class="mx-navuf">AL</a>
+      <a href="#rio-grande-do-sul" data-nav="rio-grande-do-sul" class="mx-navuf">RS</a>
+      <a href="#rondonia" data-nav="rondonia" class="mx-navuf">RO</a>
+      <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#noticias" data-nav="noticias">Notícias</a>
+      <a href="#valores-da-equipe" data-nav="valores-da-equipe">Valores da equipe</a>
+      <a href="#fontes" data-nav="fontes">Fontes</a>
+    </nav>
+    <div class="mx-actions">
+      <button type="button" class="mx-iconbtn" id="mx-srcbtn" aria-pressed="false" title="Clique em qualquer número, gráfico ou tabela para ver de onde ele vem">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="mx-src-label">Ver de onde vem cada número</span>
+      </button>
+      <button type="button" class="mx-iconbtn" id="mx-themebtn" aria-label="Alternar tema claro e escuro" title="Alternar tema claro e escuro">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ BRASIL ============ -->
+  <div class="mx-page" data-page="inicio" id="mx-pg-inicio">
+    <div class="mx-heroband">
+    <section class="mx-wrap mx-hero">
+      <div class="mx-hero-grid">
+        <div>
+          <p class="mx-eyebrow" id="mx-hero-date">—</p>
+          <h1>Atlas Médico <em>do Brasil</em></h1>
+          <p class="mx-lead">Médicos, vínculos e valores pagos pelo setor público, com a fonte de cada número.</p>
+          <div class="mx-cover" id="mx-cover"></div>
+          <p class="mx-basenote" id="mx-basenote"></p>
+        </div>
+        <div class="mx-mapcard">
+          <div class="mx-map" id="mx-brmap" role="img" aria-label="Mapa do Brasil com os estados que têm relatório"></div>
+          <div class="mx-maplegend" id="mx-maplegend"></div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">Cobertura</p>
+          <h2 class="mx-h2">Médicos por mil habitantes</h2>
+          <p class="mx-big" data-fonte="br_dens" data-uf="todos"><span id="mx-br-dens">—</span><small>por mil hab.</small></p>
+          <p class="mx-story-p" id="mx-br-dens-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <p class="mx-note" style="margin-bottom:12px">Onde vive a população, pela faixa de médicos por mil habitantes do seu município.</p>
+          <div class="mx-bigbar" id="mx-br-popbar" data-fonte="br_mun" data-uf="todos"></div>
+          <div class="mx-faixas" id="mx-br-faixas"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">Contratação</p>
+          <h2 class="mx-h2">Como os médicos estão contratados</h2>
+          <p class="mx-big" data-fonte="br_vinc" data-uf="todos"><span id="mx-br-pf">—</span><small>autônomos pessoa física</small></p>
+          <p class="mx-story-p" id="mx-br-vinc-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <p class="mx-note" style="margin-bottom:12px">Vínculos médicos em hospitais, UPAs, prontos atendimentos e unidades mistas ativos no CNES. Um médico pode ter mais de um vínculo.</p>
+          <div class="mx-bigbar" id="mx-br-vinc" data-fonte="br_vinc" data-uf="todos"></div>
+          <div class="mx-vlist" id="mx-br-vinc-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap">
+        <div class="mx-sechead">
+          <p class="mx-eyebrow">Valores</p>
+          <h2 class="mx-h2">Quanto vale a hora médica</h2>
+          <p class="mx-lead">Cada ponto é um valor com documento de origem, convertido em reais por hora. O traço marca a mediana e a faixa clara, onde ficam os 50% do meio.</p>
+        </div>
+        <div class="mx-kpis" id="mx-br-hora-kpis" style="margin-bottom:22px"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:flex-end;margin-bottom:6px">
+          <label class="mx-toggle"><input type="checkbox" id="mx-team-home" checked> <span><span class="mx-teamdot"></span>Incluir valores informados pela equipe</span></label>
+        </div>
+        <div class="mx-chart" id="mx-br-hora" data-fonte="br_hora" data-uf="todos"></div>
+        <p class="mx-note" id="mx-br-hora-note" style="margin-top:10px">—</p>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">CNES, setembro de cada ano</p>
+          <h2 class="mx-h2">Crescimento do cadastro médico</h2>
+          <p class="mx-big" data-fonte="br_serie" data-uf="todos"><span id="mx-br-cresc">—</span><small>desde 2022</small></p>
+          <p class="mx-story-p" id="mx-br-serie-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <div class="mx-chart" id="mx-br-serie" data-fonte="br_serie" data-uf="todos"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap">
+        <div class="mx-sechead" style="grid-template-columns:minmax(0,1fr) auto;max-width:none;align-items:end">
+          <div style="display:grid;gap:10px">
+            <p class="mx-eyebrow">Notícias</p>
+            <h2 class="mx-h2">O que se publicou sobre falta de médicos</h2>
+          </div>
+          <a class="mx-btn ghost sm" href="#noticias">Todas as notícias</a>
+        </div>
+        <div id="mx-p-news"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ESTADO ============ -->
+  <div class="mx-page" data-page="estado" id="mx-pg-estado" hidden>
+    <div class="mx-statehead">
+      <div class="mx-wrap mx-statehero">
+        <div>
+          <p class="mx-eyebrow" id="mx-st-eyebrow">Relatório estadual</p>
+          <h1 id="mx-st-name">—</h1>
+          <div class="mx-statemeta" id="mx-st-meta"></div>
+        </div>
+        <div class="mx-silhouette" id="mx-st-locator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="mx-wrap">
+      <div class="mx-statebar">
+        <label class="mx-toggle"><input type="checkbox" id="mx-team-state" checked> <span><span class="mx-teamdot"></span>Incluir valores informados pela equipe</span></label>
+        <span class="mx-spacer"></span>
+        <a class="mx-btn ghost sm" id="mx-st-addval" href="#valores-da-equipe">Registrar valor neste estado</a>
+        <a class="mx-btn ghost sm" id="mx-st-orig" href="#" target="_blank" rel="noopener">Abrir painel original</a>
+      </div>
+      <div id="mx-state-root"></div>
+    </div>
+  </div>
+
+  <!-- ============ NOTÍCIAS ============ -->
+  <div class="mx-page" data-page="noticias" id="mx-pg-noticias" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Notícias</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">Falta de médicos, contratação e pagamento</h2>
+        <p class="mx-lead">Reportagens e publicações oficiais reunidas nos relatórios estaduais e na atualização semanal, com resumo próprio e link para a fonte. Da mais recente para a mais antiga.</p>
+      </div>
+      <div class="mx-filters" id="mx-news-filters"></div>
+      <div class="mx-filters">
+        <input class="mx-input mx-search" id="mx-news-q" type="search" placeholder="Buscar por município, tema ou veículo" aria-label="Buscar notícias">
+        <select class="mx-select" id="mx-news-tema" style="max-width:16rem" aria-label="Tema"></select>
+        <span class="mx-note" id="mx-news-count"></span>
+      </div>
+      <div id="mx-news-list"></div>
+    </section>
+  </div>
+
+  <!-- ============ VALORES DA EQUIPE ============ -->
+  <div class="mx-page" data-page="valores-da-equipe" id="mx-pg-equipe" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Levantamento por contato direto</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">Valores da equipe</h2>
+        <p class="mx-lead">Valores de plantão, hora ou salário que a equipe apura conversando com médicos. Cada registro entra no painel do estado e no panorama como uma camada separada, marcada em <span style="color:var(--team);font-weight:600">rosa</span>: os números e as fontes dos relatórios não mudam, e a camada pode ser desligada a qualquer momento.</p>
+      </div>
+      <div class="mx-teamgrid">
+        <form class="mx-panel mx-form" id="mx-form" novalidate>
+          <div class="mx-panel-head"><h3 class="mx-h3">Registrar um valor</h3><p class="mx-note">Campos com <span style="color:var(--team)">*</span> são obrigatórios.</p></div>
+          <div class="mx-msg" id="mx-form-state" hidden></div>
+          <div class="mx-fields">
+            <div class="mx-field"><label for="f-uf">Estado <i>*</i></label><select class="mx-select" id="f-uf" required></select></div>
+            <div class="mx-field"><label for="f-mun">Município <i>*</i></label><input class="mx-input" id="f-mun" list="f-mun-list" autocomplete="off" required><datalist id="f-mun-list"></datalist></div>
+            <div class="mx-field full"><label for="f-contratante">Contratante e unidade <i>*</i></label><input class="mx-input" id="f-contratante" placeholder="Ex.: Prefeitura de Arapiraca, UPA 24h" required></div>
+            <div class="mx-field"><label for="f-esfera">Quem paga</label><select class="mx-select" id="f-esfera"><option>Prefeitura</option><option>Governo do Estado</option><option>OSS ou filantrópico</option><option>Empresa médica intermediária</option><option>Privado</option><option>Governo federal</option></select></div>
+            <div class="mx-field"><label for="f-esp">Especialidade ou função <i>*</i></label><input class="mx-input" id="f-esp" list="f-esp-list" required placeholder="Ex.: Clínico plantonista"><datalist id="f-esp-list"><option>Clínico plantonista (urgência e emergência)</option><option>Clínico geral (ambulatório)</option><option>Médico da Saúde da Família (ESF)</option><option>Pediatria</option><option>Ginecologia e obstetrícia</option><option>Anestesiologia</option><option>Cirurgia geral</option><option>Ortopedia</option><option>UTI adulto (intensivista)</option><option>UTI neonatal ou pediátrica</option><option>Psiquiatria</option><option>Cardiologia</option><option>Radiologia e ultrassonografia</option><option>Regulação ou SAMU</option></datalist></div>
+            <div class="mx-field"><label for="f-forma">Forma de pagamento <i>*</i></label><select class="mx-select" id="f-forma"><option value="Plantão 12h">Plantão de 12h</option><option value="Plantão 24h">Plantão de 24h</option><option value="Plantão 6h">Plantão de 6h</option><option value="Hora">Por hora</option><option value="Mensal">Mensal (carga semanal)</option><option value="Por consulta">Por consulta ou procedimento</option></select></div>
+            <div class="mx-field" id="f-carga-wrap" hidden><label for="f-carga">Carga semanal (h) <i>*</i></label><input class="mx-input mx-num" id="f-carga" type="number" min="1" max="80" step="1" inputmode="numeric" placeholder="40"></div>
+            <div class="mx-field"><label for="f-valor">Valor (R$) <i>*</i></label><input class="mx-input mx-num" id="f-valor" type="number" min="1" step="0.01" inputmode="decimal" placeholder="1500,00" required></div>
+            <div class="mx-field"><label for="f-bruto">O valor é</label><select class="mx-select" id="f-bruto"><option>Bruto</option><option>Líquido</option><option>Não informado</option></select></div>
+            <div class="mx-field"><label for="f-vinculo">Vínculo do médico</label><select class="mx-select" id="f-vinculo"><option>PJ</option><option>Pessoa física (RPA ou autônomo)</option><option>Cooperativa</option><option>Contrato temporário</option><option>CLT</option><option>Estatutário</option><option>Não informado</option></select></div>
+            <div class="mx-field"><label for="f-mes">Mês de referência <i>*</i></label><input class="mx-input mx-num" id="f-mes" type="month" required></div>
+            <div class="mx-field full"><label for="f-origem">Como o valor foi obtido <i>*</i></label><select class="mx-select" id="f-origem"><option>Médico que recebe o valor, em conversa direta</option><option>Médico relatou o valor de um colega</option><option>Proposta ou escala recebida pela empresa</option><option>Documento visto (contrato, nota ou holerite)</option></select></div>
+            <div class="mx-field full"><label for="f-detalhe">Detalhe da fonte</label><input class="mx-input" id="f-detalhe" placeholder="Ex.: plantonista da UPA, por telefone em 28/10. Não escreva telefone nem CPF."><span class="hint">Fica visível para quem tem acesso ao site.</span></div>
+            <div class="mx-field full"><label for="f-obs">Observações</label><textarea class="mx-textarea" id="f-obs" rows="2" placeholder="Ex.: atraso de 60 dias no pagamento; escala de fim de semana paga a mais"></textarea></div>
+          </div>
+          <div class="mx-preview" id="f-preview" aria-live="polite"><span>Equivale a</span><b>—</b><span id="f-preview-sub">por hora</span></div>
+          <div class="mx-msg err" id="mx-form-err" hidden role="alert"></div>
+          <button class="mx-btn" type="submit" id="f-submit">Registrar valor</button>
+        </form>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:20px;min-width:0">
+          <div class="mx-kpis" id="mx-team-kpis"></div>
+          <div class="mx-filters" style="margin:0">
+            <select class="mx-select" id="mx-team-fuf" style="max-width:13rem" aria-label="Filtrar por estado"></select>
+            <select class="mx-select" id="mx-team-fst" style="max-width:11rem" aria-label="Filtrar por situação"><option value="ativo">Em uso</option><option value="arquivado">Arquivados</option><option value="">Todos</option></select>
+            <input class="mx-input mx-search" id="mx-team-q" type="search" placeholder="Buscar município, contratante ou especialidade" aria-label="Buscar valores da equipe">
+            <button type="button" class="mx-btn ghost sm" id="mx-team-csv">Baixar CSV</button>
+          </div>
+          <div id="mx-team-list"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ FONTES ============ -->
+  <div class="mx-page" data-page="fontes" id="mx-pg-fontes" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Fontes e atualização</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">De onde vêm os números e como o site se atualiza</h2>
+        <p class="mx-lead">O site junta três camadas que nunca se misturam: os relatórios estaduais, as novidades da atualização semanal e os valores informados pela equipe. Cada uma aparece marcada, e só a primeira entra nos indicadores principais.</p>
+      </div>
+      <div class="mx-layers">
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 1 · fixa</p><h3>Relatórios estaduais</h3><p>CNES, IBGE, PNCP, portais de transparência, diários oficiais e editais, com link e data de consulta em cada linha. Os arquivos publicados com o site não são alterados por nenhuma outra camada.</p></div>
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 2 · semanal</p><h3>Atualização automática</h3><p>Ainda não agendada. Quando ligada, uma tarefa semanal varre o PNCP por modalidade nos quatro estados, busca itens e resultados das contratações de serviço médico e procura notícias novas. O que encontra aparece como “novo desde o relatório”, com link.</p></div>
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 3 · equipe</p><h3>Contato com médicos</h3><p>Valores que a equipe registra na página Valores da equipe. Aparecem em rosa nos gráficos de hora médica e em quadro próprio em cada estado; o botão “Incluir valores informados pela equipe” liga e desliga a camada.</p></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">Relatórios publicados</h2></div>
+        <div class="mx-tablewrap"><table class="mx-table" id="mx-f-rel"></table></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">Histórico de atualizações</h2><p class="mx-lead">Registro de cada rodada da atualização semanal, com o que foi varrido e o que entrou.</p></div>
+        <div id="mx-f-log"></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">O que a atualização semanal não cobre</h2></div>
+        <div class="mx-layers">
+          <div class="mx-layer"><h3>CNES e IBGE</h3><p>O cadastro de médicos, a população e a malha municipal mudam por competência e não respondem a consulta automática fora do navegador. Ficam na competência de cada relatório (setembro de 2026) até uma nova rodada do relatório do estado.</p></div>
+          <div class="mx-layer"><h3>Folhas estaduais</h3><p>Folhas de pagamento e despesas por rubrica estão em portais com painel ou captcha. Ficam com a data de cada relatório; o pedido pela Lei de Acesso à Informação de cada estado está na aba Notas da planilha do relatório.</p></div>
+          <div class="mx-layer"><h3>Novos estados</h3><p>Um estado só ganha números no site quando o relatório dele é feito com o mesmo método. Até lá, aparece no mapa sem dados.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="mx-foot">
+  <div class="mx-wrap mx-foot-in">
+    <div class="mx-foot-brand">
+      <img src="assets/prc-logo-dark.png" alt="PRC Tracker, pesquisa e inteligência" width="186" height="50">
+      <p>Atlas Médico do Brasil: base de consulta sobre o mercado público de serviços médicos.</p>
+    </div>
+    <div class="mx-foot-col">
+      <p class="mx-foot-h">Navegar</p>
+      <a href="#inicio">Brasil</a><a href="#noticias">Notícias</a><a href="#valores-da-equipe">Valores da equipe</a><a href="#fontes">Fontes e atualização</a>
+    </div>
+    <div class="mx-foot-col">
+      <p class="mx-foot-h">Fontes</p>
+      <p>CNES/DataSUS, IBGE, PNCP, portais de transparência e diários oficiais, com link e data de consulta em cada linha. Mapa: malha estadual do IBGE, simplificada.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mx-scrim" id="mx-scrim" hidden></div>
+<aside class="mx-drawer" id="mx-drawer" aria-hidden="true" aria-labelledby="mx-dr-title" role="dialog">
+  <header>
+    <div><p class="mx-eyebrow" id="mx-dr-eyebrow">Fonte</p><h2 id="mx-dr-title">—</h2></div>
+    <button type="button" class="mx-iconbtn" id="mx-dr-close" aria-label="Fechar">Fechar</button>
+  </header>
+  <div class="body" id="mx-dr-body"></div>
+</aside>
+<div class="mx-srcbanner" id="mx-srcbanner" hidden><span>Clique em um número, gráfico ou tabela para ver a fonte.</span><button type="button" id="mx-srcoff">Sair</button></div>
+<div class="mx-toast" id="mx-toast" role="status" aria-live="polite"></div>
+<div class="mx-tip" id="mx-tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="estados/to.js" charset="utf-8"></script>
+<script src="estados/rr.js" charset="utf-8"></script>
+<script src="estados/al.js" charset="utf-8"></script>
+<script src="estados/rs.js" charset="utf-8"></script>
+<script src="estados/ro.js" charset="utf-8"></script>
+<script>
+/*__APP__*/
+</script>

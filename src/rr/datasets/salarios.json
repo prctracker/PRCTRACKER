@@ -1,0 +1,15 @@
+{
+  "description": "Remuneração média dos médicos efetivos e temporários da SESAU-RR (folha de ago/2026), valor do plantão de 6h do credenciamento estadual, planos de cargos e seleções municipais e bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json",
+    "url": "/_blob/cf70af80cf0c87d74eb5e6c3436fec38"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

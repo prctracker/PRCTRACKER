@@ -1,0 +1,15 @@
+{
+  "description": "Servidores ativos no cargo de Médico na SESAU e na Uncisal em agosto de 2024, 2025 e 2026: quantidade, folha bruta do mês e média por médico (Portal da Transparência de Alagoas).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json",
+    "url": "/_blob/e0bd493cc45cc88770452e5eeab5de26"
+  },
+  "title": "Folha de médicos efetivos",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

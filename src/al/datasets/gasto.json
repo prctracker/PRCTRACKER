@@ -1,0 +1,15 @@
+{
+  "description": "Valores pagos pela SESAU por ano: plantões extras de médicos e de outros profissionais (pessoa física), folha de vencimentos e vantagens fixas, encargos sobre serviços de PF e serviços médico-hospitalares de PJ (Portal da Transparência de Alagoas).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json",
+    "url": "/_blob/0cb8b97c06b5e24b7e3ca1c998162023"
+  },
+  "title": "Plantões extras x folha da SESAU",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

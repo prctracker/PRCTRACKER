@@ -1,0 +1,15 @@
+{
+  "description": "Números pontuais de editais, reportagens, Ministério da Saúde, CNES, IBGE e ANS: concurso da SES-RS, vínculos não estatutários na rede estadual, Mais Médicos, IPE Saúde, população e planos de saúde, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json",
+    "url": "/_blob/2ad82f3ddd89994509b14322d8c30aee"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-11-02T14:10:00-03:00",
+    "by": "Claude"
+  }
+}

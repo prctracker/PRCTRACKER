@@ -1,0 +1,15 @@
+{
+  "description": "Médicos com vínculo ativo no CNES por município (TabNet Recursos Humanos, competência set/2026), com população IBGE 2025, região de saúde e idade (Censo 2022). Um médico que atua em mais de um município conta em cada um.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "municipios.json",
+    "url": "/_blob/dc407ae1bc10eb5fce431fe12abe67e6"
+  },
+  "title": "Médicos por município",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

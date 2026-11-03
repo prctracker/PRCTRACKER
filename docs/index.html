@@ -1,0 +1,1839 @@
+<title>Atlas Médico do Brasil</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" href="assets/prc-icon-32.png">
+<meta name="description" content="Base de consulta dos relatórios de mapeamento do mercado público de serviços médicos por estado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap">
+<style>
+/* Layout: PRC Tracker identity. A deep-navy hero band carries the map of Brazil with the brand's orbit; below it, light
+   evidence sections on a 1240px measure, each led by one large number. Every figure opens its source. */
+:root {
+  --paper: #F4F7FB;
+  --surface: #FFFFFF;
+  --sunk: #E9EFF7;
+  --ink: #0B173B;
+  --ink-2: #46557A;
+  --ink-3: #7A88A8;
+  --rule: #DDE4EF;
+  --rule-2: #C3CEE0;
+  --petrol: #0A7CC4;          /* brand blue (the "Tracker" blue) */
+  --petrol-ink: #10205C;      /* brand navy */
+  --petrol-wash: #E2F0FA;
+  --brand-sky: #0AA6E6;
+  --brand-cyan: #19DDF2;
+  --brand-teal: #05A7B9;      /* the cross */
+  --team: #D98200;
+  --team-wash: #FFF2DC;
+  --ok: #1F8A5B;
+  --warn: #B7791F;
+  --bad: #D14343;
+  --s1: #0A7CC4; --s2: #05A7B9; --s3: #10205C; --s4: #5DC3EE; --s5: #6A5FD8; --s6: #0E8C7C; --s7: #8693AF; --s8: #B8C6DE;
+  --st-to: #05A7B9; --st-rr: #0AA6E6; --st-al: #2F62D6; --st-rs: #5B4FD0; --st-ro: #8446C4;
+  --map-off: #E2E8F1;
+  --map-off-line: #C9D3E3;
+  --chart-muted: #C9D3E3;
+  --hero-bg: #0B173B;
+  --hero-bg-2: #13306F;
+  --hero-ink: #EEF4FF;
+  --hero-ink-2: #A9B9DC;
+  --hero-ink-3: #7183B0;
+  --hero-off: #172A5E;
+  --hero-line: #24396F;
+  --shadow: 0 1px 2px rgba(11, 23, 59, .06), 0 12px 32px rgba(11, 23, 59, .10);
+  --display: "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure: 1240px;
+  --mast-h: 64px;
+  --stick: 65px;
+  --r: 12px;
+  --st: var(--petrol);
+
+  /* Tokens the state dashboards are written against, mapped onto this site's palette. */
+  --color-fg: var(--ink);
+  --color-fg-muted: var(--ink-2);
+  --color-bg: var(--surface);
+  --color-panel: var(--surface);
+  --color-border-line: var(--rule);
+  --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad);
+  --cds-surface-popover: var(--surface);
+  --cds-border: var(--rule-2);
+  --cds-shadow-popover: var(--shadow);
+  --cds-text-secondary: var(--ink-2);
+  --cds-chart-muted: var(--chart-muted);
+  --cds-chart-grid: var(--rule);
+  --cds-chart-axis: var(--rule-2);
+  --cds-chart-reference: var(--ink-3);
+  --cds-chart-status-critical: var(--bad);
+  --font-anthropic-sans: var(--sans);
+  --font-anthropic-serif: var(--display);
+  --cds-font-size-title: 1.75rem;
+  --cds-font-size-heading: 1.0625rem;
+  --cds-font-size-body: .975rem;
+  --cds-font-size-caption: .8125rem;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-xl: 40px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 9px; --cds-pad-md: 16px; --cds-pad-lg: 22px;
+  --cds-radius: 8px;
+  --cds-dur-slow: .35s;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #07102A; --surface: #0D1A3D; --sunk: #13234D; --ink: #E8EFFC; --ink-2: #A7B5D5; --ink-3: #7484AA;
+    --rule: #1D2C5A; --rule-2: #2B3C70; --petrol: #3EAAF0; --petrol-ink: #B5DBF8; --petrol-wash: #11305E;
+    --brand-sky: #45C3F5; --brand-cyan: #3FE6F7; --brand-teal: #25C4D0;
+    --team: #F5B23F; --team-wash: #3A2A0C; --ok: #5BC48F; --warn: #E0A64B; --bad: #F07474;
+    --s1: #3EAAF0; --s2: #25C4D0; --s3: #93A9F2; --s4: #86D6F6; --s5: #A39BF4; --s6: #4FC7B3; --s7: #9AA8C6; --s8: #5F7096;
+    --st-to: #25C4D0; --st-rr: #45C3F5; --st-al: #6D93F0; --st-rs: #9187EE; --st-ro: #B58BEE;
+    --map-off: #14244F; --map-off-line: #233667; --chart-muted: #2E3F70;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #07102A; --surface: #0D1A3D; --sunk: #13234D; --ink: #E8EFFC; --ink-2: #A7B5D5; --ink-3: #7484AA;
+  --rule: #1D2C5A; --rule-2: #2B3C70; --petrol: #3EAAF0; --petrol-ink: #B5DBF8; --petrol-wash: #11305E;
+  --brand-sky: #45C3F5; --brand-cyan: #3FE6F7; --brand-teal: #25C4D0;
+  --team: #F5B23F; --team-wash: #3A2A0C; --ok: #5BC48F; --warn: #E0A64B; --bad: #F07474;
+  --s1: #3EAAF0; --s2: #25C4D0; --s3: #93A9F2; --s4: #86D6F6; --s5: #A39BF4; --s6: #4FC7B3; --s7: #9AA8C6; --s8: #5F7096;
+  --st-to: #25C4D0; --st-rr: #45C3F5; --st-al: #6D93F0; --st-rs: #9187EE; --st-ro: #B58BEE;
+  --map-off: #14244F; --map-off-line: #233667; --chart-muted: #2E3F70;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .4);
+  color-scheme: dark;
+}
+:root { --mx-team: var(--team); }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15.5px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--surface); }
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--petrol); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; border-radius: 4px; }
+.mx-wrap { max-width: var(--measure); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mx-num { font-variant-numeric: tabular-nums; }
+.mx-mono { font-family: var(--mono); font-size: .8em; letter-spacing: .01em; }
+.mx-eyebrow { font-family: var(--display); font-weight: 600; font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--petrol); margin: 0; }
+.mx-h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.45rem, 2.2vw, 1.95rem); line-height: 1.15; letter-spacing: -.018em; margin: 0; text-wrap: balance; }
+.mx-h3 { font-size: 1.05rem; font-weight: 600; margin: 0; line-height: 1.3; text-wrap: balance; }
+.mx-lead { color: var(--ink-2); max-width: 66ch; margin: 0; }
+.mx-note { color: var(--ink-3); font-size: .8125rem; margin: 0; line-height: 1.5; }
+.mx-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Masthead */
+.mx-mast { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
+.mx-mast-in { display: flex; align-items: center; gap: 20px; min-height: var(--mast-h); }
+.mx-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); flex: none; }
+.mx-brand:hover { color: var(--ink); }
+.mx-brand svg { flex: none; }
+.mx-brand b { font-family: var(--display); font-weight: 600; font-size: 1.16rem; letter-spacing: -.01em; white-space: nowrap; }
+.mx-brand small { font-family: var(--mono); font-size: .66rem; color: var(--ink-3); letter-spacing: .06em; border: 1px solid var(--rule-2); border-radius: 4px; padding: 1px 5px; }
+.mx-nav { display: flex; gap: 2px; align-items: center; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.mx-nav::-webkit-scrollbar { display: none; }
+.mx-nav a, .mx-nav button.mx-navbtn { flex: none; text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--ink-2); padding: 7px 11px; border-radius: 6px; border: 0; background: none; cursor: pointer; white-space: nowrap; }
+.mx-nav a:hover, .mx-nav button.mx-navbtn:hover { color: var(--ink); background: var(--sunk); }
+.mx-nav a[aria-current="page"] { color: var(--ink); background: var(--sunk); }
+.mx-nav .mx-navsep { width: 1px; height: 18px; background: var(--rule); margin: 0 6px; flex: none; }
+.mx-nav .mx-navuf { font-family: var(--mono); font-size: .78rem; letter-spacing: .04em; }
+.mx-actions { display: flex; gap: 6px; align-items: center; flex: none; }
+.mx-iconbtn { display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink); cursor: pointer; font-size: .84rem; font-weight: 500; white-space: nowrap; }
+.mx-iconbtn:hover { border-color: var(--ink-3); }
+.mx-iconbtn[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.mx-iconbtn svg { flex: none; }
+@media (max-width: 1380px) { .mx-src-label { display: none; } }
+@media (max-width: 480px) { .mx-brand small { display: none; } .mx-brand b { font-size: 1.05rem; } }
+@media (max-width: 860px) {
+  .mx-mast-in { flex-wrap: wrap; gap: 4px 12px; padding-block: 8px 4px; }
+  .mx-nav { order: 3; flex-basis: 100%; margin: 0 -6px; }
+  .mx-actions { margin-left: auto; }
+  .mx-src-label { display: none; }
+}
+
+/* Pages */
+.mx-page { padding-block: 0 72px; }
+.mx-band { padding-block: 56px; }
+.mx-band + .mx-band { border-top: 1px solid var(--rule); }
+.mx-sechead { display: grid; gap: 10px; margin-bottom: 28px; max-width: 78ch; }
+.mx-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 20px; }
+.mx-panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); padding: 22px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.mx-panel-head { display: grid; gap: 6px; }
+
+/* Home hero */
+.mx-hero { padding-block: 40px 28px; }
+.mx-hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
+@media (max-width: 980px) { .mx-hero-grid { grid-template-columns: 1fr; gap: 28px; } }
+.mx-hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.25rem, 4.3vw, 3.55rem); line-height: 1.04; letter-spacing: -.02em; margin: 14px 0 16px; text-wrap: balance; }
+.mx-hero h1 em { font-style: italic; color: var(--petrol); }
+.mx-hero .mx-lead { font-size: 1.04rem; }
+.mx-cover { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--hero-line); margin-top: 30px; }
+.mx-cover div { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--hero-line); display: grid; gap: 3px; }
+.mx-cover b { font-family: var(--display); font-weight: 300; font-size: 1.45rem; letter-spacing: -.02em; white-space: nowrap; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.mx-cover b { color: var(--hero-ink); }
+.mx-cover span { font-size: .78rem; color: var(--hero-ink-2); line-height: 1.35; }
+@media (max-width: 520px) { .mx-cover { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.mx-states { margin-top: 26px; display: grid; gap: 0; }
+.mx-states h2 { margin-bottom: 8px; }
+.mx-staterow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 13px 4px; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+.mx-staterow:first-of-type { border-top: 1px solid var(--rule); }
+.mx-staterow:hover { background: var(--surface); color: var(--ink); }
+.mx-staterow:hover .mx-arrow { transform: translateX(3px); color: var(--petrol); }
+.mx-uf { font-family: var(--mono); font-size: .78rem; font-weight: 500; letter-spacing: .04em; width: 38px; height: 28px; display: grid; place-items: center; border-radius: 6px; color: #fff; background: var(--sw, var(--petrol)); }
+:root[data-theme="dark"] .mx-uf { color: var(--paper); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-uf { color: var(--paper); } }
+.mx-staterow b { font-family: var(--display); font-weight: 500; font-size: 1.2rem; display: block; line-height: 1.2; }
+.mx-staterow small { display: block; color: var(--ink-2); font-size: .8rem; line-height: 1.4; }
+.mx-arrow { color: var(--ink-3); transition: transform .2s, color .2s; }
+
+/* Map */
+.mx-mapcard { position: relative; }
+.mx-mapbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.mx-seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; background: var(--sunk); border-radius: 9px; }
+.mx-seg button { border: 0; background: none; padding: 6px 11px; border-radius: 7px; font-size: .82rem; font-weight: 500; color: var(--ink-2); cursor: pointer; }
+.mx-seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.mx-map { position: relative; width: 100%; }
+.mx-map svg { display: block; width: 100%; height: auto; max-height: 76vh; overflow: visible; }
+.mx-map .uf-off { fill: var(--map-off); stroke: var(--surface); stroke-width: 1.2; }
+.mx-map .uf-on { stroke: var(--surface); stroke-width: 1.6; cursor: pointer; transition: filter .2s; }
+.mx-map .uf-on:hover, .mx-map .uf-on:focus-visible { filter: brightness(1.12) saturate(1.1); outline: none; }
+.mx-map .uf-on:focus-visible { stroke: var(--ink); stroke-width: 2.5; }
+.mx-map .grat { stroke: var(--rule); stroke-width: .8; fill: none; }
+.mx-map .grat-key { stroke: var(--ink-3); stroke-dasharray: 4 5; stroke-width: .9; fill: none; }
+.mx-map text { font-family: var(--sans); pointer-events: none; }
+.mx-map .lab-off { font-size: 12px; fill: var(--ink-3); font-family: var(--mono); }
+.mx-map .lab-on { font-size: 17px; font-weight: 600; fill: #fff; font-family: var(--mono); }
+.mx-map .lab-val { font-size: 14px; fill: #fff; font-family: var(--sans); font-weight: 500; }
+.mx-map .lab-out { fill: var(--ink); }
+.mx-map .lab-keytext { font-size: 11px; fill: var(--hero-ink-3); letter-spacing: .12em; text-transform: uppercase; font-family: var(--display); font-weight: 600; }
+.mx-maplegend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--ink-2); align-items: center; }
+.mx-sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+
+/* Tooltip */
+.mx-tip { position: fixed; z-index: 70; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--rule-2); box-shadow: var(--shadow); border-radius: 9px; padding: 10px 12px; font-size: .82rem; line-height: 1.45; max-width: min(19rem, calc(100vw - 32px)); }
+.mx-tip h4 { margin: 0 0 4px; font-size: .9rem; font-weight: 600; }
+.mx-tip .row { display: flex; justify-content: space-between; gap: 14px; }
+.mx-tip .row span { color: var(--ink-2); }
+.mx-tip .row b { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.mx-tip .cta { margin-top: 6px; color: var(--petrol); font-weight: 600; }
+
+/* Panorama */
+.mx-ledger { display: grid; gap: 0; }
+.mx-lrow { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.mx-lrow:first-child { border-top: 1px solid var(--rule); }
+@media (max-width: 560px) { .mx-lrow { grid-template-columns: 1fr; gap: 6px; } }
+.mx-lname { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.mx-bartrack { position: relative; height: 26px; }
+.mx-bar { position: absolute; left: 0; top: 4px; height: 18px; border-radius: 3px; background: var(--petrol); }
+.mx-barval { position: absolute; top: 3px; font-variant-numeric: tabular-nums; font-weight: 600; font-size: .9rem; white-space: nowrap; }
+.mx-refline { position: absolute; top: -6px; bottom: -6px; width: 0; border-left: 1.5px dashed var(--ink-3); }
+.mx-lsub { grid-column: 2; font-size: .8rem; color: var(--ink-2); margin-top: 2px; }
+@media (max-width: 560px) { .mx-lsub { grid-column: 1; } }
+.mx-stack { display: flex; height: 22px; border-radius: 4px; overflow: hidden; background: var(--sunk); }
+.mx-stack i { display: block; height: 100%; position: relative; }
+.mx-stack i + i { box-shadow: inset 1px 0 0 var(--surface); }
+.mx-stack i span { position: absolute; inset: 0; display: grid; place-items: center; font-style: normal; font-size: .72rem; font-weight: 600; color: #fff; }
+.mx-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--ink-2); }
+.mx-chart { position: relative; width: 100%; min-width: 0; }
+.mx-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.mx-chart text { font-family: var(--sans); }
+.mx-toggle { display: inline-flex; align-items: center; gap: 9px; font-size: .86rem; color: var(--ink-2); cursor: pointer; user-select: none; }
+.mx-toggle input { appearance: none; -webkit-appearance: none; width: 34px; height: 20px; border-radius: 20px; background: var(--rule-2); position: relative; cursor: pointer; transition: background .2s; flex: none; margin: 0; }
+.mx-toggle input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); transition: transform .2s; }
+.mx-toggle input:checked { background: var(--team); }
+.mx-toggle input:checked::after { transform: translateX(14px); }
+.mx-teamdot { display: inline-block; width: 10px; height: 10px; transform: rotate(45deg); background: var(--team); margin-right: 7px; vertical-align: 0; border-radius: 1px; }
+
+/* Matrix tables */
+.mx-tablewrap { overflow-x: auto; min-width: 0; border-top: 1px solid var(--ink); }
+.mx-table { width: 100%; border-collapse: collapse; font-size: .875rem; font-variant-numeric: tabular-nums; }
+.mx-table th, .mx-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.mx-table thead th { font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; white-space: nowrap; }
+.mx-table td.n, .mx-table th.n { text-align: right; white-space: nowrap; }
+.mx-table tbody th { font-weight: 500; }
+.mx-table .grp th { font-family: var(--display); font-size: 1rem; font-weight: 700; padding-top: 20px; color: var(--ink); border-bottom-color: var(--ink-3); }
+.mx-table td small { display: block; color: var(--ink-3); font-size: .74rem; line-height: 1.35; white-space: normal; }
+.mx-heat td.n { position: relative; }
+.mx-cell-na { color: var(--ink-3); }
+
+/* News */
+.mx-filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
+.mx-chip { border: 1px solid var(--rule-2); background: var(--surface); border-radius: 999px; padding: 6px 13px; font-size: .84rem; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.mx-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.mx-input, .mx-select, .mx-textarea { border: 1px solid var(--rule-2); background: var(--surface); border-radius: 8px; padding: 9px 11px; font-size: .9rem; width: 100%; min-width: 0; }
+.mx-input:focus, .mx-select:focus, .mx-textarea:focus { outline: 2px solid var(--petrol); outline-offset: 0; border-color: transparent; }
+.mx-search { max-width: 22rem; }
+.mx-newsmonth { font-family: var(--display); font-size: 1.05rem; font-weight: 700; letter-spacing: -.005em; margin: 30px 0 4px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+.mx-newsitem { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+@media (max-width: 560px) { .mx-newsitem { grid-template-columns: 1fr; gap: 6px; } }
+.mx-newsdate { font-family: var(--mono); font-size: .78rem; color: var(--ink-2); padding-top: 3px; }
+.mx-newsmeta { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: .78rem; color: var(--ink-2); margin-bottom: 5px; }
+.mx-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .04em; padding: 2px 7px; border-radius: 4px; background: var(--sunk); color: var(--ink-2); }
+.mx-tag.uf { color: var(--petrol-ink); background: var(--petrol-wash); font-weight: 500; }
+.mx-tag.auto { background: var(--petrol-wash); color: var(--petrol-ink); }
+.mx-tag.team { background: var(--team-wash); color: var(--team); }
+.mx-newsitem a.mx-newslink { font-size: 1.02rem; line-height: 1.45; text-decoration: none; color: var(--ink); }
+.mx-newsitem a.mx-newslink:hover { text-decoration: underline; color: var(--ink); }
+
+/* Team form */
+#mx-team-list .mx-table { min-width: 1120px; }
+.mx-teamgrid { display: grid; grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (max-width: 1000px) { .mx-teamgrid { grid-template-columns: 1fr; } }
+.mx-form { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--stick) + 16px); }
+@media (max-width: 1000px) { .mx-form { position: static; } }
+.mx-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mx-field { display: grid; gap: 5px; min-width: 0; }
+.mx-field.full { grid-column: 1 / -1; }
+.mx-field label { font-size: .8rem; font-weight: 600; color: var(--ink); }
+.mx-field label i { font-style: normal; color: var(--team); }
+.mx-field .hint { font-size: .74rem; color: var(--ink-3); }
+.mx-preview { border-radius: 8px; background: var(--team-wash); color: var(--ink); padding: 12px 14px; font-size: .88rem; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.mx-preview b { font-family: var(--display); font-weight: 400; font-size: 1.45rem; color: var(--team); font-variant-numeric: tabular-nums; }
+.mx-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 9px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-weight: 600; font-size: .9rem; cursor: pointer; text-decoration: none; }
+.mx-btn:hover { color: var(--paper); filter: brightness(1.15); }
+.mx-btn.ghost { background: var(--surface); color: var(--ink); border-color: var(--rule-2); }
+.mx-btn.ghost:hover { color: var(--ink); border-color: var(--ink-3); filter: none; }
+.mx-btn.sm { height: 32px; padding: 0 11px; font-size: .8rem; font-weight: 500; border-radius: 7px; }
+.mx-btn[disabled] { opacity: .45; cursor: not-allowed; }
+.mx-msg { font-size: .84rem; border-radius: 8px; padding: 10px 12px; background: var(--sunk); color: var(--ink-2); }
+.mx-msg.err { background: color-mix(in srgb, var(--bad) 14%, var(--surface)); color: var(--ink); }
+.mx-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.mx-kpi { padding: 12px 14px 14px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; align-content: start; }
+.mx-kpi span { font-size: .78rem; color: var(--ink-2); }
+.mx-kpi b { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.mx-kpi small { font-size: .76rem; color: var(--ink-3); }
+.mx-empty { border: 1px dashed var(--rule-2); border-radius: var(--r); padding: 28px; text-align: left; color: var(--ink-2); display: grid; gap: 6px; }
+.mx-empty b { color: var(--ink); font-family: var(--display); font-size: 1rem; font-weight: 700; }
+.mx-rowacts { display: flex; gap: 6px; flex-wrap: wrap; }
+tr.is-arch td { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rule-2); }
+tr.is-arch td.acts { text-decoration: none; }
+
+/* Fontes page */
+.mx-layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.mx-layer { padding: 18px 20px 20px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; }
+.mx-layer h3 { font-family: var(--display); font-weight: 700; font-size: 1.08rem; margin: 0; }
+.mx-layer p { margin: 0; color: var(--ink-2); font-size: .9rem; }
+
+/* State page */
+.mx-statehero { padding-block: 34px 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+@media (max-width: 760px) { .mx-statehero { grid-template-columns: 1fr; } .mx-locator { display: none; } }
+.mx-statehero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -.02em; margin: 10px 0 12px; }
+.mx-statemeta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .84rem; color: var(--ink-2); }
+.mx-statemeta b { color: var(--ink); font-weight: 600; }
+.mx-statebar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 20px; }
+.mx-statebar .mx-spacer { flex: 1; }
+.mx-locator svg { width: 132px; height: auto; display: block; }
+.mx-locator path { fill: var(--map-off); stroke: var(--surface); stroke-width: 6; }
+.mx-locator path.on { fill: var(--petrol); }
+.mx-locator circle { fill: none; stroke: var(--petrol); stroke-width: 10; }
+.mx-loading { display: grid; gap: 14px; padding-block: 24px; }
+.mx-loading .bar { height: 3px; background: var(--sunk); border-radius: 3px; overflow: hidden; }
+.mx-loading .bar i { display: block; height: 100%; width: 0; background: var(--petrol); transition: width .25s; }
+
+/* The original dashboards, restyled to the site */
+#mx-state-root .tm { gap: 48px; }
+#mx-state-root .tm-title { display: none; }
+#mx-state-root .tm-take { font-family: var(--sans); font-size: clamp(1.08rem, 1.7vw, 1.25rem); line-height: 1.6; max-width: 62ch; color: var(--ink); }
+#mx-state-root .tm-take b { font-weight: 700; color: var(--st); }
+#mx-state-root .tm-nav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--stick)); z-index: 20; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding-block: 10px; margin-block: -20px -8px; border-bottom: 1px solid var(--rule); flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+#mx-state-root .tm-nav::-webkit-scrollbar { display: none; }
+#mx-state-root .tm-nav button { border: 0; background: none; color: var(--ink-2); font-weight: 500; white-space: nowrap; border-radius: 6px; padding: 6px 10px; }
+#mx-state-root .tm-nav button:hover { background: var(--sunk); color: var(--ink); }
+#mx-state-root .tm-nav button[aria-current="true"] { background: var(--st); color: #fff; }
+#mx-state-root .tm-sec { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--stick) + 64px); padding-top: 8px; }
+#mx-state-root .tm-sec-h { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.85rem); letter-spacing: -.018em; padding-top: 18px; border-top: 2px solid var(--ink); }
+#mx-state-root .tm-sec-p { color: var(--ink-2); max-width: 74ch; }
+#mx-state-root .tm-card { border-radius: var(--r); border-color: var(--rule); padding: 20px 22px; }
+#mx-state-root .tm-card-h { font-size: 1.02rem; }
+#mx-state-root .tm-kpis { gap: 0; border-top: 1px solid var(--ink); }
+#mx-state-root .tm-kpi { background: none; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 14px 16px 16px 0; }
+#mx-state-root .tm-kpi-v { font-weight: 300; letter-spacing: -.02em; }
+#mx-state-root .tm-kpis { border-top: 2px solid var(--st); }
+#mx-state-root .tm-tbl th { background: var(--surface); }
+#mx-state-root .tm-tbl tbody tr:hover td { background: var(--sunk); }
+#mx-state-root .tm-search { border-radius: 8px; padding: 8px 11px; }
+#mx-state-root .tm-seg button { border-radius: 7px; }
+#mx-state-root .tm-tip { position: absolute; }
+.dash-skeleton { position: relative; min-height: 160px; border-radius: 8px; background: linear-gradient(100deg, var(--sunk) 30%, color-mix(in srgb, var(--sunk) 55%, var(--surface)) 50%, var(--sunk) 70%) 0 0 / 300% 100%; animation: mxshimmer 1.4s linear infinite; }
+span.dash-skeleton, b.dash-skeleton { min-height: 1.1em; display: inline-block; min-width: 3ch; background: none; animation: none; }
+@keyframes mxshimmer { to { background-position: -150% 0; } }
+@keyframes mxpop { from { opacity: .35; } }
+.mx-teamcard { border-color: color-mix(in srgb, var(--team) 40%, var(--rule)) !important; }
+.mx-teamcard .tm-card-h { display: flex; align-items: center; gap: 8px; }
+.mx-dsrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 18px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: center; }
+.mx-dsrow b { font-weight: 600; }
+.mx-dsrow p { margin: 3px 0 0; color: var(--ink-2); font-size: .82rem; }
+@media (max-width: 640px) { .mx-dsrow { grid-template-columns: 1fr; } }
+
+/* Source mode and drawer */
+body.mx-src-mode [data-source], body.mx-src-mode [data-fonte] { cursor: help; outline: 1px dashed color-mix(in srgb, var(--petrol) 55%, transparent); outline-offset: 2px; border-radius: 3px; }
+body.mx-src-mode [data-source]:hover, body.mx-src-mode [data-fonte]:hover { outline: 2px solid var(--petrol); background: color-mix(in srgb, var(--petrol) 7%, transparent); }
+.mx-srcbanner { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 55; background: var(--ink); color: var(--paper); border-radius: 999px; padding: 9px 10px 9px 18px; font-size: .85rem; display: flex; gap: 12px; align-items: center; box-shadow: var(--shadow); max-width: calc(100vw - 32px); }
+.mx-srcbanner button { border: 0; border-radius: 999px; padding: 6px 12px; background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 600; font-size: .8rem; }
+.mx-drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 80; width: min(34rem, 100vw); background: var(--surface); border-left: 1px solid var(--rule-2); box-shadow: var(--shadow); display: flex; flex-direction: column; transform: translateX(102%); transition: transform .28s cubic-bezier(.2,.7,.2,1); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.mx-drawer.open { transform: none; }
+.mx-drawer header { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px solid var(--rule); }
+.mx-drawer header h2 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin: 4px 0 0; line-height: 1.2; }
+.mx-drawer .body { overflow-y: auto; padding: 16px 20px 28px; display: grid; gap: 18px; align-content: start; }
+.mx-drawer .blk { display: grid; gap: 8px; }
+.mx-drawer .blk h3 { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0; font-weight: 500; }
+.mx-drawer p { margin: 0; color: var(--ink-2); font-size: .9rem; }
+.mx-drawer pre { margin: 0; font-family: var(--mono); font-size: .74rem; line-height: 1.5; background: var(--sunk); border-radius: 8px; padding: 12px; overflow-x: auto; white-space: pre; color: var(--ink); }
+.mx-drawer .dl { display: flex; flex-wrap: wrap; gap: 8px; }
+.mx-prev { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; }
+.mx-prev table { border-collapse: collapse; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.mx-prev th, .mx-prev td { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: left; white-space: nowrap; max-width: 16rem; overflow: hidden; text-overflow: ellipsis; }
+.mx-prev th { font-weight: 600; background: var(--sunk); position: sticky; top: 0; }
+.mx-prev tr.hit td { background: var(--petrol-wash); }
+.mx-kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; font-size: .85rem; }
+.mx-kv dt { color: var(--ink-3); }
+.mx-kv dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.mx-scrim { position: fixed; inset: 0; z-index: 75; background: rgba(5, 14, 17, .32); }
+.mx-toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; z-index: 90; background: var(--ink); color: var(--paper); padding: 11px 16px; border-radius: 10px; font-size: .88rem; box-shadow: var(--shadow); transition: opacity .2s, transform .2s; pointer-events: none; max-width: calc(100vw - 32px); }
+.mx-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+
+/* Brasil page */
+.mx-basenote { margin: 16px 0 0; font-size: .8rem; color: var(--hero-ink-3); line-height: 1.5; max-width: 54ch; }
+.mx-story { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 56px; align-items: center; }
+@media (max-width: 920px) { .mx-story { grid-template-columns: 1fr; gap: 24px; } }
+.mx-story-text { display: grid; gap: 12px; align-content: start; }
+.mx-story-vis { min-width: 0; }
+.mx-big { margin: 8px 0 0; font-family: var(--display); font-weight: 300; font-size: clamp(3.6rem, 7.6vw, 6rem); line-height: .92; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.mx-big small { font-family: var(--sans); font-size: .95rem; letter-spacing: 0; color: var(--ink-2); font-weight: 500; }
+.mx-story-p { margin: 0; color: var(--ink-2); max-width: 46ch; font-size: 1rem; }
+.mx-story-p b { color: var(--ink); font-weight: 600; }
+.mx-faixas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr)); gap: 0 24px; margin-top: 16px; border-top: 1px solid var(--rule); }
+.mx-faixas div { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: .84rem; }
+.mx-faixas b { font-variant-numeric: tabular-nums; font-weight: 600; }
+.mx-faixas span.p { display: block; color: var(--ink-3); font-size: .76rem; font-variant-numeric: tabular-nums; }
+.mx-bigbar { display: flex; height: 54px; border-radius: 6px; overflow: hidden; background: var(--sunk); }
+.mx-bigbar i { display: flex; align-items: center; justify-content: center; font-style: normal; font-weight: 600; font-size: .86rem; color: #fff; min-width: 0; overflow: hidden; }
+.mx-bigbar i + i { box-shadow: inset 2px 0 0 var(--paper); }
+.mx-vlist { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 0 24px; margin-top: 16px; border-top: 1px solid var(--rule); }
+.mx-vlist div { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: .86rem; }
+.mx-vlist b { font-variant-numeric: tabular-nums; }
+.mx-vlist span.c { display: block; color: var(--ink-3); font-size: .76rem; font-variant-numeric: tabular-nums; }
+.mx-maplinks { display: flex; flex-wrap: wrap; gap: 6px; }
+.mx-maplinks a { text-decoration: none; font-size: .8rem; font-weight: 500; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--rule-2); color: var(--ink); background: var(--surface); }
+.mx-maplinks a:hover { border-color: var(--petrol); color: var(--petrol); }
+
+footer.mx-foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; color: var(--ink-3); font-size: .8rem; }
+footer.mx-foot .mx-wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* ===================== PRC Tracker identity ===================== */
+:root { --fx0: #C93838; --fx1: #E4705E; --fx2: #F2B4A3; --fx3: #A3D6F3; --fx4: #3E9EDC; --fx5: #10205C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fx0: #F07474; --fx1: #C9766A; --fx2: #7A4E55; --fx3: #22528F; --fx4: #2F86D0; --fx5: #79C6F6; } }
+:root[data-theme="dark"] { --fx0: #F07474; --fx1: #C9766A; --fx2: #7A4E55; --fx3: #22528F; --fx4: #2F86D0; --fx5: #79C6F6; }
+.mx-brand { gap: 14px; }
+.mx-brand img { display: block; height: 38px; width: auto; }
+.mx-brand .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-brand .logo-light { display: none; } :root:not([data-theme="light"]) .mx-brand .logo-dark { display: block; } }
+:root[data-theme="dark"] .mx-brand .logo-light { display: none; }
+:root[data-theme="dark"] .mx-brand .logo-dark { display: block; }
+.mx-product { display: grid; gap: 2px; line-height: 1.1; padding-left: 14px; border-left: 1px solid var(--rule-2); }
+.mx-product b { font-family: var(--display); font-weight: 700; font-size: .9rem; letter-spacing: -.005em; color: var(--ink); white-space: nowrap; }
+.mx-product small { border: 0; padding: 0; font-family: var(--display); font-weight: 600; font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--petrol); }
+@media (max-width: 1300px) { .mx-product { display: none; } }
+@media (max-width: 1500px) { .mx-src-label { display: none; } }
+@media (max-width: 480px) { .mx-brand img { height: 30px; } }
+.mx-nav a, .mx-nav button.mx-navbtn { font-family: var(--display); font-weight: 600; font-size: .82rem; }
+.mx-nav .mx-navuf { font-family: var(--display); letter-spacing: .06em; font-size: .76rem; }
+.mx-nav a[aria-current="page"] { background: var(--petrol-wash); color: var(--petrol-ink); }
+.mx-nav a.mx-navuf[aria-current="page"] { background: var(--st); color: #fff; }
+.mx-iconbtn { font-family: var(--display); font-weight: 600; font-size: .8rem; }
+.mx-iconbtn[aria-pressed="true"] { background: var(--petrol); border-color: var(--petrol); color: #fff; }
+.mx-btn { font-family: var(--display); font-weight: 600; letter-spacing: .005em; background: var(--petrol-ink); border-color: var(--petrol-ink); }
+:root[data-theme="dark"] .mx-btn:not(.ghost) { background: var(--petrol); border-color: var(--petrol); color: #07102A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-btn:not(.ghost) { background: var(--petrol); border-color: var(--petrol); color: #07102A; } }
+.mx-btn.ghost { background: var(--surface); }
+
+.mx-heroband { position: relative; overflow: hidden; color: var(--hero-ink); background: radial-gradient(1100px 640px at 78% 40%, var(--hero-bg-2) 0%, var(--hero-bg) 64%); }
+.mx-heroband::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, #19DDF2 45%, transparent); opacity: .55; }
+.mx-heroband .mx-eyebrow { color: #3FE6F7; }
+.mx-hero { padding-block: 60px 52px; }
+.mx-hero-grid { align-items: center; }
+.mx-hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 5.2vw, 4.4rem); line-height: .98; letter-spacing: -.04em; color: var(--hero-ink); margin: 18px 0 20px; }
+.mx-hero h1 em { display: inline-block; font-style: italic; font-weight: 800; background: linear-gradient(100deg, #3FE6F7 0%, #0AA6E6 55%, #2F7FD8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .1em; }
+.mx-hero .mx-lead { color: var(--hero-ink-2); font-size: 1.06rem; max-width: 44ch; }
+.mx-heroband .mx-map .uf-off { fill: var(--hero-off); stroke: var(--hero-line); stroke-width: 1.1; }
+.mx-heroband .mx-map .uf-on { stroke: #0B173B; stroke-width: 1.4; }
+.mx-heroband .mx-map .uf-on:focus-visible { stroke: #fff; stroke-width: 2.5; }
+.mx-heroband .mx-map .grat { stroke: rgba(130, 160, 230, .09); }
+.mx-heroband .mx-map .grat-key { stroke: rgba(130, 170, 240, .34); }
+.mx-heroband .mx-map .lab-off { fill: var(--hero-ink-3); font-size: 11px; font-family: var(--display); font-weight: 600; letter-spacing: .05em; }
+.mx-heroband .mx-map .lab-on { fill: #fff; font-family: var(--display); font-weight: 800; font-size: 19px; letter-spacing: .02em; }
+.mx-heroband .mx-map .lab-out { fill: var(--hero-ink); }
+.mx-heroband .mx-maplegend { color: var(--hero-ink-2); margin-top: 6px; }
+.mx-heroband .mx-maplinks a { background: rgba(255, 255, 255, .04); color: var(--hero-ink); border-color: var(--hero-line); font-family: var(--display); font-weight: 600; font-size: .76rem; }
+.mx-heroband .mx-maplinks a:hover { border-color: #3FE6F7; color: #fff; }
+.mx-heroband .mx-sw { border-radius: 50%; }
+body.mx-src-mode .mx-heroband [data-fonte] { outline-color: rgba(63, 230, 247, .6); }
+
+.mx-band { padding-block: 76px; }
+.mx-band + .mx-band { border-top: 1px solid var(--rule); }
+.mx-big { color: var(--petrol-ink); }
+.mx-big small { font-family: var(--display); font-weight: 600; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--petrol); }
+.mx-story-p { font-size: 1.02rem; line-height: 1.65; }
+.mx-bigbar { height: 58px; border-radius: 10px; }
+.mx-bigbar i { font-family: var(--display); font-weight: 700; font-size: .84rem; }
+.mx-faixas, .mx-vlist { border-top-color: var(--rule-2); }
+.mx-kpis { border-top: 2px solid var(--petrol-ink); }
+.mx-kpi span { font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.mx-kpi b { color: var(--petrol-ink); font-weight: 300; font-size: 1.9rem; letter-spacing: -.02em; }
+.mx-tablewrap { border-top: 2px solid var(--petrol-ink); }
+.mx-panel { border-radius: var(--r); }
+.mx-toggle input:checked { background: var(--team); }
+.mx-newsmonth { border-bottom: 2px solid var(--petrol-ink); }
+.mx-newsitem a.mx-newslink { font-weight: 500; }
+.mx-tag { font-family: var(--display); font-weight: 600; letter-spacing: .06em; font-size: .64rem; text-transform: uppercase; }
+.mx-chip { font-family: var(--display); font-weight: 600; font-size: .78rem; }
+.mx-chip[aria-pressed="true"] { background: var(--petrol-ink); border-color: var(--petrol-ink); color: #fff; }
+:root[data-theme="dark"] .mx-chip[aria-pressed="true"] { background: var(--petrol); color: #07102A; border-color: var(--petrol); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mx-chip[aria-pressed="true"] { background: var(--petrol); color: #07102A; border-color: var(--petrol); } }
+.mx-sechead .mx-h2[style] { font-family: var(--display); }
+
+.mx-statehead { position: relative; overflow: hidden; color: var(--hero-ink); background: radial-gradient(900px 520px at 85% 50%, color-mix(in srgb, var(--st) 38%, var(--hero-bg)) 0%, var(--hero-bg) 62%); }
+.mx-statehead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--st) 40%, transparent); }
+.mx-statehead .mx-statehero { padding-block: 44px 40px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+.mx-statehead .mx-eyebrow { color: #3FE6F7; }
+.mx-statehead h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.5rem, 5.6vw, 4.2rem); line-height: 1; letter-spacing: -.04em; margin: 12px 0 14px; color: var(--hero-ink); }
+.mx-statehead .mx-statemeta { color: var(--hero-ink-2); }
+.mx-statehead .mx-statemeta b { color: var(--hero-ink); }
+.mx-silhouette svg { display: block; width: clamp(150px, 19vw, 250px); height: auto; max-height: 230px; overflow: visible; }
+.mx-silhouette path { stroke: rgba(255, 255, 255, .35); stroke-width: 1; vector-effect: non-scaling-stroke; }
+@media (max-width: 760px) { .mx-statehead .mx-statehero { grid-template-columns: 1fr; } .mx-silhouette { display: none; } }
+.mx-statebar { border-bottom: 1px solid var(--rule); }
+
+footer.mx-foot { background: var(--hero-bg); color: var(--hero-ink-2); border-top: 0; padding-block: 48px 56px; font-size: .84rem; }
+footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 1.3fr) minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; }
+@media (max-width: 760px) { footer .mx-foot-in { grid-template-columns: 1fr; } }
+.mx-foot-brand img { display: block; height: 50px; width: auto; margin-bottom: 14px; }
+.mx-foot-brand p, .mx-foot-col p { margin: 0; line-height: 1.6; max-width: 46ch; }
+.mx-foot-col { display: grid; gap: 8px; align-content: start; }
+.mx-foot-col a { color: var(--hero-ink); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: .84rem; }
+.mx-foot-col a:hover { color: #3FE6F7; }
+.mx-foot-h { margin: 0 0 4px !important; font-family: var(--display); font-weight: 600; font-size: .64rem; letter-spacing: .24em; text-transform: uppercase; color: #3FE6F7; }
+</style>
+
+<header class="mx-mast">
+  <div class="mx-wrap mx-mast-in">
+    <a class="mx-brand" href="#inicio" aria-label="PRC Tracker · Atlas Médico do Brasil, página inicial">
+      <img class="logo-light" src="assets/prc-logo.png" alt="PRC Tracker, pesquisa e inteligência" width="141" height="38">
+      <img class="logo-dark" src="assets/prc-logo-dark.png" alt="PRC Tracker, pesquisa e inteligência" width="141" height="38">
+      <span class="mx-product"><b>Atlas Médico do Brasil</b><small id="mx-cover-tag">—</small></span>
+    </a>
+    <nav class="mx-nav" aria-label="Seções do site">
+      <a href="#inicio" data-nav="inicio">Brasil</a>
+      <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#tocantins" data-nav="tocantins" class="mx-navuf">TO</a>
+      <a href="#roraima" data-nav="roraima" class="mx-navuf">RR</a>
+      <a href="#alagoas" data-nav="alagoas" class="mx-navuf">AL</a>
+      <a href="#rio-grande-do-sul" data-nav="rio-grande-do-sul" class="mx-navuf">RS</a>
+      <a href="#rondonia" data-nav="rondonia" class="mx-navuf">RO</a>
+      <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#noticias" data-nav="noticias">Notícias</a>
+      <a href="#valores-da-equipe" data-nav="valores-da-equipe">Valores da equipe</a>
+      <a href="#fontes" data-nav="fontes">Fontes</a>
+    </nav>
+    <div class="mx-actions">
+      <button type="button" class="mx-iconbtn" id="mx-srcbtn" aria-pressed="false" title="Clique em qualquer número, gráfico ou tabela para ver de onde ele vem">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="mx-src-label">Ver de onde vem cada número</span>
+      </button>
+      <button type="button" class="mx-iconbtn" id="mx-themebtn" aria-label="Alternar tema claro e escuro" title="Alternar tema claro e escuro">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ BRASIL ============ -->
+  <div class="mx-page" data-page="inicio" id="mx-pg-inicio">
+    <div class="mx-heroband">
+    <section class="mx-wrap mx-hero">
+      <div class="mx-hero-grid">
+        <div>
+          <p class="mx-eyebrow" id="mx-hero-date">—</p>
+          <h1>Atlas Médico <em>do Brasil</em></h1>
+          <p class="mx-lead">Médicos, vínculos e valores pagos pelo setor público, com a fonte de cada número.</p>
+          <div class="mx-cover" id="mx-cover"></div>
+          <p class="mx-basenote" id="mx-basenote"></p>
+        </div>
+        <div class="mx-mapcard">
+          <div class="mx-map" id="mx-brmap" role="img" aria-label="Mapa do Brasil com os estados que têm relatório"></div>
+          <div class="mx-maplegend" id="mx-maplegend"></div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">Cobertura</p>
+          <h2 class="mx-h2">Médicos por mil habitantes</h2>
+          <p class="mx-big" data-fonte="br_dens" data-uf="todos"><span id="mx-br-dens">—</span><small>por mil hab.</small></p>
+          <p class="mx-story-p" id="mx-br-dens-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <p class="mx-note" style="margin-bottom:12px">Onde vive a população, pela faixa de médicos por mil habitantes do seu município.</p>
+          <div class="mx-bigbar" id="mx-br-popbar" data-fonte="br_mun" data-uf="todos"></div>
+          <div class="mx-faixas" id="mx-br-faixas"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">Contratação</p>
+          <h2 class="mx-h2">Como os médicos estão contratados</h2>
+          <p class="mx-big" data-fonte="br_vinc" data-uf="todos"><span id="mx-br-pf">—</span><small>autônomos pessoa física</small></p>
+          <p class="mx-story-p" id="mx-br-vinc-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <p class="mx-note" style="margin-bottom:12px">Vínculos médicos em hospitais, UPAs, prontos atendimentos e unidades mistas ativos no CNES. Um médico pode ter mais de um vínculo.</p>
+          <div class="mx-bigbar" id="mx-br-vinc" data-fonte="br_vinc" data-uf="todos"></div>
+          <div class="mx-vlist" id="mx-br-vinc-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap">
+        <div class="mx-sechead">
+          <p class="mx-eyebrow">Valores</p>
+          <h2 class="mx-h2">Quanto vale a hora médica</h2>
+          <p class="mx-lead">Cada ponto é um valor com documento de origem, convertido em reais por hora. O traço marca a mediana e a faixa clara, onde ficam os 50% do meio.</p>
+        </div>
+        <div class="mx-kpis" id="mx-br-hora-kpis" style="margin-bottom:22px"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:flex-end;margin-bottom:6px">
+          <label class="mx-toggle"><input type="checkbox" id="mx-team-home" checked> <span><span class="mx-teamdot"></span>Incluir valores informados pela equipe</span></label>
+        </div>
+        <div class="mx-chart" id="mx-br-hora" data-fonte="br_hora" data-uf="todos"></div>
+        <p class="mx-note" id="mx-br-hora-note" style="margin-top:10px">—</p>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap mx-story">
+        <div class="mx-story-text">
+          <p class="mx-eyebrow">CNES, setembro de cada ano</p>
+          <h2 class="mx-h2">Crescimento do cadastro médico</h2>
+          <p class="mx-big" data-fonte="br_serie" data-uf="todos"><span id="mx-br-cresc">—</span><small>desde 2022</small></p>
+          <p class="mx-story-p" id="mx-br-serie-txt">—</p>
+        </div>
+        <div class="mx-story-vis">
+          <div class="mx-chart" id="mx-br-serie" data-fonte="br_serie" data-uf="todos"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-band">
+      <div class="mx-wrap">
+        <div class="mx-sechead" style="grid-template-columns:minmax(0,1fr) auto;max-width:none;align-items:end">
+          <div style="display:grid;gap:10px">
+            <p class="mx-eyebrow">Notícias</p>
+            <h2 class="mx-h2">O que se publicou sobre falta de médicos</h2>
+          </div>
+          <a class="mx-btn ghost sm" href="#noticias">Todas as notícias</a>
+        </div>
+        <div id="mx-p-news"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ESTADO ============ -->
+  <div class="mx-page" data-page="estado" id="mx-pg-estado" hidden>
+    <div class="mx-statehead">
+      <div class="mx-wrap mx-statehero">
+        <div>
+          <p class="mx-eyebrow" id="mx-st-eyebrow">Relatório estadual</p>
+          <h1 id="mx-st-name">—</h1>
+          <div class="mx-statemeta" id="mx-st-meta"></div>
+        </div>
+        <div class="mx-silhouette" id="mx-st-locator" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="mx-wrap">
+      <div class="mx-statebar">
+        <label class="mx-toggle"><input type="checkbox" id="mx-team-state" checked> <span><span class="mx-teamdot"></span>Incluir valores informados pela equipe</span></label>
+        <span class="mx-spacer"></span>
+        <a class="mx-btn ghost sm" id="mx-st-addval" href="#valores-da-equipe">Registrar valor neste estado</a>
+        <a class="mx-btn ghost sm" id="mx-st-orig" href="#" target="_blank" rel="noopener">Abrir painel original</a>
+      </div>
+      <div id="mx-state-root"></div>
+    </div>
+  </div>
+
+  <!-- ============ NOTÍCIAS ============ -->
+  <div class="mx-page" data-page="noticias" id="mx-pg-noticias" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Notícias</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">Falta de médicos, contratação e pagamento</h2>
+        <p class="mx-lead">Reportagens e publicações oficiais reunidas nos relatórios estaduais e na atualização semanal, com resumo próprio e link para a fonte. Da mais recente para a mais antiga.</p>
+      </div>
+      <div class="mx-filters" id="mx-news-filters"></div>
+      <div class="mx-filters">
+        <input class="mx-input mx-search" id="mx-news-q" type="search" placeholder="Buscar por município, tema ou veículo" aria-label="Buscar notícias">
+        <select class="mx-select" id="mx-news-tema" style="max-width:16rem" aria-label="Tema"></select>
+        <span class="mx-note" id="mx-news-count"></span>
+      </div>
+      <div id="mx-news-list"></div>
+    </section>
+  </div>
+
+  <!-- ============ VALORES DA EQUIPE ============ -->
+  <div class="mx-page" data-page="valores-da-equipe" id="mx-pg-equipe" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Levantamento por contato direto</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">Valores da equipe</h2>
+        <p class="mx-lead">Valores de plantão, hora ou salário que a equipe apura conversando com médicos. Cada registro entra no painel do estado e no panorama como uma camada separada, marcada em <span style="color:var(--team);font-weight:600">rosa</span>: os números e as fontes dos relatórios não mudam, e a camada pode ser desligada a qualquer momento.</p>
+      </div>
+      <div class="mx-teamgrid">
+        <form class="mx-panel mx-form" id="mx-form" novalidate>
+          <div class="mx-panel-head"><h3 class="mx-h3">Registrar um valor</h3><p class="mx-note">Campos com <span style="color:var(--team)">*</span> são obrigatórios.</p></div>
+          <div class="mx-msg" id="mx-form-state" hidden></div>
+          <div class="mx-fields">
+            <div class="mx-field"><label for="f-uf">Estado <i>*</i></label><select class="mx-select" id="f-uf" required></select></div>
+            <div class="mx-field"><label for="f-mun">Município <i>*</i></label><input class="mx-input" id="f-mun" list="f-mun-list" autocomplete="off" required><datalist id="f-mun-list"></datalist></div>
+            <div class="mx-field full"><label for="f-contratante">Contratante e unidade <i>*</i></label><input class="mx-input" id="f-contratante" placeholder="Ex.: Prefeitura de Arapiraca, UPA 24h" required></div>
+            <div class="mx-field"><label for="f-esfera">Quem paga</label><select class="mx-select" id="f-esfera"><option>Prefeitura</option><option>Governo do Estado</option><option>OSS ou filantrópico</option><option>Empresa médica intermediária</option><option>Privado</option><option>Governo federal</option></select></div>
+            <div class="mx-field"><label for="f-esp">Especialidade ou função <i>*</i></label><input class="mx-input" id="f-esp" list="f-esp-list" required placeholder="Ex.: Clínico plantonista"><datalist id="f-esp-list"><option>Clínico plantonista (urgência e emergência)</option><option>Clínico geral (ambulatório)</option><option>Médico da Saúde da Família (ESF)</option><option>Pediatria</option><option>Ginecologia e obstetrícia</option><option>Anestesiologia</option><option>Cirurgia geral</option><option>Ortopedia</option><option>UTI adulto (intensivista)</option><option>UTI neonatal ou pediátrica</option><option>Psiquiatria</option><option>Cardiologia</option><option>Radiologia e ultrassonografia</option><option>Regulação ou SAMU</option></datalist></div>
+            <div class="mx-field"><label for="f-forma">Forma de pagamento <i>*</i></label><select class="mx-select" id="f-forma"><option value="Plantão 12h">Plantão de 12h</option><option value="Plantão 24h">Plantão de 24h</option><option value="Plantão 6h">Plantão de 6h</option><option value="Hora">Por hora</option><option value="Mensal">Mensal (carga semanal)</option><option value="Por consulta">Por consulta ou procedimento</option></select></div>
+            <div class="mx-field" id="f-carga-wrap" hidden><label for="f-carga">Carga semanal (h) <i>*</i></label><input class="mx-input mx-num" id="f-carga" type="number" min="1" max="80" step="1" inputmode="numeric" placeholder="40"></div>
+            <div class="mx-field"><label for="f-valor">Valor (R$) <i>*</i></label><input class="mx-input mx-num" id="f-valor" type="number" min="1" step="0.01" inputmode="decimal" placeholder="1500,00" required></div>
+            <div class="mx-field"><label for="f-bruto">O valor é</label><select class="mx-select" id="f-bruto"><option>Bruto</option><option>Líquido</option><option>Não informado</option></select></div>
+            <div class="mx-field"><label for="f-vinculo">Vínculo do médico</label><select class="mx-select" id="f-vinculo"><option>PJ</option><option>Pessoa física (RPA ou autônomo)</option><option>Cooperativa</option><option>Contrato temporário</option><option>CLT</option><option>Estatutário</option><option>Não informado</option></select></div>
+            <div class="mx-field"><label for="f-mes">Mês de referência <i>*</i></label><input class="mx-input mx-num" id="f-mes" type="month" required></div>
+            <div class="mx-field full"><label for="f-origem">Como o valor foi obtido <i>*</i></label><select class="mx-select" id="f-origem"><option>Médico que recebe o valor, em conversa direta</option><option>Médico relatou o valor de um colega</option><option>Proposta ou escala recebida pela empresa</option><option>Documento visto (contrato, nota ou holerite)</option></select></div>
+            <div class="mx-field full"><label for="f-detalhe">Detalhe da fonte</label><input class="mx-input" id="f-detalhe" placeholder="Ex.: plantonista da UPA, por telefone em 28/10. Não escreva telefone nem CPF."><span class="hint">Fica visível para quem tem acesso ao site.</span></div>
+            <div class="mx-field full"><label for="f-obs">Observações</label><textarea class="mx-textarea" id="f-obs" rows="2" placeholder="Ex.: atraso de 60 dias no pagamento; escala de fim de semana paga a mais"></textarea></div>
+          </div>
+          <div class="mx-preview" id="f-preview" aria-live="polite"><span>Equivale a</span><b>—</b><span id="f-preview-sub">por hora</span></div>
+          <div class="mx-msg err" id="mx-form-err" hidden role="alert"></div>
+          <button class="mx-btn" type="submit" id="f-submit">Registrar valor</button>
+        </form>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:20px;min-width:0">
+          <div class="mx-kpis" id="mx-team-kpis"></div>
+          <div class="mx-filters" style="margin:0">
+            <select class="mx-select" id="mx-team-fuf" style="max-width:13rem" aria-label="Filtrar por estado"></select>
+            <select class="mx-select" id="mx-team-fst" style="max-width:11rem" aria-label="Filtrar por situação"><option value="ativo">Em uso</option><option value="arquivado">Arquivados</option><option value="">Todos</option></select>
+            <input class="mx-input mx-search" id="mx-team-q" type="search" placeholder="Buscar município, contratante ou especialidade" aria-label="Buscar valores da equipe">
+            <button type="button" class="mx-btn ghost sm" id="mx-team-csv">Baixar CSV</button>
+          </div>
+          <div id="mx-team-list"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ FONTES ============ -->
+  <div class="mx-page" data-page="fontes" id="mx-pg-fontes" hidden>
+    <section class="mx-wrap" style="padding-top:40px">
+      <div class="mx-sechead">
+        <p class="mx-eyebrow">Fontes e atualização</p>
+        <h2 class="mx-h2" style="font-size:clamp(2rem,3.6vw,2.9rem)">De onde vêm os números e como o site se atualiza</h2>
+        <p class="mx-lead">O site junta três camadas que nunca se misturam: os relatórios estaduais, as novidades da atualização semanal e os valores informados pela equipe. Cada uma aparece marcada, e só a primeira entra nos indicadores principais.</p>
+      </div>
+      <div class="mx-layers">
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 1 · fixa</p><h3>Relatórios estaduais</h3><p>CNES, IBGE, PNCP, portais de transparência, diários oficiais e editais, com link e data de consulta em cada linha. Os arquivos publicados com o site não são alterados por nenhuma outra camada.</p></div>
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 2 · semanal</p><h3>Atualização automática</h3><p>Ainda não agendada. Quando ligada, uma tarefa semanal varre o PNCP por modalidade nos quatro estados, busca itens e resultados das contratações de serviço médico e procura notícias novas. O que encontra aparece como “novo desde o relatório”, com link.</p></div>
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 3 · equipe</p><h3>Contato com médicos</h3><p>Valores que a equipe registra na página Valores da equipe. Aparecem em rosa nos gráficos de hora médica e em quadro próprio em cada estado; o botão “Incluir valores informados pela equipe” liga e desliga a camada.</p></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">Relatórios publicados</h2></div>
+        <div class="mx-tablewrap"><table class="mx-table" id="mx-f-rel"></table></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">Histórico de atualizações</h2><p class="mx-lead">Registro de cada rodada da atualização semanal, com o que foi varrido e o que entrou.</p></div>
+        <div id="mx-f-log"></div>
+      </div>
+      <div class="mx-band" style="padding-bottom:0">
+        <div class="mx-sechead"><h2 class="mx-h2">O que a atualização semanal não cobre</h2></div>
+        <div class="mx-layers">
+          <div class="mx-layer"><h3>CNES e IBGE</h3><p>O cadastro de médicos, a população e a malha municipal mudam por competência e não respondem a consulta automática fora do navegador. Ficam na competência de cada relatório (setembro de 2026) até uma nova rodada do relatório do estado.</p></div>
+          <div class="mx-layer"><h3>Folhas estaduais</h3><p>Folhas de pagamento e despesas por rubrica estão em portais com painel ou captcha. Ficam com a data de cada relatório; o pedido pela Lei de Acesso à Informação de cada estado está na aba Notas da planilha do relatório.</p></div>
+          <div class="mx-layer"><h3>Novos estados</h3><p>Um estado só ganha números no site quando o relatório dele é feito com o mesmo método. Até lá, aparece no mapa sem dados.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="mx-foot">
+  <div class="mx-wrap mx-foot-in">
+    <div class="mx-foot-brand">
+      <img src="assets/prc-logo-dark.png" alt="PRC Tracker, pesquisa e inteligência" width="186" height="50">
+      <p>Atlas Médico do Brasil: base de consulta sobre o mercado público de serviços médicos.</p>
+    </div>
+    <div class="mx-foot-col">
+      <p class="mx-foot-h">Navegar</p>
+      <a href="#inicio">Brasil</a><a href="#noticias">Notícias</a><a href="#valores-da-equipe">Valores da equipe</a><a href="#fontes">Fontes e atualização</a>
+    </div>
+    <div class="mx-foot-col">
+      <p class="mx-foot-h">Fontes</p>
+      <p>CNES/DataSUS, IBGE, PNCP, portais de transparência e diários oficiais, com link e data de consulta em cada linha. Mapa: malha estadual do IBGE, simplificada.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mx-scrim" id="mx-scrim" hidden></div>
+<aside class="mx-drawer" id="mx-drawer" aria-hidden="true" aria-labelledby="mx-dr-title" role="dialog">
+  <header>
+    <div><p class="mx-eyebrow" id="mx-dr-eyebrow">Fonte</p><h2 id="mx-dr-title">—</h2></div>
+    <button type="button" class="mx-iconbtn" id="mx-dr-close" aria-label="Fechar">Fechar</button>
+  </header>
+  <div class="body" id="mx-dr-body"></div>
+</aside>
+<div class="mx-srcbanner" id="mx-srcbanner" hidden><span>Clique em um número, gráfico ou tabela para ver a fonte.</span><button type="button" id="mx-srcoff">Sair</button></div>
+<div class="mx-toast" id="mx-toast" role="status" aria-live="polite"></div>
+<div class="mx-tip" id="mx-tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="estados/to.js" charset="utf-8"></script>
+<script src="estados/rr.js" charset="utf-8"></script>
+<script src="estados/al.js" charset="utf-8"></script>
+<script src="estados/rs.js" charset="utf-8"></script>
+<script src="estados/ro.js" charset="utf-8"></script>
+<script>
+'use strict';
+(function () {
+  // ------------------------------------------------------------------ helpers
+  const $ = (q, r = document) => r.querySelector(q);
+  const $$ = (q, r = document) => Array.from(r.querySelectorAll(q));
+  function h(tag, props, ...kids) {
+    const el = document.createElement(tag);
+    if (props) {
+      for (const [k, v] of Object.entries(props)) {
+        if (v === null || v === undefined || v === false) continue;
+        if (k === 'class') el.className = v;
+        else if (k === 'text') el.textContent = v;
+        else if (k === 'dataset') Object.assign(el.dataset, v);
+        else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2), v);
+        else el.setAttribute(k, v === true ? '' : v);
+      }
+    }
+    for (const c of kids.flat(Infinity)) if (c !== null && c !== undefined && c !== false) el.append(c.nodeType ? c : String(c));
+    return el;
+  }
+  const NS = 'http://www.w3.org/2000/svg';
+  function sv(tag, attrs, ...kids) {
+    const el = document.createElementNS(NS, tag);
+    if (attrs) for (const [k, v] of Object.entries(attrs)) if (v !== null && v !== undefined) el.setAttribute(k, v);
+    for (const c of kids.flat()) if (c !== null && c !== undefined) el.append(c.nodeType ? c : document.createTextNode(String(c)));
+    return el;
+  }
+  const LOC = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['R$ ', ''] });
+  const F = {
+    int: LOC.format(',d'), d1: LOC.format(',.1f'), d2: LOC.format(',.2f'),
+    pct: LOC.format('.0%'), pct1: LOC.format('.1%'), brl: LOC.format('$,.2f'), brl0: LOC.format('$,.0f'),
+    mi: (v) => (v >= 1e6 ? LOC.format(',.1f')(v / 1e6) + ' milhões' : LOC.format(',d')(v)),
+    gente: (v, n) => (v >= 1e6 ? LOC.format(',.1f')(v / 1e6) + ' milhões de ' + n : LOC.format(',d')(v) + ' ' + n),
+    brlmi: (v) => 'R$ ' + LOC.format(',.1f')(v / 1e6) + ' mi',
+    signed: (v) => (v >= 0 ? '+' : '−') + LOC.format('.1%')(Math.abs(v)),
+  };
+  const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const MESL = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+  const dBR = (s) => { const p = String(s || '').slice(0, 10).split('-'); return p.length === 3 && p[2] ? `${p[2]}/${p[1]}/${p[0]}` : '—'; };
+  const compBR = (c) => { const [a, m] = String(c || '').split('-'); return m ? MES[+m - 1] + '/' + a : '—'; };
+  const norm = (s) => String(s === null || s === undefined ? '' : s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const median = (a) => { const s = a.filter((x) => x !== null && !isNaN(x)).sort((x, y) => x - y); if (!s.length) return null; const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const isUrl = (u) => /^https:\/\//.test(String(u || ''));
+  const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const tryLS = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } } };
+  const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+
+  // ------------------------------------------------------------------ constants
+  const SLUGS = { tocantins: 'to', roraima: 'rr', alagoas: 'al', 'rio-grande-do-sul': 'rs', rondonia: 'ro' };
+  const PAGES = ['inicio', 'noticias', 'valores-da-equipe', 'fontes'];
+  const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)' };
+  const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
+  const SCHEDULE = null; // weekly update not scheduled yet
+  const FORMA_HORAS = { 'Plantão 6h': 6, 'Plantão 12h': 12, 'Plantão 24h': 24, 'Hora': 1 };
+  const SEMANAS_MES = 4.345;
+
+  const APP = {
+    P: null, BR: null, news: null, mun: null, man: {},
+    team: [], auto: { valores: [], contratos: [], noticias: [] }, updates: [],
+    teamOn: tryLS.get('mx-team-on') !== '0', dbState: 'loading', db: null, user: null, me: null, canEdit: false, names: {},
+    mapMode: 'cobertura', prefUF: null, pendingSec: null,
+  };
+
+  const cache = {};
+  const getJSON = (p) => cache[p] || (cache[p] = fetch(p).then((r) => { if (!r.ok) throw new Error(p + ' respondeu ' + r.status); return r.json(); }).catch((e) => { delete cache[p]; throw e; }));
+
+  // ------------------------------------------------------------------ toast + tooltip
+  let toastT;
+  function toast(msg) { const t = $('#mx-toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3800); }
+  const TIP = $('#mx-tip');
+  function tipShow(ev, head, rows, cta) {
+    TIP.replaceChildren(h('h4', { text: head }), ...rows.filter(Boolean).map(([k, v, c]) => h('div', { class: 'row' }, h('span', null, c ? h('i', { class: 'mx-sw', style: `background:${c}` }) : null, k), h('b', { text: v }))), cta ? h('div', { class: 'cta', text: cta }) : null);
+    TIP.hidden = false;
+    const w = TIP.offsetWidth, hh = TIP.offsetHeight;
+    let x = ev.clientX + 16, y = ev.clientY + 16;
+    if (x + w > innerWidth - 8) x = Math.max(8, ev.clientX - w - 16);
+    if (y + hh > innerHeight - 8) y = Math.max(8, ev.clientY - hh - 16);
+    TIP.style.left = x + 'px'; TIP.style.top = y + 'px';
+  }
+  const tipHide = () => { TIP.hidden = true; };
+
+  // ------------------------------------------------------------------ theme
+  function applyTheme(t) { if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); }
+  function currentTheme() { const a = document.documentElement.getAttribute('data-theme'); return a || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  applyTheme(tryLS.get('mx-theme'));
+  $('#mx-themebtn').addEventListener('click', () => {
+    const n = currentTheme() === 'dark' ? 'light' : 'dark';
+    applyTheme(n); tryLS.set('mx-theme', n); redrawAll();
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => redrawAll());
+
+  // ------------------------------------------------------------------ CSV and downloads
+  function csvCell(v) {
+    if (v === null || v === undefined) return '';
+    if (typeof v === 'number') return String(v).replace('.', ',');
+    if (typeof v === 'object') v = JSON.stringify(v);
+    v = String(v);
+    return /[";\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function toCSV(rows) {
+    const cols = [];
+    for (const r of rows) for (const k of Object.keys(r || {})) if (!cols.includes(k)) cols.push(k);
+    return '﻿' + [cols.join(';')].concat(rows.map((r) => cols.map((c) => csvCell(r[c])).join(';'))).join('\r\n');
+  }
+  let dlCap;
+  async function baixar(nome, texto, tipo) {
+    if (dlCap === undefined) { try { dlCap = window.claude && window.claude.use ? await window.claude.use('downloads') : null; } catch (e) { dlCap = null; } }
+    if (dlCap) {
+      try { await dlCap.save({ filename: nome, data: new Blob([texto], { type: tipo }) }); toast('Arquivo pronto: ' + nome); return; }
+      catch (e) { if (e && e.code === 'declined') { toast('Download cancelado.'); return; } }
+    }
+    try { await navigator.clipboard.writeText(texto.replace(/^﻿/, '')); toast('Download indisponível nesta visualização; o conteúdo foi copiado para colar no Excel.'); }
+    catch (e) { toast('Não foi possível baixar aqui. Abra o site pelo claude.ai para baixar os dados.'); }
+  }
+  const baixarCSV = (nome, rows) => baixar(nome + '.csv', toCSV(rows), 'text/csv;charset=utf-8');
+  const baixarJSON = (nome, rows) => baixar(nome + '.json', JSON.stringify(rows, null, 1), 'application/json');
+
+  // ------------------------------------------------------------------ team helpers
+  function horasDe(t) { if (t.forma === 'Mensal') return Number(t.carga) > 0 ? Number(t.carga) * SEMANAS_MES : null; return FORMA_HORAS[t.forma] || null; }
+  function macroDeForma(f) { if (/^Plantão/.test(f)) return 'plantao'; if (f === 'Hora') return 'hora'; if (f === 'Mensal') return 'carga'; return null; }
+  const teamAtivos = (uf) => APP.team.filter((t) => t.status !== 'arquivado' && (!uf || t.uf === uf));
+  function nomeDe(id) { if (!id) return '—'; if (id === APP.me) return 'Você'; return (APP.names[id] && APP.names[id].name) || 'Integrante da equipe'; }
+  function teamHoraRows(uf) {
+    return teamAtivos(uf).filter((t) => Number(t.valor_hora) > 0).map((t) => ({
+      id: 'equipe-' + t.id, categoria: 'Informado pela equipe (contato com médicos)', ordem: 99, esfera: 'Equipe',
+      contratante: t.contratante, municipio: t.municipio, forma: t.forma === 'Mensal' ? `Mensal (${t.carga}h por semana)` : t.forma,
+      especialidade: t.especialidade, vinculo: t.vinculo, valor: Number(t.valor), valor_hora: Number(t.valor_hora),
+      data: (t.mes || '') + '-01', documento: 'Equipe · ' + (t.origem || '') + (t.detalhe ? ' · ' + t.detalhe : ''),
+    }));
+  }
+
+  // ------------------------------------------------------------------ sticky offset
+  const mast = $('.mx-mast');
+  const setStick = () => document.documentElement.style.setProperty('--stick', mast.offsetHeight + 'px');
+  new ResizeObserver(setStick).observe(mast);
+  setStick();
+
+  // ------------------------------------------------------------------ boot
+  async function boot() {
+    try {
+      const [P, BR] = await Promise.all([getJSON('data/panorama.json'), getJSON('data/brasil.json')]);
+      APP.P = P; APP.BR = BR;
+      const mans = await Promise.all(P.ordem.map((uf) => getJSON(`data/${uf}/manifest.json`)));
+      P.ordem.forEach((uf, i) => { APP.man[uf] = mans[i]; });
+    } catch (e) {
+      $('main').prepend(h('div', { class: 'mx-wrap', style: 'padding-top:24px' }, h('div', { class: 'mx-msg err', text: 'Os dados do site não carregaram (' + e.message + '). Recarregue a página.' })));
+      return;
+    }
+    $('#mx-team-home').checked = APP.teamOn; $('#mx-team-state').checked = APP.teamOn;
+    const onTeamToggle = (ev) => { APP.teamOn = ev.target.checked; tryLS.set('mx-team-on', APP.teamOn ? '1' : '0'); $('#mx-team-home').checked = APP.teamOn; $('#mx-team-state').checked = APP.teamOn; onTeamChange(); };
+    $('#mx-team-home').addEventListener('change', onTeamToggle);
+    $('#mx-team-state').addEventListener('change', onTeamToggle);
+    window.addEventListener('hashchange', route);
+    route();
+    initCaps();
+    getJSON('data/noticias.json').then((n) => { APP.news = n; if (PAGE === 'inicio') renderHomeNews(); if (PAGE === 'noticias') renderNews(); }).catch(() => {});
+    new ResizeObserver(debounce(() => { if (PAGE === 'inicio') drawHomeCharts(); }, 160)).observe($('#mx-pg-inicio'));
+  }
+
+  // ------------------------------------------------------------------ router
+  let PAGE = null, PAGE_UF = null;
+  function route() {
+    const name = decodeURIComponent(location.hash.slice(1));
+    let page = 'inicio', uf = null;
+    if (SLUGS[name]) { page = 'estado'; uf = SLUGS[name]; } else if (PAGES.includes(name)) page = name;
+    const changed = page !== PAGE || uf !== PAGE_UF;
+    PAGE = page; PAGE_UF = uf;
+    $$('.mx-page').forEach((p) => { p.hidden = p.dataset.page !== page; });
+    $$('.mx-nav a').forEach((a) => { if (a.dataset.nav === (name && (SLUGS[name] || PAGES.includes(name)) ? name : 'inicio')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    closeDrawer(); tipHide();
+    if (page !== 'estado') closeState();
+    if (changed && !APP.pendingSec) window.scrollTo({ top: 0, behavior: 'instant' });
+    const S = uf && APP.P.estados[uf];
+    document.title = (S ? S.nome + ' · ' : page === 'noticias' ? 'Notícias · ' : page === 'valores-da-equipe' ? 'Valores da equipe · ' : page === 'fontes' ? 'Fontes · ' : '') + 'Atlas Médico do Brasil';
+    if (page === 'inicio') renderHome();
+    else if (page === 'estado') openState(uf);
+    else if (page === 'noticias') renderNews();
+    else if (page === 'valores-da-equipe') renderTeamPage();
+    else if (page === 'fontes') renderFontes();
+  }
+  function redrawAll() {
+    if (PAGE === 'inicio') drawHomeCharts();
+    if (CUR) CUR.runCharts();
+  }
+
+  // ================================================================== HOME (Brasil, soma dos estados com relatório)
+  let homeBuilt = false;
+  const VSEG = [['est', 'Estatutário', 'var(--s1)'], ['tmp', 'Prazo determinado', 'var(--s2)'], ['pj', 'PJ', 'var(--s3)'], ['pf', 'Autônomo pessoa física', 'var(--s4)'], ['outros', 'CLT, cooperado, residente e outros', 'var(--chart-muted)']];
+  function renderHome() {
+    const P = APP.P, B = P.brasil, T = P.total;
+    if (!homeBuilt) {
+      homeBuilt = true;
+      const datas = P.ordem.map((uf) => P.estados[uf].relatorio_em).sort();
+      $('#mx-hero-date').textContent = 'Pesquisa e inteligência · atualizado em ' + dBR(datas[datas.length - 1]);
+      $('#mx-cover-tag').textContent = `Base: ${B.n_estados} de 27 estados`;
+      buildPopBar();
+      $('#mx-cover').replaceChildren(
+        cov(B.n_estados + ' de 27', 'estados com relatório', 'relatorio'),
+        cov(F.int(T.municipios), 'municípios mapeados', 'n_mun'),
+        cov(F.mi(T.pop), 'habitantes (IBGE 2025)', 'pop'),
+        cov(F.int(T.medicos), 'vínculos médicos no CNES, set/2026', 'medicos'),
+        cov(F.int(T.valores), 'valores com documento de origem', 'n_mapa'),
+        cov(F.int(T.contratos), 'contratos e credenciados', 'n_contratos'));
+      $('#mx-basenote').textContent = `Brasil parcial: os números desta página somam os ${B.n_estados} estados que já têm relatório (${B.base.join(', ')}). Cada novo relatório entra nos totais.`;
+      // cobertura
+      $('#mx-br-dens').textContent = F.d2(B.dens);
+      $('#mx-br-dens-txt').replaceChildren('São ', h('b', { text: F.int(B.medicos) }), ` vínculos médicos para ${F.gente(B.pop, 'habitantes')}, e ${F.pct(B.medicos_sus / B.medicos)} deles atendem pelo SUS. Mesmo assim, `, h('b', { text: `${F.int(B.mun_baixa)} dos ${F.int(B.n_mun)} municípios` }), ` ficam abaixo de 1 médico por mil habitantes, onde vivem ${F.gente(B.pop_baixa, 'pessoas')}.`);
+      // contratação
+      const V = B.vinc, tot = V.vinculos;
+      $('#mx-br-pf').textContent = F.pct(V.pf / tot);
+      $('#mx-br-vinc-txt').replaceChildren('dos vínculos médicos em hospitais e UPAs. Concursados são só ', h('b', { text: F.pct1(V.est / tot) }), `; PJ, ${F.pct1(V.pj / tot)}; prazo determinado, ${F.pct1(V.tmp / tot)}.`);
+      $('#mx-br-vinc').replaceChildren(...VSEG.map(([k, n, c]) => {
+        const sh = V[k] / tot;
+        const seg = h('i', { style: `width:${sh * 100}%;background:${c}${k === 'outros' ? ';color:var(--ink)' : ''}` }, sh > 0.07 ? F.pct(sh) : '');
+        seg.addEventListener('pointermove', (ev) => tipShow(ev, n, [['Vínculos', F.int(V[k])], ['Parcela', F.pct1(sh)]]));
+        seg.addEventListener('pointerleave', tipHide);
+        return seg;
+      }));
+      $('#mx-br-vinc-list').replaceChildren(...VSEG.map(([k, n, c]) => h('div', null, h('i', { class: 'mx-sw', style: `background:${c}` }), h('span', null, n, h('span', { class: 'c', text: F.int(V[k]) + ' vínculos' })), h('b', { text: F.pct1(V[k] / tot) }))));
+      // hora
+      const kp = (label, v, sub, fonte) => h('div', { class: 'mx-kpi', dataset: { fonte, uf: 'todos' } }, h('span', { text: label }), h('b', { text: v }), h('small', { text: sub }));
+      const hs = B.hora;
+      $('#mx-br-hora-kpis').replaceChildren(
+        kp('Plantão, mediana por hora', hs.plantao.n ? F.brl(hs.plantao.mediana) : '—', `${F.int(hs.plantao.n)} valores · metade entre ${F.brl0(hs.plantao.q1)} e ${F.brl0(hs.plantao.q3)}`, 'br_hora'),
+        kp('Plantão de 24h em prefeituras', B.p24.n ? F.brl0(B.p24.mediana) : '—', `mediana · ${F.brl(B.p24.mediana_hora)} por hora · ${F.int(B.p24.n)} valores`, 'br_p24'),
+        kp('Hora avulsa contratada, mediana', hs.hora.n ? F.brl(hs.hora.mediana) : '—', `${F.int(hs.hora.n)} valores de empresa ou credenciado`, 'br_hora'),
+        kp('Carga semanal ou salário, por hora', hs.carga.n ? F.brl(hs.carga.mediana) : '—', `mediana · ${F.int(hs.carga.n)} valores de concurso, seleção ou contrato`, 'br_hora'));
+      // série
+      const S0 = B.serie[0], S1 = B.serie[B.serie.length - 1];
+      $('#mx-br-cresc').textContent = F.signed(B.cresc);
+      $('#mx-br-serie-txt').replaceChildren(`De ${F.int(S0.medicos)} vínculos médicos em ${compBR(S0.competencia)} para `, h('b', { text: F.int(S1.medicos) }), ` em ${compBR(S1.competencia)}, na mesma competência de cada ano.`);
+    }
+    drawHomeCharts();
+    renderHomeNews();
+  }
+  function cov(v, label, fonte) { return h('div', { dataset: { fonte, uf: 'todos' } }, h('b', { text: v }), h('span', { text: label })); }
+  function drawHomeCharts() { if (!APP.P) return; drawMap(); drawHoraBR(); drawSerieBR(); }
+
+  // ---------- map (coverage only), drawn on the navy hero band
+  function drawMap() {
+    const BR = APP.BR, P = APP.P, box = $('#mx-brmap');
+    if (!box || !BR) return;
+    const W = BR.w, H = BR.h, pr = BR.proj;
+    const X = (lon) => (lon - pr.x0) * pr.k * pr.sc, Y = (lat) => (pr.y1 - lat) * pr.sc;
+    const svg = sv('svg', { viewBox: `-14 -14 ${W + 120} ${H + 28}`, role: 'presentation' });
+    svg.append(sv('defs', null,
+      sv('linearGradient', { id: 'mx-stgrad', x1: 0, x2: 0.4, y1: 0, y2: 1 }, sv('stop', { offset: '0%', 'stop-color': '#3FE6F7' }), sv('stop', { offset: '100%', 'stop-color': '#0A7CC4' })),
+      sv('linearGradient', { id: 'mx-orbitg', x1: 0, x2: 1, y1: 0, y2: 0 }, sv('stop', { offset: '0%', 'stop-color': '#0A7CC4', 'stop-opacity': 0 }), sv('stop', { offset: '55%', 'stop-color': '#0AA6E6', 'stop-opacity': 0.85 }), sv('stop', { offset: '100%', 'stop-color': '#3FE6F7', 'stop-opacity': 1 })),
+      sv('filter', { id: 'mx-glow', x: '-30%', y: '-30%', width: '160%', height: '160%' }, sv('feGaussianBlur', { stdDeviation: 9, result: 'b' }), sv('feMerge', null, sv('feMergeNode', { in: 'b' }), sv('feMergeNode', { in: 'SourceGraphic' }))),
+      sv('filter', { id: 'mx-dotglow', x: '-200%', y: '-200%', width: '500%', height: '500%' }, sv('feGaussianBlur', { stdDeviation: 5, result: 'b' }), sv('feMerge', null, sv('feMergeNode', { in: 'b' }), sv('feMergeNode', { in: 'b' }), sv('feMergeNode', { in: 'SourceGraphic' })))));
+    const g0 = sv('g');
+    for (let lat = 5; lat >= -30; lat -= 5) g0.append(sv('line', { class: 'grat', x1: 0, x2: W, y1: Y(lat), y2: Y(lat) }));
+    for (let lon = -70; lon <= -35; lon += 5) g0.append(sv('line', { class: 'grat', x1: X(lon), x2: X(lon), y1: 0, y2: H }));
+    g0.append(sv('line', { class: 'grat-key', x1: 0, x2: W, y1: Y(0), y2: Y(0) }));
+    g0.append(sv('line', { class: 'grat-key', x1: 0, x2: W, y1: Y(-23.44), y2: Y(-23.44) }));
+    g0.append(sv('text', { class: 'lab-keytext', x: 4, y: Y(0) - 8 }, 'Equador'));
+    g0.append(sv('text', { class: 'lab-keytext', x: 4, y: Y(-23.44) - 8 }, 'Trópico de Capricórnio'));
+    svg.append(g0);
+    // the brand orbit: a partial ellipse around the country with a glowing point at its end
+    const cx0 = 520, cy0 = 545, rx = 650, ry = 205, rot = -31 * Math.PI / 180;
+    const pt = (a) => { const x = rx * Math.cos(a), y = ry * Math.sin(a); return [cx0 + x * Math.cos(rot) - y * Math.sin(rot), cy0 + x * Math.sin(rot) + y * Math.cos(rot)]; };
+    const seg = []; for (let k = 0; k <= 120; k++) seg.push(pt(Math.PI * 0.66 + (Math.PI * 1.3) * k / 120));
+    const orbitD = 'M' + seg.map((p) => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join('L');
+    const gOrbit = sv('g', { class: 'mx-orbit' });
+    gOrbit.append(sv('path', { d: orbitD, fill: 'none', stroke: 'url(#mx-orbitg)', 'stroke-width': 3.2, 'stroke-linecap': 'round', opacity: 0.9 }));
+    const end = seg[seg.length - 1];
+    const dot = sv('circle', { cx: end[0], cy: end[1], r: 7, fill: '#3FE6F7', filter: 'url(#mx-dotglow)' });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      dot.setAttribute('cx', 0); dot.setAttribute('cy', 0);
+      dot.append(sv('animateMotion', { dur: '18s', repeatCount: 'indefinite', path: orbitD, keyPoints: '0;1;1', keyTimes: '0;0.8;1', calcMode: 'linear' }));
+    }
+    gOrbit.append(dot);
+    const gOff = sv('g'), gOn = sv('g', { filter: 'url(#mx-glow)' }), gLab = sv('g');
+    let i = 0;
+    for (const u of BR.ufs) {
+      const uf = u.uf.toLowerCase(), S = P.estados[uf];
+      if (!S) {
+        const p = sv('path', { d: u.d, class: 'uf-off' });
+        p.addEventListener('pointermove', (ev) => tipShow(ev, u.nome, [['Situação', 'sem relatório']], 'Nenhum número estimado para este estado'));
+        p.addEventListener('pointerleave', tipHide);
+        gOff.append(p);
+        if (u.uf !== 'DF') gLab.append(sv('text', { class: 'lab-off', x: u.cx, y: u.cy + 4, 'text-anchor': 'middle' }, u.uf));
+        continue;
+      }
+      const p = sv('path', { d: u.d, class: 'uf-on', fill: 'url(#mx-stgrad)', tabindex: '0', role: 'link', 'aria-label': `${S.nome}: abrir relatório`, style: `animation: mxpop .8s ${0.1 * i++}s both` });
+      const go = () => { location.hash = S.slug; };
+      p.addEventListener('click', go);
+      p.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); go(); } });
+      p.addEventListener('pointermove', (ev) => tipShow(ev, S.nome, [['Relatório de', dBR(S.relatorio_em)]], 'Clique para abrir o relatório →'));
+      p.addEventListener('pointerleave', tipHide);
+      p.dataset.fonte = 'relatorio'; p.dataset.uf = uf;
+      gOn.append(p);
+      const outside = uf === 'al';
+      const lx = outside ? u.cx + 70 : u.cx, ly = outside ? u.cy + 26 : u.cy;
+      if (outside) gLab.append(sv('line', { x1: u.cx + 6, y1: u.cy + 3, x2: lx - 6, y2: ly - 6, stroke: '#7183B0', 'stroke-width': 1.2 }));
+      gLab.append(sv('text', { class: 'lab-on' + (outside ? ' lab-out' : ''), x: lx, y: ly + 7, 'text-anchor': outside ? 'start' : 'middle' }, S.sigla));
+    }
+    svg.append(gOff, gOrbit, gOn, gLab);
+    box.replaceChildren(svg);
+    $('#mx-maplegend').replaceChildren(
+      h('span', null, h('i', { class: 'mx-sw', style: 'background:linear-gradient(#3FE6F7,#0A7CC4)' }), 'Com relatório:'),
+      h('span', { class: 'mx-maplinks' }, ...P.ordem.map((uf) => h('a', { href: '#' + P.estados[uf].slug, text: P.estados[uf].nome }))),
+      h('span', null, h('i', { class: 'mx-sw', style: 'background:var(--hero-off);outline:1px solid var(--hero-line)' }), `Sem relatório (${27 - P.ordem.length})`));
+  }
+
+  // ---------- population by coverage band, one bar
+  const FX_COR = ['var(--fx0)', 'var(--fx1)', 'var(--fx2)', 'var(--fx3)', 'var(--fx4)', 'var(--fx5)'];
+  function buildPopBar() {
+    const B = APP.P.brasil;
+    $('#mx-br-popbar').replaceChildren(...B.faixas.map((f, i) => {
+      const sh = f.pop / B.pop;
+      const seg = h('i', { style: `width:${sh * 100}%;background:${FX_COR[i]}${i === 2 || i === 3 ? ';color:var(--ink)' : ''}` }, sh > 0.07 ? F.pct(sh) : '');
+      seg.addEventListener('pointermove', (ev) => tipShow(ev, f.nome + (i === 0 ? '' : ' médicos por mil hab.'), [['Municípios', F.int(f.n)], ['População', F.int(f.pop)], ['Parcela da população', F.pct1(sh)]]));
+      seg.addEventListener('pointerleave', tipHide);
+      return seg;
+    }));
+    $('#mx-br-faixas').replaceChildren(...B.faixas.map((f, i) => h('div', { dataset: { fonte: 'br_mun', uf: 'todos' } }, h('i', { class: 'mx-sw', style: `background:${FX_COR[i]}` }), h('span', null, f.nome + (i === 0 ? '' : ' por mil hab.'), h('span', { class: 'p', text: `${F.int(f.n)} municípios` })), h('b', { text: f.pop / B.pop < 0.01 ? F.pct1(f.pop / B.pop) : F.pct(f.pop / B.pop) }))));
+  }
+
+  // ---------- hour value, all mapped states together
+  function drawHoraBR() {
+    const P = APP.P, B = P.brasil, box = $('#mx-br-hora');
+    if (!box) return;
+    const MK = ['plantao', 'hora', 'carga'];
+    const pts = P.ordem.flatMap((uf) => P.estados[uf].pontos.map((p) => Object.assign({ uf: P.estados[uf].sigla }, p)));
+    const team = APP.teamOn ? teamAtivos().filter((t) => Number(t.valor_hora) > 0 && macroDeForma(t.forma)) : [];
+    const all = pts.map((p) => p.v).concat(team.map((t) => Number(t.valor_hora)));
+    const lo = Math.min(10, d3.min(all) * 0.9), hi = Math.max(800, d3.max(all) * 1.1);
+    const W = Math.max(300, box.clientWidth || 900);
+    const x = d3.scaleLog([lo, hi], [6, W - 10]);
+    const rowH = 92, top = 4, Hh = top + MK.length * rowH + 26;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${Hh}`, width: '100%' });
+    const ink = cssVar('--ink'), ink2 = cssVar('--ink-2'), ink3 = cssVar('--ink-3'), rule = cssVar('--rule'), pet = cssVar('--petrol'), wash = cssVar('--petrol-wash'), team_c = cssVar('--team'), srf = cssVar('--surface');
+    for (const t of [15, 25, 50, 100, 200, 400, 800].filter((v) => v >= lo && v <= hi)) {
+      svg.append(sv('line', { x1: x(t), x2: x(t), y1: top + 30, y2: Hh - 22, stroke: rule, 'stroke-width': 1 }));
+      svg.append(sv('text', { x: x(t), y: Hh - 6, 'text-anchor': 'middle', fill: ink3, 'font-size': 12 }, 'R$ ' + t + '/h'));
+    }
+    const hash = (s) => { let z = 0; for (const ch of String(s)) z = (z * 31 + ch.charCodeAt(0)) | 0; return z; };
+    MK.forEach((mk, k) => {
+      const y0 = top + k * rowH, cy = y0 + 58, st = B.hora[mk];
+      svg.append(sv('text', { x: 0, y: y0 + 18, fill: ink, 'font-size': 14.5, 'font-weight': 600 }, P.macros[mk]));
+      svg.append(sv('text', { x: W - 2, y: y0 + 18, 'text-anchor': 'end', fill: ink2, 'font-size': 12.5 }, st.n ? `${F.int(st.n)} valores · mediana ${F.brl(st.mediana)}/h` : 'sem valores'));
+      if (!st.n) return;
+      svg.append(sv('rect', { x: x(st.q1), y: cy - 16, width: Math.max(2, x(st.q3) - x(st.q1)), height: 32, rx: 4, fill: wash }));
+      const g = sv('g');
+      pts.filter((p) => p.m === mk).forEach((p) => {
+        const c = sv('circle', { cx: x(p.v), cy: cy + ((Math.abs(hash(p.id)) % 25) - 12) * 1.05, r: 3.3, fill: pet, 'fill-opacity': 0.42 });
+        c.addEventListener('pointermove', (ev) => tipShow(ev, `${p.ct} · ${p.mu} (${p.uf})`, [['Forma', p.f], ['Especialidade', p.e || '—'], ['Por hora', F.brl(p.v)], ['Data', dBR(p.d)], ['Documento', p.doc || '—']]));
+        c.addEventListener('pointerleave', tipHide);
+        g.append(c);
+      });
+      svg.append(g);
+      svg.append(sv('line', { x1: x(st.mediana), x2: x(st.mediana), y1: cy - 20, y2: cy + 20, stroke: ink, 'stroke-width': 2.6, 'stroke-linecap': 'round' }));
+      team.filter((t) => macroDeForma(t.forma) === mk).forEach((t, j) => {
+        const cx = x(Number(t.valor_hora)), yy = cy + ((j % 5) - 2) * 4;
+        const d = sv('path', { d: `M${cx},${yy - 7}L${cx + 7},${yy}L${cx},${yy + 7}L${cx - 7},${yy}Z`, fill: team_c, stroke: srf, 'stroke-width': 1.4, 'data-source': 'valores_equipe' });
+        d.addEventListener('pointermove', (ev) => tipShow(ev, 'Informado pela equipe', [['Contratante', t.contratante], ['Município', `${t.municipio} (${String(t.uf).toUpperCase()})`], ['Forma', t.forma], ['Especialidade', t.especialidade], ['Valor', F.brl(Number(t.valor))], ['Por hora', F.brl(Number(t.valor_hora))], ['Mês', compBR(t.mes)], ['Origem', t.origem]]));
+        d.addEventListener('pointerleave', tipHide);
+        svg.append(d);
+      });
+    });
+    box.replaceChildren(svg);
+    $('#mx-br-hora-note').textContent = `Cada valor com documento conta uma vez, por isso tabelas com muitas especialidades pesam mais na mediana. Escala logarítmica. Fora do gráfico: a bolsa do Mais Médicos${B.mm_hora ? ' (' + F.brl(B.mm_hora) + ' por hora)' : ''}. ` + (!APP.teamOn ? 'Os valores da equipe estão desligados.' : team.length ? `${team.length === 1 ? 'O valor' : 'Os ' + F.int(team.length) + ' valores'} da equipe ${team.length === 1 ? 'aparece como losango rosa e não entra' : 'aparecem como losangos rosa e não entram'} nas medianas.` : 'Nenhum valor da equipe registrado ainda.');
+  }
+
+  // ---------- CNES series, one line
+  function drawSerieBR() {
+    const B = APP.P.brasil, box = $('#mx-br-serie');
+    if (!box) return;
+    const W = Math.max(280, box.clientWidth || 600), Hh = 280, ml = 8, mr = 8, mt = 34, mb = 30;
+    const S = B.serie;
+    const x = d3.scalePoint(S.map((r) => r.competencia), [ml + 30, W - mr - 30]);
+    const y = d3.scaleLinear([0, d3.max(S, (r) => r.medicos) * 1.06], [Hh - mb, mt]);
+    const pet = cssVar('--petrol'), ink = cssVar('--ink'), ink3 = cssVar('--ink-3'), rule = cssVar('--rule');
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${Hh}` });
+    const grad = sv('linearGradient', { id: 'mx-areag', x1: 0, x2: 0, y1: 0, y2: 1 }, sv('stop', { offset: '0%', 'stop-color': pet, 'stop-opacity': 0.22 }), sv('stop', { offset: '100%', 'stop-color': pet, 'stop-opacity': 0 }));
+    svg.append(sv('defs', null, grad));
+    svg.append(sv('line', { x1: ml, x2: W - mr, y1: Hh - mb, y2: Hh - mb, stroke: rule }));
+    const area = d3.area().x((r) => x(r.competencia)).y0(Hh - mb).y1((r) => y(r.medicos));
+    const line = d3.line().x((r) => x(r.competencia)).y((r) => y(r.medicos));
+    svg.append(sv('path', { d: area(S), fill: 'url(#mx-areag)' }));
+    svg.append(sv('path', { d: line(S), fill: 'none', stroke: pet, 'stroke-width': 2.8, 'stroke-linejoin': 'round' }));
+    S.forEach((r, i) => {
+      const last = i === S.length - 1;
+      svg.append(sv('circle', { cx: x(r.competencia), cy: y(r.medicos), r: last ? 6 : 3.6, fill: last ? pet : cssVar('--surface'), stroke: pet, 'stroke-width': 2 }));
+      svg.append(sv('text', { x: x(r.competencia), y: y(r.medicos) - 14, 'text-anchor': 'middle', fill: last ? ink : cssVar('--ink-2'), 'font-size': last ? 14 : 12.5, 'font-weight': last ? 600 : 400 }, F.int(r.medicos)));
+      svg.append(sv('text', { x: x(r.competencia), y: Hh - 9, 'text-anchor': 'middle', fill: ink3, 'font-size': 12 }, r.competencia.slice(0, 4)));
+      const prev = i ? S[i - 1].medicos : null;
+      const band = sv('rect', { x: x(r.competencia) - x.step() / 2, y: 0, width: x.step(), height: Hh, fill: 'transparent' });
+      band.addEventListener('pointermove', (ev) => tipShow(ev, 'CNES, ' + compBR(r.competencia), [['Vínculos médicos', F.int(r.medicos)], prev ? ['Variação no ano', F.signed(r.medicos / prev - 1)] : null]));
+      band.addEventListener('pointerleave', tipHide);
+      svg.append(band);
+    });
+    box.replaceChildren(svg);
+  }
+
+  // ---------- sources of the Brazil figures
+  const FONTES = {
+    br_dens: { t: 'Médicos por mil habitantes, Brasil parcial', como: 'Soma dos médicos com vínculo ativo no CNES (setembro de 2026) em todos os municípios dos estados com relatório, dividida pela soma da população estimada do IBGE para 2025, vezes mil. Um médico que atua em dois municípios conta em cada um.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => `${F.d2(S.dens)} (${F.int(S.medicos)} vínculos, ${F.int(S.pop)} hab.)` },
+    br_mun: { t: 'Municípios por faixa de médicos por mil habitantes', como: 'Cada município dos estados com relatório, classificado pelos médicos com vínculo no CNES por mil habitantes. A parcela da população soma os habitantes de cada faixa.', ds: ['municipios'], sec: 'mapa', v: (S) => `${F.int(S.mun_baixa)} de ${F.int(S.n_mun)} abaixo de 1 por mil · ${F.int(S.mun_zero)} sem médico` },
+    br_vinc: { t: 'Vínculos médicos em hospitais e UPAs, Brasil parcial', como: 'Soma dos vínculos médicos de todos os hospitais, UPAs, prontos atendimentos e unidades mistas ativos no CNES nos estados com relatório, consultados por estabelecimento. Estatutário inclui cedidos e comissionados; PJ inclui o autônomo PJ e o intermediado por empresa; autônomo pessoa física é o médico pago como pessoa física.', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => `${F.int(S.vinc.vinculos)} vínculos em ${F.int(S.vinc.unidades)} unidades` },
+    br_hora: { t: 'Valor da hora médica, Brasil parcial', como: 'Todos os valores com hora calculável dos gráficos “Quanto vale a hora médica” dos painéis estaduais, juntos: o plantão dividido pelas suas horas e o valor mensal dividido pela carga semanal vezes 4,345 semanas. Cada valor com documento conta uma vez. A mediana e a faixa dos 50% do meio são calculadas sobre todos os valores do grupo. Valores da equipe não entram.', ds: ['valores'], calc: 'hora', sec: 'contratacao', v: (S) => `plantão ${S.hora.plantao.n} · hora avulsa ${S.hora.hora.n} · carga semanal ${S.hora.carga.n} valores` },
+    br_p24: { t: 'Plantão de 24h em prefeituras, Brasil parcial', como: 'Mediana de todos os valores de plantão de 24h pagos por prefeituras que os indicadores estaduais usam: editais e credenciamentos no PNCP e, onde o relatório do estado inclui, concursos e seleções.', ds: ['valores'], calc: 'val_kpi', sec: 'contratacao', v: (S) => (S.n24 ? `${S.n24} valores · mediana ${F.brl0(S.p24)}` : 'nenhum valor publicado') },
+    br_serie: { t: 'Vínculos médicos no CNES, 2022 a 2026', como: 'Soma dos médicos com vínculo ativo no CNES em setembro de cada ano nos estados com relatório (TabNet, mesma competência em cada ano).', ds: ['serie'], sec: 'ociosas', v: (S) => `${F.int(S.serie[0].medicos)} → ${F.int(S.serie[S.serie.length - 1].medicos)}` },
+    relatorio: { t: 'Relatório estadual', como: 'Painel publicado com os três relatórios do estado (mapeamento médico, contratação e valores, mapa de preços). Data do relatório: a da última atualização dos seus conjuntos de dados.', ds: [], sec: 'mapa', v: (S) => dBR(S.relatorio_em) },
+    n_mun: { t: 'Municípios mapeados', como: 'Número de municípios na tabela de médicos por município de cada relatório.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => F.int(S.n_mun) },
+    pop: { t: 'População estimada (IBGE 2025)', como: 'Soma da população estimada pelo IBGE para 2025 em todos os municípios do estado.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => F.int(S.pop) },
+    medicos: { t: 'Médicos com vínculo no CNES', como: 'Soma dos médicos com vínculo ativo em cada município (CNES, TabNet de Recursos Humanos, competência de setembro de 2026). Um médico que atua em dois municípios conta em cada um, por isso o total é de vínculos por município.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => F.int(S.medicos) },
+    dens: { t: 'Médicos por mil habitantes', como: 'Médicos com vínculo no CNES divididos pela população estimada do IBGE para 2025, vezes mil, somando todos os municípios.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => F.d2(S.dens) },
+    mun_baixa: { t: 'Municípios abaixo de 1 médico por mil habitantes', como: 'Municípios com menos de 1 médico por mil habitantes; a parcela da população soma os habitantes desses municípios.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => `${F.int(S.mun_baixa)} de ${F.int(S.n_mun)} (${F.pct(S.pop_baixa / S.pop)} da população)` },
+    mun_zero: { t: 'Municípios sem médico registrado', como: 'Municípios com zero médicos com vínculo no CNES na competência do relatório.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => F.int(S.mun_zero) },
+    conc: { t: 'Concentração nos polos', como: 'Parcela dos médicos do estado registrados nos municípios-polo de cada relatório.', ds: ['municipios'], calc: 'kpi', sec: 'mapa', v: (S) => `${F.pct(S.conc_share)} em ${S.polos}` },
+    cresc_cnes: { t: 'Crescimento do cadastro médico, 2022 a 2026', como: 'Médicos com vínculo ativo no CNES em setembro de 2026 comparados com setembro de 2022 (TabNet, mesma competência em cada ano).', ds: ['serie'], sec: 'ociosas', v: (S) => F.signed(S.cresc_cnes) },
+    int_100k: { t: 'Intensivistas por 100 mil habitantes', como: 'Médicos com especialidade de medicina intensiva no CNES divididos pela população estimada, vezes 100 mil.', ds: ['especialidades', 'municipios'], sec: 'ociosas', v: (S) => `${F.d2(S.int_100k)} (${F.int(S.intensivistas)} intensivistas)` },
+    ped: { t: 'Pediatras por 100 mil crianças de 0 a 14 anos', como: 'Pediatras no CNES divididos pela população de 0 a 14 anos do Censo 2022, vezes 100 mil.', ds: ['especialidades', 'indicadores'], sec: 'ociosas', v: (S) => (S.ped_100k_criancas !== null ? F.d1(S.ped_100k_criancas) : 'outra base no relatório') },
+    vinc: { t: 'Vínculos médicos nos hospitais e UPAs', como: 'Vínculos médicos de todos os hospitais, UPAs, prontos atendimentos e unidades mistas ativos no CNES, consultados por estabelecimento. Estatutário inclui cedidos e comissionados; PJ inclui o autônomo PJ e o intermediado por empresa; autônomo PF é o médico pago como pessoa física.', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => `${F.int(S.vinc.vinculos)} vínculos em ${F.int(S.vinc.unidades)} unidades` },
+    vinc_est: { t: 'Vínculos de concursados', como: 'Vínculos estatutários sobre o total de vínculos médicos nos hospitais e UPAs (CNES).', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => F.pct1(S.vinc.est / S.vinc.vinculos) },
+    vinc_tmp: { t: 'Vínculos por prazo determinado', como: 'Contratos por tempo determinado sobre o total de vínculos médicos nos hospitais e UPAs (CNES).', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => F.pct1(S.vinc.tmp / S.vinc.vinculos) },
+    vinc_pj: { t: 'Vínculos PJ', como: 'Médicos contratados por meio de pessoa jurídica (autônomo PJ ou intermediado) sobre o total de vínculos médicos nos hospitais e UPAs (CNES).', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => F.pct1(S.vinc.pj / S.vinc.vinculos) },
+    vinc_pf: { t: 'Vínculos de autônomo pessoa física', como: 'Médicos pagos como pessoa física sobre o total de vínculos médicos nos hospitais e UPAs (CNES).', ds: ['hospitais'], calc: 'kpi_vinc', sec: 'hospitais', v: (S) => F.pct1(S.vinc.pf / S.vinc.vinculos) },
+    p24: { t: 'Plantão de 24h em prefeituras, mediana', como: 'Mediana dos valores de plantão de 24h pagos por prefeituras (editais e credenciamentos no PNCP, concursos e seleções), o mesmo indicador do topo da seção de contratação do painel.', ds: ['valores'], calc: 'val_kpi', sec: 'contratacao', v: (S) => (S.n24 ? `${F.brl0(S.p24)} (${F.brl(S.p24h)}/h, ${S.n24} valores)` : 'sem valor publicado') },
+    hora_plantao: { t: 'Hora de plantão, mediana', como: 'Mediana do valor por hora de todos os plantões do gráfico “Quanto vale a hora médica” do painel (credenciamento, licitação, concurso, seleção e plantão pago pelo Estado). Valores da equipe não entram.', ds: ['valores'], calc: 'hora', sec: 'contratacao', v: (S) => (S.hora.plantao.n ? `${F.brl(S.hora.plantao.mediana)} (${S.hora.plantao.n} valores)` : 'sem valor') },
+    hora_hora: { t: 'Hora avulsa contratada, mediana', como: 'Mediana do valor por hora contratado de empresa ou credenciado por hora de serviço médico (pregões e credenciamentos no PNCP).', ds: ['valores'], calc: 'hora', sec: 'contratacao', v: (S) => (S.hora.hora.n ? `${F.brl(S.hora.hora.mediana)} (${S.hora.hora.n} valores)` : 'sem valor') },
+    hora_carga: { t: 'Carga semanal ou salário, mediana por hora', como: 'Mediana do valor por hora de salários e cargas semanais (concursos, seleções, contratos por carga), dividindo o valor mensal pela carga semanal vezes 4,345 semanas.', ds: ['valores'], calc: 'hora', sec: 'contratacao', v: (S) => (S.hora.carga.n ? `${F.brl(S.hora.carga.mediana)} (${S.hora.carga.n} valores)` : 'sem valor') },
+    cons_esp: { t: 'Preço mediano da consulta especializada', como: 'Mediana dos preços unitários de consulta da especialidade em credenciamentos e pregões do estado. Os nomes de especialidade foram agrupados por código para comparar estados (por exemplo, Pediatra e Pediatria).', ds: ['consultas'], calc: 'cons_esp', sec: 'contratacao', v: null },
+    usg: { t: 'Ultrassonografia, preço mediano por exame', como: 'Mediana dos preços unitários de ultrassonografia em credenciamentos e pregões do estado.', ds: ['consultas'], calc: 'cons_esp', sec: 'contratacao', v: (S) => (S.usg ? `${F.brl(S.usg.mediana)} (${S.usg.n} valores)` : 'sem valor') },
+    rem_estado: { t: 'Remuneração de referência do médico do Estado', como: 'Primeira linha da tabela de salários de cada painel: remuneração média paga ao médico efetivo do Estado ou, onde não há folha pública, o salário inicial do concurso. A descrição de cada valor diz o que ele mede.', ds: ['salarios'], sec: 'concursos', v: (S) => (S.remuneracao_estado ? F.brl0(S.remuneracao_estado.valor) : '—') },
+    concurso: { t: 'Concurso estadual: vagas de médico', como: 'Indicador de concurso de cada painel, com a data e a fonte da informação.', ds: ['indicadores'], sec: 'concursos', v: (S) => (S.concurso && S.concurso.valor !== null && S.concurso.valor !== 'Não localizado' ? F.int(Number(S.concurso.valor)) : 'Não localizado') },
+    n_mapa: { t: 'Valores no mapa de preços', como: 'Linhas do mapa de preços do painel: remuneração, consultas e exames, cada uma com documento de origem e link.', ds: ['valores', 'consultas'], calc: 'mapa_kpi', sec: 'contratacao', v: (S) => `${F.int(S.n_mapa)} de ${F.int(S.n_documentos)} documentos` },
+    n_contratos: { t: 'Contratos e credenciados', como: 'Contratos e credenciamentos de serviço médico publicados no PNCP, sem laboratórios.', ds: ['contratos'], sec: 'contratacao', v: (S) => `${F.int(S.n_contratos)} (${F.brlmi(S.contratos_valor_global)} somados)` },
+    n_noticias: { t: 'Notícias no relatório', como: 'Reportagens e publicações sobre falta de médicos, contratação e pagamento reunidas no relatório.', ds: ['noticias'], sec: 'noticias', v: (S) => F.int(S.n_noticias) },
+    share_60: { t: 'Pessoas com 60 anos ou mais', como: 'População de 60 anos ou mais sobre a população total, Censo 2022.', ds: ['indicadores', 'municipios'], calc: 'demo', sec: 'demografia', v: (S) => (S.demo ? F.pct1(S.demo.share_60) : 'não levantado') },
+    cobertura: { t: 'População com plano de saúde', como: 'Beneficiários de planos médico-hospitalares (ANS, dez/2025) sobre a população estimada.', ds: ['indicadores', 'municipios'], calc: 'demo', sec: 'demografia', v: (S) => (S.demo ? F.pct1(S.demo.cobertura) : 'não levantado') },
+  };
+  // ---------- news (home + page)
+  function allNews() {
+    const off = (APP.news || []).map((n) => ({ ...n, origem: 'relatorio' }));
+    const auto = APP.auto.noticias.map((n) => ({ ...n, origem: 'auto', uf: String(n.uf || '').toLowerCase() }));
+    const seen = new Set(off.map((n) => n.url));
+    return off.concat(auto.filter((n) => !seen.has(n.url))).sort((a, b) => String(b.data).localeCompare(String(a.data)));
+  }
+  function newsItem(n) {
+    const S = APP.P.estados[n.uf];
+    return h('article', { class: 'mx-newsitem', dataset: { fonte: n.origem === 'auto' ? 'auto_noticia' : 'n_noticias', uf: n.uf } },
+      h('div', { class: 'mx-newsdate', text: dBR(n.data) }),
+      h('div', null,
+        h('div', { class: 'mx-newsmeta' }, S ? h('span', { class: 'mx-tag uf', text: S.sigla }) : null, n.tema ? h('span', { class: 'mx-tag', text: n.tema }) : null, n.origem === 'auto' ? h('span', { class: 'mx-tag auto', text: 'atualização semanal' }) : null, h('span', { text: [n.local, n.veiculo].filter(Boolean).join(' · ') })),
+        isUrl(n.url) ? h('a', { class: 'mx-newslink', href: n.url, target: '_blank', rel: 'noopener', text: n.resumo }) : h('span', { class: 'mx-newslink', text: n.resumo })));
+  }
+  function renderHomeNews() {
+    const box = $('#mx-p-news');
+    if (!box || !APP.news) return;
+    box.replaceChildren(...allNews().slice(0, 5).map(newsItem));
+  }
+  const NEWS = { uf: '', tema: '', q: '' };
+  let newsBuilt = false;
+  function renderNews() {
+    if (!APP.news) { $('#mx-news-list').replaceChildren(h('p', { class: 'mx-note', text: 'Carregando notícias…' })); return; }
+    const all = allNews();
+    if (!newsBuilt) {
+      newsBuilt = true;
+      $('#mx-news-q').addEventListener('input', debounce((e) => { NEWS.q = e.target.value; renderNews(); }, 120));
+      $('#mx-news-tema').addEventListener('change', (e) => { NEWS.tema = e.target.value; renderNews(); });
+    }
+    const chips = [['', 'Todos os estados']].concat(APP.P.ordem.map((uf) => [uf, APP.P.estados[uf].nome]));
+    $('#mx-news-filters').replaceChildren(...chips.map(([uf, nome]) => {
+      const n = all.filter((x) => !uf || x.uf === uf).length;
+      return h('button', { type: 'button', class: 'mx-chip', 'aria-pressed': String(NEWS.uf === uf), onclick: () => { NEWS.uf = uf; renderNews(); } }, nome, h('span', { class: 'mx-num', style: 'opacity:.6', text: String(n) }));
+    }));
+    const temas = Array.from(new Set(all.map((n) => n.tema).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+    const sel = $('#mx-news-tema');
+    if (sel.options.length !== temas.length + 1) sel.replaceChildren(h('option', { value: '', text: 'Todos os temas' }), ...temas.map((t) => h('option', { value: t, text: t })));
+    sel.value = NEWS.tema;
+    const q = norm(NEWS.q);
+    const rows = all.filter((n) => (!NEWS.uf || n.uf === NEWS.uf) && (!NEWS.tema || n.tema === NEWS.tema) && (!q || norm([n.local, n.tema, n.resumo, n.veiculo].join(' ')).includes(q)));
+    $('#mx-news-count').textContent = rows.length === all.length ? `${F.int(all.length)} notícias` : `${F.int(rows.length)} de ${F.int(all.length)} notícias`;
+    const out = [];
+    let mes = null;
+    for (const n of rows) {
+      const m = String(n.data).slice(0, 7);
+      if (m !== mes) { mes = m; const [a, mm] = m.split('-'); out.push(h('h3', { class: 'mx-newsmonth', text: (MESL[+mm - 1] || '') + ' de ' + a })); }
+      out.push(newsItem(n));
+    }
+    $('#mx-news-list').replaceChildren(...(out.length ? out : [h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhuma notícia com esses filtros.' }), h('span', { text: 'Limpe a busca ou escolha outro estado.' }))]));
+  }
+
+  // ================================================================== STATE PAGE
+  let CUR = null, LOADING_UF = null;
+  function closeState() {
+    if (!CUR && !LOADING_UF) return;
+    if (CUR) { if (CUR.ro) CUR.ro.disconnect(); if (CUR.io) CUR.io.disconnect(); }
+    CUR = null; LOADING_UF = null;
+    $('#mx-state-root').replaceChildren();
+    const st = $('#mx-state-style'); if (st) st.textContent = '';
+    document.documentElement.style.removeProperty('--st');
+    window.TM = undefined;
+  }
+  function nextRun() {
+    if (!SCHEDULE) return null;
+    const d = new Date();
+    const r = new Date(d); r.setHours(SCHEDULE.h, SCHEDULE.m, 0, 0);
+    let add = (SCHEDULE.dow - d.getDay() + 7) % 7;
+    if (add === 0 && d >= r) add = 7;
+    r.setDate(r.getDate() + add);
+    return r;
+  }
+  function renderLocator(uf) {
+    const u = APP.BR.ufs.find((x) => x.uf.toLowerCase() === uf);
+    if (!u) return;
+    const nums = u.d.match(/-?\d+(\.\d+)?/g).map(Number);
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (let k = 0; k + 1 < nums.length; k += 2) { const x = nums[k], y = nums[k + 1]; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    const pad = Math.max(x1 - x0, y1 - y0) * 0.06;
+    const svg = sv('svg', { viewBox: `${x0 - pad} ${y0 - pad} ${x1 - x0 + 2 * pad} ${y1 - y0 + 2 * pad}` });
+    svg.append(sv('defs', null, sv('linearGradient', { id: 'mx-silg', x1: 0, x2: 0.5, y1: 0, y2: 1 }, sv('stop', { offset: '0%', style: 'stop-color:#3FE6F7' }), sv('stop', { offset: '100%', style: 'stop-color:var(--st)' })),
+      sv('filter', { id: 'mx-silglow', x: '-30%', y: '-30%', width: '160%', height: '160%' }, sv('feGaussianBlur', { stdDeviation: (x1 - x0) * 0.03, result: 'b' }), sv('feMerge', null, sv('feMergeNode', { in: 'b' }), sv('feMergeNode', { in: 'SourceGraphic' })))));
+    svg.append(sv('path', { d: u.d, fill: 'url(#mx-silg)', filter: 'url(#mx-silglow)' }));
+    $('#mx-st-locator').replaceChildren(svg);
+  }
+  async function openState(uf) {
+    if ((CUR && CUR.uf === uf) || LOADING_UF === uf) return;
+    closeState();
+    LOADING_UF = uf;
+    const S = APP.P.estados[uf], man = APP.man[uf];
+    document.documentElement.style.setProperty('--st', ST_COLOR[uf]);
+    $('#mx-st-eyebrow').textContent = `Relatório estadual · ${S.sigla}`;
+    $('#mx-st-name').textContent = S.nome;
+    $('#mx-st-meta').replaceChildren(...[
+      h('span', { dataset: { fonte: 'relatorio', uf } }, 'Relatório de ', h('b', { text: dBR(S.relatorio_em) })),
+      S.revisado_em ? h('span', null, 'Revisado em ', h('b', { text: dBR(S.revisado_em) })) : null,
+      h('span', null, 'CNES ', h('b', { text: compBR(S.cnes_competencia) })),
+      h('span', null, h('b', { text: F.int(S.n_mun) }), ' municípios'),
+      h('span', null, h('b', { text: F.int(S.pop) }), ' habitantes'),
+      h('span', null, h('b', { text: F.int(S.n_mapa) }), ' valores com fonte')].filter(Boolean));
+    $('#mx-st-orig').href = S.url;
+    $('#mx-st-addval').onclick = () => { APP.prefUF = uf; };
+    renderLocator(uf);
+    const root = $('#mx-state-root');
+    const ids = Object.keys(man.datasets);
+    const bar = h('i'), lbl = h('span', { class: 'mx-note', text: `Carregando ${ids.length} conjuntos de dados do relatório…` });
+    root.replaceChildren(h('div', { class: 'mx-loading' }, lbl, h('div', { class: 'bar' }, bar), h('div', { class: 'dash-skeleton', style: 'min-height:320px' })));
+    const data = {};
+    let done = 0;
+    try {
+      await Promise.all(ids.map((id) => getJSON(`data/${uf}/${id}.json`).then((rows) => { data[id] = rows; done += 1; bar.style.width = (done / ids.length * 100) + '%'; })));
+    } catch (e) {
+      if (LOADING_UF === uf) root.replaceChildren(h('div', { class: 'mx-msg err', text: 'Os dados do relatório não carregaram (' + e.message + '). Recarregue a página.' }));
+      LOADING_UF = null;
+      return;
+    }
+    if (LOADING_UF !== uf) return;
+    const mod = window.MX_ESTADOS && window.MX_ESTADOS[uf];
+    if (!mod) { root.replaceChildren(h('div', { class: 'mx-msg err', text: 'O painel deste estado não carregou. Recarregue a página.' })); LOADING_UF = null; return; }
+    let st = $('#mx-state-style');
+    if (!st) { st = document.createElement('style'); st.id = 'mx-state-style'; document.head.appendChild(st); }
+    st.textContent = mod.css;
+    root.innerHTML = mod.markup;
+    const tm = root.querySelector('.tm');
+    const nav = tm.querySelector('.tm-nav'), kpis = tm.querySelector('.tm-kpis');
+    if (nav && kpis) tm.insertBefore(nav, kpis);
+    const ctx = makeCtx(uf, root, data, man);
+    try { mod.run(ctx.dash); } catch (e) { console.error('painel', uf, e); root.prepend(h('div', { class: 'mx-msg err', text: 'Parte do painel não carregou: ' + e.message })); }
+    injectTeamCard(ctx); injectNovidades(ctx); injectDownloads(ctx);
+    ctx.runAll();
+    CUR = ctx; LOADING_UF = null;
+    // scroll spy
+    const btns = $$('.tm-nav button', root);
+    ctx.io = new IntersectionObserver((ents) => {
+      for (const en of ents) if (en.isIntersecting) btns.forEach((b) => b.setAttribute('aria-current', String((b.dataset.go || b.dataset.mxGo) === en.target.id)));
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    $$('.tm-sec', root).forEach((s) => ctx.io.observe(s));
+    let lastW = root.clientWidth;
+    ctx.ro = new ResizeObserver(debounce(() => { const w = root.clientWidth; if (Math.abs(w - lastW) > 8) { lastW = w; ctx.runCharts(); } }, 160));
+    ctx.ro.observe(root);
+    if (APP.pendingSec) { const t = document.getElementById(APP.pendingSec); APP.pendingSec = null; if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60); }
+  }
+  function makeCtx(uf, root, data, man) {
+    const ctx = { uf, root, data, man, calcs: {}, cache: {}, draws: {}, onData: [] };
+    const cols = (rows) => (Array.isArray(rows) && rows.length ? Object.keys(rows[0]) : []);
+    const dash = {
+      data(id) {
+        if (id in ctx.data) return { status: 'ok', data: ctx.data[id], columns: cols(ctx.data[id]), meta: [], refreshing: false };
+        const c = ctx.calcs[id];
+        if (c) {
+          if (!(id in ctx.cache)) {
+            try { ctx.cache[id] = c.fn(...c.inputs.map((i) => dash.data(i).data)); }
+            catch (e) { console.error('cálculo', id, e); return { status: 'error', data: [], message: String(e) }; }
+          }
+          return { status: 'ok', data: ctx.cache[id], columns: cols(ctx.cache[id]), meta: [], refreshing: false };
+        }
+        return { status: 'missing', data: [], message: 'conjunto não encontrado' };
+      },
+      calc(id, def) {
+        if (id === 'hora') {
+          const orig = def.fn;
+          def = Object.assign({}, def, { orig, fn: (...a) => { const out = orig(...a); return APP.teamOn ? out.concat(teamHoraRows(uf)) : out; } });
+        }
+        ctx.calcs[id] = def;
+      },
+      draw(name, fn) { if (typeof fn === 'function') { ctx.draws[name] = fn; return; } run(name); },
+      onData(fn) { ctx.onData.push(fn); },
+      loader() {}, setLink() {}, refresh() {}, params: () => ({}), setParams() {}, resetParams() {},
+      colors: SERIES.slice(),
+    };
+    function run(name) {
+      const fn = ctx.draws[name];
+      if (!fn) return;
+      root.querySelectorAll(`[data-draw="${name}"]`).forEach((el) => { try { fn(el); } catch (e) { console.error('desenho', name, e); } });
+    }
+    ctx.dash = dash; ctx.run = run;
+    ctx.runAll = () => { Object.keys(ctx.draws).forEach(run); ctx.onData.forEach((f) => { try { f(); } catch (e) { /* ignore */ } }); };
+    ctx.runCharts = () => { const names = new Set(); root.querySelectorAll('.tm-chart[data-draw], .tm-map[data-draw]').forEach((el) => names.add(el.dataset.draw)); names.forEach(run); };
+    return ctx;
+  }
+
+  // team card inside the state dashboard
+  function injectTeamCard(ctx) {
+    const hc = ctx.root.querySelector('#valor-hora');
+    if (!hc) return;
+    const card = hc.closest('.tm-card');
+    const leg = card.querySelector('.tm-legend');
+    if (leg) leg.append(h('span', { class: 'mx-teamleg' }, h('i', { class: 'tm-sw', style: 'background:var(--team)' }), 'Informado pela equipe'));
+    const team = h('div', { class: 'tm-card mx-teamcard', id: 'mx-teamcard', 'data-source': 'valores_equipe' });
+    card.after(team);
+    ctx.teamCard = team;
+    updateTeamCard(ctx);
+  }
+  function updateTeamCard(ctx) {
+    const card = ctx.teamCard;
+    if (!card) return;
+    const S = APP.P.estados[ctx.uf];
+    const rows = teamAtivos(ctx.uf).sort((a, b) => String(b.mes).localeCompare(String(a.mes)) || String(b.criado_em).localeCompare(String(a.criado_em)));
+    const leg = ctx.root.querySelector('.mx-teamleg'); if (leg) leg.hidden = !APP.teamOn || !rows.some((r) => Number(r.valor_hora) > 0);
+    const offRows = (ctx.calcs.hora && ctx.calcs.hora.orig) ? ctx.calcs.hora.orig(ctx.data.valores) : [];
+    const offPl = median(offRows.filter((r) => /Plantão/i.test(r.categoria)).map((r) => r.valor_hora));
+    const tmPl = median(rows.filter((r) => /^Plantão/.test(r.forma) && Number(r.valor_hora) > 0).map((r) => Number(r.valor_hora)));
+    const kids = [
+      h('h3', { class: 'tm-card-h' }, h('span', { class: 'mx-teamdot' }), 'Valores informados pela equipe'),
+      h('p', { class: 'tm-card-n', text: `Apurados em contato direto com médicos e registrados na página Valores da equipe. Ficam fora dos indicadores e do mapa de preços do relatório; no gráfico acima aparecem como uma linha própria em rosa${APP.teamOn ? '' : ' (a camada está desligada no momento)'}.` }),
+      h('div', { class: 'mx-kpis' },
+        h('div', { class: 'mx-kpi' }, h('span', { text: 'Valores em uso' }), h('b', { text: F.int(rows.length) }), h('small', { text: rows.length ? 'último: ' + compBR(rows[0].mes) : 'nenhum ainda' })),
+        h('div', { class: 'mx-kpi' }, h('span', { text: 'Hora de plantão, equipe (mediana)' }), h('b', { style: 'color:var(--team)', text: tmPl ? F.brl(tmPl) : '—' }), h('small', { text: ((n) => n + (n === 1 ? ' plantão informado' : ' plantões informados'))(rows.filter((r) => /^Plantão/.test(r.forma)).length) })),
+        h('div', { class: 'mx-kpi', dataset: { source: 'hora' } }, h('span', { text: 'Hora de plantão no relatório (mediana)' }), h('b', { text: offPl ? F.brl(offPl) : '—' }), h('small', { text: tmPl && offPl ? 'equipe ' + F.signed(tmPl / offPl - 1) + ' em relação ao relatório' : 'documentos públicos' }))),
+    ];
+    if (APP.dbState === 'off') kids.push(h('p', { class: 'mx-note', text: 'O banco de valores da equipe não está disponível nesta visualização. Abra o site pelo claude.ai com sua conta para ver e registrar valores.' }));
+    if (rows.length) {
+      kids.push(h('div', { class: 'tm-tbl-wrap tm-short' }, h('table', { class: 'tm-tbl' },
+        h('thead', null, h('tr', null, ...['Mês', 'Município', 'Contratante', 'Especialidade', 'Forma', 'Valor', 'Por hora', 'Vínculo', 'Origem', 'Registrado por'].map((t, i) => h('th', { class: [5, 6].includes(i) ? 'num' : (i >= 7 ? 'tm-hide-sm' : null), text: t })))),
+        h('tbody', null, ...rows.map((r) => h('tr', null, h('td', { class: 'num', text: compBR(r.mes) }), h('td', { text: r.municipio }), h('td', { text: r.contratante }), h('td', { text: r.especialidade }), h('td', { text: r.forma === 'Mensal' ? `Mensal, ${r.carga}h/sem` : r.forma }),
+          h('td', { class: 'num', text: F.brl(Number(r.valor)) }), h('td', { class: 'num', text: Number(r.valor_hora) > 0 ? F.brl(Number(r.valor_hora)) : '—' }), h('td', { class: 'tm-hide-sm', text: r.vinculo || '—' }), h('td', { class: 'tm-hide-sm', text: r.origem + (r.detalhe ? ' · ' + r.detalhe : '') }), h('td', { class: 'tm-hide-sm', text: nomeDe(r.autor) })))))));
+    } else if (APP.dbState !== 'off') {
+      kids.push(h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhum valor registrado para ' + S.nome + ' ainda.' }), h('span', { text: 'Quando a equipe registrar um plantão, uma hora ou um salário apurado com médicos, ele aparece aqui e no gráfico de hora médica.' })));
+    }
+    kids.push(h('div', null, h('a', { class: 'mx-btn ghost sm', href: '#valores-da-equipe', onclick: () => { APP.prefUF = ctx.uf; }, text: 'Registrar valor em ' + S.nome })));
+    card.replaceChildren(...kids);
+  }
+  function injectNovidades(ctx) {
+    const card = ctx.teamCard;
+    if (!card) return;
+    const nv = h('div', { class: 'tm-card', id: 'mx-novidades', 'data-source': 'auto_valores' });
+    card.after(nv);
+    ctx.novCard = nv;
+    updateNovidades(ctx);
+  }
+  function updateNovidades(ctx) {
+    const box = ctx.novCard;
+    if (!box) return;
+    const S = APP.P.estados[ctx.uf], U = ctx.uf.toUpperCase();
+    const vals = APP.auto.valores.filter((r) => String(r.uf).toUpperCase() === U).sort((a, b) => String(b.data).localeCompare(String(a.data)));
+    const cons = APP.auto.contratos.filter((r) => String(r.uf).toUpperCase() === U).sort((a, b) => String(b.data || b.inicio).localeCompare(String(a.data || a.inicio)));
+    const last = APP.updates[0];
+    const kids = [
+      h('h3', { class: 'tm-card-h', text: 'Novo desde o relatório: atualização semanal do PNCP' }),
+      h('p', { class: 'tm-card-n', text: `Contratações e contratos de serviço médico publicados no PNCP depois de ${dBR(S.relatorio_em)}, encontrados pela varredura semanal por modalidade. Não entram nos indicadores do relatório até a próxima revisão do estado. ${last && last.status !== 'Base inicial' ? 'Última varredura: ' + dBR(last.data) + '. ' : ''}${SCHEDULE ? `Próxima: ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora}.` : 'A atualização semanal ainda não foi agendada.'}` }),
+    ];
+    if (!vals.length && !cons.length) {
+      kids.push(h('div', { class: 'mx-empty' }, h('b', { text: last && last.status !== 'Base inicial' ? 'Nada novo nesta semana.' : 'Nenhuma varredura feita ainda.' }), h('span', { text: last && last.status !== 'Base inicial' ? 'A varredura não encontrou contratação de serviço médico nova neste estado.' : 'Quando a atualização semanal for agendada, os resultados aparecem aqui.' })));
+    }
+    if (vals.length) {
+      kids.push(h('div', { class: 'tm-tbl-wrap tm-short' }, h('table', { class: 'tm-tbl' },
+        h('thead', null, h('tr', null, ...['Data', 'Município', 'Órgão', 'Descrição', 'Valor', 'Base', 'Por hora', 'Fonte'].map((t, i) => h('th', { class: [4, 6].includes(i) ? 'num' : (i === 2 ? 'tm-hide-sm' : null), text: t })))),
+        h('tbody', null, ...vals.map((r) => h('tr', null, h('td', { class: 'num', text: dBR(r.data) }), h('td', { text: r.municipio || '—' }), h('td', { class: 'tm-hide-sm', text: r.orgao || '—' }), h('td', { text: r.descricao || '—' }),
+          h('td', { class: 'num', text: Number(r.valor) > 0 ? F.brl(Number(r.valor)) : '—' }), h('td', { text: r.base || '—' }), h('td', { class: 'num', text: Number(r.valor_hora) > 0 ? F.brl(Number(r.valor_hora)) : '—' }),
+          h('td', null, isUrl(r.url) ? h('a', { href: r.url, target: '_blank', rel: 'noopener', text: r.controle_pncp || 'abrir' }) : (r.controle_pncp || '—'))))))));
+    }
+    if (cons.length) {
+      kids.push(h('p', { class: 'tm-card-n', style: 'margin-top:8px', text: `${F.int(cons.length)} contratos novos` }));
+      kids.push(h('div', { class: 'tm-tbl-wrap tm-short' }, h('table', { class: 'tm-tbl' },
+        h('thead', null, h('tr', null, ...['Início', 'Município', 'Contratado', 'Objeto', 'Valor global', 'Fonte'].map((t, i) => h('th', { class: i === 4 ? 'num' : null, text: t })))),
+        h('tbody', null, ...cons.map((r) => h('tr', null, h('td', { class: 'num', text: dBR(r.inicio || r.data) }), h('td', { text: r.municipio || '—' }), h('td', { text: (r.fornecedor || '—') + (r.cnpj ? ' · ' + r.cnpj : '') }), h('td', { text: r.objeto || '—' }),
+          h('td', { class: 'num', text: Number(r.valor_global) > 0 ? F.brl0(Number(r.valor_global)) : '—' }), h('td', null, isUrl(r.url) ? h('a', { href: r.url, target: '_blank', rel: 'noopener', text: 'abrir' }) : '—')))))));
+    }
+    box.replaceChildren(...kids);
+  }
+  function injectDownloads(ctx) {
+    const tm = ctx.root.querySelector('.tm'), nav = ctx.root.querySelector('.tm-nav');
+    const sec = h('section', { class: 'tm-sec', id: 'mx-dados' });
+    const list = h('div');
+    const mk = (id, title, desc, n, upd, rowsFn, isCalc) => h('div', { class: 'mx-dsrow' },
+      h('div', null, h('b', { text: title }), h('p', { text: `${desc}${desc ? ' ' : ''}${F.int(n)} linhas${upd ? ' · atualizado em ' + dBR(upd) : ''}${isCalc ? ' · calculado no painel' : ''}.` })),
+      h('div', { class: 'mx-rowacts' },
+        h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: () => baixarCSV(`${ctx.uf}_${id}`, rowsFn()), text: 'CSV' }),
+        h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: () => baixarJSON(`${ctx.uf}_${id}`, rowsFn()), text: 'JSON' })));
+    for (const [id, m] of Object.entries(ctx.man.datasets)) list.append(mk(id, m.title, m.description, m.rows, m.updated, () => ctx.data[id]));
+    for (const id of ['mapa', 'hora', 'cons_esp', 'regioes']) {
+      const c = ctx.calcs[id];
+      if (!c) continue;
+      const rows = ctx.dash.data(id).data || [];
+      list.append(mk(id, c.title, c.description, rows.length, null, () => ctx.dash.data(id).data, true));
+    }
+    sec.append(h('h2', { class: 'tm-sec-h', text: 'Dados e downloads' }),
+      h('p', { class: 'tm-sec-p', text: 'Todos os conjuntos que alimentam este painel, como foram publicados no relatório. O CSV abre direto no Excel em português (separador ponto e vírgula e vírgula decimal); o JSON guarda os campos como estão.' }),
+      list);
+    tm.append(sec);
+    if (nav) {
+      const b = h('button', { type: 'button', dataset: { mxGo: 'mx-dados' }, text: 'Dados e downloads' });
+      b.addEventListener('click', () => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      nav.append(b);
+    }
+  }
+
+  // ================================================================== TEAM PAGE
+  let teamBuilt = false;
+  const TEAMF = { uf: '', st: 'ativo', q: '' };
+  function setDb(state) {
+    APP.dbState = state;
+    const msg = $('#mx-form-state'), btn = $('#f-submit');
+    if (!msg) return;
+    if (state === 'loading') { msg.hidden = false; msg.className = 'mx-msg'; msg.textContent = 'Conectando ao banco de valores da equipe…'; btn.disabled = true; }
+    else if (state === 'ok') { msg.hidden = true; btn.disabled = false; }
+    else { msg.hidden = false; msg.className = 'mx-msg err'; msg.textContent = 'Para registrar valores, abra o site pelo claude.ai, entrando com a sua conta. Quem recebeu o site só com permissão de visualização não consegue gravar: peça ao responsável acesso com permissão de uso.'; btn.disabled = true; }
+    if (PAGE === 'valores-da-equipe') renderTeamList();
+    if (CUR) updateTeamCard(CUR);
+  }
+  function renderTeamPage() {
+    if (!teamBuilt) {
+      teamBuilt = true;
+      const sel = $('#f-uf');
+      const og1 = h('optgroup', { label: 'Estados com relatório' }, ...APP.P.ordem.map((uf) => h('option', { value: uf, text: APP.P.estados[uf].nome })));
+      const others = APP.BR.ufs.filter((u) => !APP.P.estados[u.uf.toLowerCase()]).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+      const og2 = h('optgroup', { label: 'Outros estados (ficam guardados para relatórios futuros)' }, ...others.map((u) => h('option', { value: u.uf.toLowerCase(), text: u.nome })));
+      sel.replaceChildren(og1, og2);
+      const now = new Date();
+      $('#f-mes').value = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      $('#f-mes').max = $('#f-mes').value;
+      sel.addEventListener('change', fillMun);
+      $('#f-forma').addEventListener('change', () => { $('#f-carga-wrap').hidden = $('#f-forma').value !== 'Mensal'; updatePreview(); });
+      ['f-valor', 'f-carga'].forEach((id) => $('#' + id).addEventListener('input', updatePreview));
+      $('#mx-form').addEventListener('submit', submitTeam);
+      $('#mx-team-fuf').addEventListener('change', (e) => { TEAMF.uf = e.target.value; renderTeamList(); });
+      $('#mx-team-fst').addEventListener('change', (e) => { TEAMF.st = e.target.value; renderTeamList(); });
+      $('#mx-team-q').addEventListener('input', debounce((e) => { TEAMF.q = e.target.value; renderTeamList(); }, 120));
+      $('#mx-team-csv').addEventListener('click', () => baixarCSV('valores_da_equipe', teamFiltered().map((r) => ({ estado: r.uf.toUpperCase(), municipio: r.municipio, contratante: r.contratante, quem_paga: r.esfera, especialidade: r.especialidade, forma: r.forma, carga_semanal: r.carga || null, valor: Number(r.valor), valor_hora: Number(r.valor_hora) || null, bruto_ou_liquido: r.bruto, vinculo: r.vinculo, mes: r.mes, origem: r.origem, detalhe: r.detalhe, observacoes: r.obs, situacao: r.status, registrado_por: nomeDe(r.autor), registrado_em: r.criado_em }))));
+      setDb(APP.dbState);
+    }
+    if (APP.prefUF) { $('#f-uf').value = APP.prefUF; APP.prefUF = null; }
+    fillMun(); updatePreview(); renderTeamList();
+  }
+  async function fillMun() {
+    const uf = $('#f-uf').value, dl = $('#f-mun-list');
+    if (!APP.mun) { try { APP.mun = await getJSON('data/municipios.json'); } catch (e) { APP.mun = {}; } }
+    dl.replaceChildren(...(APP.mun[uf] || []).map((n) => h('option', { value: n })));
+  }
+  function updatePreview() {
+    const forma = $('#f-forma').value, valor = Number($('#f-valor').value), carga = Number($('#f-carga').value);
+    const horas = horasDe({ forma, carga });
+    const b = $('#f-preview b'), sub = $('#f-preview-sub');
+    if (forma === 'Por consulta') { b.textContent = valor > 0 ? F.brl(valor) : '—'; sub.textContent = 'por atendimento; não entra no gráfico de hora'; return; }
+    b.textContent = valor > 0 && horas ? F.brl(valor / horas) : '—';
+    sub.textContent = horas ? `por hora (${forma === 'Mensal' ? `${carga}h × ${LOC.format(',.3f')(SEMANAS_MES)} semanas = ${F.d1(horas)}h no mês` : F.int(horas) + (horas === 1 ? ' hora' : ' horas')})` : 'por hora: informe a carga semanal';
+  }
+  async function submitTeam(ev) {
+    ev.preventDefault();
+    const err = $('#mx-form-err');
+    err.hidden = true;
+    if (!APP.db) { err.hidden = false; err.textContent = 'O banco de valores não está disponível nesta visualização.'; return; }
+    const v = (id) => $('#' + id).value.trim();
+    const t = { uf: v('f-uf'), municipio: v('f-mun'), contratante: v('f-contratante'), esfera: v('f-esfera'), especialidade: v('f-esp'), forma: v('f-forma'), valor: Number($('#f-valor').value), bruto: v('f-bruto'), vinculo: v('f-vinculo'), mes: v('f-mes'), origem: v('f-origem'), detalhe: v('f-detalhe'), obs: v('f-obs') };
+    if (t.forma === 'Mensal') t.carga = Number($('#f-carga').value);
+    const faltam = [];
+    if (!t.municipio) faltam.push('município');
+    if (!t.contratante) faltam.push('contratante e unidade');
+    if (!t.especialidade) faltam.push('especialidade');
+    if (!(t.valor > 0)) faltam.push('valor');
+    if (t.forma === 'Mensal' && !(t.carga >= 1 && t.carga <= 80)) faltam.push('carga semanal entre 1 e 80 horas');
+    if (!/^\d{4}-\d{2}$/.test(t.mes)) faltam.push('mês de referência');
+    if (faltam.length) { err.hidden = false; err.textContent = 'Preencha: ' + faltam.join(', ') + '.'; return; }
+    if (t.mes > $('#f-mes').max) { err.hidden = false; err.textContent = 'O mês de referência não pode estar no futuro.'; return; }
+    if (t.valor > 200000) { err.hidden = false; err.textContent = 'O valor parece alto demais para um pagamento médico. Confira se não há um zero a mais.'; return; }
+    if (/\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\(?\d{2}\)?\s?9?\d{4}-?\d{4}/.test(t.detalhe + ' ' + t.obs)) { err.hidden = false; err.textContent = 'Tire o CPF ou telefone do detalhe e das observações: o site é visto por toda a equipe.'; return; }
+    const horas = horasDe(t);
+    const doc = Object.assign(t, {
+      uf_nome: (APP.P.estados[t.uf] || APP.BR.ufs.find((u) => u.uf.toLowerCase() === t.uf) || {}).nome || t.uf.toUpperCase(),
+      horas: horas ? Math.round(horas * 100) / 100 : null,
+      valor_hora: horas && t.forma !== 'Por consulta' ? Math.round(t.valor / horas * 100) / 100 : null,
+      status: 'ativo', autor: APP.me || null, criado_em: new Date().toISOString(),
+    });
+    if (doc.carga === undefined) delete doc.carga;
+    const btn = $('#f-submit');
+    btn.disabled = true; btn.textContent = 'Registrando…';
+    try {
+      await APP.db.collection('valores_equipe').add(doc);
+      toast(`Valor registrado. Já aparece ${APP.P.estados[doc.uf] ? 'no painel de ' + doc.uf_nome + ' e no panorama' : 'na lista da equipe'}.`);
+      ['f-valor', 'f-detalhe', 'f-obs', 'f-contratante', 'f-carga'].forEach((id) => { $('#' + id).value = ''; });
+      updatePreview();
+    } catch (e) {
+      err.hidden = false;
+      err.textContent = e && e.code === 'not_granted' ? 'Sua conta não tem permissão para gravar neste site. Peça ao responsável acesso com permissão de uso.' : 'Não foi possível registrar agora (' + ((e && (e.message || e.code)) || 'erro') + '). Tente de novo em instantes.';
+    } finally { btn.disabled = APP.dbState !== 'ok'; btn.textContent = 'Registrar valor'; }
+  }
+  function teamFiltered() {
+    const q = norm(TEAMF.q);
+    return APP.team.filter((r) => (!TEAMF.uf || r.uf === TEAMF.uf) && (!TEAMF.st || (r.status || 'ativo') === TEAMF.st) && (!q || norm([r.municipio, r.contratante, r.especialidade, r.uf_nome, r.detalhe].join(' ')).includes(q)))
+      .sort((a, b) => String(b.criado_em).localeCompare(String(a.criado_em)));
+  }
+  function renderTeamList() {
+    if (!teamBuilt) return;
+    const ativos = teamAtivos();
+    const ufs = Array.from(new Set(APP.team.map((r) => r.uf))).sort();
+    const fsel = $('#mx-team-fuf');
+    const want = [''].concat(ufs).join('|');
+    if (fsel.dataset.k !== want) { fsel.dataset.k = want; fsel.replaceChildren(h('option', { value: '', text: 'Todos os estados' }), ...ufs.map((uf) => h('option', { value: uf, text: (APP.P.estados[uf] || {}).nome || uf.toUpperCase() }))); fsel.value = TEAMF.uf; }
+    const pl = median(ativos.filter((r) => /^Plantão/.test(r.forma) && Number(r.valor_hora) > 0).map((r) => Number(r.valor_hora)));
+    const ult = ativos.map((r) => r.criado_em).sort().pop();
+    $('#mx-team-kpis').replaceChildren(
+      h('div', { class: 'mx-kpi' }, h('span', { text: 'Valores em uso' }), h('b', { text: F.int(ativos.length) }), h('small', { text: F.int(APP.team.length - ativos.length) + ' arquivados' })),
+      h('div', { class: 'mx-kpi' }, h('span', { text: 'Estados com registro' }), h('b', { text: F.int(new Set(ativos.map((r) => r.uf)).size) }), h('small', { text: Array.from(new Set(ativos.map((r) => r.uf.toUpperCase()))).join(', ') || '—' })),
+      h('div', { class: 'mx-kpi' }, h('span', { text: 'Hora de plantão, mediana' }), h('b', { style: 'color:var(--team)', text: pl ? F.brl(pl) : '—' }), h('small', { text: 'todos os estados' })),
+      h('div', { class: 'mx-kpi' }, h('span', { text: 'Último registro' }), h('b', { text: ult ? dBR(ult) : '—' }), h('small', { text: ult ? 'por ' + nomeDe((ativos.find((r) => r.criado_em === ult) || {}).autor) : '' })));
+    const box = $('#mx-team-list');
+    if (APP.dbState === 'loading') { box.replaceChildren(h('div', { class: 'dash-skeleton', style: 'min-height:200px' })); return; }
+    if (APP.dbState === 'off') { box.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Valores da equipe indisponíveis nesta visualização.' }), h('span', { text: 'Abra o site pelo claude.ai com sua conta para ver e registrar valores.' }))); return; }
+    const rows = teamFiltered();
+    if (!rows.length) {
+      box.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: APP.team.length ? 'Nenhum valor com esses filtros.' : 'Nenhum valor registrado ainda.' }), h('span', { text: APP.team.length ? 'Mude o estado, a situação ou a busca.' : 'Use o formulário para registrar o primeiro. Ele aparece na hora no painel do estado, em rosa, e no gráfico de hora médica do panorama.' })));
+      return;
+    }
+    const canAct = (r) => APP.canEdit || (APP.me && r.autor === APP.me);
+    const tbl = h('table', { class: 'mx-table' },
+      h('thead', null, h('tr', null, ...['Mês', 'Estado', 'Município', 'Contratante', 'Especialidade', 'Forma', 'Valor', 'Por hora', 'Vínculo', 'Origem', 'Registrado por', ''].map((t, i) => h('th', { class: [6, 7].includes(i) ? 'n' : null, text: t })))),
+      h('tbody', null, ...rows.map((r) => {
+        const arch = r.status === 'arquivado';
+        const act = h('td', { class: 'acts' });
+        if (canAct(r)) {
+          const b = h('button', { type: 'button', class: 'mx-btn ghost sm', text: arch ? 'Restaurar' : 'Arquivar' });
+          b.addEventListener('click', async () => {
+            if (!b.dataset.confirm) { b.dataset.confirm = '1'; b.textContent = arch ? 'Confirmar restauração' : 'Confirmar arquivamento'; setTimeout(() => { if (b.isConnected) { delete b.dataset.confirm; b.textContent = arch ? 'Restaurar' : 'Arquivar'; } }, 4000); return; }
+            b.disabled = true;
+            try { await APP.db.collection('valores_equipe').doc(r.id).update(arch ? { status: 'ativo', restaurado_por: APP.me || null, restaurado_em: new Date().toISOString() } : { status: 'arquivado', arquivado_por: APP.me || null, arquivado_em: new Date().toISOString() }); toast(arch ? 'Valor restaurado.' : 'Valor arquivado: saiu dos gráficos e continua guardado.'); }
+            catch (e) { b.disabled = false; toast('Não foi possível alterar: ' + ((e && (e.message || e.code)) || 'erro')); }
+          });
+          act.append(b);
+        }
+        return h('tr', { class: arch ? 'is-arch' : null, 'data-source': 'valores_equipe' },
+          h('td', { text: compBR(r.mes) }), h('td', null, h('span', { class: 'mx-tag uf', text: String(r.uf).toUpperCase() })), h('td', { text: r.municipio }), h('td', { text: r.contratante }), h('td', { text: r.especialidade }),
+          h('td', { text: r.forma === 'Mensal' ? `Mensal, ${r.carga}h/sem` : r.forma }), h('td', { class: 'n', text: F.brl(Number(r.valor)) }), h('td', { class: 'n', text: Number(r.valor_hora) > 0 ? F.brl(Number(r.valor_hora)) : '—' }),
+          h('td', { text: r.vinculo || '—' }), h('td', null, r.origem, r.detalhe ? h('small', { text: r.detalhe }) : null, r.obs ? h('small', { text: r.obs }) : null), h('td', null, nomeDe(r.autor), h('small', { text: dBR(r.criado_em) })), act);
+      })));
+    box.replaceChildren(h('div', { class: 'mx-tablewrap' }, tbl));
+  }
+
+  // ================================================================== FONTES PAGE
+  function renderFontes() {
+    const P = APP.P;
+    const thead = h('thead', null, h('tr', null, ...['Estado', 'Relatório de', 'CNES', 'Valores no mapa de preços', 'Documentos', 'Contratos', 'Notícias', 'Painel original'].map((t, i) => h('th', { class: i >= 3 && i <= 6 ? 'n' : null, text: t }))));
+    const tbody = h('tbody', null, ...P.ordem.map((uf) => { const S = P.estados[uf]; return h('tr', null,
+      h('th', { scope: 'row' }, h('a', { href: '#' + S.slug, text: S.nome })), h('td', null, dBR(S.relatorio_em), S.revisado_em ? h('small', { text: 'revisado em ' + dBR(S.revisado_em) }) : null), h('td', { text: compBR(S.cnes_competencia) }),
+      h('td', { class: 'n', text: F.int(S.n_mapa) }), h('td', { class: 'n', text: F.int(S.n_documentos) }), h('td', { class: 'n', text: F.int(S.n_contratos) }), h('td', { class: 'n', text: F.int(S.n_noticias) }),
+      h('td', null, h('a', { href: S.url, target: '_blank', rel: 'noopener', text: 'abrir' }))); }));
+    $('#mx-f-rel').replaceChildren(thead, tbody);
+    const log = $('#mx-f-log');
+    if (APP.dbState === 'off') { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Histórico indisponível nesta visualização.' }), h('span', { text: 'Abra o site pelo claude.ai com sua conta para ver o registro das atualizações.' }))); return; }
+    if (!APP.updates.length) { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhuma rodada registrada ainda.' }), h('span', { text: SCHEDULE ? `A próxima atualização automática roda ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora} (horário de Brasília).` : 'A atualização semanal ainda não foi agendada.' }))); return; }
+    log.replaceChildren(h('div', { class: 'mx-tablewrap' }, h('table', { class: 'mx-table' },
+      h('thead', null, h('tr', null, ...['Data', 'Situação', 'Resumo', 'TO', 'RR', 'AL', 'RS', 'RO'].map((t, i) => h('th', { class: i >= 3 ? 'n' : null, text: t })))),
+      h('tbody', null, ...APP.updates.map((u) => h('tr', null, h('td', { text: dBR(u.data) }), h('td', { text: u.status || '—' }), h('td', null, u.resumo || '—', u.observacoes ? h('small', { text: u.observacoes }) : null),
+        ...['to', 'rr', 'al', 'rs', 'ro'].map((uf) => { const e = (u.por_estado || {})[uf] || {}; return h('td', { class: 'n' }, e.novos_valores !== undefined ? `${F.int(e.novos_valores || 0)} val.` : '—', h('small', { text: e.novos_contratos !== undefined ? `${F.int(e.novos_contratos || 0)} contr. · ${F.int(e.novas_noticias || 0)} not.` : '' })); })))))));
+  }
+
+  // ================================================================== SOURCE DRAWER
+  const drawer = $('#mx-drawer'), scrim = $('#mx-scrim');
+  function openDrawer(eyebrow, title, blocks) {
+    $('#mx-dr-eyebrow').textContent = eyebrow; $('#mx-dr-title').textContent = title;
+    $('#mx-dr-body').replaceChildren(...blocks.filter(Boolean));
+    drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); scrim.hidden = false;
+    $('#mx-dr-close').focus({ preventScroll: true });
+  }
+  function closeDrawer() { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); scrim.hidden = true; }
+  $('#mx-dr-close').addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  const blk = (title, ...kids) => h('div', { class: 'blk' }, h('h3', { text: title }), ...kids);
+  function preview(rows, hit) {
+    if (!Array.isArray(rows) || !rows.length) return h('p', { text: 'Sem linhas.' });
+    const cols = Object.keys(rows[0]).filter((c) => c !== 'geom').slice(0, 14);
+    const sel = hit ? [hit].concat(rows.filter((r) => r !== hit).slice(0, 9)) : rows.slice(0, 10);
+    const fmtCell = (v) => (v === null || v === undefined ? '' : typeof v === 'number' ? LOC.format(',.6~f')(v) : typeof v === 'object' ? JSON.stringify(v) : String(v));
+    return h('div', { class: 'mx-prev' }, h('table', null, h('thead', null, h('tr', null, ...cols.map((c) => h('th', { text: c })))), h('tbody', null, ...sel.map((r) => h('tr', { class: r === hit ? 'hit' : null }, ...cols.map((c) => h('td', { text: fmtCell(r[c]), title: fmtCell(r[c]) })))))));
+  }
+  function matchWhere(rows, w) {
+    if (!w || !Array.isArray(rows)) return null;
+    const pairs = w.split('&').map((p) => p.split('=').map((x) => decodeURIComponent(x)));
+    return rows.find((r) => pairs.every(([k, v]) => String(r[k]) === v)) || null;
+  }
+  function dsBlocks(ctx, id, el) {
+    const m = ctx.man.datasets[id], c = ctx.calcs[id];
+    const d = ctx.dash.data(id);
+    const rows = Array.isArray(d.data) ? d.data : [d.data];
+    const hit = el ? (el.dataset.where ? matchWhere(rows, el.dataset.where) : (el.dataset.row ? rows[Number(el.dataset.row)] : (el.dataset.field && rows.length === 1 ? rows[0] : null))) : null;
+    const out = [];
+    if (m) {
+      out.push(blk('Conjunto de dados', h('p', { style: 'color:var(--ink);font-weight:600', text: m.title }), h('p', { text: m.description })));
+      out.push(h('dl', { class: 'mx-kv' }, h('dt', { text: 'Linhas' }), h('dd', { text: F.int(m.rows) }), h('dt', { text: 'Atualizado em' }), h('dd', { text: m.updated ? dBR(m.updated) : '—' }), h('dt', { text: 'Situação' }), h('dd', { text: m.fixed ? 'Arquivo fixo do relatório' : 'Arquivo do relatório' }), h('dt', { text: 'Painel' }), h('dd', null, h('a', { href: ctx.man.url, target: '_blank', rel: 'noopener', text: 'painel original de ' + ctx.man.nome }))));
+    } else if (c) {
+      out.push(blk('Cálculo do painel', h('p', { style: 'color:var(--ink);font-weight:600', text: c.title }), h('p', { text: c.description })));
+      out.push(blk('Calculado a partir de', h('div', { class: 'dl' }, ...c.inputs.map((i) => h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: () => openSource(null, [i]), text: (ctx.man.datasets[i] || ctx.calcs[i] || { title: i }).title })))));
+      out.push(blk('Código do cálculo', h('pre', { text: String(c.orig || c.fn).replace(/\\u([0-9a-fA-F]{4})/g, (m, x) => String.fromCharCode(parseInt(x, 16))) })));
+      if (id === 'hora') out.push(h('p', { class: 'mx-note', text: 'No site, os valores informados pela equipe são somados a este resultado como uma categoria própria quando a camada da equipe está ligada.' }));
+    }
+    if (hit && el && el.dataset.field) out.push(blk('Valor exibido', h('p', null, h('span', { class: 'mx-mono', text: el.dataset.field }), ' = ', h('b', { text: String(hit[el.dataset.field]) }))));
+    out.push(blk(hit ? 'Linha de origem e primeiras linhas' : 'Primeiras linhas', preview(rows, hit)));
+    out.push(blk('Baixar', h('div', { class: 'dl' }, h('button', { type: 'button', class: 'mx-btn sm', onclick: () => baixarCSV(`${ctx.uf}_${id}`, rows), text: 'CSV para Excel' }), h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: () => baixarJSON(`${ctx.uf}_${id}`, rows), text: 'JSON' }))));
+    return out;
+  }
+  function openSource(el, idsOverride) {
+    const ids = idsOverride || String(el.dataset.source).split(/\s+/).filter(Boolean);
+    if (ids[0] === 'valores_equipe') {
+      const rows = CUR ? teamAtivos(CUR.uf) : teamAtivos();
+      openDrawer('Valores da equipe', 'Valores informados pela equipe', [
+        h('p', { text: 'Registros feitos na página Valores da equipe, a partir de conversas com médicos, propostas recebidas ou documentos vistos. Ficam no banco do site, separados dos arquivos dos relatórios, com o nome de quem registrou e a data.' }),
+        h('dl', { class: 'mx-kv' }, h('dt', { text: 'Em uso' }), h('dd', { text: F.int(rows.length) }), h('dt', { text: 'Valor por hora' }), h('dd', { text: 'plantão dividido pelas horas; mensal dividido pela carga semanal vezes 4,345 semanas' })),
+        blk('Primeiras linhas', preview(rows.map((r) => ({ mes: r.mes, uf: r.uf, municipio: r.municipio, contratante: r.contratante, especialidade: r.especialidade, forma: r.forma, valor: Number(r.valor), valor_hora: Number(r.valor_hora) || null, origem: r.origem, registrado_por: nomeDe(r.autor) })))),
+        h('div', { class: 'dl' }, h('a', { class: 'mx-btn sm', href: '#valores-da-equipe', onclick: () => { exitSrc(); }, text: 'Abrir Valores da equipe' }))]);
+      return;
+    }
+    if (ids[0] === 'auto_valores') {
+      openDrawer('Atualização semanal', 'Novidades do PNCP', [h('p', { text: 'Linhas gravadas pela tarefa semanal que varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa e pregão) nos quatro estados e busca os itens e resultados de cada contratação de serviço médico. Cada linha traz o número de controle do PNCP e o link.' }), blk('Primeiras linhas', preview(APP.auto.valores.concat(APP.auto.contratos)))]);
+      return;
+    }
+    if (!CUR) return;
+    const blocks = [];
+    ids.forEach((id, i) => { if (i) blocks.push(h('hr', { style: 'border:0;border-top:1px solid var(--rule);width:100%' })); blocks.push(...dsBlocks(CUR, id, idsOverride ? null : el)); });
+    const first = CUR.man.datasets[ids[0]] || CUR.calcs[ids[0]] || { title: ids[0] };
+    openDrawer(`Fonte · ${CUR.man.nome}`, ids.length > 1 ? `${ids.length} fontes neste elemento` : first.title, blocks);
+  }
+  async function openFonte(key, uf) {
+    const f = FONTES[key];
+    const P = APP.P;
+    if (key === 'auto_noticia') { openDrawer('Atualização semanal', 'Notícia encontrada pela atualização semanal', [h('p', { text: 'Encontrada pela busca semanal de notícias sobre falta de médicos nos estados mapeados. O resumo é próprio; o link leva à publicação original.' })]); return; }
+    if (!f) return;
+    const ufs = uf && P.estados[uf] ? [uf] : P.ordem;
+    const blocks = [h('p', { text: f.como })];
+    if (f.v) blocks.push(blk(key.startsWith('br_') || uf === 'todos' ? 'Composição por estado' : 'Valor em cada estado', h('dl', { class: 'mx-kv' }, ...P.ordem.flatMap((u) => [h('dt', { text: P.estados[u].nome }), h('dd', { style: u === uf ? 'font-weight:700;color:var(--ink)' : null, text: f.v(P.estados[u]) })]))));
+    if (key === 'cons_esp' && uf) {
+      const S = P.estados[uf];
+      blocks.push(blk('Valor da célula', h('p', { text: S.consultas_esp[APP.srcEsp] ? `${APP.srcEsp}: mediana ${F.brl(S.consultas_esp[APP.srcEsp].mediana)}, de ${F.brl(S.consultas_esp[APP.srcEsp].min)} a ${F.brl(S.consultas_esp[APP.srcEsp].max)}, ${S.consultas_esp[APP.srcEsp].n} valores.` : 'Os preços de consulta foram agrupados pelo nome da especialidade e a mediana calculada por código a partir das linhas do conjunto de consultas.' })));
+    }
+    for (const u of ufs) {
+      const man = APP.man[u];
+      if (!f.ds.length) continue;
+      blocks.push(blk(`Dados de origem · ${P.estados[u].nome}`, ...f.ds.map((id) => { const m = man.datasets[id]; return h('div', { class: 'mx-dsrow', style: 'padding:8px 0' }, h('div', null, h('b', { text: m ? m.title : id }), h('p', { text: m ? `${F.int(m.rows)} linhas · atualizado em ${dBR(m.updated)}` : '' })), h('div', { class: 'mx-rowacts' }, h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: async () => { try { baixarCSV(`${u}_${id}`, await getJSON(`data/${u}/${id}.json`)); } catch (e) { toast('Não foi possível carregar o conjunto.'); } }, text: 'CSV' }))); }), f.calc && man.calcs[f.calc] ? h('p', { class: 'mx-note', text: 'Cálculo do painel usado: ' + man.calcs[f.calc].title + '.' }) : null));
+    }
+    if (uf && P.estados[uf]) {
+      const S = P.estados[uf];
+      blocks.push(h('div', { class: 'dl' }, h('button', { type: 'button', class: 'mx-btn sm', onclick: () => { exitSrc(); closeDrawer(); APP.pendingSec = f.sec; location.hash = S.slug; }, text: `Ver no painel de ${S.nome}` }), h('a', { class: 'mx-btn ghost sm', href: S.url, target: '_blank', rel: 'noopener', text: 'Painel original' })));
+    }
+    openDrawer('Panorama' + (uf && P.estados[uf] ? ' · ' + P.estados[uf].nome : ''), f.t, blocks);
+  }
+  // source mode
+  const srcBtn = $('#mx-srcbtn'), srcBanner = $('#mx-srcbanner');
+  function setSrc(on) { document.body.classList.toggle('mx-src-mode', on); srcBtn.setAttribute('aria-pressed', String(on)); srcBanner.hidden = !on; }
+  function exitSrc() { setSrc(false); }
+  srcBtn.addEventListener('click', () => setSrc(!document.body.classList.contains('mx-src-mode')));
+  $('#mx-srcoff').addEventListener('click', exitSrc);
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') { if (drawer.classList.contains('open')) closeDrawer(); else exitSrc(); } });
+  document.addEventListener('click', (ev) => {
+    if (!document.body.classList.contains('mx-src-mode')) return;
+    if (ev.target.closest('.mx-drawer, .mx-mast, .mx-srcbanner, .mx-scrim')) return;
+    const t = ev.target.closest('[data-source], [data-fonte]');
+    if (!t) return;
+    ev.preventDefault(); ev.stopPropagation();
+    APP.srcEsp = t.dataset.esp || null;
+    if (t.dataset.fonte) openFonte(t.dataset.fonte, t.dataset.uf); else openSource(t);
+  }, true);
+
+  // ================================================================== capabilities: db, user
+  function onTeamChange() {
+    if (PAGE === 'inicio' && APP.P) drawHoraBR();
+    if (CUR) { delete CUR.cache.hora; CUR.run('horas'); updateTeamCard(CUR); }
+    if (PAGE === 'valores-da-equipe') renderTeamList();
+    resolveNames();
+  }
+  function onAutoChange() {
+    if (CUR) updateNovidades(CUR);
+    if (PAGE === 'noticias') renderNews();
+    if (PAGE === 'inicio') renderHomeNews();
+    if (PAGE === 'fontes') renderFontes();
+  }
+  const resolveNames = debounce(async () => {
+    if (!APP.user || !APP.user.profiles) return;
+    const ids = Array.from(new Set(APP.team.map((r) => r.autor).filter((id) => id && !APP.names[id])));
+    if (!ids.length) return;
+    try { Object.assign(APP.names, await APP.user.profiles(ids)); if (PAGE === 'valores-da-equipe') renderTeamList(); if (CUR) updateTeamCard(CUR); } catch (e) { /* names stay generic */ }
+  }, 200);
+  async function initCaps() {
+    if (!window.claude || typeof window.claude.use !== 'function') { setDb('off'); return; }
+    const timer = setTimeout(() => { if (APP.dbState === 'loading') setDb('off'); }, 10000);
+    let db = null;
+    try {
+      const [d, u] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+      db = d; APP.user = u;
+      if (u) { try { APP.me = await u.id(); } catch (e) { /* no id */ } try { APP.canEdit = await u.canEdit(); } catch (e) { /* no flag */ } }
+    } catch (e) { db = null; }
+    if (!db) { clearTimeout(timer); setDb('off'); return; }
+    APP.db = db;
+    db.collection('valores_equipe').onSnapshot((snap) => {
+      clearTimeout(timer);
+      APP.team = snap.docs.map((d) => Object.assign({ id: d.id }, d.data()));
+      if (APP.dbState !== 'ok') setDb('ok');
+      onTeamChange();
+    }, () => { clearTimeout(timer); setDb('off'); });
+    for (const [k, col] of [['valores', 'auto_valores'], ['contratos', 'auto_contratos'], ['noticias', 'auto_noticias']]) {
+      db.collection(col).onSnapshot((snap) => { APP.auto[k] = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())); onAutoChange(); }, () => {});
+    }
+    db.collection('atualizacoes').onSnapshot((snap) => { APP.updates = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())).sort((a, b) => String(b.data).localeCompare(String(a.data))); onAutoChange(); }, () => {});
+  }
+
+  boot();
+})();
+
+</script>

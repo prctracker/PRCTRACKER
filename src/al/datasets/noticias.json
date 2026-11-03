@@ -1,0 +1,15 @@
+{
+  "description": "Reportagens e publicações de 2025 e 2026 sobre falta de médicos, contratação e pagamento em Alagoas, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json",
+    "url": "/_blob/2f5e95f2d9f8db6dd6f76948425db2a6"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

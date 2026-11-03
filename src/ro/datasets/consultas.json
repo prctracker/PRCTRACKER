@@ -1,0 +1,15 @@
+{
+  "description": "Preço unitário de consultas especializadas, ultrassonografias, ecocardiogramas, endoscopias e laudos em credenciamentos, dispensas, inexigibilidades e pregões de prefeituras e do Estado de Rondônia no PNCP, e em leis e credenciamentos municipais do Diário Oficial dos Municípios (AROM), um por linha, com órgão, documento, nº de controle e item, quantidade, valor estimado e homologado e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "consultas.json",
+    "url": "/_blob/f636bff620e8f8427f3cb16e092b6ae0"
+  },
+  "title": "Preços de consulta e exame",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

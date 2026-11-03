@@ -1,0 +1,15 @@
+{
+  "description": "Números pontuais de editais, reportagens, Ministério da Saúde, CNES, IBGE e ANS: concurso, vínculos não estatutários, Mais Médicos, população, planos de saúde e pagamentos, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json",
+    "url": "/_blob/21feadfd907d55f9cab00a8bd83ed02d"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

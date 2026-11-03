@@ -1,0 +1,15 @@
+{
+  "description": "Preço unitário de consultas especializadas, ultrassonografias, ecocardiogramas, endoscopias e laudos em credenciamentos, dispensas, inexigibilidades e pregões de prefeituras, consórcios e do Estado do Rio Grande do Sul no PNCP, e no credenciamento do IPE Saúde, um por linha, com órgão, edital, nº de controle e item, quantidade, valor estimado e homologado e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "consultas.json",
+    "url": "/_blob/124567200dab6ff1798374c058a436e6"
+  },
+  "title": "Preços de consulta e exame",
+  "updated": {
+    "at": "2026-11-02T14:30:00-03:00",
+    "by": "Claude"
+  }
+}

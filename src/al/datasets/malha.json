@@ -1,0 +1,15 @@
+{
+  "description": "Contornos dos 102 municípios de Alagoas (malha IBGE via geodata-br), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json",
+    "url": "/_blob/2c980a9f1694fb0e5f67e30624755717"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-10-29T12:30:00-03:00",
+    "by": "Claude"
+  }
+}

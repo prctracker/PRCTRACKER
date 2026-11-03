@@ -1,0 +1,15 @@
+{
+  "description": "Soma das rubricas de adicional de serviço extraordinário pagas aos servidores ativos nos cargos Médico 20h e 40h, por mês de folha, de janeiro de 2025 a outubro de 2026, com o número de médicos que receberam (API do Portal da Transparência de Rondônia).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json",
+    "url": "/_blob/2de0e094440c27a1b4b17033978ae35e"
+  },
+  "title": "Serviço extraordinário do Estado, por mês",
+  "updated": {
+    "at": "2026-11-02T23:30:00-03:00",
+    "by": "Claude"
+  }
+}

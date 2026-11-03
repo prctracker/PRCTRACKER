@@ -1,0 +1,15 @@
+{
+  "description": "Valores pagos a médicos em Alagoas, um por linha, com órgão, documento de origem, amparo legal, nº de controle e item no PNCP, unidade, quantidade, valor e link: credenciamentos e pregões municipais, concursos e seleções, folha estadual e bolsa do Mais Médicos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "valores.json",
+    "url": "/_blob/de47bc4fc745bbb963e18c8436c8a2c9"
+  },
+  "title": "Remuneração médica levantada",
+  "updated": {
+    "at": "2026-10-29T13:05:00-03:00",
+    "by": "Claude"
+  }
+}

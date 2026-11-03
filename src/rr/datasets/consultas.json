@@ -1,0 +1,15 @@
+{
+  "description": "Preço unitário de consultas, exames com laudo e procedimentos médicos em credenciamentos, pregões e contratos publicados no PNCP por órgãos em Roraima, um por linha, com órgão, documento, nº de controle e item, quantidade e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "consultas.json",
+    "url": "/_blob/8f05ccf31a34ab3d279db286882f5b8c"
+  },
+  "title": "Preços de consulta e exame",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}

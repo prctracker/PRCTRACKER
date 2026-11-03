@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: o valor pago por mês em plantões extraordinários de médicos da SES-TO não pôde ser consultado; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte tentada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json"
+  },
+  "title": "Plantões extras da SES-TO, por mês",
+  "updated": {
+    "at": "2026-11-02T19:10:00-03:00",
+    "by": "Claude"
+  }
+}

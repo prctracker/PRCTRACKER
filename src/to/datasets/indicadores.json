@@ -1,0 +1,15 @@
+{
+  "description": "Números pontuais de editais e reportagens: concurso SES-TO, Mais Médicos, pediatras, fila de cirurgias pediátricas e chamamento das UPAs de Palmas, cada um com data e fonte. Na revisão de 02/11/2026 entraram população, idade e envelhecimento do Censo 2022 (IBGE) e beneficiários de plano de saúde (ANS, via IESS). Na revisão de 02/11/2026 (tarde) entraram Mais Médicos e Mais Médicos Especialistas de 2026 (Ministério da Saúde) e a parcela de vínculos não estatutários nos hospitais estaduais (CNES).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json",
+    "url": "/_blob/c119b9695c313323580366190464e9b3"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-11-02T19:10:00-03:00",
+    "by": "Claude"
+  }
+}

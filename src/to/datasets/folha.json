@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: número de médicos efetivos e temporários ativos na folha da SES-TO e remuneração média por ano não puderam ser consultados; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte tentada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos efetivos da SES-TO",
+  "updated": {
+    "at": "2026-11-02T19:10:00-03:00",
+    "by": "Claude"
+  }
+}

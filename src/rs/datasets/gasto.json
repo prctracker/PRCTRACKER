@@ -1,0 +1,15 @@
+{
+  "description": "Não localizado: o Rio Grande do Sul não publica pagamento de plantões médicos por ano em consulta aberta; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json",
+    "url": "/_blob/fcb46ad37afadf4d501e3798e8d16163"
+  },
+  "title": "Plantões extras x folha do Estado",
+  "updated": {
+    "at": "2026-11-02T14:40:00-03:00",
+    "by": "Claude"
+  }
+}

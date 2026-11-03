@@ -1,0 +1,15 @@
+{
+  "description": "Contratos e credenciados de serviço médico em Roraima (PNCP, sem laboratórios) e pagamentos de 2025 do Fundo Estadual de Saúde a PJ por plantões terceirizados (Portal da Transparência), com contratado, CNPJ, valor e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "contratos.json",
+    "url": "/_blob/8d85b4dec5abaf9b88802df0242bf04f"
+  },
+  "title": "Contratos de serviço médico",
+  "updated": {
+    "at": "2026-10-30T19:00:00-03:00",
+    "by": "Claude"
+  }
+}
