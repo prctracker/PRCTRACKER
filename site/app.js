@@ -50,7 +50,7 @@
   const PAGES = ['inicio', 'noticias', 'valores-da-equipe', 'fontes'];
   const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)' };
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
-  const SCHEDULE = { dow: 0, h: 22, m: 0, dia: 'domingo', hora: '22h' }; // weekly PNCP and news (Sunday night); CNES monthly on the second Saturday
+  const SCHEDULE = { dow: 0, h: 22, m: 0, dia: 'domingo', hora: '22h' }; // weekly PNCP and news (Sunday night); CNES monthly on day 15
   const FORMA_HORAS = { 'Plantão 6h': 6, 'Plantão 12h': 12, 'Plantão 24h': 24, 'Hora': 1 };
   const SEMANAS_MES = 4.345;
 
