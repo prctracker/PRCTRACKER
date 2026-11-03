@@ -86,7 +86,7 @@ for (const uf of ORDER) {
     const id = f.replace(/\.json$/, '');
     data[id] = rowsOf(JSON.parse(fs.readFileSync(path.join(dir, 'data', f), 'utf8')));
     const m = JSON.parse(fs.readFileSync(path.join(dir, 'datasets', f), 'utf8'));
-    meta[id] = { title: m.title, description: m.description || '', updated: m.updated ? m.updated.at : null, rows: data[id].length, fixed: !!m.fixed };
+    meta[id] = { title: m.title, description: m.description || '', updated: m.updated ? m.updated.at : null, rows: data[id].length, fixed: !!m.fixed, ...(m.competencia ? { competencia: m.competencia } : {}) };
     write(path.join(SITE, 'data', uf, id + '.json'), data[id]);
   }
   const C = CALCS[uf].calcs;
@@ -155,7 +155,7 @@ for (const uf of ORDER) {
     ...S,
     relatorio_em: S.relatorio,
     revisado_em: revisadoEm > S.relatorio ? revisadoEm : null,
-    cnes_competencia: serie[serie.length - 1].competencia,
+    cnes_competencia: (meta.municipios && meta.municipios.competencia) || serie[serie.length - 1].competencia,
     n_mun: kpi.n_mun, pop: kpi.pop, medicos: kpi.medicos, medicos_sus: kpi.medicos_sus, dens: r2(kpi.dens),
     mun_baixa: kpi.mun_baixa, mun_vazio: kpi.mun_vazio, mun_zero: kpi.mun_zero, pop_baixa: popBaixa, pop_zero: popZero,
     conc_share: r2(kpi.conc_share),
@@ -248,6 +248,11 @@ write(path.join(SITE, 'data', 'panorama.json'), site);
 write(path.join(SITE, 'data', 'noticias.json'), noticias.sort((a, b) => String(b.data).localeCompare(String(a.data))));
 write(path.join(SITE, 'data', 'municipios.json'), municipiosLista);
 fs.copyFileSync(path.join(ROOT, 'geo', 'brasil_ufs.json'), path.join(SITE, 'data', 'brasil.json'));
+// Automatic updates (weekly PNCP and news, monthly CNES log): copied as they are, listed on the site as novidades.
+for (const k of ['valores', 'contratos', 'noticias', 'atualizacoes']) {
+  const p = path.join(SRC, '_auto', k + '.json');
+  write(path.join(SITE, 'data', 'auto', k + '.json'), fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : []);
+}
 
 for (const uf of ORDER) {
   const s = site.estados[uf];

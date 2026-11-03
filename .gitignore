@@ -6,3 +6,4 @@ shots/
 site/data/
 site/estados/
 *.log
+__pycache__/

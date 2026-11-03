@@ -50,13 +50,14 @@
   const PAGES = ['inicio', 'noticias', 'valores-da-equipe', 'fontes'];
   const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)' };
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
-  const SCHEDULE = null; // weekly update not scheduled yet
+  const SCHEDULE = { dow: 1, h: 7, m: 0, dia: 'segunda-feira', hora: '07:00' }; // weekly PNCP and news (GitHub Actions, Monday 07:00); CNES monthly on day 10
   const FORMA_HORAS = { 'Plantão 6h': 6, 'Plantão 12h': 12, 'Plantão 24h': 24, 'Hora': 1 };
   const SEMANAS_MES = 4.345;
 
   const APP = {
     P: null, BR: null, news: null, mun: null, man: {},
     team: [], auto: { valores: [], contratos: [], noticias: [] }, updates: [],
+    autoFile: { valores: [], contratos: [], noticias: [] }, autoDb: { valores: [], contratos: [], noticias: [] }, updatesFile: [], updatesDb: [],
     teamOn: tryLS.get('mx-team-on') !== '0', dbState: 'loading', db: null, user: null, me: null, canEdit: false, names: {},
     mapMode: 'cobertura', prefUF: null, pendingSec: null,
   };
@@ -153,6 +154,9 @@
     window.addEventListener('hashchange', route);
     route();
     initCaps();
+    Promise.all(['valores', 'contratos', 'noticias', 'atualizacoes'].map((k) => getJSON(`data/auto/${k}.json`).catch(() => []))).then(([v, c, n, u]) => {
+      APP.autoFile = { valores: v || [], contratos: c || [], noticias: n || [] }; APP.updatesFile = u || []; syncAuto();
+    });
     getJSON('data/noticias.json').then((n) => { APP.news = n; if (PAGE === 'inicio') renderHomeNews(); if (PAGE === 'noticias') renderNews(); }).catch(() => {});
     new ResizeObserver(debounce(() => { if (PAGE === 'inicio') drawHomeCharts(); }, 160)).observe($('#mx-pg-inicio'));
   }
@@ -666,12 +670,13 @@
     const box = ctx.novCard;
     if (!box) return;
     const S = APP.P.estados[ctx.uf], U = ctx.uf.toUpperCase();
-    const vals = APP.auto.valores.filter((r) => String(r.uf).toUpperCase() === U).sort((a, b) => String(b.data).localeCompare(String(a.data)));
-    const cons = APP.auto.contratos.filter((r) => String(r.uf).toUpperCase() === U).sort((a, b) => String(b.data || b.inicio).localeCompare(String(a.data || a.inicio)));
+    const desde = String(S.relatorio_em).slice(0, 10);
+    const vals = APP.auto.valores.filter((r) => String(r.uf).toUpperCase() === U && String(r.data) >= desde).sort((a, b) => String(b.data).localeCompare(String(a.data)));
+    const cons = APP.auto.contratos.filter((r) => String(r.uf).toUpperCase() === U && String(r.data || r.inicio) >= desde).sort((a, b) => String(b.data || b.inicio).localeCompare(String(a.data || a.inicio)));
     const last = APP.updates[0];
     const kids = [
       h('h3', { class: 'tm-card-h', text: 'Novo desde o relatório: atualização semanal do PNCP' }),
-      h('p', { class: 'tm-card-n', text: `Contratações e contratos de serviço médico publicados no PNCP depois de ${dBR(S.relatorio_em)}, encontrados pela varredura semanal por modalidade. Não entram nos indicadores do relatório até a próxima revisão do estado. ${last && last.status !== 'Base inicial' ? 'Última varredura: ' + dBR(last.data) + '. ' : ''}${SCHEDULE ? `Próxima: ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora}.` : 'A atualização semanal ainda não foi agendada.'}` }),
+      h('p', { class: 'tm-card-n', text: `Contratações e contratos de serviço médico publicados no PNCP a partir de ${dBR(S.relatorio_em)}, encontrados pela varredura semanal por modalidade. Não entram nos indicadores do relatório até a próxima revisão do estado. ${last && last.status !== 'Base inicial' ? 'Última varredura: ' + dBR(last.data) + '. ' : ''}${SCHEDULE ? `Próxima: ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora}.` : 'A atualização semanal ainda não foi agendada.'}` }),
     ];
     if (!vals.length && !cons.length) {
       kids.push(h('div', { class: 'mx-empty' }, h('b', { text: last && last.status !== 'Base inicial' ? 'Nada novo nesta semana.' : 'Nenhuma varredura feita ainda.' }), h('span', { text: last && last.status !== 'Base inicial' ? 'A varredura não encontrou contratação de serviço médico nova neste estado.' : 'Quando a atualização semanal for agendada, os resultados aparecem aqui.' })));
@@ -869,7 +874,7 @@
       h('td', null, h('a', { href: S.url, target: '_blank', rel: 'noopener', text: 'abrir' }))); }));
     $('#mx-f-rel').replaceChildren(thead, tbody);
     const log = $('#mx-f-log');
-    if (APP.dbState === 'off') { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Histórico indisponível nesta visualização.' }), h('span', { text: 'Abra o site pelo claude.ai com sua conta para ver o registro das atualizações.' }))); return; }
+    if (APP.dbState === 'off' && !APP.updates.length) { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Histórico indisponível nesta visualização.' }), h('span', { text: 'Abra o site pelo claude.ai com sua conta para ver o registro das atualizações.' }))); return; }
     if (!APP.updates.length) { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhuma rodada registrada ainda.' }), h('span', { text: SCHEDULE ? `A próxima atualização automática roda ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora} (horário de Brasília).` : 'A atualização semanal ainda não foi agendada.' }))); return; }
     log.replaceChildren(h('div', { class: 'mx-tablewrap' }, h('table', { class: 'mx-table' },
       h('thead', null, h('tr', null, ...['Data', 'Situação', 'Resumo', 'TO', 'RR', 'AL', 'RS', 'RO'].map((t, i) => h('th', { class: i >= 3 ? 'n' : null, text: t })))),
@@ -933,7 +938,7 @@
       return;
     }
     if (ids[0] === 'auto_valores') {
-      openDrawer('Atualização semanal', 'Novidades do PNCP', [h('p', { text: 'Linhas gravadas pela tarefa semanal que varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa e pregão) nos quatro estados e busca os itens e resultados de cada contratação de serviço médico. Cada linha traz o número de controle do PNCP e o link.' }), blk('Primeiras linhas', preview(APP.auto.valores.concat(APP.auto.contratos)))]);
+      openDrawer('Atualização semanal', 'Novidades do PNCP', [h('p', { text: 'Linhas gravadas pela tarefa semanal que varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa e pregão) nos estados com relatório e busca os itens e resultados de cada contratação de serviço médico. Cada linha traz o número de controle do PNCP e o link.' }), blk('Primeiras linhas', preview(APP.auto.valores.concat(APP.auto.contratos)))]);
       return;
     }
     if (!CUR) return;
@@ -989,6 +994,11 @@
     if (PAGE === 'valores-da-equipe') renderTeamList();
     resolveNames();
   }
+  function syncAuto() {
+    for (const k of ['valores', 'contratos', 'noticias']) APP.auto[k] = APP.autoFile[k].concat(APP.autoDb[k]);
+    APP.updates = APP.updatesFile.concat(APP.updatesDb).sort((a, b) => String(b.data).localeCompare(String(a.data)));
+    onAutoChange();
+  }
   function onAutoChange() {
     if (CUR) updateNovidades(CUR);
     if (PAGE === 'noticias') renderNews();
@@ -1019,9 +1029,9 @@
       onTeamChange();
     }, () => { clearTimeout(timer); setDb('off'); });
     for (const [k, col] of [['valores', 'auto_valores'], ['contratos', 'auto_contratos'], ['noticias', 'auto_noticias']]) {
-      db.collection(col).onSnapshot((snap) => { APP.auto[k] = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())); onAutoChange(); }, () => {});
+      db.collection(col).onSnapshot((snap) => { APP.autoDb[k] = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())); syncAuto(); }, () => {});
     }
-    db.collection('atualizacoes').onSnapshot((snap) => { APP.updates = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())).sort((a, b) => String(b.data).localeCompare(String(a.data))); onAutoChange(); }, () => {});
+    db.collection('atualizacoes').onSnapshot((snap) => { APP.updatesDb = snap.docs.map((d) => Object.assign({ id: d.id }, d.data())); syncAuto(); }, () => {});
   }
 
   boot();

@@ -1,0 +1,52 @@
+name: Atualização mensal (CNES)
+
+on:
+  schedule:
+    - cron: '0 11 10 * *'  # todo dia 10, 08:00 em Brasília
+  workflow_dispatch:
+    inputs:
+      forcar:
+        description: 'Refazer mesmo sem competência nova do CNES'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: atualizacao-do-site
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: tools/package-lock.json
+      - name: Atualizar pelo CNES
+        run: python3 -u tools/auto/cnes_mensal.py ${{ inputs.forcar && '--forcar' || '' }}
+      - name: Montar o site
+        run: |
+          cd tools
+          npm ci --omit=optional
+          npm run build
+      - name: Publicar
+        run: |
+          git config user.name "Atualização automática"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src docs
+          if git diff --cached --quiet; then echo "Nada novo"; exit 0; fi
+          git commit -m "Atualização mensal: CNES ($(date -u +%Y-%m-%d))"
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" || true
+        env:
+          GH_TOKEN: ${{ github.token }}
