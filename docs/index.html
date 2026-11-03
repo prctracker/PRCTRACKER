@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Atlas Médico do Brasil</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" type="image/png" href="assets/prc-icon-32.png">
@@ -520,6 +521,40 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
 .mx-foot-col a { color: var(--hero-ink); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: .84rem; }
 .mx-foot-col a:hover { color: #3FE6F7; }
 .mx-foot-h { margin: 0 0 4px !important; font-family: var(--display); font-weight: 600; font-size: .64rem; letter-spacing: .24em; text-transform: uppercase; color: #3FE6F7; }
+/* ---------- oportunidades */
+.mx-opstates { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.mx-opstates .mx-chip { background: transparent; color: var(--hero-ink); border-color: var(--hero-line); }
+.mx-opstates .mx-chip b { font-family: var(--mono); font-weight: 500; color: #19DDF2; }
+.mx-opstates .mx-chip[aria-pressed="true"] { background: #19DDF2; border-color: #19DDF2; color: #0B173B; }
+.mx-opstates .mx-chip[aria-pressed="true"] b { color: #0B173B; }
+.mx-opmaphead { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 34px; margin-bottom: 6px; color: var(--hero-ink-2); font-size: .82rem; }
+.mx-opmaphead button { font: inherit; font-weight: 600; color: var(--hero-ink); background: transparent; border: 1px solid var(--hero-line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.mx-opmaphead button:hover { border-color: #19DDF2; }
+.mx-opmap .mun { stroke: var(--hero-line); }
+.mx-opmap .mun:not(.has) { fill: var(--hero-off); stroke: var(--hero-line); stroke-width: .6; transition: filter .15s; }
+.mx-opmap .mun.has { cursor: pointer; stroke: #0B173B; stroke-width: .8; }
+.mx-opmap .mun:hover { filter: brightness(1.3); }
+.mx-opmap .mun.sel { stroke: #fff; stroke-width: 2; }
+.mx-opmap .op-pin { fill: #19DDF2; stroke: #0B173B; stroke-width: 1.2; cursor: pointer; }
+.mx-opmap .op-pin-n { font-family: var(--mono); font-size: 11px; font-weight: 700; fill: #0B173B; pointer-events: none; }
+.mx-opmap .lab-mun { font-family: var(--display); font-size: 12px; font-weight: 600; fill: #EEF4FF; paint-order: stroke; stroke: #0B173B; stroke-width: 3px; pointer-events: none; }
+.mx-opmap .uf-badge circle { fill: #19DDF2; }
+.mx-opmap .uf-badge text { fill: #0B173B; font-family: var(--mono); font-size: 15px; font-weight: 700; }
+.mx-opgrid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 28px; align-items: start; }
+@media (max-width: 900px) { .mx-opgrid { grid-template-columns: minmax(0, 1fr); } }
+.mx-oppanel { position: sticky; top: 88px; border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); padding: 20px; display: grid; gap: 12px; }
+@media (max-width: 900px) { .mx-oppanel { position: static; } }
+.mx-oppanel h3 { margin: 0; font-family: var(--display); font-size: 1.25rem; }
+.mx-oppanel .mx-kv { margin: 0; }
+.mx-oppanel p { margin: 0; font-size: .86rem; color: var(--ink-2); line-height: 1.5; }
+.mx-opcard { border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); padding: 16px 18px; display: grid; gap: 8px; margin-bottom: 12px; }
+.mx-opcard h4 { margin: 0; font-size: .98rem; line-height: 1.45; font-weight: 600; }
+.mx-opmeta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: .8rem; color: var(--ink-2); }
+.mx-opdue { font-family: var(--mono); font-size: .76rem; padding: 2px 9px; border-radius: 999px; background: var(--sunk); color: var(--ink); }
+.mx-opdue.soon { background: var(--team-wash); color: var(--team); font-weight: 600; }
+.mx-opitems { margin: 0; padding-left: 18px; font-size: .8rem; color: var(--ink-2); display: grid; gap: 2px; }
+.mx-oplinks { display: flex; gap: 8px; flex-wrap: wrap; }
+.mx-opmun { border: 0; background: none; padding: 0; font: inherit; color: var(--petrol-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 </style>
 
 <header class="mx-mast">
@@ -538,6 +573,7 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
       <a href="#rio-grande-do-sul" data-nav="rio-grande-do-sul" class="mx-navuf">RS</a>
       <a href="#rondonia" data-nav="rondonia" class="mx-navuf">RO</a>
       <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#oportunidades" data-nav="oportunidades">Oportunidades</a>
       <a href="#noticias" data-nav="noticias">Notícias</a>
       <a href="#valores-da-equipe" data-nav="valores-da-equipe">Valores da equipe</a>
       <a href="#fontes" data-nav="fontes">Fontes</a>
@@ -675,6 +711,45 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
   </div>
 
   <!-- ============ NOTÍCIAS ============ -->
+  <!-- ============ OPORTUNIDADES ============ -->
+  <div class="mx-page" data-page="oportunidades" id="mx-pg-oport" hidden>
+    <div class="mx-heroband">
+    <section class="mx-wrap mx-hero">
+      <div class="mx-hero-grid">
+        <div>
+          <p class="mx-eyebrow" id="mx-op-date">Oportunidades abertas · PNCP</p>
+          <h1>Oportunidades <em>abertas</em></h1>
+          <p class="mx-lead">Credenciamentos, chamamentos, pregões e outras contratações de serviço médico com proposta aberta nos estados com relatório. Clique em um estado e depois no município.</p>
+          <div class="mx-cover" id="mx-op-cover"></div>
+          <div class="mx-opstates" id="mx-op-states" role="group" aria-label="Estado"></div>
+          <p class="mx-basenote" id="mx-op-note"></p>
+        </div>
+        <div class="mx-mapcard">
+          <div class="mx-opmaphead" id="mx-op-maphead"></div>
+          <div class="mx-map mx-opmap" id="mx-opmap" role="img" aria-label="Mapa das oportunidades abertas"></div>
+          <div class="mx-maplegend" id="mx-op-legend"></div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <section class="mx-wrap" style="padding-top:32px;padding-bottom:48px">
+      <div class="mx-opgrid">
+        <aside class="mx-oppanel" id="mx-op-panel" aria-live="polite"></aside>
+        <div>
+          <div class="mx-filters">
+            <input class="mx-input mx-search" id="mx-op-q" type="search" placeholder="Buscar por município, órgão ou especialidade" aria-label="Buscar oportunidades">
+            <select class="mx-select" id="mx-op-mod" style="max-width:15rem" aria-label="Modalidade"></select>
+            <select class="mx-select" id="mx-op-prazo" style="max-width:13rem" aria-label="Prazo">
+              <option value="">Qualquer prazo</option><option value="7">Fecha em até 7 dias</option><option value="30">Fecha em até 30 dias</option>
+            </select>
+            <span class="mx-note" id="mx-op-count"></span>
+          </div>
+          <div id="mx-op-list"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div class="mx-page" data-page="noticias" id="mx-pg-noticias" hidden>
     <section class="mx-wrap" style="padding-top:40px">
       <div class="mx-sechead">
@@ -856,7 +931,7 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
 
   // ------------------------------------------------------------------ constants
   const SLUGS = { tocantins: 'to', roraima: 'rr', alagoas: 'al', 'rio-grande-do-sul': 'rs', rondonia: 'ro' };
-  const PAGES = ['inicio', 'noticias', 'valores-da-equipe', 'fontes'];
+  const PAGES = ['inicio', 'oportunidades', 'noticias', 'valores-da-equipe', 'fontes'];
   const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)' };
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
   const SCHEDULE = { dow: 0, h: 22, m: 0, dia: 'domingo', hora: '22h' }; // weekly PNCP and news (Sunday night); CNES monthly on day 15
@@ -970,6 +1045,185 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
     new ResizeObserver(debounce(() => { if (PAGE === 'inicio') drawHomeCharts(); }, 160)).observe($('#mx-pg-inicio'));
   }
 
+  // ================================================================== OPORTUNIDADES (editais com proposta aberta)
+  const OPS = { list: null, uf: null, ibge: null, q: '', mod: '', prazo: '', geo: {}, mun: {}, built: false };
+  const opAberta = (o) => !o.encerramento || new Date(o.encerramento) >= new Date();
+  const opDias = (s) => Math.ceil((new Date(s) - new Date()) / 864e5);
+  const opCov = (v, label) => h('div', null, h('b', { text: v }), h('span', { text: label }));
+  const opUF = (o) => String(o.uf || '').toLowerCase();
+  function opLista() { return (OPS.list || []).filter((o) => opAberta(o) && APP.P.estados[opUF(o)]); }
+  async function renderOport() {
+    if (!OPS.list) {
+      try { OPS.list = (await getJSON('data/auto/oportunidades.json')) || []; } catch (e) { OPS.list = []; }
+      try { OPS.when = ((await getJSON('data/auto/atualizacoes.json')) || []).find((u) => /PNCP/.test(u.tipo || '')); } catch (e) { OPS.when = null; }
+    }
+    if (!OPS.built) {
+      OPS.built = true;
+      $('#mx-op-q').addEventListener('input', debounce((ev) => { OPS.q = ev.target.value; renderOpList(); }, 150));
+      $('#mx-op-mod').addEventListener('change', (ev) => { OPS.mod = ev.target.value; renderOpList(); });
+      $('#mx-op-prazo').addEventListener('change', (ev) => { OPS.prazo = ev.target.value; renderOpList(); });
+    }
+    const L = opLista(), P = APP.P;
+    const munis = new Set(L.map((o) => o.uf + o.ibge));
+    const em7 = L.filter((o) => o.encerramento && opDias(o.encerramento) <= 7).length;
+    const cred = L.filter((o) => /credenc|inexig|manifesta/i.test(o.modalidade)).length;
+    $('#mx-op-date').textContent = 'Oportunidades abertas · PNCP' + (OPS.when ? ' · varredura de ' + dBR(OPS.when.data) : '');
+    $('#mx-op-cover').replaceChildren(
+      opCov(F.int(L.length), 'contratações abertas de serviço médico'),
+      opCov(F.int(munis.size), 'municípios com oportunidade'),
+      opCov(F.int(em7), 'fecham em até 7 dias'),
+      opCov(F.int(cred), 'credenciamentos e chamamentos'),
+      opCov(F.int(L.length - cred), 'pregões, concorrências e dispensas'),
+      opCov(P.ordem.length + ' de 27', 'estados cobertos (os com relatório)'));
+    $('#mx-op-note').textContent = 'Encontradas na varredura semanal do PNCP (credenciamento, inexigibilidade e chamamento, pregão, concorrência, dispensa, manifestação de interesse e pré-qualificação), filtradas por serviço médico e revisadas antes de publicar. O site esconde sozinho as que passam do prazo. Confira sempre o edital no link antes de enviar proposta.';
+    const mods = Array.from(new Set(L.map((o) => o.modalidade))).sort();
+    $('#mx-op-mod').replaceChildren(h('option', { value: '', text: 'Todas as modalidades' }), ...mods.map((m) => h('option', { value: m, text: m })));
+    $('#mx-op-mod').value = mods.includes(OPS.mod) ? OPS.mod : (OPS.mod = '');
+    renderOpStates(); await drawOpMap(); renderOpPanel(); renderOpList();
+  }
+  function renderOpStates() {
+    const L = opLista(), P = APP.P;
+    const chip = (uf, label, n) => h('button', { type: 'button', class: 'mx-chip', 'aria-pressed': String(OPS.uf === uf), onclick: () => opSetUF(uf) }, label, ' ', h('b', { text: F.int(n) }));
+    $('#mx-op-states').replaceChildren(chip(null, 'Todos', L.length), ...P.ordem.map((uf) => chip(uf, P.estados[uf].sigla, L.filter((o) => opUF(o) === uf).length)));
+  }
+  async function opSetUF(uf) { OPS.uf = uf; OPS.ibge = null; renderOpStates(); await drawOpMap(); renderOpPanel(); renderOpList(); }
+  function opSetMun(ibge) { OPS.ibge = OPS.ibge === ibge ? null : ibge; $$('#mx-opmap .mun').forEach((p) => p.classList.toggle('sel', p.dataset.id === OPS.ibge)); renderOpPanel(); renderOpList(); }
+  async function opGeo(uf) {
+    if (!OPS.geo[uf]) {
+      const [m, mu] = await Promise.all([getJSON(`data/${uf}/malha.json`), getJSON(`data/${uf}/municipios.json`)]);
+      OPS.geo[uf] = m.map((r) => ({ id: String(r.id), nome: r.nome, g: typeof r.geom === 'string' ? JSON.parse(r.geom) : r.geom }));
+      OPS.mun[uf] = new Map(mu.map((r) => [String(r.id), r]));
+    }
+    return OPS.geo[uf];
+  }
+  async function drawOpMap() {
+    const box = $('#mx-opmap'), head = $('#mx-op-maphead'), L = opLista(), P = APP.P;
+    if (!OPS.uf) {
+      head.replaceChildren(h('span', { text: 'Brasil · estados com relatório' }));
+      const BR = APP.BR, W = BR.w, H = BR.h;
+      const svg = sv('svg', { viewBox: `-14 -14 ${W + 120} ${H + 28}`, role: 'presentation' });
+      svg.append(sv('defs', null, sv('linearGradient', { id: 'op-stgrad', x1: 0, x2: 0.4, y1: 0, y2: 1 }, sv('stop', { offset: '0%', 'stop-color': '#3FE6F7' }), sv('stop', { offset: '100%', 'stop-color': '#0A7CC4' })),
+        sv('filter', { id: 'op-glow', x: '-30%', y: '-30%', width: '160%', height: '160%' }, sv('feGaussianBlur', { stdDeviation: 9, result: 'b' }), sv('feMerge', null, sv('feMergeNode', { in: 'b' }), sv('feMergeNode', { in: 'SourceGraphic' })))));
+      const gOff = sv('g'), gOn = sv('g', { filter: 'url(#op-glow)' }), gLab = sv('g');
+      for (const u of BR.ufs) {
+        const uf = u.uf.toLowerCase(), S = P.estados[uf];
+        if (!S) { gOff.append(sv('path', { d: u.d, class: 'uf-off' })); continue; }
+        const n = L.filter((o) => opUF(o) === uf).length;
+        const p = sv('path', { d: u.d, class: 'uf-on', fill: 'url(#op-stgrad)', tabindex: '0', role: 'button', 'aria-label': `${S.nome}: ${n} oportunidades abertas` });
+        p.addEventListener('click', () => opSetUF(uf));
+        p.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); opSetUF(uf); } });
+        p.addEventListener('pointermove', (ev) => tipShow(ev, S.nome, [['Oportunidades abertas', F.int(n)], ['Municípios com oportunidade', F.int(new Set(L.filter((o) => opUF(o) === uf).map((o) => o.ibge)).size)]], 'Clique para ver os municípios →'));
+        p.addEventListener('pointerleave', tipHide);
+        gOn.append(p);
+        const out = uf === 'al', bx = out ? u.cx + 74 : u.cx, by = out ? u.cy + 22 : u.cy;
+        if (out) gLab.append(sv('line', { x1: u.cx + 6, y1: u.cy + 3, x2: bx - 14, y2: by, stroke: '#7183B0', 'stroke-width': 1.2 }));
+        const b = sv('g', { class: 'uf-badge', transform: `translate(${bx},${by})` });
+        b.append(sv('circle', { r: 17 + Math.min(10, Math.sqrt(n) * 1.6) }), sv('text', { 'text-anchor': 'middle', y: 5 }, F.int(n)));
+        gLab.append(b, sv('text', { class: 'lab-on', x: bx, y: by + 40 + Math.min(10, Math.sqrt(n) * 1.6), 'text-anchor': 'middle' }, S.sigla));
+      }
+      svg.append(gOff, gOn, gLab);
+      box.replaceChildren(svg);
+      $('#mx-op-legend').replaceChildren(h('span', null, h('i', { class: 'mx-sw', style: 'background:#19DDF2;border-radius:50%' }), 'número de oportunidades abertas'), h('span', null, h('i', { class: 'mx-sw', style: 'background:var(--hero-off);outline:1px solid var(--hero-line)' }), 'estado sem relatório (fora da varredura)'));
+      return;
+    }
+    const uf = OPS.uf, S = P.estados[uf];
+    head.replaceChildren(h('button', { type: 'button', onclick: () => opSetUF(null), text: '← Todos os estados' }), h('span', { text: S.nome + ' · municípios' }));
+    box.replaceChildren(h('div', { class: 'mx-loading' }, h('div', { class: 'bar' })));
+    const feats = await opGeo(uf), M = OPS.mun[uf];
+    if (OPS.uf !== uf) return;
+    const cnt = {}; for (const o of L.filter((o) => opUF(o) === uf)) cnt[String(o.ibge)] = (cnt[String(o.ibge)] || 0) + 1;
+    const each = (g, f) => { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates; for (const p of polys) for (const ring of p) for (const pt of ring) f(pt); };
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    feats.forEach((ft) => each(ft.g, ([x, y]) => { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }));
+    const kx = Math.cos(((y0 + y1) / 2) * Math.PI / 180), W = 900, H = Math.min(900, W * (y1 - y0) / ((x1 - x0) * kx));
+    const sc = Math.min((W - 20) / ((x1 - x0) * kx), (H - 20) / (y1 - y0)), ox = (W - (x1 - x0) * kx * sc) / 2, oy = (H - (y1 - y0) * sc) / 2;
+    const Pj = ([x, y]) => [ox + (x - x0) * kx * sc, oy + (y1 - y) * sc];
+    const pathOf = (g) => { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates; let d = ''; for (const p of polys) for (const ring of p) d += 'M' + ring.map((pt) => Pj(pt).map((v) => v.toFixed(1)).join(',')).join('L') + 'Z'; return d; };
+    const cen = (g) => { let sx = 0, sy = 0, n = 0; each(g, (pt) => { const q = Pj(pt); sx += q[0]; sy += q[1]; n += 1; }); return [sx / n, sy / n]; };
+    const maxN = Math.max(1, ...Object.values(cnt));
+    const ramp = d3.interpolateRgb('#1E5BA8', '#3FE6F7');
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'presentation' });
+    const gM = sv('g'), gP = sv('g'), gL = sv('g');
+    for (const ft of feats) {
+      const n = cnt[ft.id] || 0, r = M.get(ft.id) || {};
+      const p = sv('path', { d: pathOf(ft.g), class: 'mun' + (n ? ' has' : '') + (OPS.ibge === ft.id ? ' sel' : ''), fill: n ? ramp(Math.sqrt(n / maxN)) : null });
+      p.dataset.id = ft.id;
+      p.addEventListener('pointermove', (ev) => tipShow(ev, (r.nome || ft.nome) + ' · ' + S.sigla, [['Oportunidades abertas', F.int(n)], ['População', r.pop ? F.int(r.pop) : '—'], ['Médicos por mil hab.', r.dens !== undefined ? F.d2(r.dens) : '—'], ['Hospitais e UPAs', r.n_unid !== undefined ? F.int(r.n_unid) : '—']], n ? 'Clique para ver as oportunidades →' : 'Clique para ver os dados do município'));
+      p.addEventListener('pointerleave', tipHide);
+      p.addEventListener('click', () => opSetMun(ft.id));
+      gM.append(p);
+      if (n) {
+        const [cx, cy] = cen(ft.g), rr = 7 + Math.sqrt(n) * 2.4;
+        const c = sv('circle', { class: 'op-pin', cx, cy, r: rr });
+        c.addEventListener('click', () => opSetMun(ft.id));
+        c.addEventListener('pointermove', (ev) => tipShow(ev, (r.nome || ft.nome) + ' · ' + S.sigla, [['Oportunidades abertas', F.int(n)]], 'Clique para ver →'));
+        c.addEventListener('pointerleave', tipHide);
+        gP.append(c, sv('text', { class: 'op-pin-n', x: cx, y: cy + 4, 'text-anchor': 'middle' }, F.int(n)));
+      }
+    }
+    Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 6).forEach(([id]) => {
+      const ft = feats.find((f) => f.id === id); if (!ft) return;
+      const [cx, cy] = cen(ft.g), rr = 7 + Math.sqrt(cnt[id]) * 2.4;
+      gL.append(sv('text', { class: 'lab-mun', x: cx, y: cy - rr - 5, 'text-anchor': 'middle' }, (M.get(id) || ft).nome));
+    });
+    svg.append(gM, gP, gL);
+    box.replaceChildren(svg);
+    $('#mx-op-legend').replaceChildren(h('span', null, h('i', { class: 'mx-sw', style: 'background:linear-gradient(90deg,#1E5BA8,#3FE6F7)' }), 'mais oportunidades, cor mais clara'), h('span', null, h('i', { class: 'mx-sw', style: 'background:#19DDF2;border-radius:50%' }), 'número de oportunidades no município'));
+  }
+  function renderOpPanel() {
+    const box = $('#mx-op-panel'), L = opLista(), P = APP.P;
+    if (!OPS.uf) {
+      box.replaceChildren(h('h3', { text: 'Por estado' }), h('p', { text: 'Contratações de serviço médico com proposta aberta. Escolha um estado no mapa ou nos botões acima.' }),
+        h('div', { class: 'mx-tablewrap' }, h('table', { class: 'mx-table' }, h('thead', null, h('tr', null, h('th', { text: 'Estado' }), h('th', { class: 'n', text: 'Abertas' }), h('th', { class: 'n', text: 'Municípios' }))),
+          h('tbody', null, ...P.ordem.map((uf) => { const l = L.filter((o) => opUF(o) === uf); return h('tr', null, h('td', null, h('button', { type: 'button', class: 'mx-opmun', onclick: () => opSetUF(uf), text: P.estados[uf].nome })), h('td', { class: 'n', text: F.int(l.length) }), h('td', { class: 'n', text: F.int(new Set(l.map((o) => o.ibge)).size) })); })))));
+      return;
+    }
+    const uf = OPS.uf, S = P.estados[uf], M = OPS.mun[uf];
+    const ref = [['Plantão de 24h em prefeituras (mediana do relatório)', S.p24 ? F.brl0(S.p24) : 'sem valor'], ['Hora de plantão (mediana do relatório)', S.hora && S.hora.plantao && S.hora.plantao.n ? F.brl(S.hora.plantao.mediana) : 'sem valor']];
+    const kv = (rows) => h('dl', { class: 'mx-kv' }, ...rows.flatMap(([k, v]) => [h('dt', { text: k }), h('dd', { text: v })]));
+    if (!OPS.ibge || !M) {
+      const l = L.filter((o) => opUF(o) === uf);
+      box.replaceChildren(h('h3', { text: S.nome }), h('p', { text: 'Clique em um município no mapa para ver os dados dele e as oportunidades abertas.' }),
+        kv([['Oportunidades abertas', F.int(l.length)], ['Municípios com oportunidade', F.int(new Set(l.map((o) => o.ibge)).size)], ['Médicos por mil hab. no estado', F.d2(S.dens)], ...ref]),
+        h('a', { class: 'mx-btn ghost sm', href: '#' + S.slug, text: 'Abrir o relatório de ' + S.nome }));
+      return;
+    }
+    const r = M.get(OPS.ibge) || {}, l = L.filter((o) => String(o.ibge) === OPS.ibge);
+    box.replaceChildren(h('h3', { text: (r.nome || '—') + ' · ' + S.sigla }), h('p', { text: 'Região de saúde: ' + (r.cir_nome || '—') + '. Dados do relatório do estado (CNES ' + compBR(S.cnes_competencia) + ', IBGE 2025).' }),
+      kv([['Oportunidades abertas', F.int(l.length)], ['População', r.pop ? F.int(r.pop) : '—'], ['Médicos com vínculo no CNES', r.med !== undefined ? F.int(r.med) + ' (' + F.int(r.med_sus || 0) + ' pelo SUS)' : '—'],
+        ['Médicos por mil hab.', r.dens !== undefined ? F.d2(r.dens) + ' (estado: ' + F.d2(S.dens) + ')' : '—'], ['Hospitais e UPAs', r.n_unid !== undefined ? F.int(r.n_unid) : '—'], ['Pessoas com 60 anos ou mais', r.pct_60mais !== undefined ? F.d1(r.pct_60mais) + '%' : '—'], ...ref]),
+      h('div', { class: 'mx-oplinks' }, h('a', { class: 'mx-btn ghost sm', href: '#' + S.slug, text: 'Relatório de ' + S.nome }), h('button', { type: 'button', class: 'mx-btn ghost sm', onclick: () => opSetMun(OPS.ibge), text: 'Ver o estado todo' })));
+  }
+  function renderOpList() {
+    const q = norm(OPS.q), P = APP.P;
+    let L = opLista();
+    if (OPS.uf) L = L.filter((o) => opUF(o) === OPS.uf);
+    if (OPS.ibge) L = L.filter((o) => String(o.ibge) === OPS.ibge);
+    if (OPS.mod) L = L.filter((o) => o.modalidade === OPS.mod);
+    if (OPS.prazo) L = L.filter((o) => o.encerramento && opDias(o.encerramento) <= Number(OPS.prazo));
+    if (q) L = L.filter((o) => norm([o.municipio, o.orgao, o.unidade, o.objeto, o.complemento, o.modalidade, (o.itens || []).map((i) => i.descricao).join(' ')].join(' ')).includes(q));
+    L.sort((a, b) => String(a.encerramento || '9999').localeCompare(String(b.encerramento || '9999')));
+    $('#mx-op-count').textContent = F.int(L.length) + (L.length === 1 ? ' oportunidade' : ' oportunidades');
+    const list = $('#mx-op-list');
+    if (!L.length) { list.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhuma oportunidade aberta com esses filtros.' }), h('span', { text: opLista().length ? 'Tente outro estado, município ou prazo.' : 'A primeira varredura ainda não publicou oportunidades.' }))); return; }
+    list.replaceChildren(...L.slice(0, 300).map((o) => {
+      const d = o.encerramento ? opDias(o.encerramento) : null, S = P.estados[opUF(o)];
+      const tx = o.complemento ? (o.objeto ? o.objeto + ' — ' : '') + o.complemento : o.objeto;
+      const curto = tx && tx.length > 260 ? tx.slice(0, 257) + '…' : tx;
+      return h('article', { class: 'mx-opcard' },
+        h('div', { class: 'mx-opmeta' }, h('span', { class: 'mx-tag uf', text: o.uf }), h('span', { class: 'mx-tag', text: o.modalidade }),
+          o.encerramento ? h('span', { class: 'mx-opdue' + (d <= 7 ? ' soon' : ''), text: 'propostas até ' + dBR(o.encerramento) + (d <= 0 ? ' (último dia)' : ` (faltam ${d} dias)`) }) : null),
+        h('h4', { text: curto || '—' }),
+        h('div', { class: 'mx-opmeta' }, h('button', { type: 'button', class: 'mx-opmun', onclick: async () => { if (OPS.uf !== opUF(o)) await opSetUF(opUF(o)); opSetMun(String(o.ibge)); window.scrollTo({ top: 0, behavior: 'smooth' }); }, text: (o.municipio || '—') + ' · ' + (S ? S.sigla : o.uf) }),
+          h('span', { text: o.orgao || '' }), Number(o.valor_estimado) > 0 ? h('span', { text: 'valor estimado ' + F.brl0(Number(o.valor_estimado)) }) : null,
+          o.abertura ? h('span', { text: 'aberto desde ' + dBR(o.abertura) }) : null),
+        (o.itens && o.itens.length) ? h('ul', { class: 'mx-opitems' }, ...o.itens.slice(0, 5).map((i) => h('li', { text: i.descricao + (Number(i.valor_unitario) > 0 ? ' · ' + F.brl(Number(i.valor_unitario)) + (i.unidade ? ' por ' + String(i.unidade).toLowerCase() : '') : '') })),
+          o.n_itens > 5 ? h('li', { text: `e mais ${o.n_itens - 5} itens no edital` }) : null) : null,
+        h('div', { class: 'mx-oplinks' }, isUrl(o.link_pncp) ? h('a', { class: 'mx-btn sm', href: o.link_pncp, target: '_blank', rel: 'noopener', text: 'Ver edital no PNCP' }) : null,
+          isUrl(o.link_sistema) ? h('a', { class: 'mx-btn ghost sm', href: o.link_sistema, target: '_blank', rel: 'noopener', text: 'Sistema onde enviar a proposta' }) : null));
+    }));
+  }
+
   // ------------------------------------------------------------------ router
   let PAGE = null, PAGE_UF = null;
   function route() {
@@ -984,15 +1238,17 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
     if (page !== 'estado') closeState();
     if (changed && !APP.pendingSec) window.scrollTo({ top: 0, behavior: 'instant' });
     const S = uf && APP.P.estados[uf];
-    document.title = (S ? S.nome + ' · ' : page === 'noticias' ? 'Notícias · ' : page === 'valores-da-equipe' ? 'Valores da equipe · ' : page === 'fontes' ? 'Fontes · ' : '') + 'Atlas Médico do Brasil';
+    document.title = (S ? S.nome + ' · ' : page === 'oportunidades' ? 'Oportunidades · ' : page === 'noticias' ? 'Notícias · ' : page === 'valores-da-equipe' ? 'Valores da equipe · ' : page === 'fontes' ? 'Fontes · ' : '') + 'Atlas Médico do Brasil';
     if (page === 'inicio') renderHome();
     else if (page === 'estado') openState(uf);
+    else if (page === 'oportunidades') renderOport();
     else if (page === 'noticias') renderNews();
     else if (page === 'valores-da-equipe') renderTeamPage();
     else if (page === 'fontes') renderFontes();
   }
   function redrawAll() {
     if (PAGE === 'inicio') drawHomeCharts();
+    if (PAGE === 'oportunidades') drawOpMap();
     if (CUR) CUR.runCharts();
   }
 

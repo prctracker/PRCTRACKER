@@ -53,6 +53,8 @@ Duas tarefas agendadas no Claude (conta da PRC Tracker) rodam os scripts de `too
 | Atualização semanal do PNCP | todo domingo, por volta das 22h | `tools/auto/pncp_semanal.py`: editais e credenciamentos por modalidade (credenciamento, inexigibilidade, dispensa, pregão), itens com valor, contratos novos e notícias. Grava em `src/_auto/`; a revisão tira o que não for serviço médico e registra o que tirou. O site mostra como "novo desde o relatório", com link; os indicadores não mudam. |
 | Atualização mensal do CNES | todo dia 15, por volta das 22h | `tools/auto/cnes_mensal.py`: quando o CNES tem competência nova, médicos por município (total e SUS), por especialidade, a série de setembro e os médicos e vínculos de cada hospital e UPA, com o mesmo método dos relatórios. A revisão compara com o mês anterior e confere amostras direto no TabNet e no CNES antes de publicar. |
 
+Na mesma tarefa de domingo, `tools/auto/oportunidades.py` busca no PNCP as contratações de serviço médico com proposta ainda aberta nos estados com relatório e grava em `src/_auto/oportunidades.json`; a revisão tira o que não for serviço médico. A aba Oportunidades do site mostra essas contratações no mapa, por estado e município, e esconde sozinha as que passam do prazo.
+
 Cada rodada fica registrada em `src/_auto/atualizacoes.json` e aparece na página Fontes do site. Os mesmos scripts podem rodar no GitHub Actions como reserva (aba Actions → Run workflow), sem a revisão.
 
 O que continua manual: folha e plantões estaduais, concursos, Mais Médicos, os textos de análise de cada estado (escritos na data do relatório ou da revisão) e a inclusão de valores de editais no mapa de preços.

@@ -249,7 +249,7 @@ write(path.join(SITE, 'data', 'noticias.json'), noticias.sort((a, b) => String(b
 write(path.join(SITE, 'data', 'municipios.json'), municipiosLista);
 fs.copyFileSync(path.join(ROOT, 'geo', 'brasil_ufs.json'), path.join(SITE, 'data', 'brasil.json'));
 // Automatic updates (weekly PNCP and news, monthly CNES log): copied as they are, listed on the site as novidades.
-for (const k of ['valores', 'contratos', 'noticias', 'atualizacoes']) {
+for (const k of ['valores', 'contratos', 'noticias', 'atualizacoes', 'oportunidades']) {
   const p = path.join(SRC, '_auto', k + '.json');
   write(path.join(SITE, 'data', 'auto', k + '.json'), fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : []);
 }

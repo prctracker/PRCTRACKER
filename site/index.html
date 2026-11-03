@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Atlas Médico do Brasil</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" type="image/png" href="assets/prc-icon-32.png">
@@ -520,6 +521,40 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
 .mx-foot-col a { color: var(--hero-ink); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: .84rem; }
 .mx-foot-col a:hover { color: #3FE6F7; }
 .mx-foot-h { margin: 0 0 4px !important; font-family: var(--display); font-weight: 600; font-size: .64rem; letter-spacing: .24em; text-transform: uppercase; color: #3FE6F7; }
+/* ---------- oportunidades */
+.mx-opstates { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.mx-opstates .mx-chip { background: transparent; color: var(--hero-ink); border-color: var(--hero-line); }
+.mx-opstates .mx-chip b { font-family: var(--mono); font-weight: 500; color: #19DDF2; }
+.mx-opstates .mx-chip[aria-pressed="true"] { background: #19DDF2; border-color: #19DDF2; color: #0B173B; }
+.mx-opstates .mx-chip[aria-pressed="true"] b { color: #0B173B; }
+.mx-opmaphead { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 34px; margin-bottom: 6px; color: var(--hero-ink-2); font-size: .82rem; }
+.mx-opmaphead button { font: inherit; font-weight: 600; color: var(--hero-ink); background: transparent; border: 1px solid var(--hero-line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.mx-opmaphead button:hover { border-color: #19DDF2; }
+.mx-opmap .mun { stroke: var(--hero-line); }
+.mx-opmap .mun:not(.has) { fill: var(--hero-off); stroke: var(--hero-line); stroke-width: .6; transition: filter .15s; }
+.mx-opmap .mun.has { cursor: pointer; stroke: #0B173B; stroke-width: .8; }
+.mx-opmap .mun:hover { filter: brightness(1.3); }
+.mx-opmap .mun.sel { stroke: #fff; stroke-width: 2; }
+.mx-opmap .op-pin { fill: #19DDF2; stroke: #0B173B; stroke-width: 1.2; cursor: pointer; }
+.mx-opmap .op-pin-n { font-family: var(--mono); font-size: 11px; font-weight: 700; fill: #0B173B; pointer-events: none; }
+.mx-opmap .lab-mun { font-family: var(--display); font-size: 12px; font-weight: 600; fill: #EEF4FF; paint-order: stroke; stroke: #0B173B; stroke-width: 3px; pointer-events: none; }
+.mx-opmap .uf-badge circle { fill: #19DDF2; }
+.mx-opmap .uf-badge text { fill: #0B173B; font-family: var(--mono); font-size: 15px; font-weight: 700; }
+.mx-opgrid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 28px; align-items: start; }
+@media (max-width: 900px) { .mx-opgrid { grid-template-columns: minmax(0, 1fr); } }
+.mx-oppanel { position: sticky; top: 88px; border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); padding: 20px; display: grid; gap: 12px; }
+@media (max-width: 900px) { .mx-oppanel { position: static; } }
+.mx-oppanel h3 { margin: 0; font-family: var(--display); font-size: 1.25rem; }
+.mx-oppanel .mx-kv { margin: 0; }
+.mx-oppanel p { margin: 0; font-size: .86rem; color: var(--ink-2); line-height: 1.5; }
+.mx-opcard { border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); padding: 16px 18px; display: grid; gap: 8px; margin-bottom: 12px; }
+.mx-opcard h4 { margin: 0; font-size: .98rem; line-height: 1.45; font-weight: 600; }
+.mx-opmeta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: .8rem; color: var(--ink-2); }
+.mx-opdue { font-family: var(--mono); font-size: .76rem; padding: 2px 9px; border-radius: 999px; background: var(--sunk); color: var(--ink); }
+.mx-opdue.soon { background: var(--team-wash); color: var(--team); font-weight: 600; }
+.mx-opitems { margin: 0; padding-left: 18px; font-size: .8rem; color: var(--ink-2); display: grid; gap: 2px; }
+.mx-oplinks { display: flex; gap: 8px; flex-wrap: wrap; }
+.mx-opmun { border: 0; background: none; padding: 0; font: inherit; color: var(--petrol-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 </style>
 
 <header class="mx-mast">
@@ -538,6 +573,7 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
       <a href="#rio-grande-do-sul" data-nav="rio-grande-do-sul" class="mx-navuf">RS</a>
       <a href="#rondonia" data-nav="rondonia" class="mx-navuf">RO</a>
       <span class="mx-navsep" aria-hidden="true"></span>
+      <a href="#oportunidades" data-nav="oportunidades">Oportunidades</a>
       <a href="#noticias" data-nav="noticias">Notícias</a>
       <a href="#valores-da-equipe" data-nav="valores-da-equipe">Valores da equipe</a>
       <a href="#fontes" data-nav="fontes">Fontes</a>
@@ -675,6 +711,45 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
   </div>
 
   <!-- ============ NOTÍCIAS ============ -->
+  <!-- ============ OPORTUNIDADES ============ -->
+  <div class="mx-page" data-page="oportunidades" id="mx-pg-oport" hidden>
+    <div class="mx-heroband">
+    <section class="mx-wrap mx-hero">
+      <div class="mx-hero-grid">
+        <div>
+          <p class="mx-eyebrow" id="mx-op-date">Oportunidades abertas · PNCP</p>
+          <h1>Oportunidades <em>abertas</em></h1>
+          <p class="mx-lead">Credenciamentos, chamamentos, pregões e outras contratações de serviço médico com proposta aberta nos estados com relatório. Clique em um estado e depois no município.</p>
+          <div class="mx-cover" id="mx-op-cover"></div>
+          <div class="mx-opstates" id="mx-op-states" role="group" aria-label="Estado"></div>
+          <p class="mx-basenote" id="mx-op-note"></p>
+        </div>
+        <div class="mx-mapcard">
+          <div class="mx-opmaphead" id="mx-op-maphead"></div>
+          <div class="mx-map mx-opmap" id="mx-opmap" role="img" aria-label="Mapa das oportunidades abertas"></div>
+          <div class="mx-maplegend" id="mx-op-legend"></div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <section class="mx-wrap" style="padding-top:32px;padding-bottom:48px">
+      <div class="mx-opgrid">
+        <aside class="mx-oppanel" id="mx-op-panel" aria-live="polite"></aside>
+        <div>
+          <div class="mx-filters">
+            <input class="mx-input mx-search" id="mx-op-q" type="search" placeholder="Buscar por município, órgão ou especialidade" aria-label="Buscar oportunidades">
+            <select class="mx-select" id="mx-op-mod" style="max-width:15rem" aria-label="Modalidade"></select>
+            <select class="mx-select" id="mx-op-prazo" style="max-width:13rem" aria-label="Prazo">
+              <option value="">Qualquer prazo</option><option value="7">Fecha em até 7 dias</option><option value="30">Fecha em até 30 dias</option>
+            </select>
+            <span class="mx-note" id="mx-op-count"></span>
+          </div>
+          <div id="mx-op-list"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div class="mx-page" data-page="noticias" id="mx-pg-noticias" hidden>
     <section class="mx-wrap" style="padding-top:40px">
       <div class="mx-sechead">
