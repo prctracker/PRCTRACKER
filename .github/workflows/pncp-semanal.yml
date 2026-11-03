@@ -1,8 +1,8 @@
 name: Atualização semanal (PNCP e notícias)
 
+# Reserva: a rodada semanal é feita por uma tarefa agendada no Claude, que revisa os dados antes de publicar.
+# Este robô só roda quando acionado à mão (aba Actions → Run workflow).
 on:
-  schedule:
-    - cron: '0 10 * * 1'   # toda segunda-feira, 07:00 em Brasília
   workflow_dispatch:
 
 permissions:

@@ -46,13 +46,13 @@ O GitHub Pages serve o site aberto: qualquer pessoa com o endereço consegue ver
 
 ## Atualização automática
 
-Dois robôs rodam no GitHub Actions (aba Actions do repositório) e republicam o site sozinhos:
+Duas tarefas agendadas no Claude (conta da PRC Tracker) rodam os scripts de `tools/auto/`, revisam o resultado e publicam neste repositório:
 
-| Robô | Quando | O que faz |
+| Tarefa | Quando | O que faz |
 |---|---|---|
-| `Atualização semanal (PNCP e notícias)` | toda segunda, 07:00 | Varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa, pregão) e os contratos publicados nos estados com relatório, filtra serviço médico por palavras-chave, lê os itens e procura notícias novas no Google Notícias. Grava em `src/_auto/` e o site mostra como "novo desde o relatório", com link. Não muda os indicadores. |
-| `Atualização mensal (CNES)` | todo dia 10, 08:00 | Quando o CNES tem competência nova, atualiza médicos por município (total e SUS), por especialidade, a série de setembro e os médicos e vínculos de cada hospital e UPA, com o mesmo método dos relatórios (`tools/auto/tabnet.py` e `tools/auto/cnes_mensal.py`). Se o total de médicos variar mais de 15%, o estado não é alterado e a falha fica registrada. |
+| Atualização semanal do PNCP | toda segunda, por volta das 7h | `tools/auto/pncp_semanal.py`: editais e credenciamentos por modalidade (credenciamento, inexigibilidade, dispensa, pregão), itens com valor, contratos novos e notícias. Grava em `src/_auto/`; a revisão tira o que não for serviço médico e registra o que tirou. O site mostra como "novo desde o relatório", com link; os indicadores não mudam. |
+| Atualização mensal do CNES | todo dia 10, por volta das 8h | `tools/auto/cnes_mensal.py`: quando o CNES tem competência nova, médicos por município (total e SUS), por especialidade, a série de setembro e os médicos e vínculos de cada hospital e UPA, com o mesmo método dos relatórios. A revisão compara com o mês anterior e confere amostras direto no TabNet e no CNES antes de publicar. |
 
-Cada rodada fica registrada em `src/_auto/atualizacoes.json` e aparece na página Fontes do site. Para rodar na hora: aba Actions → escolha o robô → Run workflow.
+Cada rodada fica registrada em `src/_auto/atualizacoes.json` e aparece na página Fontes do site. Os mesmos scripts podem rodar no GitHub Actions como reserva (aba Actions → Run workflow), sem a revisão.
 
 O que continua manual: folha e plantões estaduais, concursos, Mais Médicos, os textos de análise de cada estado (escritos na data do relatório ou da revisão) e a inclusão de valores de editais no mapa de preços.

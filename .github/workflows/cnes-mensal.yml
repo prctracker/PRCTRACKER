@@ -1,8 +1,8 @@
 name: Atualização mensal (CNES)
 
+# Reserva: a rodada mensal é feita por uma tarefa agendada no Claude, que revisa os dados antes de publicar.
+# Este robô só roda quando acionado à mão (aba Actions → Run workflow).
 on:
-  schedule:
-    - cron: '0 11 10 * *'  # todo dia 10, 08:00 em Brasília
   workflow_dispatch:
     inputs:
       forcar:
