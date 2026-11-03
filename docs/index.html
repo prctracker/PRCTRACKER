@@ -748,7 +748,7 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
       </div>
       <div class="mx-layers">
         <div class="mx-layer"><p class="mx-eyebrow">Camada 1 · fixa</p><h3>Relatórios estaduais</h3><p>CNES, IBGE, PNCP, portais de transparência, diários oficiais e editais, com link e data de consulta em cada linha. Os arquivos publicados com o site não são alterados por nenhuma outra camada.</p></div>
-        <div class="mx-layer"><p class="mx-eyebrow">Camada 2 · automática</p><h3>Atualização automática</h3><p>Toda segunda-feira, uma tarefa agendada no Claude varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa e pregão) e os contratos publicados nos estados com relatório, lê os itens das contratações de serviço médico, procura notícias novas e revisa o resultado antes de publicar. O que entra aparece como “novo desde o relatório”, com link, e não muda os indicadores. Todo dia 10, outra tarefa atualiza pelo CNES os médicos por município, por especialidade e em cada hospital e UPA, com o mesmo método dos relatórios, e confere os números antes de publicar.</p></div>
+        <div class="mx-layer"><p class="mx-eyebrow">Camada 2 · automática</p><h3>Atualização automática</h3><p>Todo domingo à noite, uma tarefa agendada no Claude varre o PNCP por modalidade (credenciamento, inexigibilidade, dispensa e pregão) e os contratos publicados nos estados com relatório, lê os itens das contratações de serviço médico, procura notícias novas e revisa o resultado antes de publicar. O que entra aparece como “novo desde o relatório”, com link, e não muda os indicadores. No segundo sábado de cada mês, à noite, outra tarefa atualiza pelo CNES os médicos por município, por especialidade e em cada hospital e UPA, com o mesmo método dos relatórios, e confere os números antes de publicar.</p></div>
         <div class="mx-layer"><p class="mx-eyebrow">Camada 3 · equipe</p><h3>Contato com médicos</h3><p>Valores que a equipe registra na página Valores da equipe. Aparecem em rosa nos gráficos de hora médica e em quadro próprio em cada estado; o botão “Incluir valores informados pela equipe” liga e desliga a camada.</p></div>
       </div>
       <div class="mx-band" style="padding-bottom:0">
@@ -859,7 +859,7 @@ footer .mx-foot-in { display: grid !important; grid-template-columns: minmax(0, 
   const PAGES = ['inicio', 'noticias', 'valores-da-equipe', 'fontes'];
   const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)' };
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
-  const SCHEDULE = { dow: 1, h: 7, m: 0, dia: 'segunda-feira', hora: '07:00' }; // weekly PNCP and news (GitHub Actions, Monday 07:00); CNES monthly on day 10
+  const SCHEDULE = { dow: 0, h: 22, m: 0, dia: 'domingo', hora: '22h' }; // weekly PNCP and news (Sunday night); CNES monthly on the second Saturday
   const FORMA_HORAS = { 'Plantão 6h': 6, 'Plantão 12h': 12, 'Plantão 24h': 24, 'Hora': 1 };
   const SEMANAS_MES = 4.345;
 

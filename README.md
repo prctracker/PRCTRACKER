@@ -50,8 +50,8 @@ Duas tarefas agendadas no Claude (conta da PRC Tracker) rodam os scripts de `too
 
 | Tarefa | Quando | O que faz |
 |---|---|---|
-| Atualização semanal do PNCP | toda segunda, por volta das 7h | `tools/auto/pncp_semanal.py`: editais e credenciamentos por modalidade (credenciamento, inexigibilidade, dispensa, pregão), itens com valor, contratos novos e notícias. Grava em `src/_auto/`; a revisão tira o que não for serviço médico e registra o que tirou. O site mostra como "novo desde o relatório", com link; os indicadores não mudam. |
-| Atualização mensal do CNES | todo dia 10, por volta das 8h | `tools/auto/cnes_mensal.py`: quando o CNES tem competência nova, médicos por município (total e SUS), por especialidade, a série de setembro e os médicos e vínculos de cada hospital e UPA, com o mesmo método dos relatórios. A revisão compara com o mês anterior e confere amostras direto no TabNet e no CNES antes de publicar. |
+| Atualização semanal do PNCP | todo domingo, por volta das 22h | `tools/auto/pncp_semanal.py`: editais e credenciamentos por modalidade (credenciamento, inexigibilidade, dispensa, pregão), itens com valor, contratos novos e notícias. Grava em `src/_auto/`; a revisão tira o que não for serviço médico e registra o que tirou. O site mostra como "novo desde o relatório", com link; os indicadores não mudam. |
+| Atualização mensal do CNES | segundo sábado de cada mês, por volta das 22h | `tools/auto/cnes_mensal.py`: quando o CNES tem competência nova, médicos por município (total e SUS), por especialidade, a série de setembro e os médicos e vínculos de cada hospital e UPA, com o mesmo método dos relatórios. A revisão compara com o mês anterior e confere amostras direto no TabNet e no CNES antes de publicar. |
 
 Cada rodada fica registrada em `src/_auto/atualizacoes.json` e aparece na página Fontes do site. Os mesmos scripts podem rodar no GitHub Actions como reserva (aba Actions → Run workflow), sem a revisão.
 
