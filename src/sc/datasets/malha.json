@@ -1,0 +1,14 @@
+{
+  "description": "Contornos dos 295 municípios de Santa Catarina (malha municipal IBGE 2022), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

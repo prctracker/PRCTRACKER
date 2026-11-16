@@ -1,0 +1,14 @@
+{
+  "description": "Médicos ativos e valor bruto pago no mês aos cargos de médico do Executivo de Santa Catarina (arquivos Remuneração de Servidores, dados.sc.gov.br): out/2022, jun/2023 e out/2026, com efetivos e temporários (ACT) separados em 2026.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

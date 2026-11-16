@@ -99,7 +99,7 @@ with sync_playwright() as p:
     report['home_team_diamonds'] = pg.eval_on_selector_all('#mx-br-hora path[data-source="valores_equipe"]', 'els => els.length')
     pg.locator('#mx-br-hora').scroll_into_view_if_needed()
     pg.screenshot(path=f'{SHOTS}/home_hora.png')
-    for slug in ['tocantins', 'roraima', 'alagoas', 'rio-grande-do-sul', 'rondonia', 'parana']:
+    for slug in ['tocantins', 'roraima', 'alagoas', 'rio-grande-do-sul', 'rondonia', 'parana', 'santa-catarina']:
         t0 = time.time()
         pg.goto(f'http://127.0.0.1:{PORT}/index.html#{slug}')
         pg.wait_for_selector('#mx-teamcard', timeout=60000)

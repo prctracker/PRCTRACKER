@@ -1,0 +1,14 @@
+{
+  "description": "Remuneração do médico no concurso e nas seleções temporárias da SES-SC, média paga na folha estadual, vencimentos de concursos e seleções municipais, plantão fixado em lei e bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

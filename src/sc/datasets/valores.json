@@ -1,0 +1,14 @@
+{
+  "description": "Valores pagos a médicos em Santa Catarina, um por linha, com órgão, documento de origem, amparo legal, nº de controle e item no PNCP, unidade, quantidade, valor estimado e homologado, base do valor e link: credenciamentos, dispensas, inexigibilidades e pregões de prefeituras e do Estado no PNCP, leis, contratos, credenciamentos, concursos e seleções municipais do Diário Oficial dos Municípios de Santa Catarina (DOM/SC), concurso e seleções da SES-SC, médias da folha estadual e bolsa do Mais Médicos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "valores.json"
+  },
+  "title": "Remuneração médica levantada",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

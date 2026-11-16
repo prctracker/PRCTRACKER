@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: a folha aberta de Santa Catarina traz só o valor bruto por servidor, sem rubrica de plantão; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json"
+  },
+  "title": "Plantões extras pagos pelo Estado, por mês",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

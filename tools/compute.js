@@ -16,7 +16,7 @@ function rowsOf(j) {
 }
 
 const result = {};
-for (const uf of ['al', 'to', 'rr', 'rs', 'ro', 'pr']) {
+for (const uf of ['al', 'to', 'rr', 'rs', 'ro', 'pr', 'sc']) {
   const html = fs.readFileSync(path.join(SRC, uf, 'index.html'), 'utf8');
   const data = {};
   for (const f of fs.readdirSync(path.join(SRC, uf, 'data'))) {

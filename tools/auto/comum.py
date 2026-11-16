@@ -5,7 +5,7 @@ from datetime import datetime, timezone, timedelta
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SRC = os.path.join(ROOT, 'src')
 AUTO = os.path.join(SRC, '_auto')
-UFS = {'to': ('TO', 'Tocantins', '17'), 'rr': ('RR', 'Roraima', '14'), 'al': ('AL', 'Alagoas', '27'), 'rs': ('RS', 'Rio Grande do Sul', '43'), 'ro': ('RO', 'Rondônia', '11'), 'pr': ('PR', 'Paraná', '41')}
+UFS = {'to': ('TO', 'Tocantins', '17'), 'rr': ('RR', 'Roraima', '14'), 'al': ('AL', 'Alagoas', '27'), 'rs': ('RS', 'Rio Grande do Sul', '43'), 'ro': ('RO', 'Rondônia', '11'), 'pr': ('PR', 'Paraná', '41'), 'sc': ('SC', 'Santa Catarina', '42')}
 BRT = timezone(timedelta(hours=-3))
 
 def agora():
