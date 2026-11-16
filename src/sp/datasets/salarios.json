@@ -1,0 +1,14 @@
+{
+  "description": "Remuneração do médico nos concursos da SES-SP e da USP, média paga na folha estadual, hora paga por organização social, vencimentos de concursos e seleções municipais e bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

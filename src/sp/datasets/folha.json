@@ -1,0 +1,14 @@
+{
+  "description": "Médicos ativos e remuneração bruta do mês dos cargos de médico do Executivo de São Paulo (Portal da Transparência: arquivos de abril de 2022 a 2025 e arquivo atual, de abr/2026), separados em médicos de carreira e médicos legistas.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

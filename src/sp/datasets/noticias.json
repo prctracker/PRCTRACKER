@@ -1,0 +1,14 @@
+{
+  "description": "Reportagens e publicações de 2025 e 2026 sobre falta de médicos, contratação e pagamento no estado de São Paulo, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json"
+  },
+  "title": "Notícias sobre falta de médicos",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}
