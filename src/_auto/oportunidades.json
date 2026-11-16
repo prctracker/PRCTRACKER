@@ -1,586 +1,5 @@
 [
  {
-  "id": "87366159000102-1-000297/2026",
-  "uf": "RS",
-  "ibge": "4319901",
-  "municipio": "Sapiranga",
-  "orgao": "MUNICIPIO DE SAPIRANGA",
-  "unidade": "SECRETARIA MUNICIPAL DE SAÚDE",
-  "esfera": "M",
-  "modalidade": "Credenciamento",
-  "instrumento": "Edital de Chamamento Público",
-  "numero": "1",
-  "processo": "PRO22375/2026",
-  "objeto": "Credenciamento de empresas para prestação de serviços de Exames de Imagem, Tomografia Computadorizada com Contraste e Emissão de Laudos, destinados ao atendimento dos usuários do Sistema Único de Saúde  SUS",
-  "valor_estimado": 169604.4,
-  "abertura": "2026-08-03T13:00:00",
-  "encerramento": "2026-11-03T13:00:00",
-  "publicado": "2026-07-31",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/87366159000102/2026/297",
-  "link_sistema": "",
-  "itens": [],
-  "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "11336672000199-1-000090/2025",
-  "uf": "TO",
-  "ibge": "1709500",
-  "municipio": "Gurupi",
-  "orgao": "FUNDO MUNICIPAL DE SAUDE",
-  "unidade": "FUNDO MUNICIPAL DE SAUDE",
-  "esfera": "M",
-  "modalidade": "Credenciamento",
-  "instrumento": "Edital de Chamamento Público",
-  "numero": "CR/2025.008-FMS-GURUPI-TO",
-  "processo": "CR/2025.008-FMS-GURUPI-TO",
-  "objeto": "CREDENCIAMENTO DE PESSOAS JURIDICAS, DE NATUREZA PRIVADA COM OU SEM FINS ECONOMICOS, PARA PRESTACAO DE SERVICOS DE SAUDE EM OFTALMOLOGIA AMBULATORIAL CONSULTAS MEDICAS, EXAMES PARA DIAGNOSTICO E PROCEDIMENTOS CIRURGICOS DE MEDIA E ALTA COMPLEXIDADE HABILITADOS PELO MINISTERIO DE SAUDE NO AMBITO DO SUS. / /",
-  "valor_estimado": 13127412.0,
-  "abertura": "2025-11-04T09:00:00",
-  "encerramento": "2026-11-03T23:59:00",
-  "publicado": "2025-11-03",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/11336672000199/2025/90",
-  "link_sistema": "",
-  "itens": [
-   {
-    "descricao": "CONSULTA MEDICA EM ATENCAO ESPECIALIZADA",
-    "quantidade": 5000.0,
-    "unidade": "SERVICO",
-    "valor_unitario": 80.0
-   },
-   {
-    "descricao": "TRATAMENTO CIRURGICO DE PTERIGIO MONOCULAR",
-    "quantidade": 3000.0,
-    "unidade": "SERVICO",
-    "valor_unitario": 419.1
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA OCULAR BINOCULAR",
-    "quantidade": 200.0,
-    "unidade": "SERVICO",
-    "valor_unitario": 150.0
-   }
-  ],
-  "n_itens": 3,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "91338558000137-1-000114/2026",
-  "uf": "RS",
-  "ibge": "4309050",
-  "municipio": "Glorinha",
-  "orgao": "MUNICIPIO DE GLORINHA",
-  "unidade": "Setor de Compras e Licitações",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "55",
-  "processo": "585",
-  "objeto": "[Portal de Compras Públicas] - SMS - CONTRATAÇÃO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS PARA A SECRETARIA MUNICIPAL DE SAÚDE.",
-  "valor_estimado": 70982.08,
-  "abertura": "2026-10-15T09:00:00",
-  "encerramento": "2026-11-04T08:29:00",
-  "publicado": "2026-10-15",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/91338558000137/2026/114",
-  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Glorinha-281/PE-55-2026-2026-518486",
-  "itens": [
-   {
-    "descricao": "Prestacao de servico medico de responsabilidade tecnica, 8 horas/semanais.",
-    "quantidade": 416.0,
-    "unidade": "Hora",
-    "valor_unitario": 170.63
-   }
-  ],
-  "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "87990800000185-1-000361/2026",
-  "uf": "RS",
-  "ibge": "4303103",
-  "municipio": "Cachoeirinha",
-  "orgao": "MUNICIPIO DE CACHOEIRINHA",
-  "unidade": "FUNDO MUNICIPAL DE SAUDE",
-  "esfera": "M",
-  "modalidade": "Credenciamento",
-  "instrumento": "Edital de Chamamento Público",
-  "numero": "CHP 2",
-  "processo": "298/2026",
-  "objeto": "Seleção de Organização da Sociedade Civil - OSC, por meio de Chamamento Público, para celebração de Termo de Colaboração, visando à realização de exames de mamografia e ultrassonografia em unidade móvel, para ampliação do acesso e redução da demanda reprimida no Município de Cachoeirinha/RS.",
-  "valor_estimado": 1626432.26,
-  "abertura": "2026-10-05T08:00:00",
-  "encerramento": "2026-11-04T10:00:00",
-  "publicado": "2026-10-02",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/87990800000185/2026/361",
-  "link_sistema": "",
-  "itens": [
-   {
-    "descricao": "ULTRASSONOGRAFIA TRANSVAGINAL\r\n Ultrassonografias transvaginais",
-    "quantidade": 800.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 121.08
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA MAMARIA BILATERAL\r\n Ultrassonografias mamárias bilaterais",
-    "quantidade": 300.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 97.6
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE PRÓSTATA POR VIA ABDOMINAL\r\n Ultrassonografias de próstata",
-    "quantidade": 200.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 97.76
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE BOLSA ESCROTAL\r\n Ultrassonografias de bolsa escrotal",
-    "quantidade": 50.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 108.85
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE ABDÔMEN TOTAL\r\n Ultrassonografias de abdômen total",
-    "quantidade": 900.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 155.05
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE ARTICULAÇÃO E PARTES MOLES\r\n Ultrassonografias de partes moles",
-    "quantidade": 950.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 104.88
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE TIREOIDE\r\n Ultrassonografias de tireoide",
-    "quantidade": 100.0,
-    "unidade": "UN (UN)",
-    "valor_unitario": 113.51
-   }
-  ],
-  "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "92123918000146-1-000078/2026",
-  "uf": "RS",
-  "ibge": "4322541",
-  "municipio": "Vale Real",
-  "orgao": "MUNICIPIO DE VALE REAL",
-  "unidade": "Setor de Licitações",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "36",
-  "processo": "36",
-  "objeto": "[Portal de Compras Públicas] - Contratação de pessoa jurídica para prestação de serviços médicos especializados em ginecologia/obstetrícia, mediante disponibilização de profissional devidamente habilitado e com comprovação da respectiva especialidade, para realização de consultas médicas, procedimentos ambulatoriais e acompanhamento pré-natal nas Unidades Básicas de Saúde do Município de Vale Real/RS.",
-  "valor_estimado": 0.0,
-  "abertura": "2026-10-23T09:00:00",
-  "encerramento": "2026-11-06T08:55:00",
-  "publicado": "2026-10-23",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/92123918000146/2026/78",
-  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Vale-Real-343/PE-36-2026-2026-520641",
-  "itens": [
-   {
-    "descricao": "SERVICO MEDICO",
-    "quantidade": 260.0,
-    "unidade": "Hora",
-    "valor_unitario": 0
-   }
-  ],
-  "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "88860366000181-1-000135/2026",
-  "uf": "RS",
-  "ibge": "4301305",
-  "municipio": "Arroio Grande",
-  "orgao": "MUNICIPIO DE ARROIO GRANDE",
-  "unidade": "Setor de Licitações",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "51",
-  "processo": "2386",
-  "objeto": "[Portal de Compras Públicas] - Contratação de empresa especializada para prestação de serviços de fornecimento de consultas médicas especializadas em neurologia pediátrica (neuropediatria) aos pacientes do município. Descrição do objeto licitado, exigências operacionais, quantidades, valores de referência e demais informações estão contidos nos ANEXO I e II do edital.",
-  "valor_estimado": 137592.0,
-  "abertura": "2026-10-09T14:00:00",
-  "encerramento": "2026-11-06T09:00:00",
-  "publicado": "2026-10-09",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/88860366000181/2026/135",
-  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Arroio-Grande-489/PE-51-2026-2026-517518",
-  "itens": [
-   {
-    "descricao": "CONSULTAS DE NEUROLOGIA PEDIATRICA /NEUROPEDIATRIA",
-    "quantidade": 216.0,
-    "unidade": "Unidade",
-    "valor_unitario": 637.0
-   }
-  ],
-  "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "10519243000194-1-000002/2026",
-  "uf": "RS",
-  "ibge": "4312153",
-  "municipio": "Mato Leitão",
-  "orgao": "FUNDO MUNICIPAL DA SAUDE DE MATO LEITAO",
-  "unidade": "Fundo Municipal Da Saude De Mato Leitao",
-  "esfera": "M",
-  "modalidade": "Credenciamento",
-  "instrumento": "Edital de Chamamento Público",
-  "numero": "2",
-  "processo": "113/2026",
-  "objeto": "serviços médicos",
-  "valor_estimado": 39951.0,
-  "abertura": "2026-06-09T08:00:00",
-  "encerramento": "2026-11-08T17:00:00",
-  "publicado": "2026-06-08",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/10519243000194/2026/2",
-  "link_sistema": "",
-  "itens": [],
-  "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": "Contratação de empresa especializada para realização de exames de Ressonância Magnética (RM), com e sem utilização de meio de contraste paramagnético, destinados ao atendimento de pacientes encaminhados pela contratante, conforme demanda."
- },
- {
-  "id": "13183513000127-1-000199/2026",
-  "uf": "RS",
-  "ibge": "4320008",
-  "municipio": "Sapucaia do Sul",
-  "orgao": "FUNDACAO DE SAUDE SAPUCAIA DO SUL",
-  "unidade": "FUNDAÇÃO DE SAÚDE SAPUCAIA DO SUL",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "0175",
-  "processo": "327239",
-  "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DO SERVIÇO MÉDICO – NUTRÓLOGO, PARA ATENDIMENTO EM CONSULTORIAS NO HOSPITAL MUNICIPAL GETÚLIO VARGAS (HMGV), EM SAPUCAIA DO SUL/RS",
-  "valor_estimado": 0.0,
-  "abertura": "2026-10-22T08:00:00",
-  "encerramento": "2026-11-09T08:45:00",
-  "publicado": "2026-10-22",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/13183513000127/2026/199",
-  "link_sistema": "https://pregaobanrisul.com.br/editais/0175_2026/358457",
-  "itens": [],
-  "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "05893631000109-1-000033/2026",
-  "uf": "RO",
-  "ibge": "1100106",
-  "municipio": "Guajará-Mirim",
-  "orgao": "MUNICIPIO DE GUAJARA-MIRIM",
-  "unidade": "MUNICÍPIO DE GUAJARÁ-MIRIM/RO",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "22",
-  "processo": "1770/2026",
-  "objeto": "[LICITANET] - Contratação de Empresa Especializada em vistas à Prestação de Serviços de SADT´S – Serviço Auxiliar de Diagnóstico e Tratamento, - Endoscopia Digestiva Alta; Colonoscopia; Retossigmoidoscopia; Ecocardiografia Transtorácica; Ultrassonografia Doppler Colorido de Vasos; Ultrassonografia Transvaginal; Ultrassonografia Pélvica ginecológica; Ultrassonografia obstétrica; Ultrassonografia de Tireoide; Ultrassonografia de Próstata via Abdominal; Ultrassonografia Mamária Bilateral; Ultrassonografia de Abdômen Total, Ultrassonografia de Partes Moles, para suprir a necessidade da secretaria municipal de saúde de Guajará-Mirim/RO, por um período de 12 (doze) meses.",
-  "valor_estimado": 377933.33,
-  "abertura": "2026-10-26T17:50:53",
-  "encerramento": "2026-11-10T11:00:00",
-  "publicado": "2026-10-26",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/05893631000109/2026/33",
-  "link_sistema": "https://licitanet.com.br/sessao/205835",
-  "itens": [
-   {
-    "descricao": "ULTRASSONOGRAFIA DOPPLER COLORIDO DE VASOS,\nDIAGNÓSTICO DE DIVERSAS PATOLOGIAS VASCULARES. PODE\nSER FEITO NAS PERNAS, BRAÇOS, PESCOÇO, ABDÔMEN",
-    "quantidade": 100.0,
-    "unidade": "Serv.",
-    "valor_unitario": 545.0
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA PELVICA (GINECOLOGICA) PROCEDIMENTO\nNÃO INVASIVO REALIZADO POR VIA ABDOMINAL, REGIÃO SUPRA\nPÚBICA.",
-    "quantidade": 50.0,
-    "unidade": "Serv.",
-    "valor_unitario": 175.0
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA OBSTETRICA, PERMITE O DIAGNÓSTICO DE\nGRAVIDEZ, DA VIABILIDADE DA GRAVIDEZ, A DETERMINAÇÃO\nDA IDADE GESTACIONAL E DO TAMANHO DO FETO",
-    "quantidade": 30.0,
-    "unidade": "Serv.",
-    "valor_unitario": 221.67
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE PROSTATA POR VIA ABDOMINAL\nPROCEDIMENTO NÃO INVASIVO REALIZADO POR VIA\nABDOMINAL SUPRAPÚBICA UTILIZADO PARA AVALIAÇÃO,\nSEGUIMENTO, DIAGNÓSTICO E CARACTERIZAÇÃO DAS\nALTERAÇÕES E/OU LESÕES",
-    "quantidade": 20.0,
-    "unidade": "Serv.",
-    "valor_unitario": 211.67
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA MAMARIA BILATERAL PROCEDIMENTO\nNÃO INVASIVO QUE POSSIBILITA IDENTIFICAR LESÕES NA MAMA",
-    "quantidade": 50.0,
-    "unidade": "Serv.",
-    "valor_unitario": 235.0
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE ABDOMEN TOTAL PROCEDIMENTO NÃO\nINVASIVO, UTILIZADO PARA AVALIAÇÃO, SEGUIMENTO,\nDIAGNÓSTICO E CARACTERIZAÇÃO DAS ALTERAÇÕES DO\nFÍGADO, DA VESÍCULA BILIAR, DOS RINS, DO PÂNCREAS,",
-    "quantidade": 50.0,
-    "unidade": "Serv.",
-    "valor_unitario": 295.0
-   },
-   {
-    "descricao": "ULTRASSONOGRAFIA DE PARTES MOLES, PARA ANÁLISE DE\nÁREAS COMO REGIÃO CERVICAL, AXILAR, INGUINAL, PAREDE\nABDOMINAL, REGIÃO LOMBAR, MEMBROS E OUTRAS PARTES\nMOLES INDICADAS NA SOLICITAÇÃO MÉDICA.",
-    "quantidade": 30.0,
-    "unidade": "Serv.",
-    "valor_unitario": 213.67
-   }
-  ],
-  "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "11249252000175-1-000015/2026",
-  "uf": "TO",
-  "ibge": "1707702",
-  "municipio": "Filadélfia",
-  "orgao": "FUNDO MUNICUIPAL DE SAUDE",
-  "unidade": "FUNDO MUNICIPAL DE SAÚDE DE FILADÉLFIA/TO",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "10",
-  "processo": "86/2026",
-  "objeto": "Registro de Preços para futura e eventual contratação de empresa especializada na prestação de serviços de exames para diagnóstico por imagem (ultrassonografia, raio X com laudo, tomografia computadorizada com e sem contraste e ressonância magnética com e sem contraste), destinados ao atendimento das demandas do Fundo Municipal de Saúde de Filadélfia/TO.",
-  "valor_estimado": 186140.54,
-  "abertura": "2026-10-28T18:00:00",
-  "encerramento": "2026-11-11T08:30:00",
-  "publicado": "2026-10-28",
-  "situacao": "Divulgada no PNCP",
-  "srp": true,
-  "link_pncp": "https://pncp.gov.br/app/editais/11249252000175/2026/15",
-  "link_sistema": "https://bnccompras.com/Process/ProcessView?param1=[gkz]gOyg3nOfUc01x1fYno0yVjU_HVE9_dRCWTnGhj8q6Llpnq5D6aZtwBePnpkAs5dtqtfymwZJYfVdOk/ATBDgMwnR_IXNAHEeYcKgFW1pyq0=",
-  "itens": [
-   {
-    "descricao": "Ultrassonografia",
-    "quantidade": 1122.0,
-    "unidade": "Serv.",
-    "valor_unitario": 106.6233
-   },
-   {
-    "descricao": "Raio x com laudo",
-    "quantidade": 24.0,
-    "unidade": "Serv.",
-    "valor_unitario": 91.0
-   },
-   {
-    "descricao": "Ressonância magnética com contraste, incluindo imagens e laudo médico",
-    "quantidade": 30.0,
-    "unidade": "Serv.",
-    "valor_unitario": 565.0867
-   },
-   {
-    "descricao": "Ressonância magnética sem contraste, incluindo imagens e laudo médico",
-    "quantidade": 30.0,
-    "unidade": "Serv.",
-    "valor_unitario": 614.4433
-   }
-  ],
-  "n_itens": 4,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "87613626000151-1-000448/2026",
-  "uf": "RS",
-  "ibge": "4311304",
-  "municipio": "Lagoa Vermelha",
-  "orgao": "MUNICIPIO DE LAGOA VERMELHA",
-  "unidade": "ADMINSTRAÇÃO",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "PCE 101",
-  "processo": "411/2026",
-  "objeto": "Contratação de serviços de perícia médica para avaliação de capacidade laboral de servidores municipais.",
-  "valor_estimado": 67250.0,
-  "abertura": "2026-10-26T08:30:00",
-  "encerramento": "2026-11-11T08:30:00",
-  "publicado": "2026-10-26",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/87613626000151/2026/448",
-  "link_sistema": "",
-  "itens": [
-   {
-    "descricao": "Exame pericial por junta médica composta de, no mínimo, três profissionais, acompanhado do respectivo laudo, para verificação de capacidade laboral, até o limite de 25 (vinte e cinco) laudos por ano.",
-    "quantidade": 25.0,
-    "unidade": "UNIDADE (UN)",
-    "valor_unitario": 2690.0
-   }
-  ],
-  "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "87890992000158-1-001012/2026",
-  "uf": "RS",
-  "ibge": "4309209",
-  "municipio": "Gravataí",
-  "orgao": "MUNICIPIO DE GRAVATAI",
-  "unidade": "Departamento de Licitações e Contratos",
-  "esfera": "M",
-  "modalidade": "Concorrência - Eletrônica",
-  "instrumento": "Edital",
-  "numero": "5",
-  "processo": "5/2026",
-  "objeto": "[Portal de Compras Públicas] - Contratação de entidade para a gestão das Unidades de Pronto Atendimento",
-  "valor_estimado": 39557462.4,
-  "abertura": "2026-09-18T11:00:00",
-  "encerramento": "2026-11-11T08:59:00",
-  "publicado": "2026-09-18",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/87890992000158/2026/1012",
-  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Gravatai-44/CPTP-5-2026-2026-491107",
-  "itens": [
-   {
-    "descricao": "Lote unico - GESTAO UPA COHAB. (conforme termo de referencia)",
-    "quantidade": 12.0,
-    "unidade": "Serviço",
-    "valor_unitario": 1648227.6
-   },
-   {
-    "descricao": "Lote unico - GESTAO UPA MORADAS. (conforme termo de referencia)",
-    "quantidade": 12.0,
-    "unidade": "Serviço",
-    "valor_unitario": 1648227.6
-   }
-  ],
-  "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "88199971000153-1-000221/2026",
-  "uf": "RS",
-  "ibge": "4321709",
-  "municipio": "Três Coroas",
-  "orgao": "MUNICIPIO DE TRES COROAS",
-  "unidade": "Setor de Licitações e Contratos",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "41",
-  "processo": "209",
-  "objeto": "[Portal de Compras Públicas] - Registro de preços para futura e eventual contratação de empresa especializada na prestação de serviços médicos, destinados ao atendimento da demanda da Secretaria Municipal de Saúde do Município de Três Coroas/RS, compreendendo profissionais médicos nas especialidades de Clínica Geral, Pediatria e Ginecologia/Obstetrícia, conforme necessidade da Administração.",
-  "valor_estimado": 3763596.0,
-  "abertura": "2026-10-28T12:00:00",
-  "encerramento": "2026-11-11T13:00:00",
-  "publicado": "2026-10-27",
-  "situacao": "Divulgada no PNCP",
-  "srp": true,
-  "link_pncp": "https://pncp.gov.br/app/editais/88199971000153/2026/221",
-  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Tres-Coroas-53/RPE-41-2026-2026-521561",
-  "itens": [
-   {
-    "descricao": "Profissional Pediatra",
-    "quantidade": 3600.0,
-    "unidade": "Hora",
-    "valor_unitario": 253.0
-   },
-   {
-    "descricao": "Profissional Ginecologista Obstetra",
-    "quantidade": 1200.0,
-    "unidade": "Hora",
-    "valor_unitario": 259.33
-   }
-  ],
-  "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
-  "id": "88185020000125-1-000259/2026",
-  "uf": "RS",
-  "ibge": "4320008",
-  "municipio": "Sapucaia do Sul",
-  "orgao": "MUNICIPIO DE SAPUCAIA DO SUL",
-  "unidade": "Municipio De Sapucaia Do Sul",
-  "esfera": "M",
-  "modalidade": "Pregão - Eletrônico",
-  "instrumento": "Edital",
-  "numero": "59",
-  "processo": "35182/2026",
-  "objeto": "REGISTRO DE PREÇOS PARA REALIZAÇÃO DE PERÍCIAS MÉDICAS",
-  "valor_estimado": 124215.0,
-  "abertura": "2026-10-29T00:00:00",
-  "encerramento": "2026-11-11T13:45:00",
-  "publicado": "2026-10-28",
-  "situacao": "Divulgada no PNCP",
-  "srp": true,
-  "link_pncp": "https://pncp.gov.br/app/editais/88185020000125/2026/259",
-  "link_sistema": "",
-  "itens": [
-   {
-    "descricao": "EMPRESA PARA REALIZAÇÃO DE PERÍCIA MÉDICA POR  MEIO DE",
-    "quantidade": 390.0,
-    "unidade": "UN",
-    "valor_unitario": 318.5
-   }
-  ],
-  "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": "REGISTRO DE PREÇOS PARA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA REALIZAÇÃO DE PERÍCIAS MÉDICAS DE SERVIDORES VINCULADOS AO FAPS E À PREFEITURA MUNICIPAL DE SAPUCAIA DO SUL"
- },
- {
-  "id": "11046759000121-1-000025/2025",
-  "uf": "TO",
-  "ibge": "1702109",
-  "municipio": "Araguaína",
-  "orgao": "FUNDO MUNICIPAL DE SAUDE",
-  "unidade": "FUNDO MUNICIPAL DE SAUDE DE ARAGUAINA",
-  "esfera": "M",
-  "modalidade": "Credenciamento",
-  "instrumento": "Edital de Chamamento Público",
-  "numero": "09",
-  "processo": "2025008084",
-  "objeto": "Credenciamento para contratação de empresa especializada para a realização de serviços de assistência à saúde na área de exames de análises clínicas, radiografia e ultrassonografia, para atender as demandas da Secretaria Municipal de Saúde de Araguaína/TO, por meio da Superintendência de Atenção Primária, conforme condições e exigências estabelecidas no Termo de Referência e seus anexos.",
-  "valor_estimado": 12757999.92,
-  "abertura": "2025-11-12T08:00:00",
-  "encerramento": "2026-11-11T18:00:00",
-  "publicado": "2025-11-11",
-  "situacao": "Divulgada no PNCP",
-  "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/11046759000121/2025/25",
-  "link_sistema": "https://bnccompras.com/Process/ProcessView?param1=[gkz]zkvKBUmZUX65gyuHuFQv/gjOeohjpUuu1V8sbUp0qs8ngpHZWbTAlLyslIKaWlgi2cp5I86IO82CSQnwgxv_yopN29QrkTdkDcfIBlBkMhU=",
-  "itens": [],
-  "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
- },
- {
   "id": "87866745000116-1-000515/2026",
   "uf": "RS",
   "ibge": "4322509",
@@ -593,6 +12,7 @@
   "numero": "300025 | Processo 4927",
   "processo": "300025",
   "objeto": "Contratacao de empresa especializada para prestacao de servicos medicos",
+  "complemento": "",
   "valor_estimado": 12140021.08,
   "abertura": "2026-10-29T14:00:00",
   "encerramento": "2026-11-16T09:00:00",
@@ -634,8 +54,7 @@
    }
   ],
   "n_itens": 5,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87893111000152-1-000419/2026",
@@ -650,11 +69,12 @@
   "numero": "07",
   "processo": "07",
   "objeto": "[Portal de Compras Públicas] - Seleção de Organização Social para a prestação de serviços técnicos especializados de gestão e operacionalização, gerenciamento e execução das ações e serviços de saúde de forma compartilhada, para atuar na REDE DE ATENÇÃO PSICOSSOCIAL, no âmbito do Município de São Lourenço do Sul/RS, nos termos da Lei Nacional n.º 9.637/1998, combinada com a Lei Municipal nº 4.021/2021 e alterações posteriores, Decreto Municipal n.º 6.868/2025, com aplicação subsidiária das Leis n.º 13.019/2014 e 14.133/2021.",
+  "complemento": "",
   "valor_estimado": 467749.22,
   "abertura": "2026-09-28T09:30:00",
   "encerramento": "2026-11-16T09:59:00",
   "publicado": "2026-09-24",
-  "situacao": "Divulgada no PNCP",
+  "situacao": "Suspensa",
   "srp": false,
   "link_pncp": "https://pncp.gov.br/app/editais/87893111000152/2026/419",
   "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Sao-Lourenco-do-Sul-1026/CRED-07-2026-2026-513862",
@@ -667,8 +87,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87893111000152-1-000418/2026",
@@ -683,11 +102,12 @@
   "numero": "06",
   "processo": "06",
   "objeto": "[Portal de Compras Públicas] - Chamamento Público nº 06/2026 – Seleção de Organização Social para a prestação de serviços técnicos especializados de gestão e operacionalização, gerenciamento e execução das ações e serviços de saúde de forma compartilhada, para atuação na ATENÇÃO PRIMÁRIA À SAÚDE e SERVIÇO DE ATENDIMENTO MÓVEL DE URGÊNCIA (SAMU), no âmbito do Município de São Lourenço do Sul/RS, nos termos da Lei Nacional n.º 9.637/1998, combinada com a Lei Municipal nº 4.021/2021 e alterações posteriores, Decreto Municipal n.º 6.868/2025, com aplicação subsidiária das Leis n.º 13.019/2014 e 14.133/2021.",
+  "complemento": "",
   "valor_estimado": 1222965.72,
   "abertura": "2026-09-28T09:30:00",
   "encerramento": "2026-11-16T10:59:00",
   "publicado": "2026-09-24",
-  "situacao": "Divulgada no PNCP",
+  "situacao": "Suspensa",
   "srp": false,
   "link_pncp": "https://pncp.gov.br/app/editais/87893111000152/2026/418",
   "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Sao-Lourenco-do-Sul-1026/CRED-06-2026-2026-513843",
@@ -700,8 +120,205 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "00733062000102-1-000515/2026",
+  "uf": "RO",
+  "ibge": "1100205",
+  "municipio": "Porto Velho",
+  "orgao": "FUNDO ESTADUAL DE SAUDE",
+  "unidade": "FUNDO ESTADUAL DE SAÚDE DE RONDONIA",
+  "esfera": "E",
+  "modalidade": "Dispensa",
+  "instrumento": "Aviso de Contratação Direta",
+  "numero": "542",
+  "processo": "0036.034017/2026-09",
+  "objeto": "Contratação de empresa especializada na realização de Consultas Médicas para cumprimento da ordem judicial, através de Dispensa de Licitação com fulcro no artigo 75, inciso VIII, da Lei nº 14.133, de 01 de abril de 2021.",
+  "complemento": "",
+  "valor_estimado": 4441.35,
+  "abertura": "2026-11-13T08:00:00",
+  "encerramento": "2026-11-18T08:00:00",
+  "publicado": "2026-11-12",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/00733062000102/2026/515",
+  "link_sistema": "https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/compras/acompanhamento-compra?compra=92750206005422026",
+  "itens": [
+   {
+    "descricao": "Cirurgia vascular Cirurgia vascular",
+    "quantidade": 3.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 1000.0
+   },
+   {
+    "descricao": "Consulta médica - cardiologia / angiologia Consulta médica - cardiologia / angiologia",
+    "quantidade": 1.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 566.35
+   },
+   {
+    "descricao": "Cirurgia Vascular Cirurgia Vascular",
+    "quantidade": 1.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 550.0
+   }
+  ],
+  "n_itens": 3,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "87896874000157-1-000337/2026",
+  "uf": "RS",
+  "ibge": "4300406",
+  "municipio": "Alegrete",
+  "orgao": "MUNICIPIO DE ALEGRETE",
+  "unidade": "Prefeitura Municipal",
+  "esfera": "M",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "124 | Processo 417",
+  "processo": "124",
+  "objeto": "REGISTRO DE PRECO DE EXAMES POR IMAGEM ENDOSCOPICOS E CARDIOLOGICOS",
+  "complemento": "",
+  "valor_estimado": 2217855.31,
+  "abertura": "2026-11-04T13:00:00",
+  "encerramento": "2026-11-18T08:30:00",
+  "publicado": "2026-11-04",
+  "situacao": "Divulgada no PNCP",
+  "srp": true,
+  "link_pncp": "https://pncp.gov.br/app/editais/87896874000157/2026/337",
+  "link_sistema": " ",
+  "itens": [
+   {
+    "descricao": "Ultrassonografia de Abdome Total",
+    "quantidade": 960.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 104.22
+   },
+   {
+    "descricao": "Ultrassonografia de Articulacao  seguida da regiao especifica  quando aplicavel",
+    "quantidade": 240.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 98.19
+   },
+   {
+    "descricao": "Ultrassonografia de Mamas.",
+    "quantidade": 600.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 124.84
+   },
+   {
+    "descricao": "Ultrassonografia da Parede Abdominal",
+    "quantidade": 120.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 106.0
+   },
+   {
+    "descricao": "Ultrassonografia Tireoide.",
+    "quantidade": 180.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 167.87
+   },
+   {
+    "descricao": "Ultrassonografia do Ombro",
+    "quantidade": 360.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 119.87
+   },
+   {
+    "descricao": "Ultrassonografia Obstetrica com doppler.",
+    "quantidade": 300.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 141.32
+   },
+   {
+    "descricao": "Ultrassonografia Transvaginal.",
+    "quantidade": 600.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 120.97
+   }
+  ],
+  "n_itens": 14,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "00733062000102-1-000519/2026",
+  "uf": "RO",
+  "ibge": "1100205",
+  "municipio": "Porto Velho",
+  "orgao": "FUNDO ESTADUAL DE SAUDE",
+  "unidade": "FUNDO ESTADUAL DE SAÚDE DE RONDONIA",
+  "esfera": "E",
+  "modalidade": "Dispensa",
+  "instrumento": "Aviso de Contratação Direta",
+  "numero": "551",
+  "processo": "0036.048144/2026-87",
+  "objeto": "Contratação de empresa especializada na prestação de serviços médicos em Clínica Geral, em caráter emergencial, para atender a demanda de usuários da saúde pública nas dependências do Hospital de Urgência e Emergência de Cacoal - HEURO e Hospital Regional de Cacoal - HRC, por um período de 01 (um) ano, nos termos da Lei nº 14.133, de 1º de abril de 2021. nos moldes da Lei n.º 14.133/2021.",
+  "complemento": "",
+  "valor_estimado": 0.0,
+  "abertura": "2026-11-16T08:00:00",
+  "encerramento": "2026-11-19T08:00:00",
+  "publicado": "2026-11-13",
+  "situacao": "Revogada",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/00733062000102/2026/519",
+  "link_sistema": "https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/compras/acompanhamento-compra?compra=92750206005512026",
+  "itens": [
+   {
+    "descricao": "Consulta médica - clínica geral Plantão Diurno/Noturno de 12h de Médico Clínico Geral, para atuar na Sala Vermelha do HEURO. Plantão de 12 Horas, 07 dia/semana",
+    "quantidade": 944.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 1610.21
+   },
+   {
+    "descricao": "Consulta Médica - Clínica Geral Plantão Diurno/noturno de 12h de médico Clínico Geral, para Atuar nas Unidades de Terapia Intensiva do Hospital Regional de Cacoal Plantão de 12 Horas, 07 dias/semana",
+    "quantidade": 876.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 1610.21
+   }
+  ],
+  "n_itens": 2,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "00733062000102-1-000522/2026",
+  "uf": "RO",
+  "ibge": "1100205",
+  "municipio": "Porto Velho",
+  "orgao": "FUNDO ESTADUAL DE SAUDE",
+  "unidade": "FUNDO ESTADUAL DE SAÚDE DE RONDONIA",
+  "esfera": "E",
+  "modalidade": "Dispensa",
+  "instrumento": "Aviso de Contratação Direta",
+  "numero": "553",
+  "processo": "Diretoria Executiva",
+  "objeto": "Contratação de empresa especializada na prestação de serviços médicos em Clínica Geral, em caráter emergencial, para atender a demanda de usuários da saúde pública nas dependências do Hospital de Urgência e Emergência de Cacoal - HEURO e Hospital Regional de Cacoal - HRC, por um período de 01 (um) ano, nos termos da Lei nº 14.133, de 1º de abril de 2021. nos moldes da Lei n.º 14.133/2021.",
+  "complemento": "",
+  "valor_estimado": 2930582.2,
+  "abertura": "2026-11-16T08:00:00",
+  "encerramento": "2026-11-19T08:00:00",
+  "publicado": "2026-11-13",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/00733062000102/2026/522",
+  "link_sistema": "https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/compras/acompanhamento-compra?compra=92750206005532026",
+  "itens": [
+   {
+    "descricao": "Consulta médica - clínica geral Plantão Diurno/Noturno de 12h de Médico Clínico Geral, para atuar na Sala Vermelha do HEURO. Plantão de 12 Horas, 07 dia/semana",
+    "quantidade": 944.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 1610.21
+   },
+   {
+    "descricao": "Consulta Médica - Clínica Geral Consulta Médica - Clínica Geral",
+    "quantidade": 876.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 1610.21
+   }
+  ],
+  "n_itens": 2,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87849923000109-1-000547/2026",
@@ -716,6 +333,7 @@
   "numero": "0078",
   "processo": "239",
   "objeto": "ABERTURA DE PROCESSO LICITATÓRIO PARA CONTRATAÇÃO DE SERVIÇOS TERCEIRIZADOS DE HORAS MÉDICAS PARA SECRETARIA MUNICIPAL DE SAÚDE DE BENTO GONÇALVES.",
+  "complemento": "",
   "valor_estimado": 154231891.2,
   "abertura": "2026-08-21T14:00:00",
   "encerramento": "2026-11-19T08:30:00",
@@ -775,8 +393,7 @@
    }
   ],
   "n_itens": 12,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612974000104-1-000165/2025",
@@ -791,6 +408,7 @@
   "numero": "0014",
   "processo": "0000139",
   "objeto": "Serviços Médicos Especializados Pediatria e Medicina do Trabalho.",
+  "complemento": "",
   "valor_estimado": 122875.2,
   "abertura": "2025-11-20T08:00:00",
   "encerramento": "2026-11-20T23:59:00",
@@ -808,8 +426,109 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "01612289000162-1-000062/2026",
+  "uf": "RS",
+  "ibge": "4308250",
+  "municipio": "Floriano Peixoto",
+  "orgao": "MUNICIPIO DE FLORIANO PEIXOTO",
+  "unidade": "Prefeitura Municipal de Floriano Peixoto",
+  "esfera": "M",
+  "modalidade": "Pregão - Presencial",
+  "instrumento": "Edital",
+  "numero": "6",
+  "processo": "77/2026",
+  "objeto": "CONTRATAÇÃO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS ESPECIALIZADOS PARA REALIZAÇÃO DE CONSULTAS CLÍNICAS NA ÁREA DE PEDIATRIA E PROCEDIMENTOS AMBULATORIAIS E CIRÚRGICOS DE PEQUENO PORTE",
+  "complemento": "",
+  "valor_estimado": 120000.0,
+  "abertura": "2026-11-10T07:30:00",
+  "encerramento": "2026-11-24T13:59:00",
+  "publicado": "2026-11-10",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/01612289000162/2026/62",
+  "link_sistema": "",
+  "itens": [
+   {
+    "descricao": "SERVIÇOS MÉDICOS",
+    "quantidade": 12.0,
+    "unidade": "M",
+    "valor_unitario": 10000.0
+   }
+  ],
+  "n_itens": 1,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "90836693000140-1-000873/2026",
+  "uf": "RS",
+  "ibge": "4304630",
+  "municipio": "Capão da Canoa",
+  "orgao": "MUNICIPIO DE CAPAO DA CANOA",
+  "unidade": "Secretaria de Gestão, Inovação e Planejamento",
+  "esfera": "M",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "PE 390",
+  "processo": "899/2026",
+  "objeto": "Registro de Preços para futura e eventual contratação de empresa especializada para prestação de serviços médicos por hora, em caráter complementar à capacidade assistencial da rede municipal de saúde, destinados à cobertura dos serviços de urgência e emergência e à realização de atendimentos médicos especializados aos usuários do Sistema Único de Saúde - SUS.",
+  "complemento": "",
+  "valor_estimado": 13658448.0,
+  "abertura": "2026-11-06T14:00:00",
+  "encerramento": "2026-11-24T14:00:00",
+  "publicado": "2026-11-06",
+  "situacao": "Divulgada no PNCP",
+  "srp": true,
+  "link_pncp": "https://pncp.gov.br/app/editais/90836693000140/2026/873",
+  "link_sistema": "",
+  "itens": [
+   {
+    "descricao": "CARDIOLOGISTA.. - CARDIOLOGISTA. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 250.47
+   },
+   {
+    "descricao": "CLÍNICO GERAL – PRONTO ATENDIMENTO - CLÍNICO GERAL – PRONTO ATENDIMENTO. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 28800.0,
+    "unidade": "Hora",
+    "valor_unitario": 181.56
+   },
+   {
+    "descricao": "GINECOLOGISTA E OBSTETRA - GINECOLOGISTA E OBSTETRA. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 238.5
+   },
+   {
+    "descricao": "NEUROLOGISTA PEDIÁTRICO - NEUROLOGISTA PEDIÁTRICO. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 287.15
+   },
+   {
+    "descricao": "ORTOPEDISTA E TRAUMATOLOGISTA - ORTOPEDISTA E TRAUMATOLOGISTA. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 244.23
+   },
+   {
+    "descricao": "PSIQUIATRA.. - PSIQUIATRA. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 237.45
+   },
+   {
+    "descricao": "ULTRASSONOGRAFISTA – ULTRASSONOGRAFIA CONVENCIONAL - ULTRASSONOGRAFISTA – ULTRASSONOGRAFIA CONVENCIONAL. Prestação de serviço técnico profissional conforme descrito no Termo de Referência Complementar.",
+    "quantidade": 2400.0,
+    "unidade": "Hora",
+    "valor_unitario": 211.67
+   }
+  ],
+  "n_itens": 7,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "97320030000117-1-000282/2025",
@@ -824,6 +543,7 @@
   "numero": "Chamamento público/ Credenciamento 6",
   "processo": "218",
   "objeto": "Credenciamento de empresas interessadas em prestar serviços de realização de exames de diagnóstico especializados exclusivamente voltados ao atendimento de pacientes pediátricos, usuários do Sistema Único de Saúde - SUS, residentes no Município de Sarandi/RS.",
+  "complemento": "",
   "valor_estimado": 87339.75,
   "abertura": "2025-11-24T08:00:00",
   "encerramento": "2026-11-24T17:00:00",
@@ -834,8 +554,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "22855183000160-1-000060/2026",
@@ -850,6 +569,7 @@
   "numero": "04",
   "processo": "996-SEMUSA/2026",
   "objeto": "[LICITANET] - Contratação de Pessoa Jurídica de Direito Privado sem Fins Lucrativos, Entidades Filantrópicas e/ou Organização Social (OS), qualificada nos termos da legislação vigente como organização da sociedade civil, para a gestão, operacionalização e execução de serviços de saúde, compreendendo a disponibilização de profissionais médicos generalistas e especialistas, profissionais de enfermagem e demais categorias da área da saúde, em conformidade com a Lei nº 2.532-GP/2026, de 28 de abril de 2026 e ESPECIFICAÇÕES CONSTANTES DO ANEXO I, PARTE INTEGRANTE DO PRESENTE EDITAL",
+  "complemento": "",
   "valor_estimado": 26907600.0,
   "abertura": "2026-11-04T00:00:00",
   "encerramento": "2026-11-25T00:00:00",
@@ -873,8 +593,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11055682000156-1-000443/2025",
@@ -889,6 +608,7 @@
   "numero": "CPC 1",
   "processo": "438/2025",
   "objeto": "CREDENCIAMENTO de pessoas jurídicas interessadas na prestação de serviços médicos nas especialidades de Anestesiologia, Gastroenterologia, Coloproctologia e Cirurgia Vascular.",
+  "complemento": "",
   "valor_estimado": 3207960.0,
   "abertura": "2025-11-26T10:00:00",
   "encerramento": "2026-11-26T10:00:00",
@@ -906,8 +626,40 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "87958658000199-1-001177/2026",
+  "uf": "RS",
+  "ibge": "4314902",
+  "municipio": "Porto Alegre",
+  "orgao": "SUBSECRETARIA DA ADMINISTRACAO CENTRAL DE LICITACOES",
+  "unidade": "CELIC - SUBSECRETARIA DA ADMINISTRAÇÃO CENTRAL DE LICITAÇÕES",
+  "esfera": "E",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "9337",
+  "processo": "25/1203-0004946-0",
+  "objeto": "Contratação de empresa para fornecimento de 02 (dois) postos de serviço de Médico Psiquiatra para o Hospital da Brigada Militar de Santa Maria, conforme anexo VI - Termo de Referência.",
+  "complemento": "",
+  "valor_estimado": 3830356.8,
+  "abertura": "2026-11-12T10:36:00",
+  "encerramento": "2026-11-27T09:00:00",
+  "publicado": "2026-11-12",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/87958658000199/2026/1177",
+  "link_sistema": "https://www.compras.rs.gov.br/editais/9337_2026/359408",
+  "itens": [
+   {
+    "descricao": "Médico Psiquiatra",
+    "quantidade": 60.0,
+    "unidade": "mes",
+    "valor_unitario": 63839.28
+   }
+  ],
+  "n_itens": 1,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11301094000155-1-000029/2026",
@@ -922,6 +674,7 @@
   "numero": "(1102) | 22-0",
   "processo": "3587/2026",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURÍDICAS ESPECIALIZADAS NA PRESTAÇÃO DE SERVIÇOS MÉDICOS OFTALMOLÓGICOS, PARA REALIZAÇÃO DE CONSULTAS, EXAMES, PROCEDIMENTOS CIRÚRGICOS E ACOMPANHAMENTO PÓS-OPERATÓRIO DE PACIENTES DO SISTEMA ÚNICO DE SAÚDE – SUS, ENCAMINHADOS PELA SECRETARIA MUNICIPAL DE SAÚDE DE DIANÓPOLIS/TO. O FOCO PRINCIPAL É A EXECUÇÃO DE CIRURGIAS DE CATARATA E PTERÍGIO, PROVENIENTE DE REPASSE DO FUNDO NACIONAL DE SAÚDE, POR MEIO DA PROPOSTA DE CUSTEIO Nº 63000728455202600.",
+  "complemento": "",
   "valor_estimado": 424833.5,
   "abertura": "2026-06-17T07:00:00",
   "encerramento": "2026-11-30T13:00:00",
@@ -932,8 +685,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "01138957000161-1-000066/2025",
@@ -948,6 +700,7 @@
   "numero": "(1018) | 27-0",
   "processo": "6028/2025",
   "objeto": "Chamamento Público tem por objeto CREDENCIAR PESSOA JURÍDICA PARA A PRESTAÇÃO DE SERVIÇOS MÉDICOS ESPECIALIZADOS (JUNTA MÉDICA) COM ATUAÇÃO NO MUNICÍPO DE DIANÓPOLIS/TO",
+  "complemento": "",
   "valor_estimado": 443478.6,
   "abertura": "2025-12-10T09:00:00",
   "encerramento": "2026-11-30T23:59:00",
@@ -958,8 +711,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11301094000155-1-000003/2026",
@@ -974,6 +726,7 @@
   "numero": "(1039) | 5-0",
   "processo": "7045/2025",
   "objeto": "Chamamento Público tem por objeto o CREDENCIAMENTO DE PRESTADORES DE SERVIÇOS DE ASSISTÊNCIA MÉDICA EM PSIQUIATRIA, MEDIANTE O REGIME DE PAGAMENTO POR CONSULTA REALIZADA, PARA ATENDER ÀS DEMANDAS DE MÉDIA E ALTA COMPLEXIDADE DOS USUÁRIOS DO CENTRO DE ATENÇÃO PSICOSSOCIAL II DR. CHAGAS (CAPS II) DE DIANÓPOLIS-TO",
+  "complemento": "",
   "valor_estimado": 331020.0,
   "abertura": "2026-02-03T13:00:00",
   "encerramento": "2026-11-30T23:59:00",
@@ -984,8 +737,99 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "88860366000181-1-000135/2026",
+  "uf": "RS",
+  "ibge": "4301305",
+  "municipio": "Arroio Grande",
+  "orgao": "MUNICIPIO DE ARROIO GRANDE",
+  "unidade": "Setor de Licitações",
+  "esfera": "M",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "51",
+  "processo": "2386",
+  "objeto": "[Portal de Compras Públicas] - Contratação de empresa especializada para prestação de serviços de fornecimento de consultas médicas especializadas em neurologia pediátrica (neuropediatria) aos pacientes do município. Descrição do objeto licitado, exigências operacionais, quantidades, valores de referência e demais informações estão contidos nos ANEXO I e II do edital.",
+  "complemento": "",
+  "valor_estimado": 137592.0,
+  "abertura": "2026-11-13T14:00:00",
+  "encerramento": "2026-12-01T09:00:00",
+  "publicado": "2026-10-09",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/88860366000181/2026/135",
+  "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Arroio-Grande-489/PE-51-2026-2026-517518",
+  "itens": [
+   {
+    "descricao": "CONSULTAS DE NEUROLOGIA PEDIATRICA /NEUROPEDIATRIA",
+    "quantidade": 216.0,
+    "unidade": "Unidade",
+    "valor_unitario": 637.0
+   }
+  ],
+  "n_itens": 1,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "87613626000151-1-000448/2026",
+  "uf": "RS",
+  "ibge": "4311304",
+  "municipio": "Lagoa Vermelha",
+  "orgao": "MUNICIPIO DE LAGOA VERMELHA",
+  "unidade": "ADMINSTRAÇÃO",
+  "esfera": "M",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "PCE 101",
+  "processo": "411/2026",
+  "objeto": "Contratação de serviços de perícia médica para avaliação de capacidade laboral de servidores municipais.",
+  "complemento": "",
+  "valor_estimado": 67250.0,
+  "abertura": "2026-11-16T08:30:00",
+  "encerramento": "2026-12-02T08:30:00",
+  "publicado": "2026-10-26",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/87613626000151/2026/448",
+  "link_sistema": "",
+  "itens": [
+   {
+    "descricao": "Exame pericial por junta médica composta de, no mínimo, três profissionais, acompanhado do respectivo laudo, para verificação de capacidade laboral, até o limite de 25 (vinte e cinco) laudos por ano.",
+    "quantidade": 25.0,
+    "unidade": "UNIDADE (UN)",
+    "valor_unitario": 2690.0
+   }
+  ],
+  "n_itens": 1,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "92787118000120-1-001048/2026",
+  "uf": "RS",
+  "ibge": "4314902",
+  "municipio": "Porto Alegre",
+  "orgao": "HOSPITAL NOSSA SENHORA DA CONCEICAO S/A",
+  "unidade": "HOSPITAL NOSSA SENHORA DA CONCEICAO S A",
+  "esfera": "F",
+  "modalidade": "Pregão - Eletrônico",
+  "instrumento": "Edital",
+  "numero": "764/26",
+  "processo": "1791/26",
+  "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS TÉCNICOS DE NEFROLOGIA TERAPIA RENAL SUBSTITUTIVA (TRS), COMPREENDENDO HEMODIÁLISE INTERMITENTE/CONVENCIONAL E TERAPIA RENAL SUBSTITUTIVA CONTÍNUA, PARA ATENDIMENTO AOS PACIENTES DO HOSPITAL REGIONAL DE PRONTO SOCORRO DE PELOTAS (HRPS), EM REGIME DE DISPONIBILIDADE ININTERRUPTA, 24 (VINTE E QUATRO) HORAS POR DIA, 7 (SETE) DIAS POR SEMANA, INCLUSIVE SÁBADOS, DOMINGOS E FERIADOS, pelo período de 12 (doze) meses, prorrogável até o limite legal, conforme Termo de Referência e demais especificações e condições constantes deste Edital e seus Anexos.",
+  "complemento": "",
+  "valor_estimado": 0.0,
+  "abertura": "2026-11-09T12:00:00",
+  "encerramento": "2026-12-02T09:30:00",
+  "publicado": "2026-11-09",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/92787118000120/2026/1048",
+  "link_sistema": "https://licitacoes-e2.bb.com.br/aop-inter-estatico/visualizar-processo-publico/1103680",
+  "itens": [],
+  "n_itens": 0,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "92406180000124-1-000177/2025",
@@ -1000,6 +844,7 @@
   "numero": "3",
   "processo": "172/2025",
   "objeto": "Credenciamento de pessoas jurídicas para prestação de serviços médicos especializados e exames diagnósticos, em quantidades variáveis conforme demanda dos pacientes do Município de Ernestina/RS, visando atender às necessidades da Secretaria Municipal de Saúde.",
+  "complemento": "",
   "valor_estimado": 1274908.0,
   "abertura": "2025-12-15T00:00:00",
   "encerramento": "2026-12-14T00:00:00",
@@ -1059,8 +904,7 @@
    }
   ],
   "n_itens": 18,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "13693153000103-1-000064/2026",
@@ -1075,6 +919,7 @@
   "numero": "CPC 23",
   "processo": "23/2026",
   "objeto": "Mamografia - prestação de serviços de mamografia bilateral, compreendendo exame das duas mamas, disponibilização de imagens e emissão de laudo médico, mediante encaminhamento dos Municípios consorciados.",
+  "complemento": "",
   "valor_estimado": 125.5,
   "abertura": "2026-10-15T09:00:00",
   "encerramento": "2026-12-14T23:59:00",
@@ -1092,8 +937,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "13693153000103-1-000065/2026",
@@ -1108,6 +952,7 @@
   "numero": "23",
   "processo": "23 / 2026 - 3244",
   "objeto": "[Portal de Compras Públicas] - Mamografia - prestação de serviços de mamografia bilateral, compreendendo exame das duas mamas, disponibilização de imagens e emissão de laudo médico, mediante encaminhamento dos Municípios consorciados.",
+  "complemento": "",
   "valor_estimado": 125.5,
   "abertura": "2026-10-15T09:00:00",
   "encerramento": "2026-12-14T23:59:00",
@@ -1125,8 +970,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11359904000124-1-000035/2025",
@@ -1141,6 +985,7 @@
   "numero": "(2330) | 12-0",
   "processo": "9228/2025",
   "objeto": "Chamamento Público, na forma de Credenciamento de pessoa física ou jurídica para realização de prestação de serviços de saúde, sendo consultas, plantões e prestações de serviços médicos mensais, para atendimento dos usuários do SUS, em atendimento às necessidades da Secretaria Municipal de Saúde de Colinas do Tocantins/TO",
+  "complemento": "",
   "valor_estimado": 7719688.75,
   "abertura": "2025-12-18T07:00:00",
   "encerramento": "2026-12-18T07:55:00",
@@ -1158,8 +1003,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88585518000185-1-001045/2025",
@@ -1174,6 +1018,7 @@
   "numero": "12",
   "processo": "13153",
   "objeto": "[Portal de Compras Públicas] - Edital de Chamamento Público destinado ao credenciamento de pessoas jurídicas, especializadas para a prestação de serviços de realização de exames de colonoscopia e endoscopia digestiva alta, conforme prescrição médica e autorização da Secretaria Municipal de Saúde",
+  "complemento": "",
   "valor_estimado": 2252052.0,
   "abertura": "2025-12-19T09:00:00",
   "encerramento": "2026-12-18T09:00:00",
@@ -1184,8 +1029,46 @@
   "link_sistema": "https://portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Canela-909/CRED-12-2025-2025-446423",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "87613535000116-1-000604/2026",
+  "uf": "RS",
+  "ibge": "4304705",
+  "municipio": "Carazinho",
+  "orgao": "MUNICIPIO DE CARAZINHO",
+  "unidade": "FUNDO MUNICIPAL DE SAÚDE/CARAZINHO",
+  "esfera": "M",
+  "modalidade": "Credenciamento",
+  "instrumento": "Edital de Chamamento Público",
+  "numero": "CHP 8",
+  "processo": "618/2026",
+  "objeto": "Contratação de entidade de direito privado sem fins lucrativos, a ser qualificada como Organização Social na área de atuação de Unidades de Pronto Atendimento - UPA 24h, no âmbito do Município de Carazinho para a gestão, operacionalização e execução dos serviços de saúde UPA 24h - Armindo Francisco Capitânio, conforme especificações, quantitativos, regulamentação do gerenciamento e execução de atividades e serviços de saúde e demais obrigações.",
+  "complemento": "",
+  "valor_estimado": 10355483.05,
+  "abertura": "2026-11-05T09:00:00",
+  "encerramento": "2026-12-21T09:00:00",
+  "publicado": "2026-11-05",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/87613535000116/2026/604",
+  "link_sistema": "",
+  "itens": [
+   {
+    "descricao": "SERVIÇOS MEDICOS",
+    "quantidade": 22227.0,
+    "unidade": "HORA (HORA)",
+    "valor_unitario": 150.0
+   },
+   {
+    "descricao": "MEDICINA E SEGURANÇA DO TRABALHO",
+    "quantidade": 12.0,
+    "unidade": "MES (MES)",
+    "valor_unitario": 1251.2
+   }
+  ],
+  "n_itens": 2,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04092672000125-1-000007/2026",
@@ -1200,6 +1083,7 @@
   "numero": "11",
   "processo": "1-7824/2025",
   "objeto": "o CHAMAMENTO PÚBLICO que cujo o objeto é o Chamamento Público com a finalidade de credenciamento de pessoas jurídicas para a prestação de serviços médicos, conforme especialidades médicas, para atendimento de forma complementar no âmbito da Secretaria Municipal de Saúde, visando atender as necessidades da Secretaria Municipal de Saúde de Ji-Paraná/RO. CONTINUAÇÃO NO EDITAL.",
+  "complemento": "",
   "valor_estimado": 23392200.0,
   "abertura": "2025-12-22T08:30:00",
   "encerramento": "2026-12-22T08:30:00",
@@ -1217,8 +1101,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11359904000124-1-000037/2025",
@@ -1233,6 +1116,7 @@
   "numero": "(2336) | 13-0",
   "processo": "8814/2025",
   "objeto": "Contratação de Pessoa Jurídica para prestação de serviços especializados na área de saúde, para prestar serviços de consultas com exames, cirurgias e demais procedimentos especializados em oftalmologia, em atendimento as necessidades da Secretaria Municipal de Saúde de Colinas do Tocantins/TO",
+  "complemento": "",
   "valor_estimado": 1899279.27,
   "abertura": "2025-12-23T08:00:00",
   "encerramento": "2026-12-23T07:55:00",
@@ -1256,8 +1140,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11463865000100-1-000015/2026",
@@ -1272,6 +1155,7 @@
   "numero": "(2956) | 2-0",
   "processo": "1546/2026",
   "objeto": "PROCESSO REFERENTE A REALIZAÇÃO DE EXAMES. GINECOLOGICOS, PREVENTIVOS, ULTRASSONOGRAFIA, REALIZADOS PELA SECRETARIA MUNICIPAL DE SAUDE DE NAZARE.",
+  "complemento": "",
   "valor_estimado": 82481.1,
   "abertura": "2026-10-19T08:00:00",
   "encerramento": "2026-12-31T13:00:00",
@@ -1295,8 +1179,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "12982961000128-1-000001/2026",
@@ -1311,6 +1194,7 @@
   "numero": "0000001",
   "processo": "508/2025",
   "objeto": "Credenciamento de pessoa física ou jurídica para realização de prestação de serviços de saúde, sendo consultas, plantões, atendimento ambulatorial, visitas domiciliares, atuação nos programas desenvolvidos pelo municipio e prestações de serviços médicos mensais, para atendimento dos usuários do SUS, para atender às demandas do Fundo Municipal de Saúde de Pau D’Arco-To.",
+  "complemento": "",
   "valor_estimado": 299215.08,
   "abertura": "2026-01-13T17:00:00",
   "encerramento": "2026-12-31T17:00:00",
@@ -1334,8 +1218,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "00038166000105-1-000391/2025",
@@ -1350,6 +1233,7 @@
   "numero": "228",
   "processo": "282626",
   "objeto": "Credenciamento de pessoas jurídicas para prestação de serviços médicos e terapêuticos domiciliares aos beneficiários do Programa de Assistência à Saúde dos Servidores do Banco Central – PASBC, observados os padrões estabelecidos pelos órgãos de classe e instituições de fiscalização profissional em geral, conforme condições e exigências estabelecidas no Edital e seus anexos.",
+  "complemento": "",
   "valor_estimado": 0.01,
   "abertura": "2025-08-14T09:00:00",
   "encerramento": "2026-12-31T18:00:00",
@@ -1367,8 +1251,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88585518000185-1-000003/2026",
@@ -1383,6 +1266,7 @@
   "numero": "01",
   "processo": "15123/2025",
   "objeto": "[Portal de Compras Públicas] - Contratação de empresas especializadas na área da saúde para a prestação de serviços de realização de exames de Mamografias, Densitometria óssea, Ultrassonografias, Tomografia Computadorizada, Ressonância Magnética, Radiografia, Exames de avaliação cardíaca, Exames de avaliação de otorrinolaringologia, Exames para avaliação de sistema neurológico, Exames de angiotomografia, Exames para avaliação respiratória, conforme prescrição médica e autorização da Secretaria Municipal de Saúde",
+  "complemento": "",
   "valor_estimado": 42044900.4,
   "abertura": "2026-01-13T10:00:00",
   "encerramento": "2026-12-31T23:59:00",
@@ -1442,8 +1326,7 @@
    }
   ],
   "n_itens": 14,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "05903125000145-1-000013/2026",
@@ -1458,6 +1341,7 @@
   "numero": "126",
   "processo": "005.006064/2025-31",
   "objeto": "A presente contratação tem por objeto a contratação de empresas especializadas na prestação de serviços médicos, em medida de caráter subsidiário e complementar, para atendimento das necessidades assistenciais da Secretaria Municipal de Saúde de Porto Velho – SEMUSA.",
+  "complemento": "",
   "valor_estimado": 0.0,
   "abertura": "2026-01-22T09:00:00",
   "encerramento": "2027-01-22T09:00:00",
@@ -1517,8 +1401,7 @@
    }
   ],
   "n_itens": 14,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88585518000185-1-000023/2026",
@@ -1533,6 +1416,7 @@
   "numero": "02",
   "processo": "13926/2025",
   "objeto": "[Portal de Compras Públicas] - O objeto do credenciamento é a contratação de pessoas físicas e/ou jurídicas para realização de consultas especializadas visando o atendimento aos usuários do Sistema Único de Saúde – SUS, no município de Canela, conforme quantitativos e valores descritos na tabela.",
+  "complemento": "",
   "valor_estimado": 3997668.0,
   "abertura": "2026-01-22T15:00:00",
   "encerramento": "2027-01-22T15:00:00",
@@ -1591,9 +1475,8 @@
     "valor_unitario": 101.31
    }
   ],
-  "n_itens": 15,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "n_itens": 14,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11055682000156-1-000022/2026",
@@ -1608,6 +1491,7 @@
   "numero": "CPC 1",
   "processo": "20/2026",
   "objeto": "CREDENCIAMENTO de pessoas jurídicas interessadas na prestação de serviços médicos na especialidade de Cirurgia Vascular, mensurados por hora médica efetivamente trabalhada, para atendimento das necessidades assistenciais da Fundação de Saúde Pública de Novo Hamburgo - FSNH, em regime ambulatorial e hospitalar, no âmbito do Sistema Único de Saúde - SUS.",
+  "complemento": "",
   "valor_estimado": 860010.0,
   "abertura": "2026-01-23T10:00:00",
   "encerramento": "2027-01-25T10:00:00",
@@ -1625,8 +1509,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11055682000156-1-000032/2026",
@@ -1641,6 +1524,7 @@
   "numero": "CPC 2",
   "processo": "35/2026",
   "objeto": "CREDENCIAMENTO de pessoas jurídicas interessadas na prestação de serviços médicos na especialidade de Coloproctologia.",
+  "complemento": "",
   "valor_estimado": 736008.0,
   "abertura": "2026-02-04T10:00:00",
   "encerramento": "2027-02-04T10:00:00",
@@ -1658,8 +1542,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612941000164-1-000078/2026",
@@ -1674,6 +1557,7 @@
   "numero": "1",
   "processo": "23/2026",
   "objeto": "CREDENCIAMENTO PARA SERVIÇOS MÉDICOS NA UNIDADE BÁSICA DE SAÚDE.",
+  "complemento": "",
   "valor_estimado": 240000.0,
   "abertura": "2026-02-05T00:00:00",
   "encerramento": "2027-02-05T00:00:00",
@@ -1691,8 +1575,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612842000182-1-000023/2025",
@@ -1707,6 +1590,7 @@
   "numero": "3 | Processo 30",
   "processo": "3",
   "objeto": "Prestacao de servico medico especializado de Ortopedia e Traumatologia",
+  "complemento": "",
   "valor_estimado": 242000.0,
   "abertura": "2025-04-07T08:00:00",
   "encerramento": "2027-02-07T17:00:00",
@@ -1724,8 +1608,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "00699197000107-1-000036/2026",
@@ -1740,6 +1623,7 @@
   "numero": "01",
   "processo": "1196",
   "objeto": "[LICITANET] - chamada pública para Credenciamento de empresas especializadas para prestação de serviço de HORAS MÉDICAS, sendo CLÍNICO GERAL E ÁREA ESPECÍFICA, para prestar serviços no município de Nova União/RO",
+  "complemento": "",
   "valor_estimado": 76320.0,
   "abertura": "2026-02-09T00:00:00",
   "encerramento": "2027-02-09T00:00:00",
@@ -1757,8 +1641,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "90483066000172-1-000016/2026",
@@ -1773,6 +1656,7 @@
   "numero": "2",
   "processo": "00000290_00000015_2026",
   "objeto": "SOLICITA-SE A CONTRATAÇÃO DE PROFISSIONAL MÉDICO ESPECIALISTA EM PSIQUIATRIA, DEVIDAMENTE HABILITADO, PARA A REALIZAÇÃO DE ATÉ 20 (VINTE) CONSULTAS MENSAIS, VISANDO ATENDER À DEMANDA NA ÁREA DA SAÚDE E BEM-ESTAR MENTAL. A CONTRATAÇÃO JUSTIFICA-SE PELA NECESSIDADE DE ATENDIMENTO ESPECIALIZADO, ACOMPANHAMENTO CLÍNICO E SUPORTE À PROMOÇÃO DA SAÚDE MENTAL DOS USUÁRIOS, CONFORME DEMANDA DO SETOR COMPETENTE.",
+  "complemento": "",
   "valor_estimado": 7000.0,
   "abertura": "2026-03-04T08:00:00",
   "encerramento": "2027-03-04T08:00:00",
@@ -1790,8 +1674,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88572748000100-1-000099/2026",
@@ -1806,6 +1689,7 @@
   "numero": "1 | Processo 102",
   "processo": "1",
   "objeto": "Credenciamento de pessoa s juridica s especializada s para a prestacao de servicos por imagem com finalidade diagnostica por ressonancia magnetica ultrassonografia e ecodoppler a fim de atender as demandas da Secretaria Municipal de Saude de Nova Petropolis.",
+  "complemento": "",
   "valor_estimado": 1159444.4,
   "abertura": "2026-03-18T09:00:00",
   "encerramento": "2027-03-17T09:00:00",
@@ -1823,8 +1707,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613584000159-1-000059/2026",
@@ -1839,6 +1722,7 @@
   "numero": "6 | Processo 40",
   "processo": "6",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURIDICAS PARA PRESTACAO DE SERVICOS MEDICOS EM GINECOLOGIA E OBSTETRICIA PARA ATUAR NA UNIDADE BASICA DE SAUDE DR. JOSE CARLOS FERST",
+  "complemento": "",
   "valor_estimado": 168000.0,
   "abertura": "2026-03-27T08:00:00",
   "encerramento": "2027-03-27T17:00:00",
@@ -1856,8 +1740,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "25063868000161-1-000018/2026",
@@ -1872,6 +1755,7 @@
   "numero": "002",
   "processo": "908/2026",
   "objeto": "[Portal de Compras Públicas] - Credenciamento de clínicas especializadas em diagnóstico por imagem, com vistas à prestação de serviços de exames de imagem, incluindo raio-X, ultrassonografia obstétrica, transvaginal e morfológica de primeiro trimestre.",
+  "complemento": "",
   "valor_estimado": 0.0,
   "abertura": "2026-09-30T08:35:00",
   "encerramento": "2027-03-29T08:35:00",
@@ -1882,8 +1766,7 @@
   "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/TO/Prefeitura-Municipal-de-Carmolandia-1087/CRED-002-2026-2026-514115",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612941000164-1-000107/2026",
@@ -1898,6 +1781,7 @@
   "numero": "2",
   "processo": "69/2026",
   "objeto": "Credenciamento de empresas médicas para serviços de médico obstetra para atender as demandas da Secretaria Municipal de Saúde.",
+  "complemento": "",
   "valor_estimado": 108000.0,
   "abertura": "2026-03-30T00:00:00",
   "encerramento": "2027-03-30T00:00:00",
@@ -1915,8 +1799,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11608295000108-1-000012/2026",
@@ -1931,6 +1814,7 @@
   "numero": "(7718) | 2-0",
   "processo": "1436/2026",
   "objeto": "CREDENCIAMENTO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS ESPECIALIZADOS, INCLUINDO CONSULTAS PRÉ-CIRÚRGICAS E CIRURGIAS OFTALMOLÓGICAS (CATARATA PTERÍGIO), VISANDO ATENDER ÀS DEMANDAS DO MUNICÍPIO DE BREJINHO DE NAZARÉ – TO, JUNTO AO HOSPITAL MUNICIPAL DE PEQUENO PORTE NO MUNICÍPIO DE BREJINHO DE NAZARÉ - TO.",
+  "complemento": "",
   "valor_estimado": 846372.0,
   "abertura": "2026-03-31T08:30:00",
   "encerramento": "2027-03-30T23:59:00",
@@ -1954,8 +1838,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11231139000162-1-000001/2026",
@@ -1970,6 +1853,7 @@
   "numero": "001",
   "processo": "561",
   "objeto": "[LICITANET] - INSCRIÇÃO E CREDENCIAMENTO de profissionais e empresas da área da saúde para a prestação de serviços de consultas especializadas nas áreas de Ortopedia, Psiquiatria, Pediatria e Cardiologia, bem como a realização de exames de Monitorização Ambulatorial da Pressão Arterial (MAPA) e Eletrocardiografia Dinâmica (HOLTER 24 Horas), destinados ao atendimento da rede pública vinculada ao Fundo Municipal de Saúde de Itaporã do Tocantins - TO.",
+  "complemento": "",
   "valor_estimado": 533274.0,
   "abertura": "2026-04-13T00:00:00",
   "encerramento": "2027-04-12T00:00:00",
@@ -2004,12 +1888,6 @@
     "valor_unitario": 216.67
    },
    {
-    "descricao": "GINECOLOGIA E OBSTETRÍCIA: Consulta médica especializada voltada à saúde integral da mulher. Abrange a Ginecologia (prevenção, diagnóstico e tratamento de patologias do sistema reprodutor feminino, realização de colposco",
-    "quantidade": 500.0,
-    "unidade": "SV",
-    "valor_unitario": 190.0
-   },
-   {
     "descricao": "Realização de exame de Monitorização Ambulatorial da Pressão Arterial  MAPA, com emissão de laudo médico especializado, a ser realizado no Centro de Saúde do Município de Itaporã do Tocantins  TO.",
     "quantidade": 300.0,
     "unidade": "SV",
@@ -2022,9 +1900,8 @@
     "valor_unitario": 162.67
    }
   ],
-  "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "n_itens": 6,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "27064964000150-1-000010/2026",
@@ -2039,6 +1916,7 @@
   "numero": "CRED. 001/2026 FMS",
   "processo": "2024003939",
   "objeto": "[Portal de Compras Públicas] - CREDENCIAMENTO DE PESSOA(S) FÍSICA(S) E/ OU JURÍDICA(S) PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS NA ATENÇÃO BÁSICA, ATENÇÃO ESPECIALIZADA E URGÊNCIA/EMERGÊNCIA, MEDIANTE CONDIÇÕES PADRONIZADAS E NOS TERMOS DOS ARTS. 6º, XLIII, 74, IV, 78 E 79 DA LEI Nº 14.133/2021, CONFORME DESCRIÇÃO, ESPECIFICAÇÃO E QUANTIDADES CONSTANTES NO TERMO DE REFERÊNCIA.",
+  "complemento": "",
   "valor_estimado": 19593247.56,
   "abertura": "2026-04-23T08:00:00",
   "encerramento": "2027-04-22T23:59:00",
@@ -2098,8 +1976,7 @@
    }
   ],
   "n_itens": 31,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04104816000116-1-000079/2024",
@@ -2114,6 +1991,7 @@
   "numero": "7",
   "processo": "9412/2024",
   "objeto": "OBJETO Processo de Chamamento público (Procedimento Auxiliar) para CREDENCIAMENTO de pessoas físicas e jurídicas que atuem na prestação de serviços Médicos de Especialistas (Anestesistas), visando atender as necessidades da Secretaria Municipal de Saúde do Município de Ariquemes/RO.",
+  "complemento": "",
   "valor_estimado": 0.0,
   "abertura": "2024-04-26T16:00:00",
   "encerramento": "2027-04-26T14:00:00",
@@ -2131,8 +2009,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612941000164-1-000143/2026",
@@ -2147,6 +2024,7 @@
   "numero": "3",
   "processo": "83/2026",
   "objeto": "Credenciamento de empresa médica para atender as demandas daSecretaria Municipal de Saúde.",
+  "complemento": "",
   "valor_estimado": 120000.0,
   "abertura": "2026-04-29T00:00:00",
   "encerramento": "2027-04-29T00:00:00",
@@ -2164,8 +2042,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "90152299000192-1-000030/2026",
@@ -2180,6 +2057,7 @@
   "numero": "001",
   "processo": "183",
   "objeto": "[Portal de Compras Públicas] - CREDENCIADO É A PRESTAÇÃO DE SERVIÇOS DE MÉDICOS ESPECIALISTAS OU EMPRESAS PRESTADORAS DE SERVIÇOS MÉDICOS",
+  "complemento": "",
   "valor_estimado": 482863.2,
   "abertura": "2026-05-06T09:01:00",
   "encerramento": "2027-05-06T09:01:00",
@@ -2221,8 +2099,7 @@
    }
   ],
   "n_itens": 5,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11336672000199-1-000027/2026",
@@ -2237,6 +2114,7 @@
   "numero": "CR/2026.005-FMS-GURUPI-TO",
   "processo": "CR/2026.005-FMS-GURUPI-TO",
   "objeto": "CREDENCIAMENTO DE PESSOA JURIDICA PARA ATENDIMENTO MEDICO, DE FORMA COMPLEMENTAR, AOS USUARIOS DO SISTEMA UNICO DE SAUDE JUNTO A REDE MUNICIPAL DE SAUDE",
+  "complemento": "",
   "valor_estimado": 18368000.0,
   "abertura": "2026-05-11T09:00:00",
   "encerramento": "2027-05-11T23:59:00",
@@ -2278,8 +2156,7 @@
    }
   ],
   "n_itens": 5,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87334918000155-1-000129/2026",
@@ -2294,6 +2171,7 @@
   "numero": "003",
   "processo": "2026/67155",
   "objeto": "[Portal de Compras Públicas] - Credenciamento de pessoas jurídicas para realização de Cirurgias Eletivas para pacientes do Sistema Único de Saúde - SUS",
+  "complemento": "",
   "valor_estimado": 24045063.2,
   "abertura": "2026-05-29T08:00:00",
   "encerramento": "2027-05-28T17:00:00",
@@ -2353,8 +2231,7 @@
    }
   ],
   "n_itens": 130,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11046759000121-1-000011/2026",
@@ -2369,6 +2246,7 @@
   "numero": "14565",
   "processo": "2026006504",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURÍDICAS ESPECIALIZADAS NA PRESTAÇÃO DE SERVIÇOS DE ASSISTÊNCIA À SAÚDE, VISANDO À REALIZAÇÃO DE PROCEDIMENTOS CIRÚRGICOS ELETIVOS DE MÉDIA E ALTA COMPLEXIDADE, NAS MODALIDADES AMBULATORIAL E HOSPITALAR, EM DIVERSAS ESPECIALIDADES MÉDICAS, DESTINADOS AO ATENDIMENTO DAS DEMANDAS DA SECRETARIA MUNICIPAL DE SAÚDE ? SEMUS, NO ÂMBITO DA REDE PÚBLICA MUNICIPAL DE SAÚDE DE ARAGUAÍNA/TO, CONFORME CONDIÇÕES, QUANTITATIVOS E ESPECIFICAÇÕES ESTABELECIDOS NESTE TERMO DE REFERÊNCIA E EM SEUS ANEXOS.",
+  "complemento": "",
   "valor_estimado": 8243478.0,
   "abertura": "2026-06-02T08:00:00",
   "encerramento": "2027-06-01T18:00:00",
@@ -2379,8 +2257,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613162000183-1-000049/2026",
@@ -2395,6 +2272,7 @@
   "numero": "CPC 2",
   "processo": "73/2026",
   "objeto": "CONTRATAÇÃO DE EMPRESA (PJ) MÉDICO PEDIATRA PARA ATENDIMENTO DE CRIANÇAS NA ESPECIALIDADE DE PEDIATRIA EM SITUAÇÕES QUE ENVOLVAM MAIOR COMPLEXIDADE.",
+  "complemento": "",
   "valor_estimado": 100000.0,
   "abertura": "2026-06-08T08:30:00",
   "encerramento": "2027-06-07T16:30:00",
@@ -2412,8 +2290,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "90483066000172-1-000049/2026",
@@ -2428,6 +2305,7 @@
   "numero": "6",
   "processo": "00000312_00000040_2026",
   "objeto": "SOLICITO ABERTURA DE PROCESSO LICITATÓRIO PARA CONTRATAR PROFISSIONAL GINECOLOGISTA PARA CONSULTAS MÉDICAS NA QUANTIDADE DE ATÉ 30 (TRINTA) CONSULTAS MENSAIS, E IMPLANTES DE DISPOSITIVO INTRAUTERINO (DIU), NA QUANTIDADE DE ATÉ 3 (TRÊS) MENSAIS.DURANTE O PERÍODO DE 12 MESES.",
+  "complemento": "",
   "valor_estimado": 7699.89,
   "abertura": "2026-06-08T08:00:00",
   "encerramento": "2027-06-08T08:00:00",
@@ -2438,8 +2316,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "63762074000185-1-000075/2026",
@@ -2454,6 +2331,7 @@
   "numero": "37",
   "processo": "525/2026",
   "objeto": "CHAMAMENTO PÚBLICO, através do procedimento auxiliar de CREDENCIAMENTO, com o objetivo de CONTRATAÇÃO DE PESSOA JURÍDICA ESPECIALIZADA NA PRESTAÇÃO DE SERVIÇOS MÉDICOS EM CLÍNICA GERAL E ESPECIALISTAS EM CARDIOLOGISTA E ULTRASSONOGRAFISTA SEM RQE",
+  "complemento": "",
   "valor_estimado": 206606.4,
   "abertura": "2026-06-16T09:00:00",
   "encerramento": "2027-06-16T09:00:00",
@@ -2477,8 +2355,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "92401553000174-1-000046/2026",
@@ -2493,6 +2370,7 @@
   "numero": "1",
   "processo": "1735",
   "objeto": "Credenciamento de pessoas jurídicas para a prestação de serviços médicos, destinado ao atendimento da população do Município de Riozinho, mediante remuneração por valores fixos previamente estabelecidos pela Secretaria Municipal de Saúde, observadas as condições, exigências e especificações definidas no Termo de Referência.",
+  "complemento": "",
   "valor_estimado": 1023783.0,
   "abertura": "2026-06-17T00:00:00",
   "encerramento": "2027-06-17T00:00:00",
@@ -2546,8 +2424,7 @@
    }
   ],
   "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "92401553000174-1-000045/2026",
@@ -2562,6 +2439,7 @@
   "numero": "001",
   "processo": "1735/2026",
   "objeto": "Credenciamento de pessoas jurídicas para a prestação de serviços médicos, destinado ao atendimento da população do Município de Riozinho, mediante remuneração por valores fixos previamente estabelecidos pela Secretaria Municipal de Saúde, observadas as condições, exigências e especificações definidas no Termo de Referência.",
+  "complemento": "",
   "valor_estimado": 1023783.0,
   "abertura": "2026-06-17T08:30:00",
   "encerramento": "2027-06-17T08:30:00",
@@ -2615,8 +2493,7 @@
    }
   ],
   "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04696490000163-1-000010/2027",
@@ -2631,6 +2508,7 @@
   "numero": "12",
   "processo": "0036.000938/2025-89",
   "objeto": "Credenciamento de empresas especializadas para prestação complementar de serviços de saúde, consistentes na disponibilização de leitos clínicos de enfermaria para retaguarda de pacientes adultos egressos de Unidade de Terapia Intensiva (UTI), com atendimento ininterrupto 24 horas por dia, incluindo assistência multiprofissional e serviços assistenciais necessários, destinados aos usuários do SUS nas regiões de Ariquemes, Ji-Paraná e Cacoal.",
+  "complemento": "",
   "valor_estimado": 36367216.7,
   "abertura": "2026-06-17T08:00:00",
   "encerramento": "2027-06-17T18:00:00",
@@ -2660,8 +2538,7 @@
    }
   ],
   "n_itens": 3,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "92410521000135-1-000089/2026",
@@ -2676,6 +2553,7 @@
   "numero": "3",
   "processo": "64",
   "objeto": "Credenciamento de profissional médico especialista em Psiquiatria, visando à prestação de serviços especializados junto à Unidade Básica de Saúde do Município de Novo Barreiro/RS,",
+  "complemento": "",
   "valor_estimado": 112800.0,
   "abertura": "2026-06-18T09:00:00",
   "encerramento": "2027-06-18T17:00:00",
@@ -2693,8 +2571,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "91566844000150-1-000040/2026",
@@ -2709,6 +2586,7 @@
   "numero": "1",
   "processo": "00000573_00000039_2026",
   "objeto": "CONTRATAÇÃO ATRAVÉS DE CREDENCIAMENTO DE SERVIÇOS MÉDICOS, ENFERMEIRAS E EXAMES PARA ATENDIMENTO À POPULAÇÃO DO MUNICÍPIO CONFORME DEMANDAS.",
+  "complemento": "",
   "valor_estimado": 12099.4,
   "abertura": "2026-06-16T08:00:00",
   "encerramento": "2027-06-21T08:00:00",
@@ -2768,8 +2646,7 @@
    }
   ],
   "n_itens": 24,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "27064964000150-1-000020/2026",
@@ -2784,6 +2661,7 @@
   "numero": "CRED. 002/2026 FMS",
   "processo": "2025002947",
   "objeto": "[Portal de Compras Públicas] - CREDENCIAMENTO VISANDO O CONSULTAS E EXAMES ESPECIALIZADOS EM: GINECOLOGIA, OTORRINOLARINGOLOGIA, NEUROPEDIATRA, GASTROENTEROLOGIA, UROLOGIA, ORTOPEDIA, CARDIOLOGIA, ULTRASSONOGRAFIA, CIRURGIA GERAL, CIRURGIA VASCULAR, PEDIATRIA E OFTALMOLOGIA, VISANDO A AMPLIAÇÃO DO ACESSO DA POPULAÇÃO DO DISTRITO DE LUZIMANGUES, NO MUNICÍPIO DE PORTO NACIONAL – TO.",
+  "complemento": "",
   "valor_estimado": 3498000.0,
   "abertura": "2026-06-22T08:00:00",
   "encerramento": "2027-06-22T23:59:00",
@@ -2843,8 +2721,7 @@
    }
   ],
   "n_itens": 13,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11608295000108-1-000024/2026",
@@ -2859,6 +2736,7 @@
   "numero": "005",
   "processo": "2964",
   "objeto": "[LICITANET] - credenciamento de pessoas jurídicas especializadas para a prestação de serviços de exames de imagem do tipo Ressonância Magnética (sem contraste), com emissão de laudos, destinados ao atendimento dos usuários do Sistema Único de Saúde (SUS) do Município de Brejinho de Nazaré/TO",
+  "complemento": "",
   "valor_estimado": 313540.5,
   "abertura": "2026-07-22T00:00:00",
   "encerramento": "2027-07-22T23:59:59",
@@ -2869,8 +2747,7 @@
   "link_sistema": "https://licitanet.com.br/sessao/194741",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613584000159-1-000125/2026",
@@ -2885,6 +2762,7 @@
   "numero": "14 | Processo 109",
   "processo": "14",
   "objeto": "CREDENCIAMENTO de pessoas juridicas especializadas na prestacao de servicos de consultas medicas especializadas e atendimentos multiprofissionais destinados aos usuarios do Sistema Unico de Saude SUS do Municipio de Ibiraiaras RS.",
+  "complemento": "",
   "valor_estimado": 537000.0,
   "abertura": "2026-07-23T08:00:00",
   "encerramento": "2027-07-23T17:00:00",
@@ -2938,8 +2816,7 @@
    }
   ],
   "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613097000196-1-000093/2026",
@@ -2954,6 +2831,7 @@
   "numero": "2",
   "processo": "97",
   "objeto": "Consultas Médicas na área de neuropediatria",
+  "complemento": "",
   "valor_estimado": 4000.0,
   "abertura": "2026-07-23T08:00:00",
   "encerramento": "2027-07-23T17:09:00",
@@ -2971,8 +2849,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "15884109000106-1-000089/2026",
@@ -2987,6 +2864,7 @@
   "numero": "20",
   "processo": "2417/2025",
   "objeto": "CREDENCIAMENTO DE EMPRESAS ESPECIALIZADAS NA PRESTAÇÃO DE SERVIÇOS MÉDICOS E PROFISSIONAIS DA SAÚDE, POR MEIO DE PESSOA JURÍDICA (PJ), PARA ATENDIMENTO DAS UNIDADES DE SAÚDE PERTENCENTES AO MUNICÍPIO DE NOVA BRASILÂNDIA D’OESTE – RO",
+  "complemento": "",
   "valor_estimado": 4366822.08,
   "abertura": "2026-07-28T08:00:00",
   "encerramento": "2027-07-28T13:00:00",
@@ -3046,8 +2924,7 @@
    }
   ],
   "n_itens": 13,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88585518000185-1-000446/2026",
@@ -3062,6 +2939,7 @@
   "numero": "5",
   "processo": "5646/2026",
   "objeto": "[Portal de Compras Públicas] - O Município de Canela – RS torna público, para conhecimento dos interessados, o credenciamento de pessoas físicas e/ou jurídicas para realização de consultas especializadas de Neurologia Pediátrica visando o atendimento a crianças e adolescentes neurodivergentes e com transtornos globais de desenvolvimento do município de Canela, conforme quantitativos e valores descritos no edital",
+  "complemento": "",
   "valor_estimado": 212882.4,
   "abertura": "2026-07-31T09:00:00",
   "encerramento": "2027-07-30T23:59:00",
@@ -3079,8 +2957,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87738530000110-1-001217/2026",
@@ -3095,6 +2972,7 @@
   "numero": "4 | Processo 1306",
   "processo": "4",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURIDICAS PARA REALIZACAO DE SERVICOS MEDICOS ESPECIALIZADOS E TECNICOS ESPECIALIZADOS TUDO CONFORME TERMO DE REFERENCIA EM ANEXO.",
+  "complemento": "",
   "valor_estimado": 5627002.0,
   "abertura": "2026-08-04T00:00:00",
   "encerramento": "2027-08-04T23:59:00",
@@ -3154,8 +3032,7 @@
    }
   ],
   "n_itens": 15,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612933000118-1-000075/2026",
@@ -3170,6 +3047,7 @@
   "numero": "2",
   "processo": "81/2026",
   "objeto": "CREDENCIAMENTO DE EMPRESAS VISANDO A CONTRATAÇÃO DE PROFISSIONAIS MÉDICOS ESPECIALIZADOS EM PSIQUIATRIA, DEVIDAMENTE HABILITADOS E REGISTRADOS NO CONSELHO REGIONAL DE MEDICINA – CRM, COM REGISTRO DE QUALIFICAÇÃO DE ESPECIALISTA – RQE, PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS ESPECIALIZADOS DESTINADOS AO ATENDIMENTO DA DEMANDA DA SECRETARIA MUNICIPAL DE SAÚDE E SANEAMENTO DO MUNICÍPIO DE ALPESTRE/RS.",
+  "complemento": "",
   "valor_estimado": 120000.0,
   "abertura": "2026-08-12T00:00:00",
   "encerramento": "2027-08-12T00:00:00",
@@ -3187,8 +3065,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "33255043000177-1-000012/2026",
@@ -3203,6 +3080,7 @@
   "numero": "008",
   "processo": "651/2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO E CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS ESPECIALIZADOS NA ASSISTÊNCIA À SAÚDE EM EXAMES MÉDICOS ESPECIALIZADOS DE DIAGNÓSTICO POR IMAGEM E PROCEDIMENTOS AMBULATORIAIS, VISANDO ATENDER AS DEMANDAS DOS USUÁRIOS DO SISTEMA ÚNICO DE SAÚDE (SUS) NO MUNICÍPIO DE COMBINADO - TO.",
+  "complemento": "",
   "valor_estimado": 888663.0,
   "abertura": "2026-08-17T00:00:00",
   "encerramento": "2027-08-16T23:59:59",
@@ -3262,8 +3140,7 @@
    }
   ],
   "n_itens": 8,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11336672000199-1-000057/2026",
@@ -3278,6 +3155,7 @@
   "numero": "CR/2026.011-FMS-GURUPI-TO",
   "processo": "CR/2026.011-FMS-GURUPI-TO",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURIDICAS PARA REALIZACAO DE PROCEDIMENTOS MEDICOS DE ALTA E MEDIA COMPLEXIDADE E EXAMES DE DIAGNOSTICO POR IMAGENS / 2026",
+  "complemento": "",
   "valor_estimado": 3395648.96,
   "abertura": "2026-08-18T09:00:00",
   "encerramento": "2027-08-18T23:59:00",
@@ -3288,8 +3166,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88138292000174-1-000124/2026",
@@ -3304,6 +3181,7 @@
   "numero": "5 | Processo 2416",
   "processo": "5",
   "objeto": "Chamamento Publico para o Credenciamento de pessoas juridicas para a prestacao de Servicos OFTALMOLOGICOS Consultas Exames e Cirurgias Oftalmologicas destinados ao atendimento dos usuarios do Sistema Unico de Saude SUS no ambito do Municipio de Rosario do Sul RS",
+  "complemento": "",
   "valor_estimado": 127836.0,
   "abertura": "2026-08-19T07:00:00",
   "encerramento": "2027-08-19T12:00:00",
@@ -3321,8 +3199,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "63761985000198-1-000059/2026",
@@ -3337,6 +3214,7 @@
   "numero": "05",
   "processo": "0000624.02.01-2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO DE PESSOAS JURÍDICAS PARA PRESTAÇÃO DE SERVIÇOS ESPECIALIZADOS EM SAÚDE, DE FORMA COMPLEMENTAR AO SISTEMA ÚNICO DE SAÚDE – SUS, ABRANGENDO PROCEDIMENTOS CIRÚRGICOS, SERVIÇOS MÉDICOS ESPECIALIZADOS E EXAMES DE APOIO DIAGNÓSTICO E TERAPÊUTICO, MEDIANTE REMUNERAÇÃO POR PRODUÇÃO (PROCEDIMENTO REALIZADO) E/OU POR HORA TÉCNICA, CONFORME DEMANDA REGULADA PELA SECRETARIA MUNICIPAL DE SAÚDE",
+  "complemento": "",
   "valor_estimado": 0.0,
   "abertura": "2024-04-21T08:00:00",
   "encerramento": "2027-08-19T23:59:59",
@@ -3360,8 +3238,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "33255043000177-1-000013/2026",
@@ -3376,6 +3253,7 @@
   "numero": "009",
   "processo": "1265/2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO E CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS ASSISTENCIAIS DE SAÚDE, VISANDO À EXECUÇÃO DE CONSULTAS MÉDICAS ESPECIALIZADAS DE FORMA COMPLEMENTAR, PARA O ATENDIMENTO DE PACIENTES REGULADOS E ENCAMINHADOS PELA REDE PÚBLICA DO FUNDO MUNICIPAL DE SAÚDE DE COMBINADO – TO.",
+  "complemento": "",
   "valor_estimado": 6887837.2,
   "abertura": "2026-08-26T00:00:00",
   "encerramento": "2027-08-25T23:59:59",
@@ -3435,8 +3313,7 @@
    }
   ],
   "n_itens": 15,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "22855159000120-1-000131/2026",
@@ -3451,6 +3328,7 @@
   "numero": "002",
   "processo": "1-0503/2026/SEMUSA",
   "objeto": "[LICITANET] - Credenciamento de profissionais médicos na especialidade de Clínica Geral, pessoas físicas ou jurídicas, para prestação de serviços médicos assistenciais no Hospital Municipal de Cabixi - HPP e nas Unidades Básicas e Centros de Saúde do Município de Cabixi/RO",
+  "complemento": "",
   "valor_estimado": 575435.08,
   "abertura": "2026-08-26T00:00:00",
   "encerramento": "2027-08-25T23:59:59",
@@ -3468,8 +3346,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "63761936000155-1-000040/2026",
@@ -3484,6 +3361,7 @@
   "numero": "2",
   "processo": "895-05/2026",
   "objeto": "[LICITANET] - Credenciamento de pessoa jurídica para Prestação de Serviços Médicos de Especialistas para atender aos usuários do Sistema Único de Saúde – SUS do Município de Itapuã do Oeste – RO.",
+  "complemento": "",
   "valor_estimado": 587803.2,
   "abertura": "2026-09-03T00:00:00",
   "encerramento": "2027-09-03T23:59:59",
@@ -3531,8 +3409,7 @@
    }
   ],
   "n_itens": 6,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "90738196000109-1-000876/2026",
@@ -3547,6 +3424,7 @@
   "numero": "8 | Processo 699",
   "processo": "8",
   "objeto": "Credenciamento de pessoas juridicas especializadas para a prestacao sem carater de exclusividade de servicos de exames de imagem e puncoes biopsias guiadas por ultrassonografia aos usuarios do Sistema Unico de Saude SUS encaminhados pela Secretaria Municipal de Saude de Ijui RS",
+  "complemento": "",
   "valor_estimado": 3087000.0,
   "abertura": "2026-09-14T09:00:00",
   "encerramento": "2027-09-14T09:00:00",
@@ -3606,8 +3484,7 @@
    }
   ],
   "n_itens": 21,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87843819000107-1-001444/2026",
@@ -3622,6 +3499,7 @@
   "numero": "4",
   "processo": "1397/2026",
   "objeto": "CREDENCIAMENTO",
+  "complemento": "CREDENCIAMENTO de Pessoas Jurídicas interessadas na prestação de serviços médicos especializados em NEUROLOGIA, para atendimento de pacientes encaminhados pela Secretaria Municipal da Saúde do Município de Flores da Cunha/RS.",
   "valor_estimado": 99000.0,
   "abertura": "2026-09-21T09:00:00",
   "encerramento": "2027-09-21T09:00:00",
@@ -3632,8 +3510,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": "CREDENCIAMENTO de Pessoas Jurídicas interessadas na prestação de serviços médicos especializados em NEUROLOGIA, para atendimento de pacientes encaminhados pela Secretaria Municipal da Saúde do Município de Flores da Cunha/RS."
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "05903125000145-1-000245/2026",
@@ -3648,6 +3525,7 @@
   "numero": "295",
   "processo": "005.008225/2026-10",
   "objeto": "A contratação de empresas especializadas na prestação de serviços médicos, em medida de caráter subsidiário e complementar, para atendimento das necessidades assistenciais da Secretaria Municipal de Saúde de Porto Velho – SEMUSA.",
+  "complemento": "",
   "valor_estimado": 19809888.0,
   "abertura": "2026-09-22T08:00:00",
   "encerramento": "2027-09-22T18:00:00",
@@ -3707,8 +3585,7 @@
    }
   ],
   "n_itens": 8,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "25063868000161-1-000020/2026",
@@ -3723,6 +3600,7 @@
   "numero": "002/2026",
   "processo": "908/2026/2026",
   "objeto": "[Portal de Compras Públicas] - CREDENCIAMENTO DE INTERESSADOS NA PRESTAÇÃO PARA CREDENCIAMENTO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DE EXAMES DE, RADIOGRAFIA E ULTRASSONOGRAFIA, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS.",
+  "complemento": "",
   "valor_estimado": 403026.6,
   "abertura": "2026-09-25T09:00:00",
   "encerramento": "2027-09-24T09:00:00",
@@ -3740,8 +3618,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11390781000194-1-000002/2026",
@@ -3756,6 +3633,7 @@
   "numero": "(955) | 3-C",
   "processo": "750/2026",
   "objeto": "CREDENCIAMENTO PARA A CONTRATAÇÃO DE PESSOAS JURÍDICAS ESPECIALIZADAS NA PRESTAÇÃO DE SERVIÇOS NA ÁREA DE OFTALMOLOGIA, COMPREENDENDO CONSULTAS COM EXAMES, CIRURGIAS E DEMAIS PROCEDIMENTOS OFTALMOLÓGICOS ESPECIALIZADOS, EM ATENDIMENTO ÀS NECESSIDADES DA SECRETARIA MUNICIPAL DE SAÚDE DE DOIS IRMÃOS DO TOCANTINS – TO, CONFORME PROPOSTAS DE INCREMENTO MAC Nº 36000713554202500/2025 E Nº 36000786192202600/2026.",
+  "complemento": "",
   "valor_estimado": 510700.0,
   "abertura": "2026-09-24T08:00:00",
   "encerramento": "2027-09-24T14:00:00",
@@ -3773,8 +3651,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88861430000149-1-001019/2026",
@@ -3789,6 +3666,7 @@
   "numero": "5 | Processo 1256",
   "processo": "5",
   "objeto": "CONTRATACAO DE SERVICOS NA REALIZACAO DE EXAMES DE RAIO X ULTRASSONOGRAFIA RESSONANCIA MAGNETICA E TOMOGRAFIA.",
+  "complemento": "",
   "valor_estimado": 970495.92,
   "abertura": "2026-09-28T09:00:00",
   "encerramento": "2027-09-28T16:00:00",
@@ -3812,8 +3690,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88861430000149-1-001023/2026",
@@ -3828,6 +3705,7 @@
   "numero": "6 | Processo 1265",
   "processo": "6",
   "objeto": "CONTRATACAO DE SERVICOS NA REALIZACAO DE EXAMES DE ULTRASSONOGRAFIA RESSONANCIA MAGNETICA E TOMOGRAFIAS AMPLIANDO OS ATENDIMENTOS DOS USUARIOS DO SUS DA SEC. MUN. DE SAUDE E ACOLHIMENTO NA EXECUCAO DAS EMENDAS IMPOSITIVAS INDIVIDUAIS N 08 24 67 E 103 COM OBJETIVO DE ZERAR A FILA DE ESPERA.",
+  "complemento": "",
   "valor_estimado": 369793.18,
   "abertura": "2026-10-05T09:00:00",
   "encerramento": "2027-10-05T16:00:00",
@@ -3845,8 +3723,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88568902000170-1-000194/2026",
@@ -3861,6 +3738,7 @@
   "numero": "8 | Processo 278",
   "processo": "8",
   "objeto": "Credenciamento de pessoas juridicas unipessoais regularmente constituidas e legalmente habilitadas para prestacao de servicos medicos no Municipio de Sao Jose do Norte tanto na area urbana quanto rural visando o atendimento da populacao junto as unidades de atencao primaria e de atencao especializada da rede publica de saude conforme Termo de Referencia e demais informacoes exaradas pela Secretaria Municipal da Saude e encaminhadas atraves do Memorando n 9.076 2026. P.A. N 278 2026 CRED. N 8 2026",
+  "complemento": "",
   "valor_estimado": 5007600.0,
   "abertura": "2026-10-06T08:00:00",
   "encerramento": "2027-10-05T17:00:00",
@@ -3871,8 +3749,7 @@
   "link_sistema": " ",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "89814693000160-1-000265/2026",
@@ -3887,6 +3764,7 @@
   "numero": "10005",
   "processo": "6692",
   "objeto": "[Portal de Compras Públicas] - Credenciamento de empresas e/ou profissionais especializados para prestação de serviços de análise, interpretação e emissão de laudos médicos de exames de eletroencefalograma (EEG), realizados pela unidade de saúde, de forma a atender às necessidades assistenciais da rede de saúde e garantir suporte diagnóstico aos paciente.",
+  "complemento": "",
   "valor_estimado": 78840.0,
   "abertura": "2026-10-07T13:00:00",
   "encerramento": "2027-10-06T13:00:00",
@@ -3897,8 +3775,7 @@
   "link_sistema": "https://www.portaldecompraspublicas.com.br/processos/RS/Prefeitura-Municipal-de-Sao-Leopoldo-4967/CRED-10005-2026-2026-516871",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "12780909000199-1-000016/2026",
@@ -3913,6 +3790,7 @@
   "numero": "(1144) | 3-0",
   "processo": "614/2026",
   "objeto": "CREDENCIAMENTO DE PESSOAS JURÍDICAS PARA PRESTAÇÃO DE SERVIÇOS NA REALIZAÇÃO DE CIRURGIAS ELETIVAS GINECOLOGICAS, CIRURGIAS EM GERAL E OFTALMOLÓGICOS, JUNTO AO FUNDO MUNICIPAL DE SAÚDE DO MUNICÍPIO DE PEIXE – TO.",
+  "complemento": "",
   "valor_estimado": 11837400.0,
   "abertura": "2026-10-22T08:00:00",
   "encerramento": "2027-10-22T08:00:00",
@@ -3954,8 +3832,7 @@
    }
   ],
   "n_itens": 5,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88818299000137-1-000364/2026",
@@ -3970,6 +3847,7 @@
   "numero": "6",
   "processo": "4570/2026",
   "objeto": "CREDENCIAMENTO MÉDICO ANESTESIOLOGISTA",
+  "complemento": "CREDENCIAMENTO MÉDICO ESPECIALISTA EM ANESTESIOLOGIA",
   "valor_estimado": 198000.0,
   "abertura": "2026-10-28T08:00:00",
   "encerramento": "2027-10-28T17:10:00",
@@ -4005,8 +3883,7 @@
    }
   ],
   "n_itens": 4,
-  "coletado_em": "2026-11-03",
-  "complemento": "CREDENCIAMENTO MÉDICO ESPECIALISTA EM ANESTESIOLOGIA"
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "94704061000183-1-000294/2026",
@@ -4021,6 +3898,7 @@
   "numero": "3",
   "processo": "2046",
   "objeto": "[Portal de Compras Públicas] - CREDENCIAMENTO DE PESSOA JURÍDICA PARA PRESTAÇÃO DE SERVIÇOS DE EXAMES RADIOLÓGICOS, OFTALMOLÓGICOS E DE DIAGNÓSTICO DESTINADOS AO ATENDIMENTO DAS NECESSIDADES DO MUNICIPIO DE NOVA BOA VISTA/RS.",
+  "complemento": "",
   "valor_estimado": 1655841.62,
   "abertura": "2026-11-03T08:00:00",
   "encerramento": "2027-11-03T17:00:00",
@@ -4074,47 +3952,46 @@
    }
   ],
   "n_itens": 7,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
-  "id": "63787097000144-1-000051/2026",
-  "uf": "RO",
-  "ibge": "1101708",
-  "municipio": "Urupá",
-  "orgao": "MUNICIPIO DE URUPA",
-  "unidade": "MUNICÍPIO DE URUPÁ/RO",
+  "id": "01612918000154-1-000129/2026",
+  "uf": "RS",
+  "ibge": "4300877",
+  "municipio": "Araricá",
+  "orgao": "MUNICIPIO DE ARARICA",
+  "unidade": "Município de Araricá",
   "esfera": "M",
   "modalidade": "Credenciamento",
   "instrumento": "Edital de Chamamento Público",
-  "numero": "001",
-  "processo": "919/2026",
-  "objeto": "[LICITANET] - Credenciamento de pessoas jurídicas para prestação de serviços médicos e de profissionais de nível superior não médicos (multiprofissionais), visando atender às necessidades da Secretaria Municipal de Saúde – SEMSAU, nas unidades de atenção básica, Hospital Municipal e demais unidades da rede pública municipal de saúde, conforme condições e exigências estabelecidas no Edital e seus anexos.",
-  "valor_estimado": 3310000.0,
-  "abertura": "2026-11-03T00:00:00",
-  "encerramento": "2027-11-03T23:59:59",
-  "publicado": "2026-10-29",
+  "numero": "158",
+  "processo": "158/2026",
+  "objeto": "SERVIÇOS ATENÇÃO BÁSICA SAÚDE",
+  "complemento": "contratação de serviços especializados para realização de exames de ultrassonografia com e sem Doppler, incluindo a elaboração e a entrega dos respectivos laudos, destinados ao atendimento dos usuários do Sistema Único de Saúde - SUS no Município de Araricá/RS.",
+  "valor_estimado": 619200.0,
+  "abertura": "2026-11-09T13:00:00",
+  "encerramento": "2027-11-09T13:00:00",
+  "publicado": "2026-11-09",
   "situacao": "Divulgada no PNCP",
   "srp": false,
-  "link_pncp": "https://pncp.gov.br/app/editais/63787097000144/2026/51",
-  "link_sistema": "https://licitanet.com.br/sessao/206505",
+  "link_pncp": "https://pncp.gov.br/app/editais/01612918000154/2026/129",
+  "link_sistema": "",
   "itens": [
    {
-    "descricao": "LOTE 01 - ATENDIMENTO CONSULTA ESPECIALIZADA/CENTRO CIRÚRGICO - Prestação de serviços médicos especializados em Anestesiologia e Cirurgia Geral, com RQE, no Hospital Municipal Jorge Cardoso de Sá, conforme especificações",
-    "quantidade": 1.0,
-    "unidade": "Serv.",
-    "valor_unitario": 512000.0
+    "descricao": "LAUDO E EXAME DE ULTRASSONOGRAFIA COM DOPPLER",
+    "quantidade": 960.0,
+    "unidade": "UN",
+    "valor_unitario": 145.0
    },
    {
-    "descricao": "LOTE 02 - ATENDIMENTO CONSULTA ESPECIALIZADA EM AMBULATÓRIO - Prestação de serviços médicos especializados em Ginecologia/Obstetrícia, Urologia, Neuropediatria, Cardiologia, Pediatria e Ortopedia, com RQE, e Clínica Gera",
-    "quantidade": 1.0,
-    "unidade": "SERV.",
-    "valor_unitario": 2510000.0
+    "descricao": "LAUDO E EXAME DE ULTRASSONOGRAFIA GERAL SEM DOPPLER",
+    "quantidade": 4800.0,
+    "unidade": "UN",
+    "valor_unitario": 100.0
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "07242772000189-1-000040/2025",
@@ -4129,6 +4006,7 @@
   "numero": "8",
   "processo": "65/2025",
   "objeto": "SERVIÇOS TÉCNICOS PROFISSIONAIS DE ASSISTÊNCIA MÉDICA, AUDITORIA E REGULAÇÃO",
+  "complemento": "",
   "valor_estimado": 48460204.62,
   "abertura": "2025-12-16T08:00:00",
   "encerramento": "2027-11-10T17:00:00",
@@ -4176,8 +4054,79 @@
    }
   ],
   "n_itens": 6,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "63787097000144-1-000051/2026",
+  "uf": "RO",
+  "ibge": "1101708",
+  "municipio": "Urupá",
+  "orgao": "MUNICIPIO DE URUPA",
+  "unidade": "MUNICÍPIO DE URUPÁ/RO",
+  "esfera": "M",
+  "modalidade": "Credenciamento",
+  "instrumento": "Edital de Chamamento Público",
+  "numero": "001",
+  "processo": "919/2026",
+  "objeto": "[LICITANET] - Credenciamento de pessoas jurídicas para prestação de serviços médicos e de profissionais de nível superior não médicos (multiprofissionais), visando atender às necessidades da Secretaria Municipal de Saúde – SEMSAU, nas unidades de atenção básica, Hospital Municipal e demais unidades da rede pública municipal de saúde, conforme condições e exigências estabelecidas no Edital e seus anexos.",
+  "complemento": "",
+  "valor_estimado": 3310000.0,
+  "abertura": "2026-11-10T00:00:00",
+  "encerramento": "2027-11-10T23:59:59",
+  "publicado": "2026-10-29",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/63787097000144/2026/51",
+  "link_sistema": "https://licitanet.com.br/sessao/206505",
+  "itens": [
+   {
+    "descricao": "LOTE 01 - ATENDIMENTO CONSULTA ESPECIALIZADA/CENTRO CIRÚRGICO - Prestação de serviços médicos especializados em Anestesiologia e Cirurgia Geral, com RQE, no Hospital Municipal Jorge Cardoso de Sá, conforme especificações",
+    "quantidade": 1.0,
+    "unidade": "Serv.",
+    "valor_unitario": 512000.0
+   },
+   {
+    "descricao": "LOTE 02 - ATENDIMENTO CONSULTA ESPECIALIZADA EM AMBULATÓRIO - Prestação de serviços médicos especializados em Ginecologia/Obstetrícia, Urologia, Neuropediatria, Cardiologia, Pediatria e Ortopedia, com RQE, e Clínica Gera",
+    "quantidade": 1.0,
+    "unidade": "SERV.",
+    "valor_unitario": 2510000.0
+   }
+  ],
+  "n_itens": 2,
+  "coletado_em": "2026-11-15"
+ },
+ {
+  "id": "04092672000125-1-000003/2027",
+  "uf": "RO",
+  "ibge": "1100122",
+  "municipio": "Ji-Paraná",
+  "orgao": "MUNICIPIO DE JI-PARANA",
+  "unidade": "PREFEITURA MUNICIPAL DE JI-PARANÁ",
+  "esfera": "M",
+  "modalidade": "Credenciamento",
+  "instrumento": "Edital de Chamamento Público",
+  "numero": "3",
+  "processo": "1-3039/2026",
+  "objeto": "Credenciamento de prestação de serviços de cirurgias eletivas de baixa e média complexidade, incluindo consulta para avaliação cirúrgica e pré-anestésica, curativos pós-operatórios e outros procedimentos que se fizerem necessários, de forma complementar, por meio do Projeto Compartilhando Saúde, conforme Portaria de Consolidação n.º 2, de 13 de maio de 2025 da Secretaria de Estado da Saúde - SESAU (CONTINUAÇÃO ANEXO II).",
+  "complemento": "",
+  "valor_estimado": 5268103.23,
+  "abertura": "2026-11-17T08:30:00",
+  "encerramento": "2027-11-17T14:30:00",
+  "publicado": "2026-11-04",
+  "situacao": "Divulgada no PNCP",
+  "srp": false,
+  "link_pncp": "https://pncp.gov.br/app/editais/04092672000125/2027/3",
+  "link_sistema": "https://eproc.ji-parana.ro.gov.br/",
+  "itens": [
+   {
+    "descricao": "Serviço de Pronto Atendimento / Internação para a assistência médica Credenciamento de prestação de serviços de cirurgias eletivas de baixa e média complexidade, incluindo consulta para avaliação cirúrgica e pré-anestési",
+    "quantidade": 12.0,
+    "unidade": "UNIDADE",
+    "valor_unitario": 439008.6025
+   }
+  ],
+  "n_itens": 1,
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04104816000116-1-000005/2027",
@@ -4192,6 +4141,7 @@
   "numero": "301",
   "processo": "17316/2026/SEMSAU",
   "objeto": "Processo administrativo para Credenciamento de Pessoa Jurídica Especializada via chamamento público, visando a prestação de serviços de saúde para realização de exames de Tomografia Computadorizada, compreendendo procedimentos sem contraste, com contraste, com sedação quando clinicamente indicada e com contraste e sedação, bem como Angiotomografia Coronariana com contraste, incluindo a realização integral dos exames, disponibilização das imagens e emissão dos respectivos laudos médicos ...",
+  "complemento": "",
   "valor_estimado": 3197073.0,
   "abertura": "2026-09-18T12:00:00",
   "encerramento": "2027-12-31T13:30:00",
@@ -4233,8 +4183,7 @@
    }
   ],
   "n_itens": 5,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04104816000116-1-000002/2027",
@@ -4249,6 +4198,7 @@
   "numero": "2",
   "processo": "9992/2026/SEMSAU",
   "objeto": "Processo administrativo para CREDENCIAMENTO, na modalidade CHAMAMENTO PÚBLICO, para contratação de Pessoas Físicas ou Jurídicas prestadoras de serviços Médicos Especializados, destinados ao atendimento dos usuários do Sistema Único de Saúde (SUS) do Município de Ariquemes/RO nas unidades de Média e Alta Complexidade, para atender as necessidades da SEMSAU.",
+  "complemento": "",
   "valor_estimado": 2320.5,
   "abertura": "2026-05-29T14:00:00",
   "encerramento": "2027-12-31T18:00:00",
@@ -4308,8 +4258,7 @@
    }
   ],
   "n_itens": 15,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "91987669000174-1-000104/2023",
@@ -4324,6 +4273,7 @@
   "numero": "3",
   "processo": "57/2023",
   "objeto": "EXAMES/PROCEDIMENTOS",
+  "complemento": "Credenciamento de interessados em prestar serviços de consultas, exames, e procedimentos cirúrgicos oftalmológicos para pacientes encaminhados pela Unidade Básica de Saúde",
   "valor_estimado": 366652.2,
   "abertura": "2023-03-01T07:30:00",
   "encerramento": "2028-03-01T17:00:00",
@@ -4383,8 +4333,7 @@
    }
   ],
   "n_itens": 9,
-  "coletado_em": "2026-11-03",
-  "complemento": "Credenciamento de interessados em prestar serviços de consultas, exames, e procedimentos cirúrgicos oftalmológicos para pacientes encaminhados pela Unidade Básica de Saúde"
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "01786078000146-1-000007/2026",
@@ -4399,6 +4348,7 @@
   "numero": "122",
   "processo": "19.30.1552.0000622/2025-16",
   "objeto": "CREDENCIAMENTO DE PROFISSIONAIS AUTÔNOMOS (MÉDICO PSIQUIATRA) PARA PRESTAÇÃO DOS SERVIÇOS DE ATENDIMENTO E ACOMPANHAMENTO PSIQUIÁTRICO,",
+  "complemento": "",
   "valor_estimado": 477.0,
   "abertura": "2026-03-11T09:00:00",
   "encerramento": "2028-03-10T18:00:00",
@@ -4409,8 +4359,7 @@
   "link_sistema": "https://sei.mpto.mp.br",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "01786078000146-1-000011/2026",
@@ -4425,6 +4374,7 @@
   "numero": "247",
   "processo": "19.30.1552.0000623/2025-86",
   "objeto": "Credenciamento de Médicos Psiquiatras para a Prestação dos Serviços de Avaliação e Emissão dos Laudos Psiquiátricos, junto aos Promotores de Justiça em Estágio Probatório, de maneira presencial, nos locais pré-determinados na proposta inicial",
+  "complemento": "",
   "valor_estimado": 506.63,
   "abertura": "2026-03-19T09:00:00",
   "encerramento": "2028-03-17T18:00:00",
@@ -4442,8 +4392,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11336672000199-1-000012/2026",
@@ -4458,6 +4407,7 @@
   "numero": "CR/2026.004-FMS-GURUPI-TO",
   "processo": "CR/2026.004-FMS-GURUPI-TO",
   "objeto": "CREDENCIAMENTO DE EMPRESAS PARA PRESTACAO DE SERVICOS DE SAUDE EM OFTALMOLOGIA AMBULATORIAL: CONSULTAS MEDICAS, EXAMES PARA DIAGNOSTICO E PROCEDIMENTOS CIRURGICOS DE MEDIA E ALTA COMPLEXIDADE HABILITADOS PELO MINISTERIO DE SAUDE NO AMBITO DO SUS",
+  "complemento": "",
   "valor_estimado": 31601856.0,
   "abertura": "2026-03-17T08:00:00",
   "encerramento": "2028-03-17T23:59:00",
@@ -4468,8 +4418,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11783200000184-1-000002/2026",
@@ -4484,6 +4433,7 @@
   "numero": "001",
   "processo": "98/2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO DE PESSOAS JURÍDICAS PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS EM REGIME DE PLANTÃO (12H E 24H), EM CARÁTER COMPLEMENTAR À REDE MUNICIPAL DO SISTEMA ÚNICO DE SAÚDE – SUS, PARA ATENDIMENTO AOS USUÁRIOS RESIDENTES NO MUNICÍPIO DE SANTA MARIA DO TOCANTINS/TO.",
+  "complemento": "",
   "valor_estimado": 499000.0,
   "abertura": "2026-03-18T00:00:00",
   "encerramento": "2028-03-17T23:59:59",
@@ -4507,8 +4457,7 @@
    }
   ],
   "n_itens": 2,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "12308833000101-1-000002/2026",
@@ -4523,6 +4472,7 @@
   "numero": "001",
   "processo": "106/2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO DE PESSOAS JURÍDICAS PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS GENERALISTAS E ESPECIALIZADOS, EM CARÁTER COMPLEMENTAR À REDE MUNICIPAL DO SISTEMA ÚNICO DE SAÚDE – SUS, PARA ATENDIMENTO AOS USUÁRIOS RESIDENTES NO MUNICÍPIO DE CARIRI DO TOCANTINS/TO, CONFORME CONDIÇÕES, QUANTIDADES E ESPECIFICAÇÕES ESTABELECIDAS NO TERMO DE REFERÊNCIA E DEMAIS ANEXOS DESTE EDITAL.",
+  "complemento": "",
   "valor_estimado": 3340840.0,
   "abertura": "2026-05-05T00:00:00",
   "encerramento": "2028-05-05T23:59:59",
@@ -4582,8 +4532,7 @@
    }
   ],
   "n_itens": 26,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "11230123000135-1-000003/2026",
@@ -4598,6 +4547,7 @@
   "numero": "001",
   "processo": "405/2026",
   "objeto": "[LICITANET] - CREDENCIAMENTO DE PF E/OU PJ PARA PRESTAÇÃO DE SERVIÇOS MÉDICOS GENERALISTAS E ESPECIALIZADOS, EM CARÁTER COMPLEMENTAR À REDE MUNICIPAL DO SISTEMA ÚNICO DE SAÚDE - SUS, PARA ATENDIMENTO AOS USUÁRIOS RESIDENTES E SANTA RITA DO TOCANTINS/TO.",
+  "complemento": "",
   "valor_estimado": 2402191.2,
   "abertura": "2026-05-13T00:00:00",
   "encerramento": "2028-05-12T23:59:59",
@@ -4657,8 +4607,7 @@
    }
   ],
   "n_itens": 19,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "91987669000174-1-000124/2023",
@@ -4673,6 +4622,7 @@
   "numero": "5",
   "processo": "140/2023",
   "objeto": "SERVIÇOS MÉDICOS E OFTALMOLÓGICOS",
+  "complemento": "Serviço de audiometria tonais e vocais, juntamente com timpanometria.",
   "valor_estimado": 6600.0,
   "abertura": "2023-05-15T08:00:00",
   "encerramento": "2028-05-15T08:00:00",
@@ -4683,8 +4633,7 @@
   "link_sistema": "",
   "itens": [],
   "n_itens": 0,
-  "coletado_em": "2026-11-03",
-  "complemento": "Serviço de audiometria tonais e vocais, juntamente com timpanometria."
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87612842000182-1-000010/2023",
@@ -4699,6 +4648,7 @@
   "numero": "4 | Processo 47",
   "processo": "4",
   "objeto": "SERVICOS DE PSIQUIATRIA",
+  "complemento": "",
   "valor_estimado": 168000.0,
   "abertura": "2023-05-17T08:00:00",
   "encerramento": "2028-05-17T17:00:00",
@@ -4716,8 +4666,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "04632212000142-1-000061/2025",
@@ -4732,6 +4681,7 @@
   "numero": "02",
   "processo": "0583/2025",
   "objeto": "[LICITANET] - contratação de profissionais especializados na área de saúde, Serviços médicos complementares de Horas de Médico Clínico Geral e especialistas.",
+  "complemento": "",
   "valor_estimado": 5990400.0,
   "abertura": "2025-06-03T00:00:00",
   "encerramento": "2028-05-22T23:59:59",
@@ -4779,8 +4729,7 @@
    }
   ],
   "n_itens": 6,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613519000123-1-000011/2023",
@@ -4795,6 +4744,7 @@
   "numero": "2",
   "processo": "2/2023",
   "objeto": "Credenciamento de pessoas jurídicas para Prestação de serviços de atendimento médico na especialidade de psiquiatria com profissional devidamente habilitado, a nível ambulatorial para atender a demanda da Secretaria Municipal de Saúde do Município de Não-Me-Toque/RS",
+  "complemento": "",
   "valor_estimado": 210648.0,
   "abertura": "2023-06-02T08:15:00",
   "encerramento": "2028-06-01T17:00:00",
@@ -4824,8 +4774,7 @@
    }
   ],
   "n_itens": 3,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88566872000162-1-000001/2023",
@@ -4840,6 +4789,7 @@
   "numero": "CPC 7",
   "processo": "332/2023",
   "objeto": "Abertura de Licitação para contratação de empresa especializada no fornecimento de horas médicas de médico generalista para SMS, pelo período máximo de 60 meses (conforme solicitado pela SMGAL), onde o montante estimado mensal é de R$ 1.416.780,00. PD Original: 22962/20233",
+  "complemento": "",
   "valor_estimado": 85006800.0,
   "abertura": "2023-08-16T08:00:00",
   "encerramento": "2028-08-16T00:00:00",
@@ -4857,8 +4807,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613519000123-1-000118/2023",
@@ -4873,6 +4822,7 @@
   "numero": "5",
   "processo": "5/2023",
   "objeto": "Prestação de serviços médicos, para acompanhamento aos pacientes que necessitam de transferência inter - hospitalar. A transferência é realizada através de UTI Móvel - Suporte Avançado da Secretaria Municipal de Saúde de Não - Me - Toque. Valor por Km rodado IDA e VOLTA",
+  "complemento": "",
   "valor_estimado": 4742.4,
   "abertura": "2023-09-18T08:15:00",
   "encerramento": "2028-09-18T17:00:00",
@@ -4890,8 +4840,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "88379763000136-1-000150/2026",
@@ -4906,6 +4855,7 @@
   "numero": "97",
   "processo": "97",
   "objeto": "1.1 - Contratação de Pessoa Jurídica para prestação de serviços na área médica de OFTALMOLOGIA, compreendendo consultas, exames, procedimentos diagnósticos e terapêuticos, conforme segue:",
+  "complemento": "",
   "valor_estimado": 600000.0,
   "abertura": "2026-10-05T00:00:00",
   "encerramento": "2028-10-05T00:00:00",
@@ -4923,8 +4873,7 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  },
  {
   "id": "87613519000123-1-000115/2023",
@@ -4939,6 +4888,7 @@
   "numero": "6",
   "processo": "6/2023",
   "objeto": "Prestação de serviços médicos com especialidade em Ginecologia/Obstetrícia",
+  "complemento": "",
   "valor_estimado": 174084.0,
   "abertura": "2023-10-13T08:15:00",
   "encerramento": "2028-10-13T17:00:00",
@@ -4956,7 +4906,6 @@
    }
   ],
   "n_itens": 1,
-  "coletado_em": "2026-11-03",
-  "complemento": ""
+  "coletado_em": "2026-11-15"
  }
 ]
