@@ -14,9 +14,10 @@ const STATES = {
   rr: { nome: 'Roraima', sigla: 'RR', slug: 'roraima', ibge: '14', url: 'https://claude.ai/code/artifact/67bd224d-c773-4d72-87f4-126914501a9b', polos: 'Boa Vista', relatorio: '2026-10-30T19:00:00-03:00' },
   al: { nome: 'Alagoas', sigla: 'AL', slug: 'alagoas', ibge: '27', url: 'https://claude.ai/code/artifact/89be2483-da32-4a59-aea9-0c307ce767a0', polos: 'Maceió e Arapiraca', relatorio: '2026-10-29T13:05:00-03:00' },
   rs: { nome: 'Rio Grande do Sul', sigla: 'RS', slug: 'rio-grande-do-sul', ibge: '43', url: 'https://claude.ai/code/artifact/212f32a4-936a-41e5-a03f-c35c1a1bc781', polos: 'Porto Alegre', relatorio: '2026-11-02T14:40:00-03:00' },
+  pr: { nome: 'Paraná', sigla: 'PR', slug: 'parana', ibge: '41', url: 'https://prctracker.github.io/PRCTRACKER/#parana', polos: 'Curitiba', relatorio: '2026-11-16T18:00:00-03:00' },
   ro: { nome: 'Rondônia', sigla: 'RO', slug: 'rondonia', ibge: '11', url: 'https://claude.ai/artifact/UwuyNFtB8EFmnpcQrQFcaL', polos: 'Porto Velho', relatorio: '2026-11-02T23:30:00-03:00' },
 };
-const ORDER = ['to', 'rr', 'al', 'rs', 'ro'];
+const ORDER = ['to', 'rr', 'al', 'rs', 'ro', 'pr'];
 
 const rowsOf = (j) => (Array.isArray(j) ? j : j.rows || j.data || j.results);
 const num = (v) => (v === null || v === undefined || v === '' || isNaN(Number(v)) ? null : Number(v));

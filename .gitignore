@@ -7,3 +7,4 @@ site/data/
 site/estados/
 *.log
 __pycache__/
+preview/

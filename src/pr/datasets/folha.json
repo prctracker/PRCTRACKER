@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: a remuneração dos servidores do Paraná só pode ser consultada nome a nome no Portal da Transparência, sem total por cargo; a tabela traz só a linha \"Não localizado\".",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

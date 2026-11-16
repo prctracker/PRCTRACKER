@@ -1,0 +1,14 @@
+{
+  "description": "Vencimento do médico no concurso e na seleção temporária da SESA, vencimentos de seleções e leis de cargos municipais e bolsa do Mais Médicos, com link para a fonte de cada linha. Remuneração média da folha estadual: Não localizado.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Contratos de serviço médico de prefeituras, consórcios e do Estado do Paraná publicados no PNCP desde 2024 (sem laboratórios, hospitais, fisioterapia, odontologia e diagnóstico por imagem), com contratado, CNPJ, tipo de pessoa, valor, vigência e link. Pessoa física aparece sem nome nem CPF.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "contratos.json"
+  },
+  "title": "Contratos de serviço médico",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}
