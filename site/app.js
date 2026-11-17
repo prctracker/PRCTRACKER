@@ -46,9 +46,9 @@
   const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
   // ------------------------------------------------------------------ constants
-  const SLUGS = { tocantins: 'to', roraima: 'rr', alagoas: 'al', 'rio-grande-do-sul': 'rs', rondonia: 'ro', parana: 'pr', 'santa-catarina': 'sc', 'sao-paulo': 'sp' };
+  const SLUGS = { tocantins: 'to', roraima: 'rr', alagoas: 'al', 'rio-grande-do-sul': 'rs', rondonia: 'ro', parana: 'pr', 'santa-catarina': 'sc', 'sao-paulo': 'sp', 'rio-de-janeiro': 'rj' };
   const PAGES = ['inicio', 'oportunidades', 'noticias', 'valores-da-equipe', 'fontes'];
-  const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)', pr: 'var(--st-pr)', sc: 'var(--st-sc)', sp: 'var(--st-sp)' };
+  const ST_COLOR = { to: 'var(--st-to)', rr: 'var(--st-rr)', al: 'var(--st-al)', rs: 'var(--st-rs)', ro: 'var(--st-ro)', pr: 'var(--st-pr)', sc: 'var(--st-sc)', sp: 'var(--st-sp)', rj: 'var(--st-rj)' };
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)', 'var(--s8)'];
   const SCHEDULE = { dow: 0, h: 22, m: 0, dia: 'domingo', hora: '22h' }; // weekly PNCP and news (Sunday night); CNES monthly on day 15
   const FORMA_HORAS = { 'Plantão 6h': 6, 'Plantão 12h': 12, 'Plantão 24h': 24, 'Hora': 1 };
@@ -1058,9 +1058,9 @@
     if (APP.dbState === 'off' && !APP.updates.length) { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Histórico indisponível nesta visualização.' }), h('span', { text: 'Abra o site pelo claude.ai com sua conta para ver o registro das atualizações.' }))); return; }
     if (!APP.updates.length) { log.replaceChildren(h('div', { class: 'mx-empty' }, h('b', { text: 'Nenhuma rodada registrada ainda.' }), h('span', { text: SCHEDULE ? `A próxima atualização automática roda ${SCHEDULE.dia}, ${dBR(nextRun().toISOString())}, às ${SCHEDULE.hora} (horário de Brasília).` : 'A atualização semanal ainda não foi agendada.' }))); return; }
     log.replaceChildren(h('div', { class: 'mx-tablewrap' }, h('table', { class: 'mx-table' },
-      h('thead', null, h('tr', null, ...['Data', 'Situação', 'Resumo', 'TO', 'RR', 'AL', 'RS', 'RO', 'PR', 'SC', 'SP'].map((t, i) => h('th', { class: i >= 3 ? 'n' : null, text: t })))),
+      h('thead', null, h('tr', null, ...['Data', 'Situação', 'Resumo', 'TO', 'RR', 'AL', 'RS', 'RO', 'PR', 'SC', 'SP', 'RJ'].map((t, i) => h('th', { class: i >= 3 ? 'n' : null, text: t })))),
       h('tbody', null, ...APP.updates.map((u) => h('tr', null, h('td', { text: dBR(u.data) }), h('td', { text: u.status || '—' }), h('td', null, u.resumo || '—', u.observacoes ? h('small', { text: u.observacoes }) : null),
-        ...['to', 'rr', 'al', 'rs', 'ro', 'pr', 'sc', 'sp'].map((uf) => { const e = (u.por_estado || {})[uf] || {}; return h('td', { class: 'n' }, e.novos_valores !== undefined ? `${F.int(e.novos_valores || 0)} val.` : '—', h('small', { text: e.novos_contratos !== undefined ? `${F.int(e.novos_contratos || 0)} contr. · ${F.int(e.novas_noticias || 0)} not.` : '' })); })))))));
+        ...['to', 'rr', 'al', 'rs', 'ro', 'pr', 'sc', 'sp', 'rj'].map((uf) => { const e = (u.por_estado || {})[uf] || {}; return h('td', { class: 'n' }, e.novos_valores !== undefined ? `${F.int(e.novos_valores || 0)} val.` : '—', h('small', { text: e.novos_contratos !== undefined ? `${F.int(e.novos_contratos || 0)} contr. · ${F.int(e.novas_noticias || 0)} not.` : '' })); })))))));
   }
 
   // ================================================================== SOURCE DRAWER

@@ -2,7 +2,7 @@
 
 Site da PRC Tracker que reúne os relatórios estaduais de mercado médico: médicos no CNES, vínculos nos hospitais e UPAs, valores pagos pelo setor público (com o documento de origem de cada número), contratos, concursos, notícias e o panorama do Brasil calculado a partir dos estados que já têm relatório.
 
-Estados com relatório: Tocantins, Roraima, Alagoas, Rio Grande do Sul, Rondônia, Paraná, Santa Catarina e São Paulo.
+Estados com relatório: Tocantins, Roraima, Alagoas, Rio Grande do Sul, Rondônia, Paraná, Santa Catarina, São Paulo e Rio de Janeiro.
 
 ## Regra dos dados
 

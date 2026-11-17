@@ -608,7 +608,7 @@ dash.draw('mapa', (el) => {
   const BINS = { dens: [0.5, 1, 2, 3], dens_sus: [0.5, 1, 2, 3], med: [3, 6, 15, 50, 200], pct_60mais: [12, 14, 16, 18] };
   const NAMES = { dens: 'Médicos por mil hab.', dens_sus: 'Médicos SUS por mil hab.', med: 'Total de médicos', pct_60mais: 'População com 60 anos ou mais' };
   const th = BINS[metric];
-  const lo = tmColor(el, 'var(--color-panel)'), hi = tmColor(el, dash.colors[0]);
+  const lo = '#E3F0FA', hi = '#0B3D6E'; // fixed ramp: darker = higher value in light and dark themes
   const crit = tmColor(el, 'var(--cds-chart-status-critical)');
   const ramp = d3.interpolateRgb(lo, hi);
   const fills = th.concat([Infinity]).map((_, i, a) => ramp(0.16 + 0.84 * i / (a.length - 1)));

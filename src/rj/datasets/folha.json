@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: a folha nominal do Executivo do Rio de Janeiro está no Portal da Transparência do Estado, que recusou o acesso automático daqui; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}
