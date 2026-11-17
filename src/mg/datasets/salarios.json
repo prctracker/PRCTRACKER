@@ -1,0 +1,14 @@
+{
+  "description": "Remuneração do médico no concurso da SES-MG, nas seleções da FHEMIG, no concurso do Hospital Odilon Behrens, em concursos e seleções municipais, no concurso da UFMG e na bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

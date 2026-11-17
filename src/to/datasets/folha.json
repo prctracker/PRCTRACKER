@@ -1,5 +1,5 @@
 {
-  "description": "Não localizado: número de médicos efetivos e temporários ativos na folha da SES-TO e remuneração média por ano não puderam ser consultados; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte tentada.",
+  "description": "Médicos efetivos ativos da SES-TO na folha de outubro de 2026, com o salário bruto total do mês e a média por médico, somados por Claude a partir da Relação Nominal de Servidores do Portal da Transparência do Tocantins (cargo efetivo Médico, exercício 2026/10). Os anos anteriores não foram consultados.",
   "fixed": true,
   "source": {
     "format": "json",
@@ -8,7 +8,7 @@
   },
   "title": "Folha de médicos efetivos da SES-TO",
   "updated": {
-    "at": "2026-11-02T19:10:00-03:00",
+    "at": "2026-11-17T18:00:00-03:00",
     "by": "Claude"
   }
 }

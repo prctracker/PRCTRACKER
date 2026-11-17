@@ -1,0 +1,14 @@
+{
+  "description": "Números pontuais de editais, reportagens, Ministério da Saúde, CNES, IBGE e ANS: concursos da SES-MG e do Hospital Odilon Behrens, seleções da FHEMIG, vínculos não estatutários na rede estadual, Mais Médicos, população e planos de saúde, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

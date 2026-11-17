@@ -1,5 +1,5 @@
 {
-  "description": "Não localizado: a folha nominal do Executivo do Rio de Janeiro está no Portal da Transparência do Estado, que recusou o acesso automático daqui; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "description": "Médicos ativos do Executivo do Rio de Janeiro em outubro de 2022 a 2026, por grupo (efetivos da SES e do IASERJ, Fundação Saúde e peritos legistas), com o total de vantagens do mês e a média por médico, somados por Claude a partir da Consulta Remuneração do Governo do Estado (GESPERJ), por cargo de médico e situação Ativo.",
   "fixed": true,
   "source": {
     "format": "json",
@@ -8,7 +8,7 @@
   },
   "title": "Folha de médicos do Estado",
   "updated": {
-    "at": "2026-11-16T18:00:00-03:00",
+    "at": "2026-11-17T18:00:00-03:00",
     "by": "Claude"
   }
 }

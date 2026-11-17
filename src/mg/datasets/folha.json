@@ -1,0 +1,14 @@
+{
+  "description": "Médicos ativos do Executivo de Minas Gerais em setembro de 2022 a 2026, por grupo de cargo (efetivos, contratados pela Lei nº 18.185/2009 e legistas), com remuneração total do mês e média por médico, somados por Claude a partir da consulta por cargo do Portal da Transparência do Estado (situação Ativo).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-16T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

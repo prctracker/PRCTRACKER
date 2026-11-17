@@ -1,5 +1,5 @@
 {
-  "description": "Não localizado: a folha nominal do Estado do Rio de Janeiro não pôde ser consultada daqui e os Cadernos de RH não separam cargo nem plantão; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
+  "description": "Não localizado: a Consulta Remuneração do Governo do Estado não separa plantões no total de vantagens; a tabela traz só a linha \"Não localizado\", com o motivo e a fonte consultada.",
   "fixed": true,
   "source": {
     "format": "json",
@@ -8,7 +8,7 @@
   },
   "title": "Plantões extras pagos pelo Estado, por mês",
   "updated": {
-    "at": "2026-11-16T18:00:00-03:00",
+    "at": "2026-11-17T18:00:00-03:00",
     "by": "Claude"
   }
 }
