@@ -1,0 +1,14 @@
+{
+  "description": "Reportagens e publicações de 2026 sobre plantões, atrasos de pagamento, seleções e provimento de médicos em Mato Grosso do Sul, resumidas por Claude, com link para cada uma.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "noticias.json"
+  },
+  "title": "Notícias sobre médicos",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

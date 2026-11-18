@@ -1,0 +1,14 @@
+{
+  "description": "Contornos dos 79 municípios de Mato Grosso do Sul (malha municipal IBGE 2022), simplificados para desenhar o mapa.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "malha.json"
+  },
+  "title": "Limites municipais",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

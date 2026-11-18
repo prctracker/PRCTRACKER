@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: a folha aberta do Poder Executivo de Mato Grosso do Sul não identifica médicos nem traz rubricas de plantão; a tabela traz só uma linha de Não localizado, com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json"
+  },
+  "title": "Plantões extras x folha do Estado",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

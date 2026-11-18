@@ -1,0 +1,14 @@
+{
+  "description": "Números pontuais de editais, reportagens, Tribunal de Contas, Ministério da Saúde, CNES, IBGE e ANS: seleção do Hospital Regional, ausências em UPAs de Campo Grande, residentes, vínculos não estatutários na rede estadual, Mais Médicos, população e planos de saúde, cada um com data e fonte.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "indicadores.json"
+  },
+  "title": "Indicadores de déficit",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

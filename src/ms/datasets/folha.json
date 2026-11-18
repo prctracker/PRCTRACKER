@@ -1,0 +1,14 @@
+{
+  "description": "Não localizado: os arquivos mensais da folha do Poder Executivo (dados.ms.gov.br) trazem a carreira e não a função de médico; a tabela traz só uma linha de Não localizado, com o motivo e a fonte consultada.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Valores pagos a médicos no estado de Mato Grosso do Sul, um por linha, com órgão, documento de origem, amparo legal, nº de controle e item no PNCP, unidade, quantidade, valor estimado e homologado, base do valor e link: credenciamentos, dispensas, inexigibilidades e pregões de prefeituras, consórcios, fundações municipais e do Estado no PNCP, seleções municipais, seleção do Hospital Universitário da UFGD e bolsa do Mais Médicos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "valores.json"
+  },
+  "title": "Remuneração médica levantada",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

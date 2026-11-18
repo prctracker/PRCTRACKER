@@ -1,7 +1,7 @@
 """Compare the four state dashboards: sections, cards, KPI tiles, charts, table columns and datasets."""
 import json, os, re, glob
 SP = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-UFS = ['al', 'to', 'rr', 'rs', 'ro', 'pr', 'sc', 'sp', 'rj', 'mg', 'es']
+UFS = ['al', 'to', 'rr', 'rs', 'ro', 'pr', 'sc', 'sp', 'rj', 'mg', 'es', 'ms']
 def clean(t): return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t)).strip()
 def norm(t):
     t = clean(t)
