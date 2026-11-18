@@ -1,0 +1,14 @@
+{
+  "description": "Preço unitário de consultas especializadas, ultrassonografias, ecocardiogramas, endoscopias e laudos em credenciamentos, dispensas, inexigibilidades e pregões de prefeituras, consórcios e órgãos do Espírito Santo no PNCP, um por linha, com órgão, documento, nº de controle e item, quantidade, valor estimado e homologado e link.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "consultas.json"
+  },
+  "title": "Preços de consulta e exame",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

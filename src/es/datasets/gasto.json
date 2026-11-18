@@ -1,0 +1,14 @@
+{
+  "description": "Por ano (2025 e 2026 até outubro): valor pago a médicos ativos do Executivo do Espírito Santo em extensão de carga horária, serviço extraordinário e plantão, e folha do mês desses médicos sem 13º, férias, rescisões e indenizações, somados das rubricas dos arquivos de remuneração (dados.es.gov.br).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "gasto.json"
+  },
+  "title": "Extensão de carga horária x folha dos médicos do Estado",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

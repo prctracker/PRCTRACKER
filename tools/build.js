@@ -21,9 +21,10 @@ const STATES = {
   sp: { nome: 'São Paulo', sigla: 'SP', slug: 'sao-paulo', ibge: '35', url: 'https://prctracker.github.io/PRCTRACKER/#sao-paulo', polos: 'São Paulo', relatorio: '2026-11-16T22:00:00-03:00' },
   rj: { nome: 'Rio de Janeiro', sigla: 'RJ', slug: 'rio-de-janeiro', ibge: '33', url: 'https://prctracker.github.io/PRCTRACKER/#rio-de-janeiro', polos: 'Rio de Janeiro', relatorio: '2026-11-16T20:00:00-03:00' },
   mg: { nome: 'Minas Gerais', sigla: 'MG', slug: 'minas-gerais', ibge: '31', url: 'https://prctracker.github.io/PRCTRACKER/#minas-gerais', polos: 'Belo Horizonte', relatorio: '2026-11-17T18:00:00-03:00' },
+  es: { nome: 'Espírito Santo', sigla: 'ES', slug: 'espirito-santo', ibge: '32', url: 'https://prctracker.github.io/PRCTRACKER/#espirito-santo', polos: 'Vitória', relatorio: '2026-11-18T18:00:00-03:00' },
   ro: { nome: 'Rondônia', sigla: 'RO', slug: 'rondonia', ibge: '11', url: 'https://claude.ai/artifact/UwuyNFtB8EFmnpcQrQFcaL', polos: 'Porto Velho', relatorio: '2026-11-02T23:30:00-03:00' },
 };
-const ORDER = ['to', 'rr', 'al', 'rs', 'ro', 'pr', 'sc', 'sp', 'rj', 'mg'];
+const ORDER = ['to', 'rr', 'al', 'rs', 'ro', 'pr', 'sc', 'sp', 'rj', 'mg', 'es'];
 
 const rowsOf = (j) => (Array.isArray(j) ? j : j.rows || j.data || j.results);
 const num = (v) => (v === null || v === undefined || v === '' || isNaN(Number(v)) ? null : Number(v));

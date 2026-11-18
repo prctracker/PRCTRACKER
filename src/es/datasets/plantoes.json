@@ -1,0 +1,14 @@
+{
+  "description": "Valor pago por mês a médicos ativos do Executivo do Espírito Santo nas rubricas de extensão de carga horária, gratificação por serviço extraordinário e plantão, de janeiro de 2025 a outubro de 2026, somado por Claude a partir dos arquivos de remuneração do Portal da Transparência (dados.es.gov.br).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "plantoes.json"
+  },
+  "title": "Extensão de carga horária e serviço extra pagos a médicos, por mês",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

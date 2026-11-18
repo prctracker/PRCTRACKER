@@ -1,0 +1,14 @@
+{
+  "description": "Médicos ativos do Executivo do Espírito Santo em outubro de 2022 a 2026, por grupo (efetivos da SESA, designação temporária e legistas), com a remuneração do mês sem 13º, férias, rescisões e indenizações e a média por médico, somados por Claude a partir dos arquivos de remuneração do Portal da Transparência (dados.es.gov.br).",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "folha.json"
+  },
+  "title": "Folha de médicos do Estado",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

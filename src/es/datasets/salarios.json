@@ -1,0 +1,14 @@
+{
+  "description": "Remuneração do médico nas seleções da SESA e da Polícia Militar, no concurso da iNOVA Capixaba, na bolsa do Qualifica-APS, em concursos e seleções municipais e na bolsa do Mais Médicos, com link para a fonte de cada linha.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "salarios.json"
+  },
+  "title": "Salários de médicos",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}

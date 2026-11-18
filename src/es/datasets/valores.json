@@ -1,0 +1,14 @@
+{
+  "description": "Valores pagos a médicos no estado do Espírito Santo, um por linha, com órgão, documento de origem, amparo legal, nº de controle e item no PNCP, unidade, quantidade, valor estimado e homologado, base do valor e link: credenciamentos, dispensas, inexigibilidades e pregões de prefeituras, consórcios e da iNOVA Capixaba no PNCP, concursos e seleções municipais, seleções da SESA e da Polícia Militar, concurso da iNOVA Capixaba, bolsa do Qualifica-APS e bolsa do Mais Médicos.",
+  "fixed": true,
+  "source": {
+    "format": "json",
+    "kind": "file",
+    "name": "valores.json"
+  },
+  "title": "Remuneração médica levantada",
+  "updated": {
+    "at": "2026-11-18T18:00:00-03:00",
+    "by": "Claude"
+  }
+}
